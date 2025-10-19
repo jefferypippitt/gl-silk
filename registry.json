@@ -97,6 +97,36 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "mesh-gradient-button",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Mesh Gradient Button",
+      "description": "Animated button with flowing mesh gradient backgrounds powered by @paper-design/shaders-react.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/high-energy-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/ocean-theme-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/text-customization-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

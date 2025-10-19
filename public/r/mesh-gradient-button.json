@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mesh-gradient-button",
+  "type": "registry:component",
+  "title": "Mesh Gradient Button",
+  "description": "Animated button with flowing mesh gradient backgrounds powered by @paper-design/shaders-react.",
+  "dependencies": ["@paper-design/shaders-react"],
+  "files": [
+    {
+      "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/components/mesh-gradient-button/demo.tsx",
+      "type": "registry:component"
+    }
+  ]
+}

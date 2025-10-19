@@ -18,6 +18,10 @@ import { ScaleSlowDemo } from "@/registry/new-york/components/split-text-animati
 import { RotateDemo } from "@/registry/new-york/components/split-text-animation/rotate-demo";
 import { RotateFastDemo } from "@/registry/new-york/components/split-text-animation/rotate-fast-demo";
 import { RotateSlowDemo } from "@/registry/new-york/components/split-text-animation/rotate-slow-demo";
+import { MeshGradientDemo } from "@/registry/new-york/components/mesh-gradient-button/demo";
+import { HighEnergyDemo } from "@/registry/new-york/components/mesh-gradient-button/high-energy-demo";
+import { OceanThemeDemo } from "@/registry/new-york/components/mesh-gradient-button/ocean-theme-demo";
+import { TextCustomizationDemo } from "@/registry/new-york/components/mesh-gradient-button/text-customization-demo";
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
@@ -39,4 +43,8 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "split-text-rotate": RotateDemo,
   "split-text-rotate-fast": RotateFastDemo,
   "split-text-rotate-slow": RotateSlowDemo,
+  "mesh-gradient-demo": MeshGradientDemo,
+  "high-energy-demo": HighEnergyDemo,
+  "ocean-theme-demo": OceanThemeDemo,
+  "text-customization-demo": TextCustomizationDemo,
 };

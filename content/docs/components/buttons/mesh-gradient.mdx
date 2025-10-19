@@ -1,0 +1,162 @@
+---
+title: Mesh Gradient Button
+description: Animated button with flowing mesh gradient backgrounds
+---
+
+All mesh gradient buttons require the @paper-design/shaders-react package to be installed first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add @paper-design/shaders-react
+```
+
+</Tab>
+</Tabs>
+
+Then add the component:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+</Tabs>
+
+### Quick Start
+
+```tsx
+import { MeshGradientButton } from "@/components/ui/mesh-gradient-button";
+
+export default function Home() {
+  return <MeshGradientButton>Get Started</MeshGradientButton>;
+}
+```
+
+### Example
+
+<ComponentPreview name="mesh-gradient-demo" />
+
+### High Energy Effect
+
+<ComponentPreview name="high-energy-demo" />
+
+### Calm Ocean Theme
+
+<ComponentPreview name="ocean-theme-demo" />
+
+### Text Customization
+
+<ComponentPreview name="text-customization-demo" />
+
+#### Advanced Text Effects
+
+For advanced text effects, use the `textClassName` prop to add custom styling:
+
+```tsx
+// Add mix-blend-difference for color inversion effect
+<MeshGradientButton textClassName="text-white mix-blend-difference">
+  Inverted Text
+</MeshGradientButton>
+
+// Custom colors without blend mode
+<MeshGradientButton textClassName="text-black">
+  Black Text
+</MeshGradientButton>
+
+// Combine with other Tailwind classes
+<MeshGradientButton textClassName="text-primary font-bold text-lg">
+  Bold Primary Text
+</MeshGradientButton>
+```
+
+### API Reference
+
+| Prop            | Type                                                            | Default                                        | Description                                               |
+| --------------- | --------------------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------- |
+| `colors`        | `string[]`                                                      | `["#cc3333", "#cc9933", "#99cc33", "#33cc33"]` | Array of color spots (up to 10 colors)                    |
+| `distortion`    | `number`                                                        | `0.8`                                          | Power of organic noise distortion (0-1)                   |
+| `swirl`         | `number`                                                        | `0.1`                                          | Power of vortex distortion (0-1)                          |
+| `grainMixer`    | `number`                                                        | `0`                                            | Strength of grain distortion applied to color edges (0-1) |
+| `grainOverlay`  | `number`                                                        | `0`                                            | Post-processing RGB grain overlay (0-1)                   |
+| `speed`         | `number`                                                        | `1`                                            | Animation speed                                           |
+| `scale`         | `number`                                                        | `1`                                            | Overall zoom level of the graphics (0.01-4)               |
+| `frame`         | `number`                                                        | —                                              | Starting animation frame                                  |
+| `rotation`      | `number`                                                        | —                                              | Overall rotation angle of the graphics (0-360)            |
+| `offsetX`       | `number`                                                        | —                                              | Horizontal offset of the graphics center (-1 to 1)        |
+| `offsetY`       | `number`                                                        | —                                              | Vertical offset of the graphics center (-1 to 1)          |
+| `width`         | `number \| string`                                              | —                                              | CSS width style of the shader element                     |
+| `height`        | `number \| string`                                              | —                                              | CSS height style of the shader element                    |
+| `fit`           | `"contain" \| "cover"`                                          | `"cover"`                                      | How to fit the shader into canvas dimensions              |
+| `worldWidth`    | `number`                                                        | —                                              | Virtual width before scaling                              |
+| `worldHeight`   | `number`                                                        | —                                              | Virtual height before scaling                             |
+| `originX`       | `number`                                                        | —                                              | Reference point for world width (0-1)                     |
+| `originY`       | `number`                                                        | —                                              | Reference point for world height (0-1)                    |
+| `minPixelRatio` | `number`                                                        | —                                              | Minimum pixel ratio for rendering                         |
+| `maxPixelCount` | `number`                                                        | —                                              | Maximum pixel count the shader may process                |
+| `size`          | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"`                                    | Button size variant                                       |
+| `textClassName` | `string`                                                        | —                                              | Additional CSS classes for text styling                   |
+
+#### Size Variants Buttons
+
+```tsx
+<div className="flex gap-2">
+  <MeshGradientButton size="sm">Small</MeshGradientButton>
+  <MeshGradientButton size="default">Default</MeshGradientButton>
+  <MeshGradientButton size="lg">Large</MeshGradientButton>
+  <MeshGradientButton size="icon">
+    <Star className="h-4 w-4" />
+  </MeshGradientButton>
+</div>
+```
+
+### Credits
+
+- Website: [paper-design.com](https://paper.design/)
+- GitHub: [paper-design/shaders](https://github.com/paper-design/shaders)
