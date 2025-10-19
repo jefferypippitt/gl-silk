@@ -1,0 +1,87 @@
+---
+title: Text Animations
+description: Beautiful animated text effects powered by GSAP
+---
+
+All text animations require GSAP to be installed first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install gsap
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add gsap
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add gsap
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add gsap
+```
+
+</Tab>
+</Tabs>
+
+Then add the component:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+</Tabs>
+
+### Quick Start
+
+```tsx
+import { SplitTextAnimation } from "@/components/ui/split-text-animation";
+
+export default function Home() {
+  return (
+    <SplitTextAnimation
+      text="Hello World"
+      animationType="fade"
+      duration={0.8}
+      stagger={0.03}
+    />
+  );
+}
+```

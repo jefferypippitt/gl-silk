@@ -1,0 +1,154 @@
+---
+title: Slide Animation
+description: Slide text animations in multiple directions
+---
+
+## Getting Started
+
+Slides text characters from a specified direction with smooth motion.
+
+<ComponentPreview name="split-text-slide" />
+
+<section id="setup-section">
+<div className="fd-steps [&_h3]:fd-step">
+
+### Installation
+
+Install GSAP first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install gsap
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add gsap
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add gsap
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add gsap
+```
+
+</Tab>
+</Tabs>
+
+### Add the component
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+</Tabs>
+
+</div>
+</section>
+
+### Usage
+
+The command above will add the `SplitTextAnimation` component to your project. You can then use it like this:
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { SplitTextAnimation } from "@/components/ui/split-text-animation";
+
+export default function Home() {
+  return (
+    <div>
+      <SplitTextAnimation
+        text="Smooth Slide Up Animation"
+        animationType="slide"
+        direction="up"
+        duration={0.8}
+        stagger={0.03}
+      />
+    </div>
+  );
+}
+```
+
+### Props
+
+| Prop        | Type                                  | Default  | Description                   |
+| ----------- | ------------------------------------- | -------- | ----------------------------- |
+| `text`      | `string`                              | required | The text to animate           |
+| `direction` | `"up" \| "down" \| "left" \| "right"` | `"up"`   | Direction for slide animation |
+| `duration`  | `number`                              | `0.8`    | Animation duration in seconds |
+| `stagger`   | `number`                              | `0.05`   | Delay between each character  |
+| `delay`     | `number`                              | `0`      | Initial delay                 |
+
+### Directions
+
+#### Slide Up
+
+<ComponentPreview name="split-text-slide-up" />
+
+```tsx
+<SplitTextAnimation text="Slide Up" animationType="slide" direction="up" />
+```
+
+#### Slide Down
+
+<ComponentPreview name="split-text-slide-down" />
+
+```tsx
+<SplitTextAnimation text="Slide Down" animationType="slide" direction="down" />
+```
+
+#### Slide Left
+
+<ComponentPreview name="split-text-slide-left" />
+
+```tsx
+<SplitTextAnimation text="Slide Left" animationType="slide" direction="left" />
+```
+
+#### Slide Right
+
+<ComponentPreview name="split-text-slide-right" />
+
+```tsx
+<SplitTextAnimation
+  text="Slide Right"
+  animationType="slide"
+  direction="right"
+/>
+```

@@ -1,0 +1,127 @@
+---
+title: Installation
+description: How to add Glsilk components to your project
+---
+
+## Getting Started
+
+To install Glsilk components for your application.
+
+<section id="setup-section">
+<div className="fd-steps [&_h3]:fd-step">
+
+### Installation
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest init
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest init
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn shadcn@latest init
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx --bun shadcn@latest init
+```
+
+</Tab>
+</Tabs>
+
+### Add all shadcn components to your project
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add --all
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add --all
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn shadcn@latest add --all
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx --bun shadcn@latest add --all
+```
+
+</Tab>
+</Tabs>
+
+### Add a specific component
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+</Tabs>
+
+</div>
+</section>
+
+The command above will add the `MeshGradientButton` component to your project. You can then import it like this:
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { MeshGradientButton } from "@/components/ui/mesh-gradient-button";
+
+export default function Home() {
+  return (
+    <div>
+      <MeshGradientButton>Click me</MeshGradientButton>
+    </div>
+  );
+}
+```

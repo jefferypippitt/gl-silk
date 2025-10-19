@@ -1,0 +1,142 @@
+---
+title: Fade Animation
+description: Simple fade-in text animation
+---
+
+## Getting Started
+
+A clean fade-in effect that smoothly reveals each character of your text.
+
+<ComponentPreview name="split-text-fade" />
+
+<section id="setup-section">
+<div className="fd-steps [&_h3]:fd-step">
+
+### Installation
+
+Install GSAP first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install gsap
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add gsap
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add gsap
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add gsap
+```
+
+</Tab>
+</Tabs>
+
+### Add the component
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+</Tabs>
+
+</div>
+</section>
+
+### Usage
+
+The command above will add the `SplitTextAnimation` component to your project. You can then use it like this:
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { SplitTextAnimation } from "@/components/ui/split-text-animation";
+
+export default function Home() {
+  return (
+    <div>
+      <SplitTextAnimation
+        text="Beautiful Fade In Animation"
+        animationType="fade"
+        duration={0.8}
+        stagger={0.03}
+      />
+    </div>
+  );
+}
+```
+
+### Props
+
+| Prop       | Type     | Default  | Description                   |
+| ---------- | -------- | -------- | ----------------------------- |
+| `text`     | `string` | required | The text to animate           |
+| `duration` | `number` | `0.8`    | Animation duration in seconds |
+| `stagger`  | `number` | `0.05`   | Delay between each character  |
+| `delay`    | `number` | `0`      | Initial delay                 |
+
+### Examples
+
+#### Fast Fade
+
+<ComponentPreview name="split-text-fade-fast" />
+
+```tsx
+<SplitTextAnimation
+  text="Quick Fade"
+  animationType="fade"
+  duration={0.5}
+  stagger={0.02}
+/>
+```
+
+#### Slow Fade
+
+<ComponentPreview name="split-text-fade-slow" />
+
+```tsx
+<SplitTextAnimation
+  text="Slow Fade"
+  animationType="fade"
+  duration={1.2}
+  stagger={0.08}
+/>
+```

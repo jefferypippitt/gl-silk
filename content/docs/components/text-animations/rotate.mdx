@@ -1,0 +1,142 @@
+---
+title: Rotate Animation
+description: Rotating text animation with bounce effect
+---
+
+## Getting Started
+
+Rotates characters 180 degrees with a bounce effect for a playful feel.
+
+<ComponentPreview name="split-text-rotate" />
+
+<section id="setup-section">
+<div className="fd-steps [&_h3]:fd-step">
+
+### Installation
+
+Install GSAP first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install gsap
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add gsap
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add gsap
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add gsap
+```
+
+</Tab>
+</Tabs>
+
+### Add the component
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
+```
+
+</Tab>
+</Tabs>
+
+</div>
+</section>
+
+### Usage
+
+The command above will add the `SplitTextAnimation` component to your project. You can then use it like this:
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { SplitTextAnimation } from "@/components/ui/split-text-animation";
+
+export default function Home() {
+  return (
+    <div>
+      <SplitTextAnimation
+        text="Rotating Text Effect"
+        animationType="rotate"
+        duration={0.7}
+        stagger={0.04}
+      />
+    </div>
+  );
+}
+```
+
+### Props
+
+| Prop       | Type     | Default  | Description                   |
+| ---------- | -------- | -------- | ----------------------------- |
+| `text`     | `string` | required | The text to animate           |
+| `duration` | `number` | `0.7`    | Animation duration in seconds |
+| `stagger`  | `number` | `0.04`   | Delay between each character  |
+| `delay`    | `number` | `0`      | Initial delay                 |
+
+### Examples
+
+#### Fast Rotate
+
+<ComponentPreview name="split-text-rotate-fast" />
+
+```tsx
+<SplitTextAnimation
+  text="Fast Rotate"
+  animationType="rotate"
+  duration={0.5}
+  stagger={0.03}
+/>
+```
+
+#### Slow Rotate
+
+<ComponentPreview name="split-text-rotate-slow" />
+
+```tsx
+<SplitTextAnimation
+  text="Slow Rotate"
+  animationType="rotate"
+  duration={1.0}
+  stagger={0.06}
+/>
+```
