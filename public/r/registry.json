@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "gl-silk",
+  "homepage": "https://glsilk.vercel.app",
   "items": [
     {
       "name": "hello-world",
@@ -82,7 +82,7 @@
     },
     {
       "name": "split-text-animation",
-      "type": "registry:animation",
+      "type": "registry:component",
       "category": "text-animations",
       "title": "Split Text Animation",
       "description": "Beautiful split text animations using GSAP with multiple animation types.",
@@ -112,18 +112,6 @@
         },
         {
           "path": "registry/new-york/components/mesh-gradient-button/demo.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/components/mesh-gradient-button/high-energy-demo.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/components/mesh-gradient-button/ocean-theme-demo.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/components/mesh-gradient-button/text-customization-demo.tsx",
           "type": "registry:component"
         }
       ]

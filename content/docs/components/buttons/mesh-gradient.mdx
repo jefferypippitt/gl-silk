@@ -71,31 +71,103 @@ bunx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
 
 ### Quick Start
 
-```tsx
+```tsx {1,6} showLineNumbers title="app/page.tsx"
 import { MeshGradientButton } from "@/components/ui/mesh-gradient-button";
 
 export default function Home() {
-  return <MeshGradientButton>Get Started</MeshGradientButton>;
+  return (
+    <div>
+      <MeshGradientButton>Click me</MeshGradientButton>
+    </div>
+  );
 }
 ```
 
-### Example
+### Default
 
-<ComponentPreview name="mesh-gradient-demo" />
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="mesh-gradient-demo" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<MeshGradientButton>Mesh Gradient</MeshGradientButton>
+```
+
+</Tab>
+</Tabs>
 
 ### High Energy Effect
 
-<ComponentPreview name="high-energy-demo" />
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="high-energy-demo" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<MeshGradientButton
+  colors={["#ff0080", "#ff4000", "#ff8000", "#ffb000"]}
+  distortion={1.0}
+  swirl={0.3}
+  speed={2}
+  grainMixer={0.2}
+  textClassName="text-white mix-blend-difference"
+>
+  High Energy
+</MeshGradientButton>
+```
+
+</Tab>
+</Tabs>
 
 ### Calm Ocean Theme
 
-<ComponentPreview name="ocean-theme-demo" />
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="ocean-theme-demo" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<MeshGradientButton
+  colors={["#2196f3", "#00bcd4", "#009688", "#4caf50"]}
+  distortion={0.3}
+  swirl={0.05}
+  speed={0.5}
+  textClassName="text-white mix-blend-difference"
+>
+  Ocean Breeze
+</MeshGradientButton>
+```
+
+</Tab>
+</Tabs>
 
 ### Text Customization
 
-<ComponentPreview name="text-customization-demo" />
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="text-customization-demo" />
+</Tab>
+<Tab value="Code">
 
-#### Advanced Text Effects
+```tsx
+<MeshGradientButton
+  colors={["#ffffff", "#000000"]}
+  distortion={1}
+  swirl={0.2}
+  textClassName="text-green-500"
+>
+  Custom Text Color
+</MeshGradientButton>
+```
+
+</Tab>
+</Tabs>
+
+### Advanced Text Effects
 
 For advanced text effects, use the `textClassName` prop to add custom styling:
 
@@ -118,30 +190,30 @@ For advanced text effects, use the `textClassName` prop to add custom styling:
 
 ### API Reference
 
-| Prop            | Type                                                            | Default                                        | Description                                               |
-| --------------- | --------------------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------- |
-| `colors`        | `string[]`                                                      | `["#cc3333", "#cc9933", "#99cc33", "#33cc33"]` | Array of color spots (up to 10 colors)                    |
-| `distortion`    | `number`                                                        | `0.8`                                          | Power of organic noise distortion (0-1)                   |
-| `swirl`         | `number`                                                        | `0.1`                                          | Power of vortex distortion (0-1)                          |
-| `grainMixer`    | `number`                                                        | `0`                                            | Strength of grain distortion applied to color edges (0-1) |
-| `grainOverlay`  | `number`                                                        | `0`                                            | Post-processing RGB grain overlay (0-1)                   |
-| `speed`         | `number`                                                        | `1`                                            | Animation speed                                           |
-| `scale`         | `number`                                                        | `1`                                            | Overall zoom level of the graphics (0.01-4)               |
-| `frame`         | `number`                                                        | —                                              | Starting animation frame                                  |
-| `rotation`      | `number`                                                        | —                                              | Overall rotation angle of the graphics (0-360)            |
-| `offsetX`       | `number`                                                        | —                                              | Horizontal offset of the graphics center (-1 to 1)        |
-| `offsetY`       | `number`                                                        | —                                              | Vertical offset of the graphics center (-1 to 1)          |
-| `width`         | `number \| string`                                              | —                                              | CSS width style of the shader element                     |
-| `height`        | `number \| string`                                              | —                                              | CSS height style of the shader element                    |
-| `fit`           | `"contain" \| "cover"`                                          | `"cover"`                                      | How to fit the shader into canvas dimensions              |
-| `worldWidth`    | `number`                                                        | —                                              | Virtual width before scaling                              |
-| `worldHeight`   | `number`                                                        | —                                              | Virtual height before scaling                             |
-| `originX`       | `number`                                                        | —                                              | Reference point for world width (0-1)                     |
-| `originY`       | `number`                                                        | —                                              | Reference point for world height (0-1)                    |
-| `minPixelRatio` | `number`                                                        | —                                              | Minimum pixel ratio for rendering                         |
-| `maxPixelCount` | `number`                                                        | —                                              | Maximum pixel count the shader may process                |
-| `size`          | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"`                                    | Button size variant                                       |
-| `textClassName` | `string`                                                        | —                                              | Additional CSS classes for text styling                   |
+| Prop            | Type                                                                          | Default                                        | Description                                               |
+| --------------- | ----------------------------------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------- |
+| `colors`        | `string[]`                                                                    | `["#3b82f6", "#8b5cf6", "#06b6d4", "#f59e0b"]` | Array of color spots (up to 10 colors)                    |
+| `distortion`    | `number`                                                                      | `0.8`                                          | Power of organic noise distortion (0-1)                   |
+| `swirl`         | `number`                                                                      | `0.1`                                          | Power of vortex distortion (0-1)                          |
+| `grainMixer`    | `number`                                                                      | `0`                                            | Strength of grain distortion applied to color edges (0-1) |
+| `grainOverlay`  | `number`                                                                      | `0`                                            | Post-processing RGB grain overlay (0-1)                   |
+| `speed`         | `number`                                                                      | `1`                                            | Animation speed                                           |
+| `scale`         | `number`                                                                      | `1`                                            | Overall zoom level of the graphics (0.01-4)               |
+| `frame`         | `number`                                                                      | —                                              | Starting animation frame                                  |
+| `rotation`      | `number`                                                                      | —                                              | Overall rotation angle of the graphics (0-360)            |
+| `offsetX`       | `number`                                                                      | —                                              | Horizontal offset of the graphics center (-1 to 1)        |
+| `offsetY`       | `number`                                                                      | —                                              | Vertical offset of the graphics center (-1 to 1)          |
+| `width`         | `number \| string`                                                            | —                                              | CSS width style of the shader element                     |
+| `height`        | `number \| string`                                                            | —                                              | CSS height style of the shader element                    |
+| `fit`           | `"contain" \| "cover"`                                                        | `"cover"`                                      | How to fit the shader into canvas dimensions              |
+| `worldWidth`    | `number`                                                                      | —                                              | Virtual width before scaling                              |
+| `worldHeight`   | `number`                                                                      | —                                              | Virtual height before scaling                             |
+| `originX`       | `number`                                                                      | —                                              | Reference point for world width (0-1)                     |
+| `originY`       | `number`                                                                      | —                                              | Reference point for world height (0-1)                    |
+| `minPixelRatio` | `number`                                                                      | —                                              | Minimum pixel ratio for rendering                         |
+| `maxPixelCount` | `number`                                                                      | —                                              | Maximum pixel count the shader may process                |
+| `variant`       | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"`                                    | Button variant (same as shadcn Button)                    |
+| `size`          | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"`                                    | Button size variant                                       |
 
 #### Size Variants Buttons
 

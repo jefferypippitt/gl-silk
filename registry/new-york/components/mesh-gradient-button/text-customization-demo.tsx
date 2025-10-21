@@ -9,7 +9,7 @@ export function TextCustomizationDemo() {
         colors={["#ffffff", "#000000"]}
         distortion={1}
         swirl={0.2}
-        textClassName="text-purple-500"
+        textClassName="text-green-500"
       >
         Custom Text Color
       </MeshGradientButton>

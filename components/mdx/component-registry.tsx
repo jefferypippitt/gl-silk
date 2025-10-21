@@ -1,7 +1,6 @@
 // Static registry mapping for Turbopack compatibility
 import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world";
 import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form";
-import PokemonPage from "@/registry/new-york/blocks/complex-component/page";
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
 import { FadeDemo } from "@/registry/new-york/components/split-text-animation/fade-demo";
@@ -26,7 +25,6 @@ import { TextCustomizationDemo } from "@/registry/new-york/components/mesh-gradi
 export const componentRegistry: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
   "example-form": ExampleForm,
-  "complex-component": PokemonPage,
   "example-with-css": ExampleCard,
   "split-text-animation": SplitTextDemo,
   "split-text-fade": FadeDemo,

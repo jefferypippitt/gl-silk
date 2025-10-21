@@ -1,21 +1,22 @@
 import * as React from "react";
+import { Suspense } from "react";
 import { RegistryItem } from "@/lib/registry";
 import { ComponentCard } from "./component-card";
 
 // Import all your components here
 import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world";
 import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form";
-import PokemonPage from "@/registry/new-york/blocks/complex-component/page";
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
+import { MeshGradientDemo } from "@/registry/new-york/components/mesh-gradient-button/demo";
 
 // Component mapping - add new components here as you create them
 const componentMap: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
   "example-form": ExampleForm,
-  "complex-component": PokemonPage,
   "example-with-css": ExampleCard,
   "split-text-animation": SplitTextDemo,
+  "mesh-gradient-button": MeshGradientDemo,
 };
 
 interface DynamicComponentLoaderProps {
@@ -37,7 +38,15 @@ export function DynamicComponentLoader({ item }: DynamicComponentLoaderProps) {
 
   return (
     <ComponentCard item={item}>
-      <Component />
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center h-32">
+            <div className="text-sm text-muted-foreground">Loading...</div>
+          </div>
+        }
+      >
+        <Component />
+      </Suspense>
     </ComponentCard>
   );
 }

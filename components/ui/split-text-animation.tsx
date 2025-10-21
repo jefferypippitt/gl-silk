@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Button } from "@/components/ui/button";
-import { RotateCw } from "lucide-react";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -17,7 +15,6 @@ interface SplitTextAnimationProps {
   stagger?: number;
   delay?: number;
   className?: string;
-  showRerunButton?: boolean;
 }
 
 export function SplitTextAnimation({
@@ -28,11 +25,8 @@ export function SplitTextAnimation({
   stagger = 0.05,
   delay = 0,
   className = "",
-  showRerunButton = false,
 }: SplitTextAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const charsRef = useRef<HTMLSpanElement[]>([]);
-  const [rerunKey, setRerunKey] = useState(0);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -60,8 +54,6 @@ export function SplitTextAnimation({
 
       containerRef.current?.appendChild(wordSpan);
     });
-
-    charsRef.current = chars;
 
     // Set initial state based on animation type
     const setInitialState = () => {
@@ -157,30 +149,13 @@ export function SplitTextAnimation({
       tl.kill();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [text, animationType, direction, duration, stagger, delay, rerunKey]);
-
-  const handleRerun = () => {
-    setRerunKey((prev) => prev + 1);
-  };
+  }, [text, animationType, direction, duration, stagger, delay]);
 
   return (
-    <>
-      <div
-        ref={containerRef}
-        className={`text-2xl md:text-3xl font-bold tracking-tight ${className}`}
-        style={{ lineHeight: "1.2" }}
-      />
-      {showRerunButton && (
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleRerun}
-          className="absolute top-4 right-4 gap-2"
-        >
-          <RotateCw className="h-4 w-4" />
-          Rerun
-        </Button>
-      )}
-    </>
+    <div
+      ref={containerRef}
+      className={className}
+      style={{ lineHeight: "1.2" }}
+    />
   );
 }

@@ -4,7 +4,8 @@ import { createMDX } from "fumadocs-mdx/next";
 const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // PPR is disabled due to fumadocs incompatibility
+  // cacheComponents: true,
 };
 
 export default withMDX(nextConfig);

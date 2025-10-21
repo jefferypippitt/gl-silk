@@ -3,18 +3,7 @@ title: Scale Animation
 description: Scale text animation with bounce effect
 ---
 
-## Getting Started
-
-Scales characters from 0 to 1 with a satisfying bounce effect.
-
-<ComponentPreview name="split-text-scale" />
-
-<section id="setup-section">
-<div className="fd-steps [&_h3]:fd-step">
-
-### Installation
-
-Install GSAP first:
+All text animations require GSAP to be installed first:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
 <Tab value="npm">
@@ -47,7 +36,7 @@ bun add gsap
 </Tab>
 </Tabs>
 
-### Add the component
+Then add the component:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
 <Tab value="npm">
@@ -80,63 +69,96 @@ bunx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
 </Tab>
 </Tabs>
 
-</div>
-</section>
-
-### Usage
-
-The command above will add the `SplitTextAnimation` component to your project. You can then use it like this:
+### Quick Start
 
 ```tsx {1,6} showLineNumbers title="app/page.tsx"
 import { SplitTextAnimation } from "@/components/ui/split-text-animation";
 
 export default function Home() {
   return (
-    <div>
-      <SplitTextAnimation
-        text="Dynamic Scale Animation"
-        animationType="scale"
-        duration={0.6}
-        stagger={0.04}
-      />
-    </div>
+    <SplitTextAnimation
+      text="Dynamic Scale In Animation"
+      animationType="scale"
+      duration={0.6}
+      stagger={0.04}
+    />
   );
 }
 ```
 
-### Props
+### Default
 
-| Prop       | Type     | Default  | Description                   |
-| ---------- | -------- | -------- | ----------------------------- |
-| `text`     | `string` | required | The text to animate           |
-| `duration` | `number` | `0.6`    | Animation duration in seconds |
-| `stagger`  | `number` | `0.04`   | Delay between each character  |
-| `delay`    | `number` | `0`      | Initial delay                 |
-
-### Examples
-
-#### Quick Scale
-
-<ComponentPreview name="split-text-scale-fast" />
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="split-text-scale" />
+</Tab>
+<Tab value="Code">
 
 ```tsx
 <SplitTextAnimation
-  text="Quick Scale"
+  text="Dynamic Scale In Animation"
   animationType="scale"
-  duration={0.4}
-  stagger={0.03}
+  duration={0.6}
+  stagger={0.04}
 />
 ```
 
-#### Dramatic Scale
+</Tab>
+</Tabs>
 
-<ComponentPreview name="split-text-scale-slow" />
+### Fast Scale
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="split-text-scale-fast" />
+</Tab>
+<Tab value="Code">
 
 ```tsx
 <SplitTextAnimation
-  text="Dramatic Scale"
+  text="Fast Scale In Animation"
   animationType="scale"
-  duration={0.8}
+  duration={0.3}
+  stagger={0.02}
+/>
+```
+
+</Tab>
+</Tabs>
+
+### Slow Scale
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="split-text-scale-slow" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<SplitTextAnimation
+  text="Slow Scale In Animation"
+  animationType="scale"
+  duration={1.0}
   stagger={0.06}
 />
 ```
+
+</Tab>
+</Tabs>
+
+### API Reference
+
+| Prop              | Type      | Default   | Description                   |
+| ----------------- | --------- | --------- | ----------------------------- |
+| `text`            | `string`  | required  | The text to animate           |
+| `animationType`   | `"scale"` | `"scale"` | Type of animation to apply    |
+| `duration`        | `number`  | `0.6`     | Animation duration in seconds |
+| `stagger`         | `number`  | `0.04`    | Delay between each character  |
+| `delay`           | `number`  | `0`       | Initial delay                 |
+| `className`       | `string`  | `""`      | Additional CSS classes        |
+| `showRerunButton` | `boolean` | `false`   | Show a rerun button           |
+
+### Credits
+
+- GSAP: [greensock.com](https://greensock.com/)
+- GitHub: [greensock/GSAP](https://github.com/greensock/GSAP)

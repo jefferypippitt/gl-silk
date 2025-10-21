@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "example-with-css",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "Example with CSS",
   "description": "A login form with a CSS file.",
   "files": [

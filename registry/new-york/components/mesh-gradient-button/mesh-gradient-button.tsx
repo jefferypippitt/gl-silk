@@ -11,6 +11,21 @@ const meshGradientButtonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive relative overflow-hidden",
   {
     variants: {
+      variant: {
+        default:
+          "bg-transparent/20 backdrop-blur-sm shadow-xs hover:bg-transparent/40",
+        destructive:
+          "bg-transparent hover:bg-white/10 text-white focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
+        "destructive-red":
+          "bg-red-500 text-white shadow-xs hover:bg-red-600 focus-visible:ring-red-500/20 dark:focus-visible:ring-red-500/40 dark:bg-red-600",
+        outline:
+          "border bg-transparent/20 backdrop-blur-sm shadow-xs hover:bg-transparent/40 hover:text-accent-foreground dark:bg-transparent/30 dark:border-input dark:hover:bg-transparent/50",
+        secondary:
+          "bg-transparent/20 backdrop-blur-sm text-secondary-foreground shadow-xs hover:bg-transparent/40",
+        ghost:
+          "hover:backdrop-blur-sm hover:bg-white/5 hover:text-accent-foreground dark:hover:backdrop-blur-sm dark:hover:bg-black/5",
+        link: "text-primary underline-offset-4 hover:underline bg-transparent",
+      },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
@@ -21,6 +36,7 @@ const meshGradientButtonVariants = cva(
       },
     },
     defaultVariants: {
+      variant: "default",
       size: "default",
     },
   }
@@ -61,9 +77,10 @@ const MeshGradientButton = React.forwardRef<
   (
     {
       className,
+      variant,
       size,
       asChild = false,
-      colors = ["#cc3333", "#cc9933", "#99cc33", "#33cc33"],
+      colors,
       distortion = 0.8,
       swirl = 0.1,
       grainMixer = 0,
@@ -89,11 +106,18 @@ const MeshGradientButton = React.forwardRef<
     },
     ref
   ) => {
+    const defaultColors =
+      variant === "destructive-red"
+        ? ["#dc2626", "#ef4444", "#f87171", "#fca5a5"]
+        : ["#e0eaff", "#241d9a", "#f75092", "#9f50d3"];
+
+    const meshColors = colors || defaultColors;
+
     const Comp = asChild ? Slot : "button";
 
     return (
       <Comp
-        className={cn(meshGradientButtonVariants({ size, className }))}
+        className={cn(meshGradientButtonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
       >
@@ -102,7 +126,7 @@ const MeshGradientButton = React.forwardRef<
           <MeshGradient
             width="100%"
             height="100%"
-            colors={colors}
+            colors={meshColors}
             distortion={distortion}
             swirl={swirl}
             grainMixer={grainMixer}

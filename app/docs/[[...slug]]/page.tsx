@@ -1,4 +1,3 @@
-import * as React from "react";
 import { notFound } from "next/navigation";
 import {
   DocsBody,

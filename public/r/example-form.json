@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "example-form",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "Example Form",
   "description": "A contact form with Zod validation.",
   "dependencies": [

@@ -6,10 +6,6 @@ export function SplitTextDemo() {
   return (
     <div className="flex flex-col gap-16 items-center justify-center min-h-[600px] p-8">
       <div className="flex flex-col gap-8 w-full max-w-4xl">
-        <h2 className="text-2xl font-semibold text-center mb-4">
-          Split Text Animations
-        </h2>
-
         {/* Fade Animation */}
         <div className="flex flex-col gap-4">
           <h3 className="text-lg font-medium text-muted-foreground">Fade In</h3>

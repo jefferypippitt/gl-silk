@@ -71,7 +71,7 @@ bunx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
 
 ### Quick Start
 
-```tsx
+```tsx {1,6} showLineNumbers title="app/page.tsx"
 import { SplitTextAnimation } from "@/components/ui/split-text-animation";
 
 export default function Home() {
@@ -85,3 +85,50 @@ export default function Home() {
   );
 }
 ```
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="split-text-fade" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<SplitTextAnimation
+  text="Beautiful Fade In Animation"
+  animationType="fade"
+  duration={0.8}
+  stagger={0.03}
+/>
+```
+
+</Tab>
+</Tabs>
+
+### Animation Types
+
+Explore different animation types:
+
+- **[Fade Animation](/docs/components/text-animations/fade)** - Simple fade-in effect
+- **[Slide Animation](/docs/components/text-animations/slide)** - Slide from any direction
+- **[Scale Animation](/docs/components/text-animations/scale)** - Scale with bounce effect
+- **[Rotate Animation](/docs/components/text-animations/rotate)** - Rotating text effect
+
+### API Reference
+
+| Prop              | Type                                       | Default  | Description                                 |
+| ----------------- | ------------------------------------------ | -------- | ------------------------------------------- |
+| `text`            | `string`                                   | —        | The text to animate                         |
+| `animationType`   | `"fade" \| "slide" \| "scale" \| "rotate"` | `"fade"` | Type of animation to apply                  |
+| `direction`       | `"up" \| "down" \| "left" \| "right"`      | `"up"`   | Direction for slide animation               |
+| `duration`        | `number`                                   | `0.8`    | Duration of the animation in seconds        |
+| `stagger`         | `number`                                   | `0.05`   | Delay between each character animation      |
+| `delay`           | `number`                                   | `0`      | Initial delay before animation starts       |
+| `className`       | `string`                                   | `""`     | Additional CSS classes to apply             |
+| `showRerunButton` | `boolean`                                  | `false`  | Show a rerun button to replay the animation |
+
+### Credits
+
+- GSAP: [greensock.com](https://greensock.com/)
+- GitHub: [greensock/GSAP](https://github.com/greensock/GSAP)
