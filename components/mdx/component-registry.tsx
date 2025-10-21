@@ -21,6 +21,11 @@ import { MeshGradientDemo } from "@/registry/new-york/components/mesh-gradient-b
 import { HighEnergyDemo } from "@/registry/new-york/components/mesh-gradient-button/high-energy-demo";
 import { OceanThemeDemo } from "@/registry/new-york/components/mesh-gradient-button/ocean-theme-demo";
 import { TextCustomizationDemo } from "@/registry/new-york/components/mesh-gradient-button/text-customization-demo";
+import { PlayPauseDemo } from "@/registry/new-york/components/play-pause-button/demo";
+import { PlayPauseSizesDemo } from "@/registry/new-york/components/play-pause-button/sizes-demo";
+import { PlayPauseVariantsDemo } from "@/registry/new-york/components/play-pause-button/variants-demo";
+import { PlayPauseIconVariantsDemo } from "@/registry/new-york/components/play-pause-button/icon-variants-demo";
+import { PlayPauseRoundedDemo } from "@/registry/new-york/components/play-pause-button/rounded-demo";
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
@@ -45,4 +50,9 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "high-energy-demo": HighEnergyDemo,
   "ocean-theme-demo": OceanThemeDemo,
   "text-customization-demo": TextCustomizationDemo,
+  "play-pause-demo": PlayPauseDemo,
+  "play-pause-sizes": PlayPauseSizesDemo,
+  "play-pause-variants": PlayPauseVariantsDemo,
+  "play-pause-icon-variants": PlayPauseIconVariantsDemo,
+  "play-pause-rounded": PlayPauseRoundedDemo,
 };

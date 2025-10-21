@@ -9,6 +9,7 @@ import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-for
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
 import { MeshGradientDemo } from "@/registry/new-york/components/mesh-gradient-button/demo";
+import { PlayPauseDemo } from "@/registry/new-york/components/play-pause-button/demo";
 
 // Component mapping - add new components here as you create them
 const componentMap: Record<string, React.ComponentType> = {
@@ -17,6 +18,7 @@ const componentMap: Record<string, React.ComponentType> = {
   "example-with-css": ExampleCard,
   "split-text-animation": SplitTextDemo,
   "mesh-gradient-button": MeshGradientDemo,
+  "play-pause-button": PlayPauseDemo,
 };
 
 interface DynamicComponentLoaderProps {

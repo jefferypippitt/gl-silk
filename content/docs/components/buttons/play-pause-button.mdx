@@ -1,0 +1,239 @@
+---
+title: Play Pause Button
+description: Button with morphing SVG animation between Play and Pause icons using GSAP
+---
+
+All play pause buttons require the gsap package to be installed first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install gsap
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add gsap
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add gsap
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add gsap
+```
+
+</Tab>
+</Tabs>
+
+Then add the component:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+```
+
+</Tab>
+</Tabs>
+
+### Quick Start
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { PlayPauseButton } from "@/components/ui/play-pause-button";
+
+export default function Home() {
+  return (
+    <div>
+      <PlayPauseButton />
+    </div>
+  );
+}
+```
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="play-pause-demo" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<PlayPauseButton />
+```
+
+</Tab>
+</Tabs>
+
+### Sizes
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="play-pause-sizes" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<div className="flex gap-2">
+  <PlayPauseButton size="sm" variant="outline" showText>
+    Small
+  </PlayPauseButton>
+  <PlayPauseButton size="icon-sm" variant="outline" />
+</div>
+
+<div className="flex gap-2">
+  <PlayPauseButton variant="outline" showText>
+    Default
+  </PlayPauseButton>
+  <PlayPauseButton size="icon" variant="outline" />
+</div>
+
+<div className="flex gap-2">
+  <PlayPauseButton size="lg" variant="outline" showText>
+    Large
+  </PlayPauseButton>
+  <PlayPauseButton size="icon-lg" variant="outline" />
+</div>
+```
+
+</Tab>
+</Tabs>
+
+### Variants
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="play-pause-variants" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<div className="flex flex-wrap gap-2">
+  <PlayPauseButton variant="default" showText />
+  <PlayPauseButton variant="destructive" showText />
+  <PlayPauseButton variant="outline" showText />
+  <PlayPauseButton variant="secondary" showText />
+  <PlayPauseButton variant="ghost" showText />
+  <PlayPauseButton variant="link" showText />
+</div>
+```
+
+</Tab>
+</Tabs>
+
+### Icon Variants
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="play-pause-icon-variants" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<div className="flex flex-wrap gap-2">
+  <PlayPauseButton variant="default" size="icon" />
+  <PlayPauseButton variant="destructive" size="icon" />
+  <PlayPauseButton variant="outline" size="icon" />
+  <PlayPauseButton variant="secondary" size="icon" />
+  <PlayPauseButton variant="ghost" size="icon" />
+  <PlayPauseButton variant="link" size="icon" />
+</div>
+```
+
+</Tab>
+</Tabs>
+
+### Rounded
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="play-pause-rounded" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<div className="flex gap-4">
+  <PlayPauseButton variant="outline" size="icon" className="rounded-full" />
+  <PlayPauseButton variant="default" size="icon" className="rounded-full" />
+  <PlayPauseButton variant="destructive" size="icon" className="rounded-full" />
+</div>
+```
+
+</Tab>
+</Tabs>
+
+### API Reference
+
+| Prop            | Type                                                                          | Default          | Description                                |
+| --------------- | ----------------------------------------------------------------------------- | ---------------- | ------------------------------------------ |
+| `variant`       | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"`      | Button variant (same as shadcn Button)     |
+| `size`          | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"`      | Button size variant                        |
+| `duration`      | `number`                                                                      | `0.5`            | Animation duration in seconds              |
+| `ease`          | `string`                                                                      | `"power2.inOut"` | GSAP easing function                       |
+| `asChild`       | `boolean`                                                                     | `false`          | Render as child component using Radix Slot |
+| `showText`      | `boolean`                                                                     | `false`          | Show text alongside the icon               |
+| `playText`      | `string`                                                                      | `"Play"`         | Text to display when paused                |
+| `pauseText`     | `string`                                                                      | `"Pause"`        | Text to display when playing               |
+| `onStateChange` | `(isPlaying: boolean) => void`                                                | —                | Callback when state changes                |
+
+### With Text
+
+```tsx
+<PlayPauseButton showText>Play Video</PlayPauseButton>
+```
+
+### Custom Text
+
+```tsx
+<PlayPauseButton showText playText="Start" pauseText="Stop">
+  Custom Text
+</PlayPauseButton>
+```
+
+### State Change Callback
+
+```tsx
+<PlayPauseButton
+  onStateChange={(isPlaying) => {
+    console.log(isPlaying ? "Playing" : "Paused");
+  }}
+/>
+```
+
+### Credits
+
+- GSAP: [greensock.com](https://greensock.com/)
+- Icons: [lucide-react](https://lucide.dev/)

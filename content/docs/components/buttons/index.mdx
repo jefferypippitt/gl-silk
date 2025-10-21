@@ -2,3 +2,179 @@
 title: Buttons
 description: Interactive button components with various styles and effects
 ---
+
+## Installation
+
+### Mesh Gradient Button
+
+All mesh gradient buttons require the @paper-design/shaders-react package to be installed first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add @paper-design/shaders-react
+```
+
+</Tab>
+</Tabs>
+
+Then add the component:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
+```
+
+</Tab>
+</Tabs>
+
+### Play Pause Button
+
+All play pause buttons require the gsap package to be installed first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install gsap
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add gsap
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add gsap
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add gsap
+```
+
+</Tab>
+</Tabs>
+
+Then add the component:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+```
+
+</Tab>
+</Tabs>
+
+---
+
+## Quick Start
+
+### Mesh Gradient Button
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { MeshGradientButton } from "@/components/ui/mesh-gradient-button";
+
+export default function Home() {
+  return (
+    <div>
+      <MeshGradientButton>Click me</MeshGradientButton>
+    </div>
+  );
+}
+```
+
+### Play Pause Button
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { PlayPauseButton } from "@/components/ui/play-pause-button";
+
+export default function Home() {
+  return (
+    <div>
+      <PlayPauseButton showText />
+    </div>
+  );
+}
+```
+
+## Credits
+
+- GSAP: [greensock.com](https://greensock.com/)
+- Shaders React: [paper.design](https://paper.design/)
+- Icons: [lucide-react](https://lucide.dev/)

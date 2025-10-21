@@ -33,37 +33,6 @@
       ]
     },
     {
-      "name": "complex-component",
-      "type": "registry:block",
-      "category": "other",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/lib/pokemon.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
       "name": "example-with-css",
       "type": "registry:block",
       "category": "landing-page",
@@ -112,6 +81,24 @@
         },
         {
           "path": "registry/new-york/components/mesh-gradient-button/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "play-pause-button",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Play Pause Button",
+      "description": "Button with morphing SVG animation between Play and Pause icons using GSAP.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/play-pause-button/demo.tsx",
           "type": "registry:component"
         }
       ]

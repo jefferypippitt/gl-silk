@@ -84,6 +84,24 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "play-pause-button",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Play Pause Button",
+      "description": "Button with morphing SVG animation between Play and Pause icons using GSAP.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/play-pause-button/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
