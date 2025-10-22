@@ -17,6 +17,11 @@
       "path": "registry/new-york/components/theme-toggle-button/demo.tsx",
       "content": "\"use client\";\r\n\r\nimport { ThemeToggleButton } from \"./theme-toggle-button\";\r\n\r\nexport function ThemeToggleDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\r\n      <ThemeToggleButton size=\"icon\" variant=\"ghost\" />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/components/theme-toggle-button/advanced-demo.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useTheme } from \"next-themes\";\r\nimport { ThemeToggleButton } from \"./theme-toggle-button\";\r\nimport { SplitTextAnimation } from \"@/components/ui/split-text-animation\";\r\n\r\nexport function ThemeToggleAdvancedDemo() {\r\n  const { theme } = useTheme();\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-4\">\r\n      <ThemeToggleButton\r\n        variant=\"ghost\"\r\n        size=\"sm\"\r\n        className=\"[&_svg_circle]:fill-yellow-500 [&_svg_path]:stroke-yellow-500 [&[data-state=checked]_svg_circle]:fill-blue-500 [&[data-state=checked]_svg_path]:stroke-blue-500 shadow-lg hover:shadow-xl transition-all duration-300\"\r\n      >\r\n        <SplitTextAnimation\r\n          text={theme === \"dark\" ? \"Light\" : \"Dark\"}\r\n          animationType=\"fade\"\r\n          duration={0.6}\r\n          delay={0.1}\r\n        />\r\n      </ThemeToggleButton>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
     }
   ]
 }

@@ -64,6 +64,10 @@
         {
           "path": "registry/new-york/components/split-text-animation/demo.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/fade-sizes-demo.tsx",
+          "type": "registry:component"
         }
       ]
     },
@@ -117,6 +121,10 @@
         },
         {
           "path": "registry/new-york/components/theme-toggle-button/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/theme-toggle-button/advanced-demo.tsx",
           "type": "registry:component"
         }
       ]

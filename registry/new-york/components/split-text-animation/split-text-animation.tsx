@@ -40,6 +40,14 @@ export function SplitTextAnimation({
     // Clear container first
     containerRef.current.innerHTML = "";
 
+    // Get computed styles from container to inherit font properties
+    const containerStyles = window.getComputedStyle(containerRef.current);
+    const fontFamily = containerStyles.fontFamily;
+    const fontSize = containerStyles.fontSize;
+    const fontWeight = containerStyles.fontWeight;
+    const lineHeight = containerStyles.lineHeight;
+    const color = containerStyles.color;
+
     // Split text into characters
     const words = text.split(" ");
     const chars: HTMLSpanElement[] = [];
@@ -54,6 +62,12 @@ export function SplitTextAnimation({
         charSpan.textContent = char;
         charSpan.style.display = "inline-block";
         charSpan.style.opacity = "0";
+        // Inherit font properties from parent
+        charSpan.style.fontFamily = fontFamily;
+        charSpan.style.fontSize = fontSize;
+        charSpan.style.fontWeight = fontWeight;
+        charSpan.style.lineHeight = lineHeight;
+        charSpan.style.color = color;
         wordSpan.appendChild(charSpan);
         chars.push(charSpan);
       });
@@ -165,11 +179,7 @@ export function SplitTextAnimation({
 
   return (
     <>
-      <div
-        ref={containerRef}
-        className={`text-2xl md:text-3xl font-bold tracking-tight ${className}`}
-        style={{ lineHeight: "1.2" }}
-      />
+      <div ref={containerRef} className={`split-text-animation ${className}`} />
       {showRerunButton && (
         <Button
           variant="outline"

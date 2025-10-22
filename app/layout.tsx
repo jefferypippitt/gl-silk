@@ -14,9 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Custom Registry",
-  description:
-    "A custom registry for distributing reusable components using shadcn/ui",
+  title: "Glsilk",
+  description: "A component library for building web applications.",
 };
 
 export default function RootLayout({

@@ -1,0 +1,329 @@
+---
+title: Contributing
+description: Learn how to contribute to Glsilk and help make it better for everyone.
+---
+
+Thanks for your interest in contributing to Glsilk.
+
+Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.
+
+## About this repository
+
+This repository is a component library built with Next.js and TypeScript.
+
+- We use [pnpm](https://pnpm.io) for package management.
+- We use [Next.js 15](https://nextjs.org) with App Router.
+- We use [Tailwind CSS v4](https://tailwindcss.com) for styling.
+- We use [shadcn/ui](https://ui.shadcn.com) as our component foundation.
+
+## Structure
+
+This repository is structured as follows:
+
+```
+gl-silk
+├── app
+│   ├── api
+│   ├── blocks
+│   ├── docs
+│   └── layout.tsx
+├── components
+│   ├── mdx
+│   │   ├── component-preview.tsx
+│   │   ├── component-registry.tsx
+│   │   ├── component-source.tsx
+│   │   └── mdx-components.tsx
+│   ├── registry
+│   │   ├── component-card.tsx
+│   │   └── dynamic-component-loader.tsx
+│   └── ui
+├── content
+│   └── docs
+├── hooks
+├── lib
+├── registry
+│   └── new-york
+│       ├── blocks
+│       └── components
+└── public
+    └── r
+```
+
+| Path                  | Description                                  |
+| --------------------- | -------------------------------------------- |
+| `app`                 | The Next.js application pages and layouts.   |
+| `app/api`             | API routes for search functionality.         |
+| `app/blocks`          | The blocks page showing all components.      |
+| `app/docs`            | Documentation pages with MDX support.        |
+| `components`          | React components for the website and UI.     |
+| `components/mdx`      | MDX-specific components for documentation.   |
+| `components/registry` | Components for the registry system.          |
+| `components/ui`       | Base UI components (shadcn/ui).              |
+| `content`             | MDX content for documentation.               |
+| `hooks`               | Custom React hooks.                          |
+| `lib`                 | Utility functions and configurations.        |
+| `registry`            | The component registry system.               |
+| `registry/new-york`   | Component implementations organized by type. |
+| `public/r`            | JSON files for component metadata.           |
+
+## Development
+
+### Fork this repo
+
+You can fork this repo by clicking the fork button in the top right corner of this page.
+
+### Clone on your local machine
+
+```bash
+git clone https://github.com/jefferypippitt/gl-silk.git
+```
+
+### Navigate to project directory
+
+```bash
+cd gl-silk
+```
+
+### Create a new Branch
+
+```bash
+git checkout -b my-new-branch
+```
+
+### Install dependencies
+
+```bash
+pnpm install
+```
+
+### Environment Setup
+
+Create a `.env.local` file in the root directory:
+
+```bash
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+This is required for the "Open in v0" button functionality to work correctly.
+
+### Run the development server
+
+```bash
+pnpm dev
+```
+
+## Documentation
+
+The documentation for this project is located in the `content/docs` directory. You can run the documentation locally by running the following command:
+
+```bash
+pnpm dev
+```
+
+Documentation is written using [MDX](https://mdxjs.com) with [Fumadocs](https://fumadocs.dev). You can find the documentation files in the `content/docs` directory.
+
+## Components
+
+We use a registry system for developing components. You can find the source code for the components under `registry/new-york`. The components are organized by type and category.
+
+```bash
+registry
+└── new-york
+    ├── blocks
+    └── components
+        ├── buttons
+        ├── text-animations
+        └── other
+```
+
+### Creating a New Component
+
+Follow these exact steps to create a new component that follows our project structure:
+
+#### Step 1: Create Component Files
+
+1. **Create the component directory** in `registry/new-york/components/your-component-name/`
+2. **Create the main component file** as `your-component-name.tsx`
+3. **Create a demo file** as `demo.tsx`
+
+Example structure:
+
+```
+registry/new-york/components/my-button/
+├── my-button.tsx
+└── demo.tsx
+```
+
+#### Step 2: Component Implementation
+
+Your main component file should follow this pattern:
+
+```tsx
+"use client";
+
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const myButtonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        outline:
+          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
+        // Add more variants as needed
+      },
+      size: {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 px-3 text-xs",
+        lg: "h-10 px-8",
+        icon: "h-9 w-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+export interface MyButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof myButtonVariants> {
+  asChild?: boolean;
+}
+
+const MyButton = React.forwardRef<HTMLButtonElement, MyButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return (
+      <Comp
+        className={cn(myButtonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+MyButton.displayName = "MyButton";
+
+export { MyButton, myButtonVariants };
+```
+
+#### Step 3: Create Demo Component
+
+Your demo file should follow this pattern:
+
+```tsx
+"use client";
+
+import { MyButton } from "./my-button";
+
+export function MyButtonDemo() {
+  return (
+    <div className="flex items-center justify-center min-h-[200px] p-8">
+      <MyButton>Click me</MyButton>
+    </div>
+  );
+}
+```
+
+#### Step 4: Update Registry
+
+Add your component to `registry.json`:
+
+```json
+{
+  "name": "my-button",
+  "type": "registry:component",
+  "category": "buttons",
+  "title": "My Button",
+  "description": "A custom button component with variants.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/components/my-button/my-button.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/components/my-button/demo.tsx",
+      "type": "registry:component"
+    }
+  ]
+}
+```
+
+#### Step 5: Register Your Component
+
+You need to add your component to **two registry files** so it works everywhere:
+
+**A. For Documentation Pages** (`components/mdx/component-registry.tsx`):
+
+```tsx
+// Add import at top
+import { MyButtonDemo } from "@/registry/new-york/components/my-button/demo";
+
+// Add to registry object
+export const componentRegistry: Record<string, React.ComponentType> = {
+  // ... existing components
+  "my-button-demo": MyButtonDemo, // Note: with "-demo" suffix
+};
+```
+
+**B. For Blocks Page** (`components/registry/dynamic-component-loader.tsx`):
+
+```tsx
+// Add import at top
+import { MyButtonDemo } from "@/registry/new-york/components/my-button/demo";
+
+// Add to componentMap object
+const componentMap: Record<string, React.ComponentType> = {
+  // ... existing components
+  "my-button": MyButtonDemo, // Note: without "-demo" suffix
+};
+```
+
+When adding or modifying components, please ensure that:
+
+1. You follow the existing patterns in the codebase.
+2. You include proper TypeScript types.
+3. You add responsive design considerations.
+4. You ensure accessibility compliance.
+5. You update the documentation.
+6. You test across different browsers.
+
+## Commit Convention
+
+Before you create a Pull Request, please check whether your commits comply with
+the commit conventions used in this repository.
+
+When you create a commit we kindly ask you to follow the convention
+`category(scope or module): message` in your commit message while using one of
+the following categories:
+
+- `feat / feature`: all changes that introduce completely new code or new
+  features
+- `fix`: changes that fix a bug (ideally you will additionally reference an
+  issue if present)
+- `refactor`: any code related change that is not a fix nor a feature
+- `docs`: changing existing or creating new documentation (i.e. README, docs for
+  usage of a lib or cli usage)
+- `build`: all changes regarding the build of the software, changes to
+  dependencies or the addition of new dependencies
+- `test`: all changes regarding tests (adding new tests or changing existing
+  ones)
+- `ci`: all changes regarding the configuration of continuous integration (i.e.
+  github actions, ci system)
+- `chore`: all changes to the repository that do not fit into any of the above
+  categories
+
+  e.g. `feat(components): add new prop to the button component`
+
+## Requests for new components
+
+If you have a request for a new component, please open a discussion on GitHub. We'll be happy to help you out.
+
+Please ensure that the tests are passing when submitting a pull request. If you're adding new features, please include tests.

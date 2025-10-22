@@ -3,7 +3,7 @@ title: Text Animations
 description: Beautiful animated text effects powered by GSAP
 ---
 
-All text animations require GSAP to be installed first:
+All text animations require GSAP to be installed first. **No global CSS setup required** - the component is fully self-contained and inherits styles automatically.
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
 <Tab value="npm">
@@ -115,18 +115,50 @@ Explore different animation types:
 - **[Scale Animation](/docs/components/text-animations/scale)** - Scale with bounce effect
 - **[Rotate Animation](/docs/components/text-animations/rotate)** - Rotating text effect
 
+### Custom Styling
+
+The component automatically inherits all font properties (size, weight, family, color) from its container. Simply apply any Tailwind classes or custom CSS to the component - all styles will be automatically applied to each animated character:
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="split-text-custom-styling" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+// Custom styled text with Tailwind classes
+<SplitTextAnimation
+  text="Custom Styled Text"
+  className="text-2xl text-green-500"
+  animationType="fade"
+/>
+```
+
+</Tab>
+</Tabs>
+
+**How it works:** The component reads the computed styles from its container and applies them to each character span automatically. This means you can use any CSS classes:
+
+- **Text sizing:** `text-sm`, `text-lg`, `text-4xl`, etc.
+- **Font weight:** `font-normal`, `font-bold`, `font-black`, etc.
+- **Colors:** `text-blue-500`, `text-red-600`, etc.
+- **Custom styles:** `font-mono`, `tracking-wider`, `italic`, etc.
+- **Gradients:** `bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent`
+
+**No global CSS setup required** - the component handles all styling inheritance automatically.
+
 ### API Reference
 
-| Prop              | Type                                       | Default  | Description                                 |
-| ----------------- | ------------------------------------------ | -------- | ------------------------------------------- |
-| `text`            | `string`                                   | —        | The text to animate                         |
-| `animationType`   | `"fade" \| "slide" \| "scale" \| "rotate"` | `"fade"` | Type of animation to apply                  |
-| `direction`       | `"up" \| "down" \| "left" \| "right"`      | `"up"`   | Direction for slide animation               |
-| `duration`        | `number`                                   | `0.8`    | Duration of the animation in seconds        |
-| `stagger`         | `number`                                   | `0.05`   | Delay between each character animation      |
-| `delay`           | `number`                                   | `0`      | Initial delay before animation starts       |
-| `className`       | `string`                                   | `""`     | Additional CSS classes to apply             |
-| `showRerunButton` | `boolean`                                  | `false`  | Show a rerun button to replay the animation |
+| Prop              | Type                                       | Default  | Description                                                                 |
+| ----------------- | ------------------------------------------ | -------- | --------------------------------------------------------------------------- |
+| `text`            | `string`                                   | —        | The text to animate                                                         |
+| `animationType`   | `"fade" \| "slide" \| "scale" \| "rotate"` | `"fade"` | Type of animation to apply                                                  |
+| `direction`       | `"up" \| "down" \| "left" \| "right"`      | `"up"`   | Direction for slide animation                                               |
+| `duration`        | `number`                                   | `0.8`    | Duration of the animation in seconds                                        |
+| `stagger`         | `number`                                   | `0.05`   | Delay between each character animation                                      |
+| `delay`           | `number`                                   | `0`      | Initial delay before animation starts                                       |
+| `className`       | `string`                                   | `""`     | Additional CSS classes to apply (automatically inherited by all characters) |
+| `showRerunButton` | `boolean`                                  | `false`  | Show a rerun button to replay the animation                                 |
 
 ### Credits
 
