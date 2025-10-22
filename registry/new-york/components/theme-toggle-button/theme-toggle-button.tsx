@@ -225,7 +225,9 @@ const ThemeToggleButton = React.forwardRef<
             className="transition-colors duration-500"
           />
         </svg>
-        {props.children}
+        {props.children && (
+          <span className="text-inherit">{props.children}</span>
+        )}
       </Comp>
     );
   }

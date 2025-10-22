@@ -43,7 +43,7 @@ bun add next-themes
 </Tab>
 </Tabs>
 
-## Create a theme provider
+### Create a theme provider
 
 ```tsx title="components/theme-provider.tsx" showLineNumbers
 "use client";
@@ -77,6 +77,24 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+  );
+}
+```
+
+### Create a reusable mode toggle component
+
+```tsx title="components/mode-toggle.tsx" showLineNumbers
+"use client";
+
+import { useTheme } from "next-themes";
+import { ThemeToggleButton } from "@/components/ui/theme-toggle-button";
+
+export function ModeToggle() {
+  const { theme } = useTheme();
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <ThemeToggleButton variant="ghost" size="icon" />
+    </div>
   );
 }
 ```
@@ -117,74 +135,6 @@ bun add gsap
 </Tab>
 </Tabs>
 
-## Add a theme toggle
-
-Place a theme toggle on your site to toggle between light and dark mode with smooth morphing animations.
-
-<Tabs items={['Preview', 'Code']}>
-<Tab value="Preview">
-  <ComponentPreview name="theme-toggle-demo" />
-</Tab>
-<Tab value="Code">
-
-```tsx
-import { ThemeToggleButton } from "@/components/ui/theme-toggle-button";
-
-export function ModeToggle() {
-  return <ThemeToggleButton size="icon" variant="ghost" />;
-}
-```
-
-</Tab>
-</Tabs>
-
-Then add the component:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
-npx shadcn@latest add https://glsilk.vercel.app/r/theme-toggle-button.json
-```
-
-</Tab>
-<Tab value="pnpm">
-
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/theme-toggle-button.json
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/theme-toggle-button.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/theme-toggle-button.json
-```
-
-</Tab>
-</Tabs>
-
-### Quick Start
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
-import { ThemeToggleButton } from "@/components/ui/theme-toggle-button";
-
-export default function Home() {
-  return (
-    <div>
-      <ThemeToggleButton size="icon" variant="ghost" />
-    </div>
-  );
-}
-```
-
 ### Default
 
 <Tabs items={['Preview', 'Code']}>
@@ -201,6 +151,8 @@ export default function Home() {
 </Tabs>
 
 ### Sizes
+
+The button supports text alongside the icon. The spacing between the icon and text is automatically adjusted based on the size.
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
@@ -229,75 +181,7 @@ export default function Home() {
   </ThemeToggleButton>
   <ThemeToggleButton size="icon-lg" variant="outline" />
 </div>
-```
 
-</Tab>
-</Tabs>
-
-### Variants
-
-<Tabs items={['Preview', 'Code']}>
-<Tab value="Preview">
-  <ComponentPreview name="theme-toggle-variants" />
-</Tab>
-<Tab value="Code">
-
-```tsx
-<div className="flex flex-wrap gap-2">
-  <ThemeToggleButton variant="default">Default</ThemeToggleButton>
-  <ThemeToggleButton variant="destructive">Destructive</ThemeToggleButton>
-  <ThemeToggleButton variant="outline">Outline</ThemeToggleButton>
-  <ThemeToggleButton variant="secondary">Secondary</ThemeToggleButton>
-  <ThemeToggleButton variant="ghost">Ghost</ThemeToggleButton>
-  <ThemeToggleButton variant="link">Link</ThemeToggleButton>
-</div>
-```
-
-</Tab>
-</Tabs>
-
-### With Text
-
-The spacing between the icon and the text is automatically adjusted based on the size of the button. You do not need any margin on the icon.
-
-<Tabs items={['Preview', 'Code']}>
-<Tab value="Preview">
-  <ComponentPreview name="theme-toggle-with-text" />
-</Tab>
-<Tab value="Code">
-
-```tsx
-import { ThemeToggleButton } from "@/components/ui/theme-toggle-button";
-
-export function ThemeToggleWithText() {
-  return (
-    <ThemeToggleButton variant="outline" size="sm">
-      Toggle Theme
-    </ThemeToggleButton>
-  );
-}
-```
-
-</Tab>
-</Tabs>
-
-### Icon Variants
-
-<Tabs items={['Preview', 'Code']}>
-<Tab value="Preview">
-  <ComponentPreview name="theme-toggle-icon-variants" />
-</Tab>
-<Tab value="Code">
-
-```tsx
-<div className="flex flex-wrap gap-2">
-  <ThemeToggleButton variant="default" size="icon" />
-  <ThemeToggleButton variant="destructive" size="icon" />
-  <ThemeToggleButton variant="outline" size="icon" />
-  <ThemeToggleButton variant="secondary" size="icon" />
-  <ThemeToggleButton variant="ghost" size="icon" />
-  <ThemeToggleButton variant="link" size="icon" />
-</div>
 ```
 
 </Tab>
@@ -421,46 +305,6 @@ Use different colors for sun and moon states:
 </Tab>
 </Tabs>
 
-### Advanced Example
-
-The ultimate theme toggle combining split text animations, dual colors, and dynamic text!
-
-<Tabs items={['Preview', 'Code']}>
-<Tab value="Preview">
-  <ComponentPreview name="theme-toggle-advanced" />
-</Tab>
-<Tab value="Code">
-
-```tsx
-import { useTheme } from "next-themes";
-import { ThemeToggleButton } from "@/components/ui/theme-toggle-button";
-import { SplitTextAnimation } from "@/components/ui/split-text-animation";
-
-export function ThemeToggleAdvancedDemo() {
-  const { theme } = useTheme();
-
-  return (
-    <div className="flex flex-col items-center gap-4">
-      <ThemeToggleButton
-        variant="ghost"
-        size="sm"
-        className="[&_svg_circle]:fill-yellow-500 [&_svg_path]:stroke-yellow-500 [&[data-state=checked]_svg_circle]:fill-blue-500 [&[data-state=checked]_svg_path]:stroke-blue-500 shadow-lg hover:shadow-xl transition-all duration-300"
-      >
-        <SplitTextAnimation
-          text={theme === "dark" ? "Light" : "Dark"}
-          animationType="fade"
-          duration={0.6}
-          delay={0.1}
-        />
-      </ThemeToggleButton>
-    </div>
-  );
-}
-```
-
-</Tab>
-</Tabs>
-
 ### API Reference
 
 | Prop            | Type                                                                          | Default          | Description                                |
@@ -471,15 +315,6 @@ export function ThemeToggleAdvancedDemo() {
 | `ease`          | `string`                                                                      | `"power2.inOut"` | GSAP easing function                       |
 | `asChild`       | `boolean`                                                                     | `false`          | Render as child component using Radix Slot |
 | `onStateChange` | `(isDark: boolean) => void`                                                   | —                | Callback when state changes                |
-
-The button **automatically integrates with `next-themes`** and toggles between **light** and **dark** modes. When `enableSystem` is set to `true` in the ThemeProvider:
-
-- **System theme is detected automatically** - The button respects the user's OS preference as the default
-- **Clicking toggles between light/dark** - Users can override the system preference
-- **The button state reflects the current theme** - Shows sun for light, moon for dark
-- **Smooth morphing animation** - GSAP morphs between sun rays and moon crescent
-
-The component handles all theme logic internally - just drop it in and it works!
 
 ### Credits
 

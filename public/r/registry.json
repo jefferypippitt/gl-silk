@@ -64,10 +64,6 @@
         {
           "path": "registry/new-york/components/split-text-animation/demo.tsx",
           "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/components/split-text-animation/fade-sizes-demo.tsx",
-          "type": "registry:component"
         }
       ]
     },
@@ -124,7 +120,19 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/components/theme-toggle-button/advanced-demo.tsx",
+          "path": "registry/new-york/components/theme-toggle-button/sizes-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/theme-toggle-button/rounded-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/theme-toggle-button/colored-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/theme-toggle-button/dual-color-demo.tsx",
           "type": "registry:component"
         }
       ]
