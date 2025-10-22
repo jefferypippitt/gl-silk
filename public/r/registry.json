@@ -102,6 +102,24 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "theme-toggle-button",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Theme Toggle Button",
+      "description": "Button with morphing SVG animation between Sun and Moon icons using GSAP.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/theme-toggle-button/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

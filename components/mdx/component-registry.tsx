@@ -26,12 +26,22 @@ import { PlayPauseSizesDemo } from "@/registry/new-york/components/play-pause-bu
 import { PlayPauseVariantsDemo } from "@/registry/new-york/components/play-pause-button/variants-demo";
 import { PlayPauseIconVariantsDemo } from "@/registry/new-york/components/play-pause-button/icon-variants-demo";
 import { PlayPauseRoundedDemo } from "@/registry/new-york/components/play-pause-button/rounded-demo";
+import { ThemeToggleDemo } from "@/registry/new-york/components/theme-toggle-button/demo";
+import { ThemeToggleSizesDemo } from "@/registry/new-york/components/theme-toggle-button/sizes-demo";
+import { ThemeToggleVariantsDemo } from "@/registry/new-york/components/theme-toggle-button/variants-demo";
+import { ThemeToggleIconVariantsDemo } from "@/registry/new-york/components/theme-toggle-button/icon-variants-demo";
+import { ThemeToggleRoundedDemo } from "@/registry/new-york/components/theme-toggle-button/rounded-demo";
+import { ThemeToggleColoredDemo } from "@/registry/new-york/components/theme-toggle-button/colored-demo";
+import { ThemeToggleDualColorDemo } from "@/registry/new-york/components/theme-toggle-button/dual-color-demo";
+import { ThemeToggleIntegratedDemo } from "@/registry/new-york/components/theme-toggle-button/theme-toggle-integrated-demo";
+import { ThemeToggleWithTextDemo } from "@/registry/new-york/components/theme-toggle-button/with-text-demo";
+import { ThemeToggleAdvancedDemo } from "@/registry/new-york/components/theme-toggle-button/advanced-demo";
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
   "example-form": ExampleForm,
   "example-with-css": ExampleCard,
-  "split-text-animation": SplitTextDemo,
+  "split-text-demo": SplitTextDemo,
   "split-text-fade": FadeDemo,
   "split-text-fade-fast": FadeFastDemo,
   "split-text-fade-slow": FadeSlowDemo,
@@ -55,4 +65,14 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "play-pause-variants": PlayPauseVariantsDemo,
   "play-pause-icon-variants": PlayPauseIconVariantsDemo,
   "play-pause-rounded": PlayPauseRoundedDemo,
+  "theme-toggle-demo": ThemeToggleDemo,
+  "theme-toggle-sizes": ThemeToggleSizesDemo,
+  "theme-toggle-variants": ThemeToggleVariantsDemo,
+  "theme-toggle-icon-variants": ThemeToggleIconVariantsDemo,
+  "theme-toggle-rounded": ThemeToggleRoundedDemo,
+  "theme-toggle-colored": ThemeToggleColoredDemo,
+  "theme-toggle-dual-color": ThemeToggleDualColorDemo,
+  "theme-toggle-integrated": ThemeToggleIntegratedDemo,
+  "theme-toggle-with-text": ThemeToggleWithTextDemo,
+  "theme-toggle-advanced": ThemeToggleAdvancedDemo,
 };

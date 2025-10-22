@@ -4,11 +4,11 @@ import { PlayPauseButton } from "./play-pause-button";
 
 export function PlayPauseRoundedDemo() {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex gap-4">
       <PlayPauseButton variant="outline" size="icon" className="rounded-full" />
       <PlayPauseButton variant="default" size="icon" className="rounded-full" />
       <PlayPauseButton
-        variant="destructive"
+        variant="secondary"
         size="icon"
         className="rounded-full"
       />

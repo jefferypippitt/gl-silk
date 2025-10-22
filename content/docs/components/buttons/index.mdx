@@ -3,6 +3,20 @@ title: Buttons
 description: Interactive button components with various styles and effects
 ---
 
+## Components
+
+### [Mesh Gradient Button](/docs/components/buttons/mesh-gradient)
+
+Animated button with flowing mesh gradient backgrounds powered by @paper-design/shaders-react.
+
+### [Play Pause Button](/docs/components/buttons/play-pause-button)
+
+Button with morphing SVG animation between Play and Pause icons using GSAP MorphSVGPlugin.
+
+### [Theme Toggle Button](/docs/components/buttons/theme-toggle-button)
+
+Button with morphing SVG animation between Sun and Moon icons using GSAP MorphSVGPlugin.
+
 ## Installation
 
 ### Mesh Gradient Button
@@ -73,9 +87,9 @@ bunx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
 </Tab>
 </Tabs>
 
-### Play Pause Button
+### Play Pause Button & Theme Toggle Button
 
-All play pause buttons require the gsap package to be installed first:
+Both morphing SVG buttons require the gsap package to be installed first:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
 <Tab value="npm">
@@ -114,28 +128,28 @@ Then add the component:
 <Tab value="npm">
 
 ```bash
-npx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+npx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json https://ui.shadcn.com/r/button-group.json
 ```
 
 </Tab>
 <Tab value="pnpm">
 
 ```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json https://ui.shadcn.com/r/button-group.json
 ```
 
 </Tab>
 <Tab value="yarn">
 
 ```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json https://ui.shadcn.com/r/button-group.json
 ```
 
 </Tab>
 <Tab value="bun">
 
 ```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json
+bunx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json https://ui.shadcn.com/r/button-group.json
 ```
 
 </Tab>
@@ -168,6 +182,20 @@ export default function Home() {
   return (
     <div>
       <PlayPauseButton showText />
+    </div>
+  );
+}
+```
+
+### Theme Toggle Button
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { ThemeToggleButton } from "@/components/ui/theme-toggle-button";
+
+export default function Home() {
+  return (
+    <div>
+      <ThemeToggleButton showText />
     </div>
   );
 }
