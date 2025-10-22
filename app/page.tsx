@@ -1,11 +1,9 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { SplitTextAnimation } from "@/components/ui/split-text-animation";
-import { AnimatedButtons } from "@/components/ui/animated-buttons";
 import Container from "@/components/container";
 import Navbar from "@/components/navbar";
 import { SmokeRingBackground } from "@/components/smoke-ring-bg";
 import { Footer } from "@/components/footer";
+import { DelayedButtons } from "@/components/delayed-buttons";
 
 export default function Home() {
   return (
@@ -17,28 +15,29 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <SplitTextAnimation
             text="Supercharge Your UI"
-            animationType="fade"
+            animationType="scale"
             className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-4 max-w-3xl mx-auto"
             duration={0.8}
-            stagger={0.03}
+            stagger={0.01}
+            delay={0}
           />
           <SplitTextAnimation
-            text="Dive into a library of open-source components that combine stunning design with simplicity. Build faster. Experiment confidently."
-            animationType="slide"
-            direction="up"
+            text="Dive into a library of open-source components that combine stunning design with simplicity."
+            animationType="fade"
             className="text-muted-foreground max-w-xl mx-auto text-lg leading-relaxed"
-            duration={1.2}
-            stagger={0.02}
-            delay={0.3}
+            duration={0.9}
+            stagger={0.01}
+            delay={0.2}
           />
-          <AnimatedButtons className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button asChild size="default">
-              <Link href="/docs">Get Started</Link>
-            </Button>
-            <Button asChild variant="outline" size="default">
-              <Link href="/docs/components">View Components</Link>
-            </Button>
-          </AnimatedButtons>
+          <SplitTextAnimation
+            text="Build faster. Experiment confidently."
+            animationType="fade"
+            className="text-muted-foreground max-w-xl mx-auto text-lg leading-relaxed"
+            duration={0.9}
+            stagger={0.02}
+            delay={1}
+          />
+          <DelayedButtons delay={2000} />
         </div>
       </main>
       <Footer />
