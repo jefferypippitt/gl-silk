@@ -40,7 +40,6 @@ export function SplitTextAnimation({
     const fontSize = containerStyles.fontSize;
     const fontWeight = containerStyles.fontWeight;
     const lineHeight = containerStyles.lineHeight;
-    const color = containerStyles.color;
 
     // Split text into characters
     const words = text.split(" ");
@@ -61,7 +60,7 @@ export function SplitTextAnimation({
         charSpan.style.fontSize = fontSize;
         charSpan.style.fontWeight = fontWeight;
         charSpan.style.lineHeight = lineHeight;
-        charSpan.style.color = color;
+        // Don't set inline color - let CSS handle theme changes
         wordSpan.appendChild(charSpan);
         chars.push(charSpan);
       });

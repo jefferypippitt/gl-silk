@@ -16,7 +16,7 @@ export default function Home() {
           <SplitTextAnimation
             text="Supercharge Your UI"
             animationType="scale"
-            className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-4 max-w-3xl mx-auto"
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 max-w-3xl mx-auto"
             duration={0.8}
             stagger={0.01}
             delay={0}
