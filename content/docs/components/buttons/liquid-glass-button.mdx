@@ -1,0 +1,185 @@
+---
+title: Liquid Glass Button
+description: Button with animated liquid glass shader effect using SVG displacement maps
+---
+
+Then add the component:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/liquid-glass-button.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/liquid-glass-button.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/liquid-glass-button.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/liquid-glass-button.json
+```
+
+</Tab>
+</Tabs>
+
+### Quick Start
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { LiquidGlassButton } from "@/components/ui/liquid-glass-button";
+
+export default function Home() {
+  return (
+    <div>
+      <LiquidGlassButton>Click me</LiquidGlassButton>
+    </div>
+  );
+}
+```
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="liquid-glass-button-demo" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<LiquidGlassButton>Liquid Glass</LiquidGlassButton>
+```
+
+</Tab>
+</Tabs>
+
+### Variants
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="liquid-glass-variants" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<LiquidGlassButton variant="default">Default</LiquidGlassButton>
+<LiquidGlassButton variant="outline">Outline</LiquidGlassButton>
+<LiquidGlassButton variant="secondary">Secondary</LiquidGlassButton>
+<LiquidGlassButton variant="ghost">Ghost</LiquidGlassButton>
+<LiquidGlassButton variant="destructive">Destructive</LiquidGlassButton>
+```
+
+</Tab>
+</Tabs>
+
+### Sizes
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="liquid-glass-sizes" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<LiquidGlassButton size="sm">Small</LiquidGlassButton>
+<LiquidGlassButton size="default">Default</LiquidGlassButton>
+<LiquidGlassButton size="lg">Large</LiquidGlassButton>
+<LiquidGlassButton size="icon">
+  <Search className="size-4" />
+</LiquidGlassButton>
+```
+
+</Tab>
+</Tabs>
+
+### Custom Colors
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="liquid-glass-colors" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<LiquidGlassButton textClassName="text-blue-500">
+  Blue Text
+</LiquidGlassButton>
+<LiquidGlassButton textClassName="text-green-500">
+  Green Text
+</LiquidGlassButton>
+<LiquidGlassButton textClassName="text-white mix-blend-difference">
+  Inverted
+</LiquidGlassButton>
+```
+
+</Tab>
+</Tabs>
+
+### Advanced Controls
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="liquid-glass-advanced" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<LiquidGlassButton
+  distortionStrength={0.15}
+  borderRadius={0.6}
+  animationSpeed={1}
+  scale={1}
+>
+  Custom Shader
+</LiquidGlassButton>
+```
+
+</Tab>
+</Tabs>
+
+### API Reference
+
+| Prop                 | Type                                                                          | Default     | Description                                         |
+| -------------------- | ----------------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `distortionStrength` | `number`                                                                      | `0.15`      | Strength of the liquid distortion effect (0.05-0.3) |
+| `borderRadius`       | `number`                                                                      | `0.6`       | Border radius for the glass effect (0.3-1.5)        |
+| `animationSpeed`     | `number`                                                                      | `1`         | Speed of the animation (0.1-3)                      |
+| `scale`              | `number`                                                                      | `1`         | Scale of the shader pattern (0.5-2)                 |
+| `offsetX`            | `number`                                                                      | —           | Horizontal offset of the shader (-1 to 1)           |
+| `offsetY`            | `number`                                                                      | —           | Vertical offset of the shader (-1 to 1)             |
+| `rotation`           | `number`                                                                      | —           | Rotation angle of the shader (0-360)                |
+| `worldWidth`         | `number`                                                                      | `0.5`       | Virtual width before scaling                        |
+| `worldHeight`        | `number`                                                                      | `0.5`       | Virtual height before scaling                       |
+| `textClassName`      | `string`                                                                      | —           | Custom className for the text content               |
+| `variant`            | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | Button variant                                      |
+| `size`               | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"` | Button size variant                                 |
+
+#### Size Variants Buttons
+
+```tsx
+<div className="flex gap-2">
+  <LiquidGlassButton size="sm">Small</LiquidGlassButton>
+  <LiquidGlassButton size="default">Default</LiquidGlassButton>
+  <LiquidGlassButton size="lg">Large</LiquidGlassButton>
+  <LiquidGlassButton size="icon">
+    <Star className="size-4" />
+  </LiquidGlassButton>
+</div>
+```
+
+### Credits
+
+- Original Liquid Glass Effect by [Shu Ding](https://github.com/shuding/liquid-glass)
+- Adapted for React by gl-silk

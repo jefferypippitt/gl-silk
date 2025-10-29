@@ -11,6 +11,11 @@ import { SplitTextDemo } from "@/registry/new-york/components/split-text-animati
 import { MeshGradientDemo } from "@/registry/new-york/components/mesh-gradient-button/demo";
 import { PlayPauseDemo } from "@/registry/new-york/components/play-pause-button/demo";
 import { ThemeToggleDemo } from "@/registry/new-york/components/theme-toggle-button/demo";
+import { LiquidGlassButtonDemo } from "@/registry/new-york/components/liquid-glass-button/demo";
+import { LiquidGlassSizesDemo } from "@/registry/new-york/components/liquid-glass-button/sizes-demo";
+import { LiquidGlassVariantsDemo } from "@/registry/new-york/components/liquid-glass-button/variants-demo";
+import { LiquidGlassColorsDemo } from "@/registry/new-york/components/liquid-glass-button/colors-demo";
+import { LiquidGlassAdvancedDemo } from "@/registry/new-york/components/liquid-glass-button/advanced-liquid-demo";
 
 // Component mapping - add new components here as you create them
 const componentMap: Record<string, React.ComponentType> = {
@@ -21,6 +26,11 @@ const componentMap: Record<string, React.ComponentType> = {
   "mesh-gradient-button": MeshGradientDemo,
   "play-pause-button": PlayPauseDemo,
   "theme-toggle-button": ThemeToggleDemo,
+  "liquid-glass-button": LiquidGlassButtonDemo,
+  "liquid-glass-sizes": LiquidGlassSizesDemo,
+  "liquid-glass-variants": LiquidGlassVariantsDemo,
+  "liquid-glass-colors": LiquidGlassColorsDemo,
+  "liquid-glass-advanced": LiquidGlassAdvancedDemo,
 };
 
 interface DynamicComponentLoaderProps {

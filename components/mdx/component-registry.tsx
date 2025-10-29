@@ -32,6 +32,11 @@ import { ThemeToggleSizesDemo } from "@/registry/new-york/components/theme-toggl
 import { ThemeToggleRoundedDemo } from "@/registry/new-york/components/theme-toggle-button/rounded-demo";
 import { ThemeToggleColoredDemo } from "@/registry/new-york/components/theme-toggle-button/colored-demo";
 import { ThemeToggleDualColorDemo } from "@/registry/new-york/components/theme-toggle-button/dual-color-demo";
+import { LiquidGlassButtonDemo } from "@/registry/new-york/components/liquid-glass-button/demo";
+import { LiquidGlassSizesDemo } from "@/registry/new-york/components/liquid-glass-button/sizes-demo";
+import { LiquidGlassVariantsDemo } from "@/registry/new-york/components/liquid-glass-button/variants-demo";
+import { LiquidGlassColorsDemo } from "@/registry/new-york/components/liquid-glass-button/colors-demo";
+import { LiquidGlassAdvancedDemo } from "@/registry/new-york/components/liquid-glass-button/advanced-liquid-demo";
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
@@ -67,4 +72,9 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "theme-toggle-rounded": ThemeToggleRoundedDemo,
   "theme-toggle-colored": ThemeToggleColoredDemo,
   "theme-toggle-dual-color": ThemeToggleDualColorDemo,
+  "liquid-glass-button-demo": LiquidGlassButtonDemo,
+  "liquid-glass-sizes": LiquidGlassSizesDemo,
+  "liquid-glass-variants": LiquidGlassVariantsDemo,
+  "liquid-glass-colors": LiquidGlassColorsDemo,
+  "liquid-glass-advanced": LiquidGlassAdvancedDemo,
 };

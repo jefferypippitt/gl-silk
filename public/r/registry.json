@@ -136,6 +136,39 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "liquid-glass-button",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Liquid Glass Button",
+      "description": "Button with animated liquid glass shader effect using SVG displacement maps.",
+      "files": [
+        {
+          "path": "registry/new-york/components/liquid-glass-button/liquid-glass-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/liquid-glass-button/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/liquid-glass-button/variants-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/liquid-glass-button/sizes-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/liquid-glass-button/colors-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/liquid-glass-button/advanced-liquid-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
