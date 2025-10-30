@@ -6,8 +6,6 @@ import { LiquidGlassButton } from "./liquid-glass-button";
 import { Slider } from "@/components/ui/slider";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { OpenInV0Button } from "@/components/open-in-v0-button";
-
 export function LiquidGlassAdvancedDemo() {
   const [distortionStrength, setDistortionStrength] = useState(1.0);
   const [borderRadius, setBorderRadius] = useState(0.6);
@@ -52,10 +50,6 @@ ${props.join("\n")}
   };
 
   return (
-    <>
-      <div className="absolute top-4 right-4 z-10">
-        <OpenInV0Button name="liquid-glass-button-advanced" />
-      </div>
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {/* Left: Demo container */}
@@ -253,6 +247,5 @@ ${props.join("\n")}
         </div>
       </div>
     </div>
-    </>
   );
 }

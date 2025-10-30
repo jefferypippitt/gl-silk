@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/play-pause-button/rounded-demo.tsx",
-      "content": "\"use client\";\n\nimport { PlayPauseButton } from \"./play-pause-button\";\nimport { OpenInV0Button } from \"@/components/open-in-v0-button\";\n\nexport function PlayPauseRoundedDemo() {\n  return (\n    <>\n      <div className=\"absolute top-4 right-4 z-10\">\n        <OpenInV0Button name=\"play-pause-button-rounded\" />\n      </div>\n    <div className=\"flex gap-4\">\n      <PlayPauseButton variant=\"outline\" size=\"icon\" className=\"rounded-full\" />\n      <PlayPauseButton variant=\"default\" size=\"icon\" className=\"rounded-full\" />\n      <PlayPauseButton\n        variant=\"secondary\"\n        size=\"icon\"\n        className=\"rounded-full\"\n      />\n    </div>\n    </>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { PlayPauseButton } from \"./play-pause-button\";\n\nexport function PlayPauseRoundedDemo() {\n  return (\n    <div className=\"flex gap-4\">\n      <PlayPauseButton variant=\"outline\" size=\"icon\" className=\"rounded-full\" />\n      <PlayPauseButton variant=\"default\" size=\"icon\" className=\"rounded-full\" />\n      <PlayPauseButton\n        variant=\"secondary\"\n        size=\"icon\"\n        className=\"rounded-full\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:component"
     }
   ]

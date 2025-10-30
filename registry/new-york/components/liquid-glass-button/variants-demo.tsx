@@ -2,15 +2,10 @@
 
 import Image from "next/image";
 import { LiquidGlassButton } from "./liquid-glass-button";
-import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 export function LiquidGlassVariantsDemo() {
   return (
-    <>
-      <div className="absolute top-4 right-4 z-10">
-        <OpenInV0Button name="liquid-glass-button-variants" />
-      </div>
-      <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden rounded-lg border">
+    <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden rounded-lg border">
       {/* Background image */}
       <Image
         src="/images/wave-bg.jpg"
@@ -30,6 +25,5 @@ export function LiquidGlassVariantsDemo() {
         </LiquidGlassButton>
       </div>
     </div>
-    </>
   );
 }

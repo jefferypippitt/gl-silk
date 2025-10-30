@@ -1,15 +1,9 @@
 "use client";
 
 import { LiquidGlassButton } from "./liquid-glass-button";
-import { OpenInV0Button } from "@/components/open-in-v0-button";
-
 export function LiquidGlassColorsDemo() {
   return (
-    <>
-      <div className="absolute top-4 right-4 z-10">
-        <OpenInV0Button name="liquid-glass-button-colors" />
-      </div>
-      <div className="flex flex-wrap gap-4 items-center justify-center min-h-[200px] p-8 relative overflow-hidden rounded-lg">
+    <div className="flex flex-wrap gap-4 items-center justify-center min-h-[200px] p-8 relative overflow-hidden rounded-lg">
       <LiquidGlassButton textClassName="text-red-500">
         Red Text
       </LiquidGlassButton>
@@ -20,6 +14,5 @@ export function LiquidGlassColorsDemo() {
         Blue Text
       </LiquidGlassButton>
     </div>
-    </>
   );
 }

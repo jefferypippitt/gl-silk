@@ -2,15 +2,10 @@
 
 import { LiquidGlassButton } from "./liquid-glass-button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 export function LiquidGlassButtonDemo() {
   return (
-    <>
-      <div className="absolute top-4 right-4 z-10">
-        <OpenInV0Button name="liquid-glass-button" />
-      </div>
-      <div className="relative h-[400px] overflow-hidden rounded-lg border">
+    <div className="relative h-[400px] overflow-hidden rounded-lg border">
       {/* Centered button within demo container */}
       <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
         <div className="pointer-events-auto">
@@ -44,6 +39,5 @@ export function LiquidGlassButtonDemo() {
         </div>
       </ScrollArea>
     </div>
-    </>
   );
 }

@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/mesh-gradient-button/ocean-theme-demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { MeshGradientButton } from \"./mesh-gradient-button\";\r\nimport { OpenInV0Button } from \"@/components/open-in-v0-button\";\r\n\r\nexport function OceanThemeDemo() {\r\n  return (\r\n    <>\r\n      <div className=\"absolute top-4 right-4 z-10\">\r\n        <OpenInV0Button name=\"mesh-gradient-button-ocean-theme\" />\r\n      </div>\r\n      <div className=\"flex items-center justify-center min-h-[200px] p-8\">\r\n      <MeshGradientButton\r\n        colors={[\"#2196f3\", \"#00bcd4\", \"#009688\", \"#4caf50\"]}\r\n        distortion={0.3}\r\n        swirl={0.05}\r\n        speed={0.5}\r\n        textClassName=\"text-white mix-blend-difference\"\r\n      >\r\n        Ocean Breeze\r\n      </MeshGradientButton>\r\n    </div>\r\n    </>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { MeshGradientButton } from \"./mesh-gradient-button\";\r\n\r\nexport function OceanThemeDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\r\n      <MeshGradientButton\r\n        colors={[\"#2196f3\", \"#00bcd4\", \"#009688\", \"#4caf50\"]}\r\n        distortion={0.3}\r\n        swirl={0.05}\r\n        speed={0.5}\r\n        textClassName=\"text-white mix-blend-difference\"\r\n      >\r\n        Ocean Breeze\r\n      </MeshGradientButton>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:component"
     }
   ]

@@ -86,7 +86,13 @@ export default function Home() {
 }
 ```
 
-### Default
+<div className="flex items-center justify-between">
+  <h3>Default</h3>
+  <div className="flex items-center gap-2">
+    <OpenInV0Button name="split-text-fade" />
+    <RerunButton previewId="split-text-fade" />
+  </div>
+</div>
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
@@ -115,7 +121,13 @@ Explore different animation types:
 - **[Scale Animation](/docs/components/text-animations/scale)** - Scale with bounce effect
 - **[Rotate Animation](/docs/components/text-animations/rotate)** - Rotating text effect
 
-### Custom Styling
+<div className="flex items-center justify-between">
+  <h3>Custom Styling</h3>
+  <div className="flex items-center gap-2">
+    <OpenInV0Button name="split-text-custom-styling" />
+    <RerunButton previewId="split-text-custom-styling" />
+  </div>
+</div>
 
 The component automatically inherits all font properties (size, weight, family, color) from its container. Simply apply any Tailwind classes or custom CSS to the component - all styles will be automatically applied to each animated character:
 

@@ -8,12 +8,16 @@ import type { MDXComponents } from "mdx/types";
 import { ComponentPreview } from "@/components/mdx/component-preview";
 import { ComponentSource } from "@/components/mdx/component-source";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
+import { RerunButton } from "@/components/mdx/rerun-button";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
     ComponentPreview,
     ComponentSource,
+    OpenInV0Button,
+    RerunButton,
     ...TabsComponents,
     Steps,
     Step,

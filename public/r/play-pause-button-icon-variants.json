@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/play-pause-button/icon-variants-demo.tsx",
-      "content": "\"use client\";\n\nimport { PlayPauseButton } from \"./play-pause-button\";\nimport { OpenInV0Button } from \"@/components/open-in-v0-button\";\n\nexport function PlayPauseIconVariantsDemo() {\n  return (\n    <>\n      <div className=\"absolute top-4 right-4 z-10\">\n        <OpenInV0Button name=\"play-pause-button-icon-variants\" />\n      </div>\n    <div className=\"flex flex-wrap gap-2\">\n      <PlayPauseButton variant=\"default\" size=\"icon\" />\n      <PlayPauseButton variant=\"outline\" size=\"icon\" />\n      <PlayPauseButton variant=\"secondary\" size=\"icon\" />\n      <PlayPauseButton variant=\"ghost\" size=\"icon\" />\n    </div>\n    </>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { PlayPauseButton } from \"./play-pause-button\";\n\nexport function PlayPauseIconVariantsDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <PlayPauseButton variant=\"default\" size=\"icon\" />\n      <PlayPauseButton variant=\"outline\" size=\"icon\" />\n      <PlayPauseButton variant=\"secondary\" size=\"icon\" />\n      <PlayPauseButton variant=\"ghost\" size=\"icon\" />\n    </div>\n  );\n}\n",
       "type": "registry:component"
     }
   ]

@@ -12,7 +12,7 @@
     },
     {
       "path": "registry/new-york/components/liquid-glass-button/colors-demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { LiquidGlassButton } from \"./liquid-glass-button\";\r\nimport { OpenInV0Button } from \"@/components/open-in-v0-button\";\r\n\r\nexport function LiquidGlassColorsDemo() {\r\n  return (\r\n    <>\r\n      <div className=\"absolute top-4 right-4 z-10\">\r\n        <OpenInV0Button name=\"liquid-glass-button-colors\" />\r\n      </div>\r\n      <div className=\"flex flex-wrap gap-4 items-center justify-center min-h-[200px] p-8 relative overflow-hidden rounded-lg\">\r\n      <LiquidGlassButton textClassName=\"text-red-500\">\r\n        Red Text\r\n      </LiquidGlassButton>\r\n      <LiquidGlassButton textClassName=\"text-green-500\">\r\n        Green Text\r\n      </LiquidGlassButton>\r\n      <LiquidGlassButton textClassName=\"text-blue-500\">\r\n        Blue Text\r\n      </LiquidGlassButton>\r\n    </div>\r\n    </>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { LiquidGlassButton } from \"./liquid-glass-button\";\r\nexport function LiquidGlassColorsDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-4 items-center justify-center min-h-[200px] p-8 relative overflow-hidden rounded-lg\">\r\n      <LiquidGlassButton textClassName=\"text-red-500\">\r\n        Red Text\r\n      </LiquidGlassButton>\r\n      <LiquidGlassButton textClassName=\"text-green-500\">\r\n        Green Text\r\n      </LiquidGlassButton>\r\n      <LiquidGlassButton textClassName=\"text-blue-500\">\r\n        Blue Text\r\n      </LiquidGlassButton>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:component"
     }
   ]
