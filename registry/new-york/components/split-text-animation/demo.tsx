@@ -1,10 +1,15 @@
 "use client";
 
 import { SplitTextAnimation } from "./split-text-animation";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 export function SplitTextDemo() {
   return (
-    <div className="flex flex-col gap-16 items-center justify-center min-h-[600px] p-8">
+    <>
+      <div className="absolute top-4 right-4 z-10">
+        <OpenInV0Button name="split-text-animation" />
+      </div>
+      <div className="flex flex-col gap-16 items-center justify-center min-h-[600px] p-8">
       <div className="flex flex-col gap-8 w-full max-w-4xl">
         {/* Fade Animation */}
         <div className="flex flex-col gap-4">
@@ -72,5 +77,6 @@ export function SplitTextDemo() {
         </div>
       </div>
     </div>
+    </>
   );
 }

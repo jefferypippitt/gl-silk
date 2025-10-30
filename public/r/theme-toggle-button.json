@@ -15,27 +15,7 @@
     },
     {
       "path": "registry/new-york/components/theme-toggle-button/demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ThemeToggleButton } from \"./theme-toggle-button\";\r\n\r\nexport function ThemeToggleDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\r\n      <ThemeToggleButton size=\"icon\" variant=\"ghost\" />\r\n    </div>\r\n  );\r\n}\r\n",
-      "type": "registry:component"
-    },
-    {
-      "path": "registry/new-york/components/theme-toggle-button/sizes-demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ThemeToggleButton } from \"./theme-toggle-button\";\r\n\r\nexport function ThemeToggleSizesDemo() {\r\n  return (\r\n    <div className=\"flex flex-col gap-4\">\r\n      <div className=\"flex gap-2\">\r\n        <ThemeToggleButton size=\"sm\" variant=\"outline\">\r\n          Small\r\n        </ThemeToggleButton>\r\n        <ThemeToggleButton size=\"icon-sm\" variant=\"outline\" />\r\n      </div>\r\n\r\n      <div className=\"flex gap-2\">\r\n        <ThemeToggleButton variant=\"outline\">Default</ThemeToggleButton>\r\n        <ThemeToggleButton size=\"icon\" variant=\"outline\" />\r\n      </div>\r\n\r\n      <div className=\"flex gap-2\">\r\n        <ThemeToggleButton size=\"lg\" variant=\"outline\">\r\n          Large\r\n        </ThemeToggleButton>\r\n        <ThemeToggleButton size=\"icon-lg\" variant=\"outline\" />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
-      "type": "registry:component"
-    },
-    {
-      "path": "registry/new-york/components/theme-toggle-button/rounded-demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ThemeToggleButton } from \"./theme-toggle-button\";\r\n\r\nexport function ThemeToggleRoundedDemo() {\r\n  return (\r\n    <div className=\"flex gap-4\">\r\n      <ThemeToggleButton\r\n        variant=\"outline\"\r\n        size=\"icon\"\r\n        className=\"rounded-full\"\r\n      />\r\n      <ThemeToggleButton\r\n        variant=\"default\"\r\n        size=\"icon\"\r\n        className=\"rounded-full\"\r\n      />\r\n      <ThemeToggleButton\r\n        variant=\"outline\"\r\n        size=\"icon\"\r\n        className=\"rounded-full [&_svg_circle]:fill-yellow-500 [&_svg_path]:stroke-yellow-500 [&[data-state=checked]_svg_circle]:fill-blue-500 [&[data-state=checked]_svg_path]:stroke-blue-500\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
-      "type": "registry:component"
-    },
-    {
-      "path": "registry/new-york/components/theme-toggle-button/colored-demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ThemeToggleButton } from \"./theme-toggle-button\";\r\n\r\nexport function ThemeToggleColoredDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-4\">\r\n      <ThemeToggleButton\r\n        size=\"icon\"\r\n        variant=\"outline\"\r\n        className=\"[&_svg_circle]:fill-yellow-500 [&_svg_path]:stroke-yellow-500\"\r\n      />\r\n      <ThemeToggleButton\r\n        size=\"icon\"\r\n        variant=\"outline\"\r\n        className=\"[&_svg_circle]:fill-blue-500 [&_svg_path]:stroke-blue-500\"\r\n      />\r\n      <ThemeToggleButton\r\n        size=\"icon\"\r\n        variant=\"outline\"\r\n        className=\"[&_svg_circle]:fill-orange-500 [&_svg_path]:stroke-orange-500\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
-      "type": "registry:component"
-    },
-    {
-      "path": "registry/new-york/components/theme-toggle-button/dual-color-demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ThemeToggleButton } from \"./theme-toggle-button\";\r\n\r\nexport function ThemeToggleDualColorDemo() {\r\n  return (\r\n    <div className=\"flex gap-4\">\r\n      <ThemeToggleButton\r\n        size=\"icon\"\r\n        variant=\"outline\"\r\n        className=\"[&_svg_circle]:fill-yellow-500 [&_svg_path]:stroke-yellow-500 [&[data-state=checked]_svg_circle]:fill-blue-500 [&[data-state=checked]_svg_path]:stroke-blue-500\"\r\n      />\r\n      <ThemeToggleButton\r\n        size=\"icon\"\r\n        variant=\"outline\"\r\n        className=\"[&_svg_circle]:fill-orange-500 [&_svg_path]:stroke-orange-500 [&[data-state=checked]_svg_circle]:fill-purple-500 [&[data-state=checked]_svg_path]:stroke-purple-500\"\r\n      />\r\n      <ThemeToggleButton\r\n        size=\"icon\"\r\n        variant=\"outline\"\r\n        className=\"[&_svg_circle]:fill-green-500 [&_svg_path]:stroke-green-500 [&[data-state=checked]_svg_circle]:fill-pink-500 [&[data-state=checked]_svg_path]:stroke-pink-500\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { ThemeToggleButton } from \"./theme-toggle-button\";\r\nimport { OpenInV0Button } from \"@/components/open-in-v0-button\";\r\n\r\nexport function ThemeToggleDemo() {\r\n  return (\r\n    <>\r\n      <div className=\"absolute top-4 right-4 z-10\">\r\n        <OpenInV0Button name=\"theme-toggle-button\" />\r\n      </div>\r\n      <div className=\"flex items-center justify-center min-h-[200px] p-8\">\r\n        <ThemeToggleButton size=\"icon\" variant=\"ghost\" />\r\n      </div>\r\n    </>\r\n  );\r\n}\r\n",
       "type": "registry:component"
     }
   ]

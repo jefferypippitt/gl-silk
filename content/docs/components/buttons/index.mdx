@@ -3,62 +3,15 @@ title: Buttons
 description: Interactive button components with various styles and effects
 ---
 
-## Components
+## Quick Start Guide
 
-### Mesh Gradient Button
+<Steps>
 
-Animated button with flowing mesh gradient backgrounds powered by @paper-design/shaders-react.
+<Step>
 
-### Play Pause Button
+### Add Component
 
-Button with morphing SVG animation between Play and Pause icons using GSAP MorphSVGPlugin.
-
-### Theme Toggle Button
-
-Button with morphing SVG animation between Sun and Moon icons using GSAP MorphSVGPlugin.
-
-### Liquid Glass Button
-
-Button with animated liquid glass shader effect using SVG displacement maps.
-
-## Installation
-
-### Mesh Gradient Button
-
-All mesh gradient buttons require the @paper-design/shaders-react package to be installed first:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
-npm install @paper-design/shaders-react
-```
-
-</Tab>
-<Tab value="pnpm">
-
-```bash
-pnpm add @paper-design/shaders-react
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add @paper-design/shaders-react
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add @paper-design/shaders-react
-```
-
-</Tab>
-</Tabs>
-
-Then add the component:
+You can add the Mesh Gradient Button component to your project.
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
 <Tab value="npm">
@@ -91,114 +44,21 @@ bunx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
 </Tab>
 </Tabs>
 
-### Liquid Glass Button
+</Step>
 
-No additional dependencies required. Add the component:
+<Step>
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
+### Import Component
 
-```bash
-npx shadcn@latest add https://glsilk.vercel.app/r/liquid-glass-button.json
+```tsx
+import { MeshGradientButton } from "@/components/ui/mesh-gradient-button";
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
 
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/liquid-glass-button.json
-```
+<Step>
 
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/liquid-glass-button.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/liquid-glass-button.json
-```
-
-</Tab>
-</Tabs>
-
-### Play Pause Button & Theme Toggle Button
-
-Both morphing SVG buttons require the gsap package to be installed first:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
-npm install gsap
-```
-
-</Tab>
-<Tab value="pnpm">
-
-```bash
-pnpm add gsap
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add gsap
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add gsap
-```
-
-</Tab>
-</Tabs>
-
-Then add the component:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
-npx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json https://ui.shadcn.com/r/button-group.json
-```
-
-</Tab>
-<Tab value="pnpm">
-
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json https://ui.shadcn.com/r/button-group.json
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json https://ui.shadcn.com/r/button-group.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/play-pause-button.json https://ui.shadcn.com/r/button-group.json
-```
-
-</Tab>
-</Tabs>
-
----
-
-## Quick Start
-
-### Mesh Gradient Button
+### Use Component
 
 ```tsx {1,6} showLineNumbers title="app/page.tsx"
 import { MeshGradientButton } from "@/components/ui/mesh-gradient-button";
@@ -212,51 +72,6 @@ export default function Home() {
 }
 ```
 
-### Play Pause Button
+</Step>
 
-```tsx {1,6} showLineNumbers title="app/page.tsx"
-import { PlayPauseButton } from "@/components/ui/play-pause-button";
-
-export default function Home() {
-  return (
-    <div>
-      <PlayPauseButton showText />
-    </div>
-  );
-}
-```
-
-### Theme Toggle Button
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
-import { ThemeToggleButton } from "@/components/ui/theme-toggle-button";
-
-export default function Home() {
-  return (
-    <div>
-      <ThemeToggleButton showText />
-    </div>
-  );
-}
-```
-
-### Liquid Glass Button
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
-import { LiquidGlassButton } from "@/components/ui/liquid-glass-button";
-
-export default function Home() {
-  return (
-    <div>
-      <LiquidGlassButton>Click me</LiquidGlassButton>
-    </div>
-  );
-}
-```
-
-## Credits
-
-- GSAP: [greensock.com](https://greensock.com/)
-- Shaders React: [paper.design](https://paper.design/)
-- Liquid Glass Effect: [Shu Ding](https://github.com/shuding/liquid-glass)
-- Icons: [lucide-react](https://lucide.dev/)
+</Steps>

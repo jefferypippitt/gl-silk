@@ -3,219 +3,50 @@ title: Contributing
 description: Learn how to contribute to Glsilk and help make it better for everyone.
 ---
 
-Thanks for your interest in contributing to Glsilk.
+## Getting Started
 
-Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.
+<Steps>
 
-## About this repository
+<Step>
 
-This repository is a component library built with Next.js and TypeScript.
+### Setup
 
-- We use [pnpm](https://pnpm.io) for package management.
-- We use [Next.js 15](https://nextjs.org) with App Router.
-- We use [Tailwind CSS v4](https://tailwindcss.com) for styling.
-- We use [shadcn/ui](https://ui.shadcn.com) as our component foundation.
-
-## Structure
-
-This repository is structured as follows:
-
-```
-gl-silk
-├── app
-│   ├── api
-│   ├── blocks
-│   ├── docs
-│   └── layout.tsx
-├── components
-│   ├── mdx
-│   │   ├── component-preview.tsx
-│   │   ├── component-registry.tsx
-│   │   ├── component-source.tsx
-│   │   └── mdx-components.tsx
-│   ├── registry
-│   │   ├── component-card.tsx
-│   │   └── dynamic-component-loader.tsx
-│   └── ui
-├── content
-│   └── docs
-├── hooks
-├── lib
-├── registry
-│   └── new-york
-│       ├── blocks
-│       └── components
-└── public
-    └── r
-```
-
-| Path                  | Description                                  |
-| --------------------- | -------------------------------------------- |
-| `app`                 | The Next.js application pages and layouts.   |
-| `app/api`             | API routes for search functionality.         |
-| `app/blocks`          | The blocks page showing all components.      |
-| `app/docs`            | Documentation pages with MDX support.        |
-| `components`          | React components for the website and UI.     |
-| `components/mdx`      | MDX-specific components for documentation.   |
-| `components/registry` | Components for the registry system.          |
-| `components/ui`       | Base UI components (shadcn/ui).              |
-| `content`             | MDX content for documentation.               |
-| `hooks`               | Custom React hooks.                          |
-| `lib`                 | Utility functions and configurations.        |
-| `registry`            | The component registry system.               |
-| `registry/new-york`   | Component implementations organized by type. |
-| `public/r`            | JSON files for component metadata.           |
-
-## Development
-
-### Fork this repo
-
-You can fork this repo by clicking the fork button in the top right corner of this page.
-
-### Clone on your local machine
+Fork and clone the repository, then install dependencies:
 
 ```bash
 git clone https://github.com/jefferypippitt/gl-silk.git
-```
-
-### Navigate to project directory
-
-```bash
 cd gl-silk
-```
-
-### Create a new Branch
-
-```bash
-git checkout -b my-new-branch
-```
-
-### Install dependencies
-
-```bash
 pnpm install
 ```
 
-### Environment Setup
-
-Create a `.env.local` file in the root directory:
+Create a `.env.local` file:
 
 ```bash
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
-This is required for the "Open in v0" button functionality to work correctly.
-
-### Run the development server
+Run the development server:
 
 ```bash
 pnpm dev
 ```
 
-## Documentation
+</Step>
 
-The documentation for this project is located in the `content/docs` directory. You can run the documentation locally by running the following command:
+<Step>
 
-```bash
-pnpm dev
-```
+### Create Component Files
 
-Documentation is written using [MDX](https://mdxjs.com) with [Fumadocs](https://fumadocs.dev). You can find the documentation files in the `content/docs` directory.
+Create your component directory in `registry/new-york/components/your-component-name/`:
 
-## Components
+<Files>
+  <Folder name="registry/new-york/components/my-button" defaultOpen>
+    <File name="my-button.tsx" />
+    <File name="demo.tsx" />
+  </Folder>
+</Files>
 
-We use a registry system for developing components. You can find the source code for the components under `registry/new-york`. The components are organized by type and category.
-
-```bash
-registry
-└── new-york
-    ├── blocks
-    └── components
-        ├── buttons
-        ├── text-animations
-        └── other
-```
-
-### Creating a New Component
-
-Follow these exact steps to create a new component that follows our project structure:
-
-#### Step 1: Create Component Files
-
-1. **Create the component directory** in `registry/new-york/components/your-component-name/`
-2. **Create the main component file** as `your-component-name.tsx`
-3. **Create a demo file** as `demo.tsx`
-
-Example structure:
-
-```
-registry/new-york/components/my-button/
-├── my-button.tsx
-└── demo.tsx
-```
-
-#### Step 2: Component Implementation
-
-Your main component file should follow this pattern:
-
-```tsx
-"use client";
-
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
-
-const myButtonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
-        // Add more variants as needed
-      },
-      size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 px-3 text-xs",
-        lg: "h-10 px-8",
-        icon: "h-9 w-9",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-);
-
-export interface MyButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof myButtonVariants> {
-  asChild?: boolean;
-}
-
-const MyButton = React.forwardRef<HTMLButtonElement, MyButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return (
-      <Comp
-        className={cn(myButtonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
-MyButton.displayName = "MyButton";
-
-export { MyButton, myButtonVariants };
-```
-
-#### Step 3: Create Demo Component
-
-Your demo file should follow this pattern:
+**1. Create the demo file** (`demo.tsx`):
 
 ```tsx
 "use client";
@@ -224,16 +55,56 @@ import { MyButton } from "./my-button";
 
 export function MyButtonDemo() {
   return (
-    <div className="flex items-center justify-center min-h-[200px] p-8">
-      <MyButton>Click me</MyButton>
+    <div className="flex flex-wrap gap-4 justify-center">
+      <MyButton>My Button</MyButton>
     </div>
   );
 }
 ```
 
-#### Step 4: Update Registry
+**2. Create documentation file** (`content/docs/components/your-category/my-button.mdx`):
 
-Add your component to `registry.json`:
+The file should include:
+
+- Frontmatter with `title` and `description`
+- Installation tabs for all package managers (npm, pnpm, yarn, bun)
+- Quick Start section with import and usage example
+
+See `content/docs/components/buttons/mesh-gradient.mdx` for a complete example.
+
+</Step>
+
+<Step>
+
+### Register Component
+
+Add your component to **two registry files**:
+
+**1. `components/mdx/component-registry.tsx`** - For documentation pages:
+
+```tsx
+import { MyButtonDemo } from "@/registry/new-york/components/my-button/demo";
+
+export const componentRegistry: Record<string, React.ComponentType> = {
+  // ... existing components
+  "my-button-demo": MyButtonDemo,
+};
+```
+
+**2. `components/registry/dynamic-component-loader.tsx`** - For blocks page:
+
+```tsx
+import { MyButtonDemo } from "@/registry/new-york/components/my-button/demo";
+
+const componentMap: Record<string, React.ComponentType> = {
+  // ... existing components
+  "my-button": MyButtonDemo,
+};
+```
+
+**3. `registry.json`** - For registry entries:
+
+Add a main entry for your component:
 
 ```json
 {
@@ -241,7 +112,7 @@ Add your component to `registry.json`:
   "type": "registry:component",
   "category": "buttons",
   "title": "My Button",
-  "description": "A custom button component with variants.",
+  "description": "Description of your button component.",
   "dependencies": [],
   "files": [
     {
@@ -256,46 +127,64 @@ Add your component to `registry.json`:
 }
 ```
 
-#### Step 5: Register Your Component
+**4. Demo Variations** - If you create multiple demo files (e.g., `sizes-demo.tsx`, `variants-demo.tsx`):
 
-You need to add your component to **two registry files** so it works everywhere:
+You need to create separate registry entries for each demo variation. This ensures the "Open in v0" button works correctly for each demo.
 
-**A. For Documentation Pages** (`components/mdx/component-registry.tsx`):
+For example, if you have `sizes-demo.tsx`:
 
-```tsx
-// Add import at top
-import { MyButtonDemo } from "@/registry/new-york/components/my-button/demo";
-
-// Add to registry object
-export const componentRegistry: Record<string, React.ComponentType> = {
-  // ... existing components
-  "my-button-demo": MyButtonDemo, // Note: with "-demo" suffix
-};
+```json
+{
+  "name": "my-button-sizes",
+  "type": "registry:component",
+  "category": "buttons",
+  "title": "My Button - Sizes",
+  "description": "My button with different size variants.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/components/my-button/my-button.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/components/my-button/sizes-demo.tsx",
+      "type": "registry:component"
+    }
+  ]
+}
 ```
 
-**B. For Blocks Page** (`components/registry/dynamic-component-loader.tsx`):
+**Important:** Make sure the `OpenInV0Button` name in your demo file matches the registry entry name:
 
 ```tsx
-// Add import at top
-import { MyButtonDemo } from "@/registry/new-york/components/my-button/demo";
-
-// Add to componentMap object
-const componentMap: Record<string, React.ComponentType> = {
-  // ... existing components
-  "my-button": MyButtonDemo, // Note: without "-demo" suffix
-};
+<OpenInV0Button name="my-button-sizes" />
 ```
 
-When adding or modifying components, please ensure that:
+After adding entries to `registry.json`, build the registry:
 
-1. You follow the existing patterns in the codebase.
-2. You include proper TypeScript types.
-3. You add responsive design considerations.
-4. You ensure accessibility compliance.
-5. You update the documentation.
-6. You test across different browsers.
+```bash
+pnpm registry:build
+```
 
-## Commit Convention
+This generates the JSON files needed for the "Open in v0" functionality.
+
+**Important:** Commit the generated JSON files in `public/r/` to your repository. These files are required for the "Open in v0" button to work on the deployed site.
+
+</Step>
+
+</Steps>
+
+#### Best Practices
+
+When creating components, ensure you:
+
+- Follow existing patterns in the codebase
+- Include proper TypeScript types
+- Add responsive design considerations
+- Ensure accessibility compliance
+- Test across different browsers
+
+#### Commit Convention
 
 Before you create a Pull Request, please check whether your commits comply with
 the commit conventions used in this repository.
@@ -322,7 +211,7 @@ the following categories:
 
   e.g. `feat(components): add new prop to the button component`
 
-## Requests for new components
+#### Requests for new components
 
 If you have a request for a new component, please open a discussion on GitHub. We'll be happy to help you out.
 

@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/play-pause-button/demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { PlayPauseButton } from \"./play-pause-button\";\r\n\r\nexport function PlayPauseDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\r\n      <PlayPauseButton size=\"icon\" variant=\"ghost\" />\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { PlayPauseButton } from \"./play-pause-button\";\r\nimport { OpenInV0Button } from \"@/components/open-in-v0-button\";\r\n\r\nexport function PlayPauseDemo() {\r\n  return (\r\n    <>\r\n      <div className=\"absolute top-4 right-4 z-10\">\r\n        <OpenInV0Button name=\"play-pause-button\" />\r\n      </div>\r\n      <div className=\"flex items-center justify-center min-h-[200px] p-8\">\r\n        <PlayPauseButton size=\"icon\" variant=\"ghost\" />\r\n      </div>\r\n    </>\r\n  );\r\n}\r\n",
       "type": "registry:component"
     }
   ]

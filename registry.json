@@ -68,6 +68,276 @@
       ]
     },
     {
+      "name": "split-text-fade",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Fade",
+      "description": "Fade in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/fade-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-fade-fast",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Fade Fast",
+      "description": "Quick fade in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/fade-fast-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-fade-slow",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Fade Slow",
+      "description": "Slow fade in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/fade-slow-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-rotate",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Rotate",
+      "description": "Rotate in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/rotate-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-rotate-fast",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Rotate Fast",
+      "description": "Quick rotate in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/rotate-fast-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-rotate-slow",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Rotate Slow",
+      "description": "Slow rotate in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/rotate-slow-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-scale",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Scale",
+      "description": "Scale in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/scale-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-scale-fast",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Scale Fast",
+      "description": "Quick scale in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/scale-fast-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-scale-slow",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Scale Slow",
+      "description": "Slow scale in animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/scale-slow-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-slide",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Slide",
+      "description": "Slide up animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/slide-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-slide-up",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Slide Up",
+      "description": "Slide up animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/slide-up-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-slide-down",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Slide Down",
+      "description": "Slide down animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/slide-down-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-slide-left",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Slide Left",
+      "description": "Slide left animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/slide-left-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-slide-right",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Slide Right",
+      "description": "Slide right animation for split text.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/slide-right-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text-custom-styling",
+      "type": "registry:component",
+      "category": "text-animations",
+      "title": "Split Text Animation - Custom Styling",
+      "description": "Custom styled split text animation.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/split-text-animation/split-text-animation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/split-text-animation/custom-styling-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "mesh-gradient-button",
       "type": "registry:component",
       "category": "buttons",
@@ -81,6 +351,60 @@
         },
         {
           "path": "registry/new-york/components/mesh-gradient-button/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mesh-gradient-button-high-energy",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Mesh Gradient Button - High Energy",
+      "description": "High energy mesh gradient button with intense colors.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/high-energy-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mesh-gradient-button-ocean-theme",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Mesh Gradient Button - Ocean Theme",
+      "description": "Ocean-themed mesh gradient button with blue colors.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/ocean-theme-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mesh-gradient-button-text-customization",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Mesh Gradient Button - Text Customization",
+      "description": "Mesh gradient button with custom text styling.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/mesh-gradient-button/text-customization-demo.tsx",
           "type": "registry:component"
         }
       ]
@@ -104,6 +428,78 @@
       ]
     },
     {
+      "name": "play-pause-button-sizes",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Play Pause Button - Sizes",
+      "description": "Play pause button with different size variants.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/play-pause-button/sizes-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "play-pause-button-variants",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Play Pause Button - Variants",
+      "description": "Play pause button with different style variants.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/play-pause-button/variants-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "play-pause-button-icon-variants",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Play Pause Button - Icon Variants",
+      "description": "Play pause button with different icon styles.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/play-pause-button/icon-variants-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "play-pause-button-rounded",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Play Pause Button - Rounded",
+      "description": "Rounded play pause button variant.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/play-pause-button/rounded-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "theme-toggle-button",
       "type": "registry:component",
       "category": "buttons",
@@ -118,17 +514,73 @@
         {
           "path": "registry/new-york/components/theme-toggle-button/demo.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle-button-sizes",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Theme Toggle Button - Sizes",
+      "description": "Theme toggle button with different size variants.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
+          "type": "registry:component"
         },
         {
           "path": "registry/new-york/components/theme-toggle-button/sizes-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle-button-rounded",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Theme Toggle Button - Rounded",
+      "description": "Rounded theme toggle button variant.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
           "type": "registry:component"
         },
         {
           "path": "registry/new-york/components/theme-toggle-button/rounded-demo.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle-button-colored",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Theme Toggle Button - Colored",
+      "description": "Colored theme toggle button variant.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
+          "type": "registry:component"
         },
         {
           "path": "registry/new-york/components/theme-toggle-button/colored-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle-button-dual-color",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Theme Toggle Button - Dual Color",
+      "description": "Dual color theme toggle button variant.",
+      "dependencies": ["gsap"],
+      "files": [
+        {
+          "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
           "type": "registry:component"
         },
         {
@@ -151,17 +603,69 @@
         {
           "path": "registry/new-york/components/liquid-glass-button/demo.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "liquid-glass-button-variants",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Liquid Glass Button - Variants",
+      "description": "Liquid glass button with different style variants.",
+      "files": [
+        {
+          "path": "registry/new-york/components/liquid-glass-button/liquid-glass-button.tsx",
+          "type": "registry:component"
         },
         {
           "path": "registry/new-york/components/liquid-glass-button/variants-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "liquid-glass-button-sizes",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Liquid Glass Button - Sizes",
+      "description": "Liquid glass button with different size variants.",
+      "files": [
+        {
+          "path": "registry/new-york/components/liquid-glass-button/liquid-glass-button.tsx",
           "type": "registry:component"
         },
         {
           "path": "registry/new-york/components/liquid-glass-button/sizes-demo.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "liquid-glass-button-colors",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Liquid Glass Button - Colors",
+      "description": "Liquid glass button with different color variants.",
+      "files": [
+        {
+          "path": "registry/new-york/components/liquid-glass-button/liquid-glass-button.tsx",
+          "type": "registry:component"
         },
         {
           "path": "registry/new-york/components/liquid-glass-button/colors-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "liquid-glass-button-advanced",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Liquid Glass Button - Advanced",
+      "description": "Advanced liquid glass button with custom configurations.",
+      "files": [
+        {
+          "path": "registry/new-york/components/liquid-glass-button/liquid-glass-button.tsx",
           "type": "registry:component"
         },
         {

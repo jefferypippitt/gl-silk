@@ -118,14 +118,14 @@ The liquid glass button comes with two variants, both featuring the animated liq
 <Tab value="Code">
 
 ```tsx
-<LiquidGlassButton textClassName="text-blue-500">
-  Blue Text
+<LiquidGlassButton textClassName="text-red-500">
+  Red Text
 </LiquidGlassButton>
 <LiquidGlassButton textClassName="text-green-500">
   Green Text
 </LiquidGlassButton>
-<LiquidGlassButton textClassName="text-white mix-blend-difference">
-  Inverted
+<LiquidGlassButton textClassName="text-blue-500">
+  Blue Text
 </LiquidGlassButton>
 ```
 
@@ -165,15 +165,15 @@ Fine-tune the liquid glass effect with custom shader parameters. Use the interac
 
 ### API Reference
 
-| Prop                 | Type                                                            | Default                           | Description                                                                                                                                 |
-| -------------------- | --------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `distortionStrength` | `number`                                                        | `1.0`                             | Strength of the liquid distortion effect. Controls how much the glass effect bulges (0-2). Higher values create more pronounced distortion. |
-| `borderRadius`       | `number`                                                        | `0.6`                             | Border radius for the glass effect shape. Controls the roundness of the distortion area (0-1.5).                                            |
-| `blur`               | `number`                                                        | `0.25` (default), `1.0` (ghost)   | Backdrop blur intensity in pixels. Creates the frosted glass appearance (0-5).                                                              |
-| `brightness`         | `number`                                                        | `1.2` (default), `1.0` (ghost)    | Backdrop brightness multiplier. Brightens or darkens the background content (0.5-2.5).                                                      |
-| `textClassName`      | `string`                                                        | —                                 | Custom className for the text content. Useful for custom text colors or styling.                                                            |
-| `variant`            | `"default" \| "ghost"`                                              | `"default"`                       | Button variant. Default has a semi-transparent background with the glass effect. Ghost variant has a transparent background with the glass effect always visible.                                                           |
-| `size`               | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"`                       | Button size variant                                                                                                                         |
+| Prop                 | Type                                                            | Default                         | Description                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `distortionStrength` | `number`                                                        | `1.0`                           | Strength of the liquid distortion effect. Controls how much the glass effect bulges (0-2). Higher values create more pronounced distortion.                       |
+| `borderRadius`       | `number`                                                        | `0.6`                           | Border radius for the glass effect shape. Controls the roundness of the distortion area (0-1.5).                                                                  |
+| `blur`               | `number`                                                        | `0.25` (default), `1.0` (ghost) | Backdrop blur intensity in pixels. Creates the frosted glass appearance (0-5).                                                                                    |
+| `brightness`         | `number`                                                        | `1.2` (default), `1.0` (ghost)  | Backdrop brightness multiplier. Brightens or darkens the background content (0.5-2.5).                                                                            |
+| `textClassName`      | `string`                                                        | —                               | Custom className for the text content. Useful for custom text colors or styling.                                                                                  |
+| `variant`            | `"default" \| "ghost"`                                          | `"default"`                     | Button variant. Default has a semi-transparent background with the glass effect. Ghost variant has a transparent background with the glass effect always visible. |
+| `size`               | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"`                     | Button size variant                                                                                                                                               |
 
 #### Examples
 
@@ -207,9 +207,7 @@ The ghost variant features a transparent background with the liquid glass effect
 **Custom Text Color**
 
 ```tsx
-<LiquidGlassButton textClassName="text-white mix-blend-difference">
-  Inverted Text
-</LiquidGlassButton>
+<LiquidGlassButton textClassName="text-white">White Text</LiquidGlassButton>
 ```
 
 ### Credits
