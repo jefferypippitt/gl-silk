@@ -8,7 +8,7 @@ export function LiquidGlassVariantsDemo() {
     <div className="relative h-[500px] overflow-hidden rounded-lg border">
       {/* Background image */}
       <Image
-        src="/images/demo-bg-for-liquid-button.jpg"
+        src="/images/beach.jpg"
         alt="Background"
         fill
         className="object-cover"
@@ -20,17 +20,8 @@ export function LiquidGlassVariantsDemo() {
         <LiquidGlassButton variant="default" textClassName="text-white">
           Default
         </LiquidGlassButton>
-        <LiquidGlassButton variant="outline" textClassName="text-white">
-          Outline
-        </LiquidGlassButton>
-        <LiquidGlassButton variant="secondary" textClassName="text-white">
-          Secondary
-        </LiquidGlassButton>
         <LiquidGlassButton variant="ghost" textClassName="text-white">
           Ghost
-        </LiquidGlassButton>
-        <LiquidGlassButton variant="destructive" textClassName="text-white">
-          Destructive
         </LiquidGlassButton>
       </div>
     </div>
