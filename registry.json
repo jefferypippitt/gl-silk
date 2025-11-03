@@ -673,6 +673,60 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "text-3d",
+      "type": "registry:component",
+      "category": "special-effects",
+      "title": "3D Text",
+      "description": "Beautiful 3D text effect using Three.js and React Three Fiber.",
+      "dependencies": ["@react-three/fiber", "@react-three/drei", "three"],
+      "files": [
+        {
+          "path": "registry/new-york/components/text-3d/text-3d.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/text-3d/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-3d-gradient",
+      "type": "registry:component",
+      "category": "special-effects",
+      "title": "3D Text - Gradient",
+      "description": "3D text with dual-color gradient effect using vertex colors.",
+      "dependencies": ["@react-three/fiber", "@react-three/drei", "three"],
+      "files": [
+        {
+          "path": "registry/new-york/components/text-3d/text-3d.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/text-3d/gradient-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-3d-advanced",
+      "type": "registry:component",
+      "category": "special-effects",
+      "title": "3D Text - Advanced Playground",
+      "description": "Interactive playground to experiment with all 3D text properties.",
+      "dependencies": ["@react-three/fiber", "@react-three/drei", "three"],
+      "files": [
+        {
+          "path": "registry/new-york/components/text-3d/text-3d.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/text-3d/advanced-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

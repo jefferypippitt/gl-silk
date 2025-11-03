@@ -180,41 +180,6 @@ export default function Home() {
 | `variant`            | `"default" \| "ghost"`                                          | `"default"`                     | Button variant. Default has a semi-transparent background with the glass effect. Ghost variant has a transparent background with the glass effect always visible. |
 | `size`               | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"`                     | Button size variant                                                                                                                                               |
 
-#### Examples
-
-**Basic Usage**
-
-```tsx
-<LiquidGlassButton>Liquid Glass</LiquidGlassButton>
-```
-
-**Custom Shader Parameters**
-
-```tsx
-<LiquidGlassButton
-  distortionStrength={1.5}
-  borderRadius={0.8}
-  blur={0.5}
-  brightness={1.5}
->
-  High Intensity
-</LiquidGlassButton>
-```
-
-**Ghost Variant (Transparent Background)**
-
-```tsx
-<LiquidGlassButton variant="ghost">Minimal Style</LiquidGlassButton>
-```
-
-The ghost variant features a transparent background with the liquid glass effect always visible, perfect for minimal designs.
-
-**Custom Text Color**
-
-```tsx
-<LiquidGlassButton textClassName="text-white">White Text</LiquidGlassButton>
-```
-
 ### Credits
 
 - Original Liquid Glass Effect by [Shu Ding](https://github.com/shuding/liquid-glass)

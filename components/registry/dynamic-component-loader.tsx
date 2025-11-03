@@ -42,6 +42,9 @@ import { LiquidGlassSizesDemo } from "@/registry/new-york/components/liquid-glas
 import { LiquidGlassVariantsDemo } from "@/registry/new-york/components/liquid-glass-button/variants-demo";
 import { LiquidGlassColorsDemo } from "@/registry/new-york/components/liquid-glass-button/colors-demo";
 import { LiquidGlassAdvancedDemo } from "@/registry/new-york/components/liquid-glass-button/advanced-liquid-demo";
+import { Text3DDemo } from "@/registry/new-york/components/text-3d/demo";
+import { Text3DGradientDemo } from "@/registry/new-york/components/text-3d/gradient-demo";
+import { Text3DAdvancedDemo } from "@/registry/new-york/components/text-3d/advanced-demo";
 
 // Component mapping - add new components here as you create them
 const componentMap: Record<string, React.ComponentType> = {
@@ -88,6 +91,10 @@ const componentMap: Record<string, React.ComponentType> = {
   "liquid-glass-button-variants": LiquidGlassVariantsDemo,
   "liquid-glass-button-colors": LiquidGlassColorsDemo,
   "liquid-glass-button-advanced": LiquidGlassAdvancedDemo,
+  // 3D Text
+  "text-3d": Text3DDemo,
+  "text-3d-gradient": Text3DGradientDemo,
+  "text-3d-advanced": Text3DAdvancedDemo,
 };
 
 interface DynamicComponentLoaderProps {

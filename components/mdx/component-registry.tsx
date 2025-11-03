@@ -37,6 +37,9 @@ import { LiquidGlassSizesDemo } from "@/registry/new-york/components/liquid-glas
 import { LiquidGlassVariantsDemo } from "@/registry/new-york/components/liquid-glass-button/variants-demo";
 import { LiquidGlassColorsDemo } from "@/registry/new-york/components/liquid-glass-button/colors-demo";
 import { LiquidGlassAdvancedDemo } from "@/registry/new-york/components/liquid-glass-button/advanced-liquid-demo";
+import { Text3DDemo } from "@/registry/new-york/components/text-3d/demo";
+import { Text3DGradientDemo } from "@/registry/new-york/components/text-3d/gradient-demo";
+import { Text3DAdvancedDemo } from "@/registry/new-york/components/text-3d/advanced-demo";
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
@@ -77,4 +80,7 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "liquid-glass-variants": LiquidGlassVariantsDemo,
   "liquid-glass-colors": LiquidGlassColorsDemo,
   "liquid-glass-advanced": LiquidGlassAdvancedDemo,
+  "text-3d": Text3DDemo,
+  "text-3d-gradient": Text3DGradientDemo,
+  "text-3d-advanced": Text3DAdvancedDemo,
 };
