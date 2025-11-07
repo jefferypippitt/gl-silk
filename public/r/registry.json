@@ -410,6 +410,60 @@
       ]
     },
     {
+      "name": "warp-button",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Warp Button",
+      "description": "Button with animated warp shader effect using fluid, smoky, and marbled patterns.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/warp-button/warp-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/warp-button/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "warp-button-ink",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Warp Button - Ink Effect",
+      "description": "Warp button with ink-like fluid effects and organic movement patterns.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/warp-button/warp-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/warp-button/ink-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "warp-button-demo",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Warp Button - Demo",
+      "description": "Basic warp button demo showcasing text customization effects.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/warp-button/warp-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/warp-button/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "play-pause-button",
       "type": "registry:component",
       "category": "buttons",

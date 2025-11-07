@@ -37,6 +37,12 @@ import { LiquidGlassSizesDemo } from "@/registry/new-york/components/liquid-glas
 import { LiquidGlassVariantsDemo } from "@/registry/new-york/components/liquid-glass-button/variants-demo";
 import { LiquidGlassColorsDemo } from "@/registry/new-york/components/liquid-glass-button/colors-demo";
 import { LiquidGlassAdvancedDemo } from "@/registry/new-york/components/liquid-glass-button/advanced-liquid-demo";
+import { WarpButtonDemo } from "@/registry/new-york/components/warp-button/demo";
+import { WarpButtonInkDemo } from "@/registry/new-york/components/warp-button/ink-demo";
+import { WarpButtonHighDistortionDemo } from "@/registry/new-york/components/warp-button/high-distortion-demo";
+import { WarpButtonSubtleWarpDemo } from "@/registry/new-york/components/warp-button/subtle-warp-demo";
+import { WarpButtonCustomShapeDemo } from "@/registry/new-york/components/warp-button/custom-shape-demo";
+import { WarpButtonTextCustomizationDemo } from "@/registry/new-york/components/warp-button/text-customization-demo";
 import { Text3DDemo } from "@/registry/new-york/components/text-3d/demo";
 import { Text3DGradientDemo } from "@/registry/new-york/components/text-3d/gradient-demo";
 import { Text3DAdvancedDemo } from "@/registry/new-york/components/text-3d/advanced-demo";
@@ -80,6 +86,12 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "liquid-glass-variants": LiquidGlassVariantsDemo,
   "liquid-glass-colors": LiquidGlassColorsDemo,
   "liquid-glass-advanced": LiquidGlassAdvancedDemo,
+  "warp-button-demo": WarpButtonDemo,
+  "warp-button-ink": WarpButtonInkDemo,
+  "warp-button-high-distortion": WarpButtonHighDistortionDemo,
+  "warp-button-subtle-warp": WarpButtonSubtleWarpDemo,
+  "warp-button-custom-shape": WarpButtonCustomShapeDemo,
+  "warp-button-text-customization": WarpButtonTextCustomizationDemo,
   "text-3d": Text3DDemo,
   "text-3d-gradient": Text3DGradientDemo,
   "text-3d-advanced": Text3DAdvancedDemo,

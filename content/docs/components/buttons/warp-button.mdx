@@ -1,0 +1,309 @@
+---
+title: Warp Button
+description: Animated button with dynamic warp distortion effects
+---
+
+All warp buttons require the @paper-design/shaders-react package to be installed first:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npm install @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm add @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn add @paper-design/shaders-react
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bun add @paper-design/shaders-react
+```
+
+</Tab>
+</Tabs>
+
+Then add the component:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/warp-button.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/warp-button.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/warp-button.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/warp-button.json
+```
+
+</Tab>
+</Tabs>
+
+### Quick Start
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { WarpButton } from "@/components/ui/warp-button";
+
+export default function Home() {
+  return (
+    <div>
+      <WarpButton>Warp Button</WarpButton>
+    </div>
+  );
+}
+```
+
+<Callout type="info">
+  **Default Colors:** The warp button now comes with a beautiful teal color
+  scheme by default, featuring deep slate and vibrant teal tones that work well
+  in both light and dark modes.
+</Callout>
+
+<div className="flex items-center justify-between">
+  <h3>Default</h3>
+  <OpenInV0Button name="warp-button" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="warp-button-demo" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<WarpButton>Warp Button</WarpButton>
+```
+
+</Tab>
+</Tabs>
+
+<div className="flex items-center justify-between">
+  <h3>High Distortion Effect</h3>
+  <OpenInV0Button name="warp-button" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="warp-button-high-distortion" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<WarpButton
+  colors={["#ff0080", "#ff4000", "#ff8000", "#ffb000"]}
+  distortion={0.8}
+  swirl={1.5}
+  speed={2}
+  textClassName="text-white"
+>
+  High Distortion
+</WarpButton>
+```
+
+</Tab>
+</Tabs>
+
+<div className="flex items-center justify-between">
+  <h3>Subtle Warp Effect</h3>
+  <OpenInV0Button name="warp-button" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="warp-button-subtle-warp" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<WarpButton
+  colors={["#2196f3", "#00bcd4", "#009688", "#4caf50"]}
+  distortion={0.1}
+  swirl={0.3}
+  speed={0.5}
+  textClassName="text-white"
+>
+  Subtle Warp
+</WarpButton>
+```
+
+</Tab>
+</Tabs>
+
+<div className="flex items-center justify-between">
+  <h3>Custom Shape Patterns</h3>
+  <OpenInV0Button name="warp-button" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="warp-button-custom-shape" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<WarpButton
+  colors={["#ffffff", "#000000"]}
+  shape="stripes"
+  shapeScale={0.2}
+  distortion={0.4}
+  swirl={0.8}
+  textClassName="text-black"
+>
+  Stripes Pattern
+</WarpButton>
+```
+
+</Tab>
+</Tabs>
+
+<div className="flex items-center justify-between">
+  <h3>Ink Effect</h3>
+  <OpenInV0Button name="warp-button" />
+</div>
+
+<Callout type="info">
+  **Note:** This ink effect uses a black and white color scheme that works well
+  in both light and dark modes. The white text ensures readability across
+  different themes.
+</Callout>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="warp-button-ink" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<WarpButton
+  colors={["#101213", "#9fadaa", "#f3fee7", "#f3fee7"]}
+  proportion={0.05}
+  softness={0}
+  distortion={0.25}
+  swirl={0.8}
+  swirlIterations={10}
+  shape="checks"
+  shapeScale={0.28}
+  speed={2.5}
+  scale={1.2}
+  rotation={44}
+  textClassName="text-white"
+>
+  Ink Warp
+</WarpButton>
+```
+
+</Tab>
+</Tabs>
+
+<div className="flex items-center justify-between">
+  <h3>Text Customization</h3>
+  <OpenInV0Button name="warp-button" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="warp-button-text-customization" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+// Mix blend mode for color inversion effect
+<WarpButton textClassName="text-white mix-blend-difference">
+  Inverted Text
+</WarpButton>
+```
+
+</Tab>
+</Tabs>
+
+### Advanced Text Effects
+
+For advanced text effects, use the `textClassName` prop to add custom styling:
+
+```tsx
+// Add mix-blend-difference for color inversion effect
+<WarpButton textClassName="text-white mix-blend-difference">
+  Inverted Text
+</WarpButton>
+```
+
+### API Reference
+
+| Prop              | Type                                                                                               | Default          | Description                                |
+| ----------------- | -------------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------ |
+| `variant`         | `"default" \| "destructive" \| "destructive-red" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"`      | Button variant (same as shadcn Button)     |
+| `size`            | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`                                    | `"default"`      | Button size variant                        |
+| `asChild`         | `boolean`                                                                                          | `false`          | Render as child component using Radix Slot |
+| `colors`          | `string[]`                                                                                         | Default gradient | Array of colors for the warp effect        |
+| `proportion`      | `number`                                                                                           | `0.45`           | Proportion of the warp effect              |
+| `softness`        | `number`                                                                                           | `1`              | Softness of the warp edges                 |
+| `distortion`      | `number`                                                                                           | `0.25`           | Amount of distortion applied               |
+| `swirl`           | `number`                                                                                           | `0.8`            | Intensity of the swirl effect              |
+| `swirlIterations` | `number`                                                                                           | `10`             | Number of swirl iterations                 |
+| `shape`           | `"checks" \| "stripes" \| "edge"`                                                                  | `"checks"`       | Shape pattern for the warp                 |
+| `shapeScale`      | `number`                                                                                           | `0.1`            | Scale of the shape pattern                 |
+| `speed`           | `number`                                                                                           | `1`              | Animation speed                            |
+| `frame`           | `number`                                                                                           | —                | Frame number for animation control         |
+| `scale`           | `number`                                                                                           | `1`              | Scale of the warp effect                   |
+| `rotation`        | `number`                                                                                           | —                | Rotation of the warp effect                |
+| `offsetX`         | `number`                                                                                           | —                | X offset for the warp effect               |
+| `offsetY`         | `number`                                                                                           | —                | Y offset for the warp effect               |
+| `width`           | `number \| string`                                                                                 | —                | Width of the warp effect                   |
+| `height`          | `number \| string`                                                                                 | —                | Height of the warp effect                  |
+| `fit`             | `"contain" \| "cover"`                                                                             | `"cover"`        | How the warp effect fits                   |
+| `worldWidth`      | `number`                                                                                           | —                | World width for the warp effect            |
+| `worldHeight`     | `number`                                                                                           | —                | World height for the warp effect           |
+| `originX`         | `number`                                                                                           | —                | X origin for the warp effect               |
+| `originY`         | `number`                                                                                           | —                | Y origin for the warp effect               |
+| `minPixelRatio`   | `number`                                                                                           | —                | Minimum pixel ratio                        |
+| `maxPixelCount`   | `number`                                                                                           | —                | Maximum pixel count                        |
+| `className`       | `string`                                                                                           | —                | Additional CSS classes for the button      |
+| `textClassName`   | `string`                                                                                           | —                | Additional CSS classes for the text        |
+
+#### Size Variants Buttons
+
+```tsx
+<div className="flex gap-2">
+  <WarpButton size="sm">Small</WarpButton>
+  <WarpButton size="default">Default</WarpButton>
+  <WarpButton size="lg">Large</WarpButton>
+  <WarpButton size="icon">
+    <Star className="h-4 w-4" />
+  </WarpButton>
+</div>
+```
+
+### Credits
+
+- Website: [paper-design.com](https://paper.design/)
+- GitHub: [paper-design/shaders](https://github.com/paper-design/shaders)
