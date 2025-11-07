@@ -17,10 +17,11 @@ export function OpenInV0Button({
     >
       <a
         href={`https://v0.dev/chat/api/open?url=${encodeURIComponent(
-          `${(process.env.NEXT_PUBLIC_BASE_URL || "").replace(
-            /\/$/,
+          `${(
+            process.env.NEXT_PUBLIC_V0_BASE_URL ||
+            process.env.NEXT_PUBLIC_BASE_URL ||
             ""
-          )}/r/${name}.json`
+          ).replace(/\/$/, "")}/r/${name}.json`
         )}`}
         target="_blank"
         rel="noreferrer"

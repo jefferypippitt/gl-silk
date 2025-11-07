@@ -18,6 +18,78 @@
       ]
     },
     {
+      "name": "warp-button-high-distortion",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Warp Button - High Distortion",
+      "description": "Warp button with high distortion, fast swirl, and vibrant colors.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/warp-button/warp-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/warp-button/high-distortion-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "warp-button-subtle-warp",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Warp Button - Subtle Warp",
+      "description": "Warp button with subtle, calm settings and cool colors.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/warp-button/warp-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/warp-button/subtle-warp-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "warp-button-custom-shape",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Warp Button - Custom Shape",
+      "description": "Warp button using custom shape patterns like stripes.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/warp-button/warp-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/warp-button/custom-shape-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "warp-button-text-customization",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Warp Button - Text Customization",
+      "description": "Warp button demonstrating text styling options.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/warp-button/warp-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/warp-button/text-customization-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "example-form",
       "type": "registry:block",
       "category": "landing-page",

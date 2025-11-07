@@ -22,10 +22,42 @@ pnpm install
 Create a `.env.local` file:
 
 ```bash
+# App origin (local dev)
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+# For testing and previewing components with the open in v0 button.
+NEXT_PUBLIC_BASE_URL=https://<id>.ngrok-free.app
+NEXT_PUBLIC_APP_URL=https://<id>.ngrok-free.app
+NEXT_PUBLIC_V0_BASE_URL=https://<id>.ngrok-free.app
 ```
 
-Run the development server:
+</Step>
+
+<Step>
+
+### Start Public Tunnel
+
+Start a tunnel on the fixed domain (hostname only, no https):
+
+```bash
+ngrok http --domain=<id>.ngrok-free.app 3000
+```
+
+If domain reservation isn’t available, use:
+
+```bash
+ngrok http 3000
+```
+
+Then copy the printed `https://<id>.ngrok-free.app` and ensure your `.env.local` uses that URL for `NEXT_PUBLIC_V0_BASE_URL`.
+
+</Step>
+
+<Step>
+
+### Run Dev Server
+
+Start Next.js locally:
 
 ```bash
 pnpm dev
@@ -166,28 +198,16 @@ After adding entries to `registry.json`, build the registry:
 pnpm registry:build
 ```
 
-This generates the JSON files needed for the "Open in v0" functionality.
-
-**Important:** Commit the generated JSON files in `public/r/` to your repository. These files are required for the "Open in v0" button to work on the deployed site.
-
 </Step>
 
 </Steps>
 
-#### Best Practices
-
-When creating components, ensure you:
+### Best Practices
 
 - Follow existing patterns in the codebase
-- Include proper TypeScript types
 - Add responsive design considerations
 - Ensure accessibility compliance
 - Test across different browsers
-
-#### Commit Convention
-
-Before you create a Pull Request, please check whether your commits comply with
-the commit conventions used in this repository.
 
 When you create a commit we kindly ask you to follow the convention
 `category(scope or module): message` in your commit message while using one of
@@ -209,10 +229,4 @@ the following categories:
 - `chore`: all changes to the repository that do not fit into any of the above
   categories
 
-  e.g. `feat(components): add new prop to the button component`
-
-#### Requests for new components
-
-If you have a request for a new component, please open a discussion on GitHub. We'll be happy to help you out.
-
-Please ensure that the tests are passing when submitting a pull request. If you're adding new features, please include tests.
+- e.g. `feat(components): add new prop to the button component`
