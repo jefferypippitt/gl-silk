@@ -801,6 +801,74 @@
       ]
     },
     {
+      "name": "neubrutalism-button",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Neubrutalism Button",
+      "description": "Button with neubrutalism design style featuring 3D offset effect and bold borders.",
+      "files": [
+        {
+          "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/neubrutalism-button/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "neubrutalism-button-secondary",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Neubrutalism Button - Secondary",
+      "description": "Secondary variant of the neubrutalism button.",
+      "files": [
+        {
+          "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/neubrutalism-button/secondary-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "neubrutalism-button-outline",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Neubrutalism Button - Outline",
+      "description": "Outline variant of the neubrutalism button.",
+      "files": [
+        {
+          "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/neubrutalism-button/outline-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "neubrutalism-button-destructive",
+      "type": "registry:component",
+      "category": "buttons",
+      "title": "Neubrutalism Button - Destructive",
+      "description": "Destructive variant of the neubrutalism button.",
+      "files": [
+        {
+          "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/neubrutalism-button/destructive-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "text-3d",
       "type": "registry:component",
       "category": "special-effects",

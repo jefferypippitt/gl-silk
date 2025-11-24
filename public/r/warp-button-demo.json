@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/warp-button/demo.tsx",
-      "content": "\"use client\";\n\nimport { WarpButton } from \"./warp-button\";\n\nexport function WarpButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-4 justify-center\">\n      <WarpButton>Warp Button</WarpButton>\n    </div>\n  );\n}",
+      "content": "\"use client\";\r\n\r\nimport { WarpButton } from \"./warp-button\";\r\n\r\nexport function WarpButtonDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-4 justify-center\">\r\n      <WarpButton>Warp Button</WarpButton>\r\n    </div>\r\n  );\r\n}",
       "type": "registry:component"
     }
   ]

@@ -51,6 +51,7 @@ import { WarpButtonTextCustomizationDemo } from "@/registry/new-york/components/
 import { Text3DDemo } from "@/registry/new-york/components/text-3d/demo";
 import { Text3DGradientDemo } from "@/registry/new-york/components/text-3d/gradient-demo";
 import { Text3DAdvancedDemo } from "@/registry/new-york/components/text-3d/advanced-demo";
+import { NeubrutalismButtonDemo } from "@/registry/new-york/components/neubrutalism-button/demo";
 
 // Component mapping - add new components here as you create them
 const componentMap: Record<string, React.ComponentType> = {
@@ -108,6 +109,9 @@ const componentMap: Record<string, React.ComponentType> = {
   "text-3d": Text3DDemo,
   "text-3d-gradient": Text3DGradientDemo,
   "text-3d-advanced": Text3DAdvancedDemo,
+  // Neubrutalism Button
+  "neubrutalism-button": NeubrutalismButtonDemo,
+  "neubrutalism-button-demo": NeubrutalismButtonDemo,
 };
 
 interface DynamicComponentLoaderProps {

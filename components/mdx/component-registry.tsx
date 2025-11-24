@@ -46,6 +46,10 @@ import { WarpButtonTextCustomizationDemo } from "@/registry/new-york/components/
 import { Text3DDemo } from "@/registry/new-york/components/text-3d/demo";
 import { Text3DGradientDemo } from "@/registry/new-york/components/text-3d/gradient-demo";
 import { Text3DAdvancedDemo } from "@/registry/new-york/components/text-3d/advanced-demo";
+import { NeubrutalismButtonDemo } from "@/registry/new-york/components/neubrutalism-button/demo";
+import { NeubrutalismButtonOutlineDemo } from "@/registry/new-york/components/neubrutalism-button/outline-demo";
+import { NeubrutalismButtonDestructiveDemo } from "@/registry/new-york/components/neubrutalism-button/destructive-demo";
+import { NeubrutalismButtonSecondaryDemo } from "@/registry/new-york/components/neubrutalism-button/secondary-demo";
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
@@ -95,4 +99,9 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "text-3d": Text3DDemo,
   "text-3d-gradient": Text3DGradientDemo,
   "text-3d-advanced": Text3DAdvancedDemo,
+  "neubrutalism-button": NeubrutalismButtonDemo,
+  "neubrutalism-button-demo": NeubrutalismButtonDemo,
+  "neubrutalism-button-outline": NeubrutalismButtonOutlineDemo,
+  "neubrutalism-button-destructive": NeubrutalismButtonDestructiveDemo,
+  "neubrutalism-button-secondary": NeubrutalismButtonSecondaryDemo,
 };

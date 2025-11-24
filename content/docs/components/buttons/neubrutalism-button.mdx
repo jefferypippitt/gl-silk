@@ -1,0 +1,134 @@
+---
+title: Neubrutalism Button
+description: A trendy neubrutalism style button with hover and active states.
+---
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+<Tab value="npm">
+
+```bash
+npx shadcn@latest add https://glsilk.vercel.app/r/neubrutalism-button.json
+```
+
+</Tab>
+<Tab value="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/neubrutalism-button.json
+```
+
+</Tab>
+<Tab value="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://glsilk.vercel.app/r/neubrutalism-button.json
+```
+
+</Tab>
+<Tab value="bun">
+
+```bash
+bunx shadcn@latest add https://glsilk.vercel.app/r/neubrutalism-button.json
+```
+
+</Tab>
+</Tabs>
+
+### Quick Start
+
+```tsx {1,6} showLineNumbers title="app/page.tsx"
+import { NeubrutalismButton } from "@/components/ui/neubrutalism-button";
+
+export default function Home() {
+  return (
+    <div>
+      <NeubrutalismButton>Neubrutalism Button</NeubrutalismButton>
+    </div>
+  );
+}
+```
+
+<div className="flex items-center justify-between">
+  <h3>Default</h3>
+  <OpenInV0Button name="neubrutalism-button" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="neubrutalism-button-demo" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<NeubrutalismButton>Button</NeubrutalismButton>
+```
+
+</Tab>
+</Tabs>
+
+<div className="flex items-center justify-between">
+  <h3>Secondary</h3>
+  <OpenInV0Button name="neubrutalism-button-secondary" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="neubrutalism-button-secondary" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<NeubrutalismButton variant="secondary">Secondary</NeubrutalismButton>
+```
+
+</Tab>
+</Tabs>
+
+<div className="flex items-center justify-between">
+  <h3>Outline</h3>
+  <OpenInV0Button name="neubrutalism-button-outline" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="neubrutalism-button-outline" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<NeubrutalismButton variant="outline">Outline</NeubrutalismButton>
+```
+
+</Tab>
+</Tabs>
+
+<div className="flex items-center justify-between">
+  <h3>Destructive</h3>
+  <OpenInV0Button name="neubrutalism-button-destructive" />
+</div>
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="neubrutalism-button-destructive" />
+</Tab>
+<Tab value="Code">
+
+```tsx
+<NeubrutalismButton variant="destructive">Destructive</NeubrutalismButton>
+```
+
+</Tab>
+</Tabs>
+
+### API Reference
+
+The `NeubrutalismButton` component accepts all props that the standard shadcn/ui `Button` component accepts.
+
+| Prop        | Type                                                                          | Default     | Description                                            |
+| ----------- | ----------------------------------------------------------------------------- | ----------- | ------------------------------------------------------ |
+| `variant`   | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | Button variant style.                                  |
+| `size`      | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"` | Button size variant.                                   |
+| `className` | `string`                                                                      | —           | Additional CSS classes to apply to the button wrapper. |
+| `children`  | `React.ReactNode`                                                             | —           | The content to display inside the button.              |
+| `asChild`   | `boolean`                                                                     | `false`     | Render as a child element using Radix Slot.            |
+| `...props`  | `ButtonProps`                                                                 | —           | All other props supported by the `Button` component.   |
