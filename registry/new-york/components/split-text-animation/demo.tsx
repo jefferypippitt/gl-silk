@@ -23,7 +23,7 @@ export function SplitTextDemo() {
             Slide Up
           </h3>
           <SplitTextAnimation
-            text="With Glsilk Components"
+            text="With glsilk Components"
             animationType="slide"
             direction="up"
             duration={0.8}

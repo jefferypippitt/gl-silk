@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Glsilk",
+  title: "glsilk",
   description: "A component library for building web applications.",
 };
 

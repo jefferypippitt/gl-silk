@@ -8,7 +8,7 @@ export function LiquidGlassVariantsDemo() {
     <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden rounded-lg border">
       {/* Background image */}
       <Image
-        src="/images/wave-bg.jpg"
+        src="/images/glwp.jpg"
         alt="Background"
         fill
         className="object-cover"

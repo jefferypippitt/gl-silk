@@ -25,6 +25,7 @@ export function OpenInV0Button({
         )}`}
         target="_blank"
         rel="noreferrer"
+        className="no-underline"
       >
         Open in{" "}
         <svg

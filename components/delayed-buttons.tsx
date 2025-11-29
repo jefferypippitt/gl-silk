@@ -28,7 +28,7 @@ export function DelayedButtons({ delay = 2000 }: DelayedButtonsProps) {
             : "opacity-0 translate-y-4"
         }`}
       >
-        <Button asChild size="default">
+        <Button asChild size="sm">
           <Link href="/docs">Get Started</Link>
         </Button>
       </div>
@@ -39,7 +39,7 @@ export function DelayedButtons({ delay = 2000 }: DelayedButtonsProps) {
             : "opacity-0 translate-y-4"
         }`}
       >
-        <Button asChild variant="outline" size="default">
+        <Button asChild variant="outline" size="sm">
           <Link href="/docs/components">View Components</Link>
         </Button>
       </div>
