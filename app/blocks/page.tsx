@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PackageIcon, ArrowUpRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +19,7 @@ export default function BlocksPage() {
           </EmptyMedia>
           <EmptyTitle>Coming Soon</EmptyTitle>
           <EmptyDescription>
-            We're working on creating pre-built blocks and layouts that you can
+            We&apos;re working on creating pre-built blocks and layouts that you can
             easily integrate into your projects. Stay tuned!
           </EmptyDescription>
         </EmptyHeader>
@@ -29,9 +30,9 @@ export default function BlocksPage() {
             className="text-muted-foreground"
             size="sm"
           >
-            <a href="/docs">
+            <Link href="/docs">
               Learn More <ArrowUpRightIcon />
-            </a>
+            </Link>
           </Button>
           <Button
             variant="link"
