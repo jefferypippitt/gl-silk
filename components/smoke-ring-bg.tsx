@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export function SmokeRingBackground() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -13,8 +13,11 @@ export function SmokeRingBackground() {
   }, []);
 
   // Theme-aware colors - matching your global CSS
-  const smokeColors = theme === "dark" ? ["#ffffff"] : ["#000000"];
-  const backgroundColor = theme === "dark" ? "#000000" : "#ffffff";
+  // Use resolvedTheme to get the actual theme (dark/light) even when theme is "system"
+  // Fallback to light theme if resolvedTheme is not yet available
+  const isDark = resolvedTheme === "dark";
+  const smokeColors = isDark ? ["#ffffff"] : ["#000000"];
+  const backgroundColor = isDark ? "#000000" : "#ffffff";
 
   if (!mounted) {
     return null; // Don't render until mounted to prevent hydration issues
