@@ -2,6 +2,8 @@
 import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world";
 import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form";
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card";
+import { LoginFormV1 } from "@/registry/new-york/blocks/auth/login-form-v1";
+import { SignupForm } from "@/registry/new-york/blocks/auth/sign-up-form-v1";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
 import { FadeDemo } from "@/registry/new-york/components/split-text-animation/fade-demo";
 import { FadeFastDemo } from "@/registry/new-york/components/split-text-animation/fade-fast-demo";
@@ -55,6 +57,8 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "hello-world": HelloWorld,
   "example-form": ExampleForm,
   "example-with-css": ExampleCard,
+  "login-form-v1": LoginFormV1,
+  "sign-up-form-v1": SignupForm,
   "split-text-demo": SplitTextDemo,
   "split-text-fade": FadeDemo,
   "split-text-fade-fast": FadeFastDemo,

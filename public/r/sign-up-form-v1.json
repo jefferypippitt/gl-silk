@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sign-up-form-v1",
+  "type": "registry:block",
+  "title": "Sign Up Form V1",
+  "description": "A simple sign up form",
+  "dependencies": [
+    "zod"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "label",
+    "card",
+    "field"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/auth/sign-up-form-v1/page.tsx",
+      "content": "import { SignupForm } from \"../sign-up-form-v1\"\r\n\r\nexport default function Page() {\r\n  return <SignupForm />\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/signup/page.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/auth/sign-up-form-v1.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\nimport {\n    Card,\n    CardContent,\n    CardDescription,\n    CardHeader,\n    CardTitle,\n} from \"@/components/ui/card\"\nimport {\n    Field,\n    FieldDescription,\n    FieldGroup,\n    FieldLabel,\n} from \"@/components/ui/field\"\nimport { Input } from \"@/components/ui/input\"\n\nexport function SignupForm({\n    className,\n    ...props\n}: React.ComponentProps<\"div\">) {\n    return (\n        <div className={cn(\"flex min-h-svh w-full items-center justify-center p-6 md:p-10\", className)} {...props}>\n            <div className=\"w-full max-w-md\">\n                <Card>\n                    <CardHeader>\n                        <CardTitle>Create an account</CardTitle>\n                        <CardDescription>\n                            Enter your information below to create your account\n                        </CardDescription>\n                    </CardHeader>\n                    <CardContent>\n                        <form>\n                            <FieldGroup>\n                                <Field>\n                                    <FieldLabel htmlFor=\"name\">Full Name</FieldLabel>\n                                    <Input id=\"name\" type=\"text\" placeholder=\"John Doe\" required />\n                                </Field>\n                                <Field>\n                                    <FieldLabel htmlFor=\"email\">Email</FieldLabel>\n                                    <Input\n                                        id=\"email\"\n                                        type=\"email\"\n                                        placeholder=\"m@example.com\"\n                                        required\n                                    />\n                                    <FieldDescription>\n                                        We&apos;ll use this to contact you. We will not share your email\n                                        with anyone else.\n                                    </FieldDescription>\n                                </Field>\n                                <Field>\n                                    <FieldLabel htmlFor=\"password\">Password</FieldLabel>\n                                    <Input id=\"password\" type=\"password\" required />\n                                    <FieldDescription>\n                                        Must be at least 8 characters long.\n                                    </FieldDescription>\n                                </Field>\n                                <Field>\n                                    <FieldLabel htmlFor=\"confirm-password\">\n                                        Confirm Password\n                                    </FieldLabel>\n                                    <Input id=\"confirm-password\" type=\"password\" required />\n                                    <FieldDescription>Please confirm your password.</FieldDescription>\n                                </Field>\n                                <Field>\n                                    <Button type=\"submit\">Create Account</Button>\n                                    <Button variant=\"outline\" type=\"button\">\n                                        Sign up with Google\n                                    </Button>\n                                    <FieldDescription className=\"text-center\">\n                                        Already have an account? <a href=\"#\">Sign in</a>\n                                    </FieldDescription>\n                                </Field>\n                            </FieldGroup>\n                        </form>\n                    </CardContent>\n                </Card>\n            </div>\n        </div>\n    )\n}\n",
+      "type": "registry:component",
+      "target": "app/sign-up-form-v1.tsx"
+    }
+  ]
+}

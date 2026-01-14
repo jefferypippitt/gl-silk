@@ -50,6 +50,7 @@ export function SplitTextAnimation({
       wordSpan.style.display = "inline-block";
       wordSpan.style.marginRight = "0.25em";
 
+
       word.split("").forEach((char) => {
         const charSpan = document.createElement("span");
         charSpan.textContent = char;
@@ -85,14 +86,14 @@ export function SplitTextAnimation({
                 direction === "up"
                   ? slideDistance
                   : direction === "down"
-                  ? -slideDistance
-                  : 0,
+                    ? -slideDistance
+                    : 0,
               x:
                 direction === "left"
                   ? slideDistance
                   : direction === "right"
-                  ? -slideDistance
-                  : 0,
+                    ? -slideDistance
+                    : 0,
             });
             break;
           case "scale":

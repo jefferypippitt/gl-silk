@@ -14,30 +14,21 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <SplitTextAnimation
-            text="Supercharge Your UI"
+            text="Supercharge your website"
             animationType="scale"
             className="text-4xl md:text-5xl font-bold tracking-tight mb-4 max-w-3xl mx-auto"
-            duration={0.8}
-            stagger={0.01}
-            delay={0}
+            duration={0.3}
+            stagger={0.02}
           />
-          <SplitTextAnimation
-            text="Dive into a library of open-source components that combine stunning design with simplicity."
-            animationType="fade"
-            className="text-muted-foreground max-w-xl mx-auto text-lg leading-relaxed"
-            duration={0.9}
-            stagger={0.01}
-            delay={0.2}
-          />
+
           <SplitTextAnimation
             text="Build faster. Experiment confidently."
             animationType="fade"
-            className="text-muted-foreground max-w-xl mx-auto text-lg leading-relaxed"
-            duration={0.9}
+            className="max-w-xl mx-auto text-lg leading-relaxed"
+            duration={0.3}
             stagger={0.02}
-            delay={1}
           />
-          <DelayedButtons delay={2000} />
+          <DelayedButtons delay={500} />
         </div>
       </main>
       <Footer />

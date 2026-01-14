@@ -3,8 +3,19 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { componentRegistry } from "./component-registry";
+import { cn } from "@/lib/utils";
 
-export const ComponentPreview: React.FC<{ name: string }> = ({ name }) => {
+export type ViewMode = "desktop" | "tablet" | "mobile";
+
+interface ComponentPreviewProps {
+  name: string;
+  viewMode?: ViewMode;
+}
+
+export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
+  name,
+  viewMode = "desktop",
+}) => {
   const [rerunKey, setRerunKey] = useState(0);
   const Component = componentRegistry[name];
 
@@ -33,10 +44,26 @@ export const ComponentPreview: React.FC<{ name: string }> = ({ name }) => {
     );
   }
 
+  // Desktop: Full width, centered (allows for backgrounds and full layouts)
+  // Tablet: Constrained to tablet width, centered
+  // Mobile: Constrained to mobile width, centered
+  const viewModeStyles = {
+    desktop: "w-full", // Full width - no max-width constraint for backgrounds
+    tablet: "w-full max-w-[768px] mx-auto",
+    mobile: "w-full max-w-[375px] mx-auto",
+  };
+
   return (
-    <div className="not-prose">
-      <div className="flex items-center justify-center min-h-[200px] border rounded-lg p-6">
-        <Component key={rerunKey} />
+    <div className="not-prose w-full h-full">
+      <div
+        className={cn(
+          "flex items-center justify-center w-full h-full transition-all duration-200",
+          viewMode === "desktop" ? "" : "p-6"
+        )}
+      >
+        <div className={cn("w-full transition-all duration-200", viewModeStyles[viewMode])}>
+          <Component key={rerunKey} />
+        </div>
       </div>
     </div>
   );

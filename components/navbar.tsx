@@ -12,13 +12,13 @@ export default function Navbar() {
       <div className="flex items-center gap-6">
         <Link
           href="/"
-          className="text-xl font-bold hover:opacity-80 transition-opacity"
+          className="text-lg hover:opacity-80 transition-opacity"
         >
           glsilk
         </Link>
         <Link
           href="/blocks"
-          className="text-sm font-medium hover:opacity-80 transition-opacity"
+          className="text-sm hover:opacity-80 transition-opacity"
         >
           Blocks
         </Link>

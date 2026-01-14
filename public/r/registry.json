@@ -921,6 +921,48 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "login-form-v1",
+      "type": "registry:block",
+      "category": "auth",
+      "title": "Login Form V1",
+      "description": "A simple login form",
+      "dependencies": ["zod"],
+      "registryDependencies": ["button", "input", "label", "card"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/auth/login-form-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/auth/login-form-v1.tsx",
+          "type": "registry:component",
+          "target": "app/login-form-v1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sign-up-form-v1",
+      "type": "registry:block",
+      "category": "auth",
+      "title": "Sign Up Form V1",
+      "description": "A simple sign up form",
+      "dependencies": ["zod"],
+      "registryDependencies": ["button", "input", "label", "card", "field"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/auth/sign-up-form-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/auth/sign-up-form-v1.tsx",
+          "type": "registry:component",
+          "target": "app/sign-up-form-v1.tsx"
+        }
+      ]
     }
   ]
 }
