@@ -16,6 +16,9 @@ export default function Navbar() {
         >
           glsilk
         </Link>
+        <Link href="/docs" className="text-sm hover:opacity-80 transition-opacity">
+          Documentation
+        </Link>
         <Link
           href="/blocks"
           className="text-sm hover:opacity-80 transition-opacity"

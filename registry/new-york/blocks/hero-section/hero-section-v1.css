@@ -1,0 +1,22 @@
+/* CSS Variables for Hero Section V1 */
+/* These variables are required for the radial gradient background to work correctly */
+/* Import this file in your globals.css or app layout */
+
+:root {
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0 0 0);
+  --muted-foreground: oklch(0.44 0 0);
+  --chart-2: oklch(0.55 0.22 264.53);
+  /* Component-specific variable to avoid conflicts with v0 or other themes */
+  /* Uses chart-2 value directly: blue */
+  --hero-gradient-color: oklch(0.55 0.22 264.53);
+}
+
+.dark {
+  --background: oklch(0 0 0);
+  --foreground: oklch(1 0 0);
+  --muted-foreground: oklch(0.72 0 0);
+  --chart-2: oklch(0.58 0.21 260.84);
+  /* Component-specific variable for dark mode */
+  --hero-gradient-color: oklch(0.58 0.21 260.84);
+}

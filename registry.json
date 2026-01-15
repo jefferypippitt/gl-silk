@@ -963,6 +963,32 @@
           "target": "app/sign-up-form-v1.tsx"
         }
       ]
+    },
+    {
+      "name": "hero-section-v1",
+      "type": "registry:block",
+      "category": "hero-section",
+      "title": "Hero Section V1",
+      "description": "A dark-themed hero section with badge, heading, description, and CTA buttons",
+      "dependencies": [],
+      "registryDependencies": ["button", "badge"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/hero-section-v1/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v1.tsx",
+          "type": "registry:component",
+          "target": "app/hero-section-v1.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v1.css",
+          "type": "registry:component",
+          "target": "app/hero-section-v1.css"
+        }
+      ]
     }
   ]
 }
