@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import { ComponentPreview, ViewMode } from "@/components/mdx/component-preview";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
+import { CopyInstallCommand } from "@/components/copy-install-command";
 import type { RegistryItem } from "@/lib/registry";
 import { cn } from "@/lib/utils";
 import {
@@ -88,13 +89,14 @@ function BlockItem({ block }: { block: RegistryItem }) {
         {block.name}
       </h3>
 
-      {/* Toolbar — 3 columns: left / center / right */}
-      <div className="grid grid-cols-[auto_1fr_auto] items-center border rounded-t-lg bg-background px-4 py-2">
-        {/* Left: Preview label */}
-        <span className="text-sm font-medium text-foreground">Preview</span>
+      {/* Toolbar */}
+      <div className="flex items-center justify-between border rounded-t-lg bg-background px-4 py-2">
+        {/* Left: Preview label + separator + view toggles + actions */}
+        <div className="flex items-center gap-1">
+          <span className="text-sm font-medium text-foreground mr-2">Preview</span>
 
-        {/* Center: View toggles + actions */}
-        <div className="flex items-center justify-center gap-1">
+          <div className="h-4 w-px bg-border mx-1" />
+
           <button
             onClick={() => setViewMode("desktop")}
             className={cn(
@@ -150,8 +152,11 @@ function BlockItem({ block }: { block: RegistryItem }) {
           </button>
         </div>
 
-        {/* Right: Open in v0 */}
-        <OpenInV0Button name={block.name} className="h-7 text-xs px-2.5" />
+        {/* Right: Install command + Open in v0 */}
+        <div className="flex items-center gap-2">
+          <CopyInstallCommand name={block.name} className="h-7 text-xs px-2.5" />
+          <OpenInV0Button name={block.name} className="h-7 text-xs px-2.5" />
+        </div>
       </div>
 
       {/* Preview area — fixed dimensions, never shifts */}
