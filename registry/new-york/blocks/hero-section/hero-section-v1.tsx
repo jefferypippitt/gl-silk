@@ -30,22 +30,22 @@ export function HeroSectionV1({
                         className="rounded-full"
                     >
                         <Layers className="size-4" />
-                        <span>New intelligent workflows</span>
+                        <span>Lorem ipsum dolor sit</span>
                     </Badge>
 
                     {/* Main Heading */}
                     <div className="space-y-4">
                         <h1 className="text-5xl scroll-m-20 text-center font-semibold tracking-tight text-foreground">
-                            Your intelligent companion awaits
+                            Lorem ipsum dolor sit amet
                         </h1>
                         <h2 className="text-5xl scroll-m-20 text-center font-semibold tracking-tight text-foreground">
-                            Transform how you work
+                            Consectetur adipiscing elit
                         </h2>
                     </div>
 
                     {/* Description */}
                     <p className="max-w-2xl text-muted-foreground text-lg">
-                        An intelligent companion that automates routine processes and simplifies complex tasks, empowering you to dedicate time to your most important work
+                        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
 
                     {/* CTA Buttons */}

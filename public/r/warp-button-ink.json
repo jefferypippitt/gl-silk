@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/warp-button/ink-demo.tsx",
-      "content": "\"use client\";\n\nimport { WarpButton } from \"./warp-button\";\n\nexport function WarpButtonInkDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-4 justify-center\">\n      <WarpButton\n        colors={[\"#101213\", \"#9fadaa\", \"#f3fee7\", \"#f3fee7\"]}\n        proportion={0.05}\n        softness={0}\n        distortion={0.25}\n        swirl={0.8}\n        swirlIterations={10}\n        shape=\"checks\"\n        shapeScale={0.28}\n        speed={2.5}\n        scale={1.2}\n        rotation={44}\n        textClassName=\"text-white\"\n      >\n        Ink Warp\n      </WarpButton>\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { WarpButton } from \"./warp-button\";\n\nexport function WarpButtonInkDemo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\n      <WarpButton\n        colors={[\"#101213\", \"#9fadaa\", \"#f3fee7\", \"#f3fee7\"]}\n        proportion={0.05}\n        softness={0}\n        distortion={0.25}\n        swirl={0.8}\n        swirlIterations={10}\n        shape=\"checks\"\n        shapeScale={0.28}\n        speed={2.5}\n        scale={1.2}\n        rotation={44}\n        textClassName=\"text-white\"\n      >\n        Ink Warp\n      </WarpButton>\n    </div>\n  );\n}",
       "type": "registry:component"
     }
   ]

@@ -5,6 +5,9 @@ import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example
 import { LoginFormV1 } from "@/registry/new-york/blocks/auth/login-form-v1";
 import { SignupForm } from "@/registry/new-york/blocks/auth/sign-up-form-v1";
 import { HeroSectionV1 } from "@/registry/new-york/blocks/hero-section/hero-section-v1";
+import { HeroSectionV2 } from "@/registry/new-york/blocks/hero-section/hero-section-v2";
+import { FeatureSectionV1 } from "@/registry/new-york/blocks/features-section/feature-section-v1";
+import { FeatureSectionV2 } from "@/registry/new-york/blocks/features-section/feature-section-v2";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
 import { FadeDemo } from "@/registry/new-york/components/split-text-animation/fade-demo";
 import { FadeFastDemo } from "@/registry/new-york/components/split-text-animation/fade-fast-demo";
@@ -61,6 +64,9 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "login-form-v1": LoginFormV1,
   "sign-up-form-v1": SignupForm,
   "hero-section-v1": HeroSectionV1,
+  "hero-section-v2": HeroSectionV2,
+  "feature-section-v1": FeatureSectionV1,
+  "feature-section-v2": FeatureSectionV2,
   "split-text-demo": SplitTextDemo,
   "split-text-fade": FadeDemo,
   "split-text-fade-fast": FadeFastDemo,

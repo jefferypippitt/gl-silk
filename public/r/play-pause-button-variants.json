@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/play-pause-button/variants-demo.tsx",
-      "content": "\"use client\";\n\nimport { PlayPauseButton } from \"./play-pause-button\";\n\nexport function PlayPauseVariantsDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <PlayPauseButton variant=\"default\" showText />\n      <PlayPauseButton variant=\"outline\" showText />\n      <PlayPauseButton variant=\"secondary\" showText />\n      <PlayPauseButton variant=\"ghost\" showText />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { PlayPauseButton } from \"./play-pause-button\";\n\nexport function PlayPauseVariantsDemo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[200px] p-8 flex-wrap gap-2\">\n      <PlayPauseButton variant=\"default\" showText />\n      <PlayPauseButton variant=\"outline\" showText />\n      <PlayPauseButton variant=\"secondary\" showText />\n      <PlayPauseButton variant=\"ghost\" showText />\n    </div>\n  );\n}\n",
       "type": "registry:component"
     }
   ]

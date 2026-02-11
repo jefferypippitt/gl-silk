@@ -12,7 +12,7 @@
     },
     {
       "path": "registry/new-york/components/neubrutalism-button/secondary-demo.tsx",
-      "content": "\"use client\";\r\n\r\nimport { NeubrutalismButton } from \"./neubrutalism-button\";\r\n\r\nexport function NeubrutalismButtonSecondaryDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-4 justify-center\">\r\n      <NeubrutalismButton variant=\"secondary\">\r\n        Secondary\r\n      </NeubrutalismButton>\r\n    </div>\r\n  );\r\n}\r\n\r\n",
+      "content": "\"use client\";\r\n\r\nimport { NeubrutalismButton } from \"./neubrutalism-button\";\r\n\r\nexport function NeubrutalismButtonSecondaryDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\r\n      <NeubrutalismButton variant=\"secondary\">\r\n        Secondary\r\n      </NeubrutalismButton>\r\n    </div>\r\n  );\r\n}\r\n\r\n",
       "type": "registry:component"
     }
   ]

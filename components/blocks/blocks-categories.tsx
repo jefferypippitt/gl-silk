@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { getBlocksByCategory } from "@/lib/registry";
 import type { BlockCategory } from "@/lib/registry";
+import { BlockCategorySkeleton } from "./block-category-skeleton";
 
 interface BlocksCategoriesProps {
     categories: BlockCategory[];
@@ -10,7 +9,7 @@ interface BlocksCategoriesProps {
 
 export default function BlocksCategories({ categories }: BlocksCategoriesProps) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {categories.length > 0 ? (
                 categories.map((category) => {
                     const blocks = getBlocksByCategory(category.name);
@@ -22,24 +21,23 @@ export default function BlocksCategories({ categories }: BlocksCategoriesProps) 
                             href={`/blocks/${category.slug}`}
                             className="group"
                         >
-                            <Card>
-                                <CardHeader className="text-center">
-                                    <CardTitle>
+                            <div className="rounded-xl border border-border/60 bg-card transition-all duration-200 hover:border-border hover:shadow-sm overflow-hidden">
+                                {/* Skeleton illustration */}
+                                <div className="transition-transform duration-300 group-hover:scale-[1.02]">
+                                    <BlockCategorySkeleton category={category.name} />
+                                </div>
+                                {/* Label */}
+                                <div className="flex items-center justify-between border-t border-border/40 px-3 py-2.5">
+                                    <span className="text-sm font-medium text-foreground">
                                         {category.displayName}
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="text-center">
-                                    {blockCount === 0 ? (
-                                        <Badge variant="outline">
-                                            Coming Soon
-                                        </Badge>
-                                    ) : (
-                                        <Badge variant="default">
-                                            {blockCount} {blockCount === 1 ? "block" : "blocks"}
-                                        </Badge>
-                                    )}
-                                </CardContent>
-                            </Card>
+                                    </span>
+                                    <span className="text-xs text-muted-foreground tabular-nums">
+                                        {blockCount === 0
+                                            ? "Soon"
+                                            : `${blockCount} ${blockCount === 1 ? "block" : "blocks"}`}
+                                    </span>
+                                </div>
+                            </div>
                         </Link>
                     );
                 })

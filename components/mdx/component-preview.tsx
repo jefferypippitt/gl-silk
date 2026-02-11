@@ -7,6 +7,12 @@ import { cn } from "@/lib/utils";
 
 export type ViewMode = "desktop" | "tablet" | "mobile";
 
+const VIEW_WIDTHS: Record<ViewMode, string> = {
+  desktop: "100%",
+  tablet: "768px",
+  mobile: "375px",
+};
+
 interface ComponentPreviewProps {
   name: string;
   viewMode?: ViewMode;
@@ -44,25 +50,23 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     );
   }
 
-  // Desktop: Full width, centered (allows for backgrounds and full layouts)
-  // Tablet: Constrained to tablet width, centered
-  // Mobile: Constrained to mobile width, centered
-  const viewModeStyles = {
-    desktop: "w-full", // Full width - no max-width constraint for backgrounds
-    tablet: "w-full max-w-[768px] mx-auto",
-    mobile: "w-full max-w-[375px] mx-auto",
-  };
-
   return (
     <div className="not-prose w-full h-full">
-      <div
-        className={cn(
-          "flex items-center justify-center w-full h-full transition-all duration-200",
-          viewMode === "desktop" ? "" : "p-6"
-        )}
-      >
-        <div className={cn("w-full transition-all duration-200", viewModeStyles[viewMode])}>
-          <Component key={rerunKey} />
+      {/* Fixed outer shell — never changes size */}
+      <div className="relative w-full h-full flex justify-center">
+        {/* Resizable inner frame */}
+        <div
+          className={cn(
+            "h-full overflow-y-auto overflow-x-hidden bg-background transition-[max-width] duration-300 ease-in-out custom-scrollbar",
+            viewMode !== "desktop" && "border-x border-border/40"
+          )}
+          style={{ maxWidth: VIEW_WIDTHS[viewMode], width: "100%" }}
+        >
+          <div className="flex min-h-full items-center justify-center">
+            <div className="w-full">
+              <Component key={rerunKey} />
+            </div>
+          </div>
         </div>
       </div>
     </div>

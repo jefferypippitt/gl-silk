@@ -3,7 +3,7 @@
 import { ThemeToggleButton } from "./theme-toggle-button";
 export function ThemeToggleRoundedDemo() {
   return (
-    <div className="flex gap-4">
+    <div className="flex items-center justify-center min-h-[200px] p-8 gap-4">
       <ThemeToggleButton
         variant="outline"
         size="icon"

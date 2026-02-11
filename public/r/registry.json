@@ -989,6 +989,84 @@
           "target": "app/hero-section-v1.css"
         }
       ]
+    },
+    {
+      "name": "hero-section-v2",
+      "type": "registry:block",
+      "category": "hero-section",
+      "title": "Hero Section V2",
+      "description": "An editorial-style hero with asymmetric layout, serif display typography, and diagonal accents",
+      "dependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v2/page.tsx",
+          "type": "registry:page",
+          "target": "app/hero-section-v2/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v2.tsx",
+          "type": "registry:component",
+          "target": "app/hero-section-v2.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v2.css",
+          "type": "registry:component",
+          "target": "app/hero-section-v2.css"
+        }
+      ]
+    },
+    {
+      "name": "feature-section-v1",
+      "type": "registry:block",
+      "category": "features",
+      "title": "Feature Section V1",
+      "description": "A centered feature section with headline, description, and four horizontal feature icons",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/feature-section-v1/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v1.tsx",
+          "type": "registry:component",
+          "target": "app/feature-section-v1.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v1.css",
+          "type": "registry:component",
+          "target": "app/feature-section-v1.css"
+        }
+      ]
+    },
+    {
+      "name": "feature-section-v2",
+      "type": "registry:block",
+      "category": "features",
+      "title": "Feature Section V2",
+      "description": "An asymmetric bento-grid feature section with image showcase and editorial styling",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v2/page.tsx",
+          "type": "registry:page",
+          "target": "app/feature-section-v2/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v2.tsx",
+          "type": "registry:component",
+          "target": "app/feature-section-v2.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v2.css",
+          "type": "registry:component",
+          "target": "app/feature-section-v2.css"
+        }
+      ]
     }
   ]
 }

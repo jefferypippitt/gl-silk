@@ -4,7 +4,7 @@ import { NeubrutalismButton } from "./neubrutalism-button";
 
 export function NeubrutalismButtonDemo() {
   return (
-    <div className="flex flex-wrap gap-4 justify-center">
+    <div className="flex items-center justify-center min-h-[200px] p-8">
       <NeubrutalismButton>
         Button
       </NeubrutalismButton>

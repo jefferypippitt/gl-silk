@@ -4,7 +4,7 @@ import { WarpButton } from "./warp-button";
 
 export function WarpButtonCustomShapeDemo() {
   return (
-    <div className="flex flex-wrap gap-4 justify-center">
+    <div className="flex items-center justify-center min-h-[200px] p-8">
       <WarpButton
         colors={["#ffffff", "#000000"]}
         shape="stripes"

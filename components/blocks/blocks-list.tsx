@@ -1,14 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
-import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { ComponentPreview, ViewMode } from "@/components/mdx/component-preview";
-import { ComponentSource } from "@/components/mdx/component-source";
-import { RerunButton } from "@/components/mdx/rerun-button";
-import { ViewTabs } from "@/components/mdx/view-tabs";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import type { RegistryItem } from "@/lib/registry";
+import { cn } from "@/lib/utils";
 import {
   Empty,
   EmptyDescription,
@@ -17,12 +14,13 @@ import {
   EmptyTitle,
 } from "@/components/ui/empty";
 import {
-  ResizablePanelGroup,
-  ResizablePanel,
-  ResizableHandle,
-} from "@/components/ui/resizable";
-import { PackageIcon } from "lucide-react";
-import { usePathname } from "next/navigation";
+  PackageIcon,
+  Monitor,
+  Tablet,
+  Smartphone,
+  RotateCw,
+  ExternalLink,
+} from "lucide-react";
 
 interface BlocksListProps {
   blocks: RegistryItem[];
@@ -46,7 +44,7 @@ export default function BlocksList({ blocks }: BlocksListProps) {
   }
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-6">
       {blocks.map((block) => (
         <BlockItem key={block.name} block={block} />
       ))}
@@ -56,9 +54,7 @@ export default function BlocksList({ blocks }: BlocksListProps) {
 
 function BlockItem({ block }: { block: RegistryItem }) {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
 
-  // Initialize view mode from URL params if available, otherwise default to desktop
   const initialViewMode = (searchParams.get("view") as ViewMode) || "desktop";
   const [viewMode, setViewMode] = useState<ViewMode>(
     ["desktop", "tablet", "mobile"].includes(initialViewMode)
@@ -66,7 +62,6 @@ function BlockItem({ block }: { block: RegistryItem }) {
       : "desktop"
   );
 
-  // Update view mode if URL param changes
   useEffect(() => {
     const viewParam = searchParams.get("view") as ViewMode;
     if (viewParam && ["desktop", "tablet", "mobile"].includes(viewParam)) {
@@ -74,54 +69,95 @@ function BlockItem({ block }: { block: RegistryItem }) {
     }
   }, [searchParams]);
 
+  const handleRerun = useCallback(() => {
+    const event = new CustomEvent("rerun-animation", {
+      detail: { previewId: block.name },
+    });
+    window.dispatchEvent(event);
+  }, [block.name]);
+
   const handleOpenInNewTab = () => {
-    // Create a standalone preview URL (outside blocks to avoid navbar/footer)
     const previewUrl = `/preview/${block.name}?view=${viewMode}`;
     window.open(previewUrl, "_blank");
   };
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <div className="flex-1">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            {block.title || block.name}
-          </h2>
-        </div>
-        <div className="flex items-center gap-2">
-          <RerunButton previewId={block.name} />
-          <ViewTabs
-            viewMode={viewMode}
-            onViewModeChange={setViewMode}
-            onOpenInNewTab={handleOpenInNewTab}
-            previewId={block.name}
-          />
-          <OpenInV0Button name={block.name} />
-        </div>
-      </div>
-      <Tabs items={["Preview", "Code"]}>
-        <Tab value="Preview">
-          <div className="min-h-[400px] rounded-lg border overflow-hidden">
-            <ResizablePanelGroup
-              direction="horizontal"
-              className="min-h-[400px]"
-            >
-              <ResizablePanel defaultSize={100} minSize={30} collapsible={true}>
-                <div className="flex h-full items-center justify-center overflow-auto bg-muted/30 transition-all duration-200">
-                  <ComponentPreview name={block.name} viewMode={viewMode} />
-                </div>
-              </ResizablePanel>
-              <ResizableHandle withHandle />
-              <ResizablePanel defaultSize={0} minSize={0} collapsible={true}>
+    <div className="w-full space-y-2">
+      {/* Block ID — filename above the preview */}
+      <h3 className="text-sm font-medium text-muted-foreground font-mono">
+        {block.name}
+      </h3>
 
-              </ResizablePanel>
-            </ResizablePanelGroup>
-          </div>
-        </Tab>
-        <Tab value="Code">
-          <ComponentSource name={block.name} />
-        </Tab>
-      </Tabs>
+      {/* Toolbar — 3 columns: left / center / right */}
+      <div className="grid grid-cols-[auto_1fr_auto] items-center border rounded-t-lg bg-background px-4 py-2">
+        {/* Left: Preview label */}
+        <span className="text-sm font-medium text-foreground">Preview</span>
+
+        {/* Center: View toggles + actions */}
+        <div className="flex items-center justify-center gap-1">
+          <button
+            onClick={() => setViewMode("desktop")}
+            className={cn(
+              "inline-flex items-center justify-center h-7 w-7 rounded-md transition-colors",
+              viewMode === "desktop"
+                ? "text-foreground bg-muted"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+            )}
+            aria-label="Desktop view"
+          >
+            <Monitor className="h-3.5 w-3.5" />
+          </button>
+          <button
+            onClick={() => setViewMode("tablet")}
+            className={cn(
+              "inline-flex items-center justify-center h-7 w-7 rounded-md transition-colors",
+              viewMode === "tablet"
+                ? "text-foreground bg-muted"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+            )}
+            aria-label="Tablet view"
+          >
+            <Tablet className="h-3.5 w-3.5" />
+          </button>
+          <button
+            onClick={() => setViewMode("mobile")}
+            className={cn(
+              "inline-flex items-center justify-center h-7 w-7 rounded-md transition-colors",
+              viewMode === "mobile"
+                ? "text-foreground bg-muted"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+            )}
+            aria-label="Mobile view"
+          >
+            <Smartphone className="h-3.5 w-3.5" />
+          </button>
+
+          <div className="h-4 w-px bg-border mx-1" />
+
+          <button
+            onClick={handleRerun}
+            className="inline-flex items-center justify-center h-7 w-7 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            aria-label="Rerun animation"
+          >
+            <RotateCw className="h-3.5 w-3.5" />
+          </button>
+          <button
+            onClick={handleOpenInNewTab}
+            className="inline-flex items-center justify-center h-7 w-7 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            aria-label="Open in new tab"
+          >
+            <ExternalLink className="h-3.5 w-3.5" />
+          </button>
+        </div>
+
+        {/* Right: Open in v0 */}
+        <OpenInV0Button name={block.name} className="h-7 text-xs px-2.5" />
+      </div>
+
+      {/* Preview area — fixed dimensions, never shifts */}
+      <div className="border border-t-0 rounded-b-lg overflow-hidden h-[min(75vh,1000px)] w-full bg-muted/30">
+        <ComponentPreview name={block.name} viewMode={viewMode} />
+      </div>
     </div>
   );
 }

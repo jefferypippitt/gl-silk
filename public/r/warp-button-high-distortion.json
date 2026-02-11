@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/warp-button/high-distortion-demo.tsx",
-      "content": "\"use client\";\n\nimport { WarpButton } from \"./warp-button\";\n\nexport function WarpButtonHighDistortionDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-4 justify-center\">\n      <WarpButton\n        colors={[\"#ff0080\", \"#ff4000\", \"#ff8000\", \"#ffb000\"]}\n        distortion={0.8}\n        swirl={1.5}\n        speed={2}\n        textClassName=\"text-white\"\n      >\n        High Distortion\n      </WarpButton>\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { WarpButton } from \"./warp-button\";\n\nexport function WarpButtonHighDistortionDemo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\n      <WarpButton\n        colors={[\"#ff0080\", \"#ff4000\", \"#ff8000\", \"#ffb000\"]}\n        distortion={0.8}\n        swirl={1.5}\n        speed={2}\n        textClassName=\"text-white\"\n      >\n        High Distortion\n      </WarpButton>\n    </div>\n  );\n}",
       "type": "registry:component"
     }
   ]

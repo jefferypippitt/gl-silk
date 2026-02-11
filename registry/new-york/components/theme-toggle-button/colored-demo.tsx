@@ -4,7 +4,7 @@ import { ThemeToggleButton } from "./theme-toggle-button";
 
 export function ThemeToggleColoredDemo() {
   return (
-    <div className="flex flex-wrap gap-4">
+    <div className="flex items-center justify-center min-h-[200px] p-8 flex-wrap gap-4">
       <ThemeToggleButton
         size="icon"
         variant="outline"

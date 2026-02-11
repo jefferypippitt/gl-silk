@@ -4,7 +4,7 @@ import { ThemeToggleButton } from "./theme-toggle-button";
 
 export function ThemeToggleSizesDemo() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col items-center justify-center min-h-[200px] p-8 gap-4">
       <div className="flex gap-2">
         <ThemeToggleButton size="sm" variant="outline">
           Small

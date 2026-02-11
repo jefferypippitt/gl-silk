@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/mesh-gradient-button/demo.tsx",
-      "content": "\"use client\";\n\nimport { MeshGradientButton } from \"./mesh-gradient-button\";\n\nexport function MeshGradientDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-4 justify-center\">\n      <MeshGradientButton>Mesh Gradient</MeshGradientButton>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { MeshGradientButton } from \"./mesh-gradient-button\";\n\nexport function MeshGradientDemo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\n      <MeshGradientButton>Mesh Gradient</MeshGradientButton>\n    </div>\n  );\n}\n",
       "type": "registry:component"
     }
   ]

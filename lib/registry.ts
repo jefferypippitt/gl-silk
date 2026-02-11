@@ -63,24 +63,52 @@ export interface BlockCategory {
 }
 
 export const BLOCK_CATEGORIES: BlockCategory[] = [
-  { name: "auth", slug: "auth", displayName: "Auth" },
-  { name: "contact", slug: "contact", displayName: "Contact" },
-  { name: "cta", slug: "cta", displayName: "Cta" },
-  { name: "faqs", slug: "faqs", displayName: "Faqs" },
-  { name: "header", slug: "header", displayName: "Header" },
-  { name: "features", slug: "features", displayName: "Features" },
-  { name: "footer", slug: "footer", displayName: "Footer" },
-  { name: "form", slug: "form", displayName: "Form" },
+  // Landing Page
   { name: "hero-section", slug: "hero-section", displayName: "Hero Section" },
+  { name: "features", slug: "features", displayName: "Features" },
+  { name: "cta", slug: "cta", displayName: "CTA" },
+  { name: "pricing", slug: "pricing", displayName: "Pricing" },
+  { name: "testimonials", slug: "testimonials", displayName: "Testimonials" },
+  { name: "faqs", slug: "faqs", displayName: "FAQs" },
+  { name: "logo-cloud", slug: "logo-cloud", displayName: "Logo Cloud" },
+  { name: "blog", slug: "blog", displayName: "Blog" },
+  { name: "team", slug: "team", displayName: "Team" },
+  { name: "stats", slug: "stats", displayName: "Stats" },
+  { name: "newsletter", slug: "newsletter", displayName: "Newsletter" },
+
+  // Application UI
+  { name: "auth", slug: "auth", displayName: "Auth" },
+  { name: "form", slug: "form", displayName: "Form" },
+  { name: "header", slug: "header", displayName: "Header" },
+  { name: "footer", slug: "footer", displayName: "Footer" },
+  { name: "contact", slug: "contact", displayName: "Contact" },
+  { name: "not-found", slug: "not-found", displayName: "Not Found" },
+  { name: "dashboard", slug: "dashboard", displayName: "Dashboard" },
+  { name: "sidebar", slug: "sidebar", displayName: "Sidebar" },
+  { name: "profile", slug: "profile", displayName: "Profile" },
+  { name: "settings", slug: "settings", displayName: "Settings" },
+  { name: "table", slug: "table", displayName: "Table" },
+  { name: "notification", slug: "notification", displayName: "Notification" },
+
+  // E-commerce
   {
     name: "image-gallery",
     slug: "image-gallery",
     displayName: "Image Gallery",
   },
-  { name: "logo-cloud", slug: "logo-cloud", displayName: "Logo Cloud" },
-  { name: "not-found", slug: "not-found", displayName: "Not Found" },
-  { name: "pricing", slug: "pricing", displayName: "Pricing" },
-  { name: "testimonials", slug: "testimonials", displayName: "Testimonials" },
+  {
+    name: "product-card",
+    slug: "product-card",
+    displayName: "Product Card",
+  },
+  {
+    name: "shopping-cart",
+    slug: "shopping-cart",
+    displayName: "Shopping Cart",
+  },
+  { name: "checkout", slug: "checkout", displayName: "Checkout" },
+
+  // Other
   { name: "coming-soon", slug: "coming-soon", displayName: "Coming Soon" },
 ];
 

@@ -22,22 +22,20 @@ export function DelayedButtons({ delay = 2000 }: DelayedButtonsProps) {
   return (
     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
       <div
-        className={`transition-all duration-700 ${
-          show
+        className={`transition-all duration-700 ${show
             ? "animate-in fade-in-0 slide-in-from-bottom-4"
             : "opacity-0 translate-y-4"
-        }`}
+          }`}
       >
         <Button asChild size="sm">
           <Link href="/docs">Get Started</Link>
         </Button>
       </div>
       <div
-        className={`transition-all duration-700 ${
-          show
+        className={`transition-all duration-700 ${show
             ? "animate-in fade-in-0 slide-in-from-bottom-4 delay-100"
             : "opacity-0 translate-y-4"
-        }`}
+          }`}
       >
         <Button asChild variant="outline" size="sm">
           <Link href="/docs/components">View Components</Link>

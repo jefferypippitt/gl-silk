@@ -87,7 +87,7 @@ export function ExampleForm() {
             <Input
               id="name"
               name="name"
-              placeholder="Lee Robinson"
+              placeholder="Your name"
               className="group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive"
               disabled={pending}
               aria-invalid={!!state.errors?.name}
@@ -113,7 +113,7 @@ export function ExampleForm() {
             <Input
               id="email"
               name="email"
-              placeholder="leerob@acme.com"
+              placeholder="your@email.com"
               className="group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive"
               disabled={pending}
               aria-invalid={!!state.errors?.email}
