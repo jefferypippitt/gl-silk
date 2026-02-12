@@ -8,6 +8,12 @@ import { HeroSectionV1 } from "@/registry/new-york/blocks/hero-section/hero-sect
 import { HeroSectionV2 } from "@/registry/new-york/blocks/hero-section/hero-section-v2";
 import { FeatureSectionV1 } from "@/registry/new-york/blocks/features-section/feature-section-v1";
 import { FeatureSectionV2 } from "@/registry/new-york/blocks/features-section/feature-section-v2";
+import { FeatureSectionV3 } from "@/registry/new-york/blocks/features-section/feature-section-v3";
+import { CtaSectionV1 } from "@/registry/new-york/blocks/cta-section/cta-section-v1";
+import { CtaSectionV2 } from "@/registry/new-york/blocks/cta-section/cta-section-v2";
+import { CtaSectionV3 } from "@/registry/new-york/blocks/cta-section/cta-section-v3";
+import { FaqSectionV1 } from "@/registry/new-york/blocks/faq-section/faq-section-v1";
+import { FaqSectionV2 } from "@/registry/new-york/blocks/faq-section/faq-section-v2";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
 import { FadeDemo } from "@/registry/new-york/components/split-text-animation/fade-demo";
 import { FadeFastDemo } from "@/registry/new-york/components/split-text-animation/fade-fast-demo";
@@ -67,6 +73,12 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "hero-section-v2": HeroSectionV2,
   "feature-section-v1": FeatureSectionV1,
   "feature-section-v2": FeatureSectionV2,
+  "feature-section-v3": FeatureSectionV3,
+  "cta-section-v1": CtaSectionV1,
+  "cta-section-v2": CtaSectionV2,
+  "cta-section-v3": CtaSectionV3,
+  "faq-section-v1": FaqSectionV1,
+  "faq-section-v2": FaqSectionV2,
   "split-text-demo": SplitTextDemo,
   "split-text-fade": FadeDemo,
   "split-text-fade-fast": FadeFastDemo,

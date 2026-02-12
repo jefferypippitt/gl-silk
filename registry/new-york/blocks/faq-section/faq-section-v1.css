@@ -1,0 +1,278 @@
+/* CSS Variables for FAQ Section V1 */
+/* These variables are required for the component styles to work correctly */
+/* Import this file in your globals.css or app layout */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
+
+/* ============================================
+   FAQ Section V1 — Editorial Accordion
+   Refined serif headline, smooth accordion
+   with plus/minus toggles, subtle grain texture
+   ============================================ */
+
+/* ── Section Root ──────────────────────────── */
+
+.faq1-section {
+  /* Fonts */
+  --faq1-display: 'DM Serif Display', serif;
+  --faq1-sans: var(--font-sans, 'Geist', sans-serif);
+
+  /* Colors */
+  --faq1-divider: oklch(0 0 0 / 0.08);
+  --faq1-icon-stroke: oklch(0 0 0 / 0.35);
+  --faq1-hover-bg: oklch(0 0 0 / 0.02);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  container-name: faq1;
+  color: var(--foreground);
+}
+
+.dark .faq1-section {
+  --faq1-divider: oklch(1 0 0 / 0.08);
+  --faq1-icon-stroke: oklch(1 0 0 / 0.35);
+  --faq1-hover-bg: oklch(1 0 0 / 0.03);
+}
+
+/* ── Grain Overlay ───────────────────────────── */
+
+.faq1-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='faq1-grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23faq1-grain)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+}
+
+.dark .faq1-grain {
+  opacity: 0.15;
+  mix-blend-mode: soft-light;
+}
+
+/* ── Inner Content ───────────────────────────── */
+
+.faq1-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── Eyebrow ─────────────────────────────────── */
+
+.faq1-eyebrow {
+  font-family: var(--faq1-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin: 0 0 1.25rem;
+}
+
+/* ── Headline ────────────────────────────────── */
+
+.faq1-headline {
+  font-family: var(--faq1-display);
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+  margin: 0 0 1rem;
+}
+
+.faq1-headline em {
+  font-style: italic;
+  color: var(--foreground);
+}
+
+/* ── Description ─────────────────────────────── */
+
+.faq1-description {
+  font-family: var(--faq1-sans);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  max-width: 32rem;
+  margin: 0 0 3rem;
+}
+
+/* ── Accordion Container ─────────────────────── */
+
+.faq1-accordion {
+  width: 100%;
+  text-align: left;
+}
+
+/* ── Accordion Item ──────────────────────────── */
+
+.faq1-item {
+  border-top: 1px solid var(--faq1-divider);
+}
+
+.faq1-item:last-child {
+  border-bottom: 1px solid var(--faq1-divider);
+}
+
+/* ── Trigger Button ──────────────────────────── */
+
+.faq1-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.faq1-trigger:hover {
+  background-color: var(--faq1-hover-bg);
+}
+
+.faq1-trigger:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ── Question Text ───────────────────────────── */
+
+.faq1-question {
+  font-family: var(--faq1-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+/* ── Plus/Minus Icon ─────────────────────────── */
+
+.faq1-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--faq1-icon-stroke);
+}
+
+.faq1-icon-svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* ── Content Wrapper (height transition) ─────── */
+
+.faq1-content-wrapper {
+  overflow: hidden;
+  transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Answer Content ──────────────────────────── */
+
+.faq1-content {
+  padding: 0 0.25rem 1.25rem;
+}
+
+.faq1-answer {
+  font-family: var(--faq1-sans);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  margin: 0;
+  max-width: 38rem;
+}
+
+/* ================================
+   Responsive — Tablet (640px+)
+   ================================ */
+
+@container faq1 (min-width: 640px) {
+  .faq1-inner {
+    padding: 6rem 2rem;
+  }
+
+  .faq1-description {
+    font-size: 1rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .faq1-trigger {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .faq1-question {
+    font-size: 1.0625rem;
+  }
+
+  .faq1-content {
+    padding: 0 0.5rem 1.5rem;
+  }
+
+  .faq1-answer {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ================================
+   Responsive — Desktop (960px+)
+   ================================ */
+
+@container faq1 (min-width: 960px) {
+  .faq1-inner {
+    padding: 8rem 2.5rem;
+  }
+
+  .faq1-description {
+    margin-bottom: 4rem;
+  }
+
+  .faq1-trigger {
+    padding: 1.75rem 0.75rem;
+  }
+
+  .faq1-question {
+    font-size: 1.125rem;
+  }
+
+  .faq1-answer {
+    font-size: 1rem;
+  }
+}
+
+/* ================================
+   Large Desktop (1200px+)
+   ================================ */
+
+@container faq1 (min-width: 1200px) {
+  .faq1-inner {
+    padding: 10rem 3rem;
+  }
+}
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .faq1-content-wrapper {
+    transition: none;
+  }
+}

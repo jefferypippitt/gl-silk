@@ -1,3 +1,9 @@
+/* CSS Variables for Example Card */
+/* These variables are required for the component styles to work correctly */
+/* Import this file in your globals.css or app layout */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
+
 .login-container {
   --primary-color: #111111;
   --primary-hover: #484747;

@@ -1,3 +1,9 @@
+/* CSS Variables for Hero Section V2 */
+/* These variables are required for the component styles to work correctly */
+/* Import this file in your globals.css or app layout */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
+
 /* ============================================
    Hero Section V2 — Clean, modern, serif display heading,
    pill buttons, warm interactive card,
@@ -169,13 +175,17 @@
   mix-blend-mode: soft-light;
 }
 
+/* Fonts — inherits --font-sans and --font-display from next/font (globals.css) */
+
 :root {
+  /* Colors */
   --hs2-card-bg: oklch(0.95 0.01 75 / 1);
   --hs2-subcard-bg: var(--background);
   --hs2-subcard-border: var(--border);
 }
 
 .dark {
+  /* Colors */
   --hs2-card-bg: oklch(0.22 0.01 75 / 1);
   --hs2-subcard-bg: oklch(0.18 0.005 75 / 1);
   --hs2-subcard-border: oklch(0.30 0.01 75 / 1);

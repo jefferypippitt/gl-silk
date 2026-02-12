@@ -1,3 +1,9 @@
+/* CSS Variables for Feature Section V1 */
+/* These variables are required for the component styles to work correctly */
+/* Import this file in your globals.css or app layout */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
+
 /* ============================================
    Feature Section V1 — 2×2 Compact Card Grid
    Large serif intro paragraph, four compact
@@ -6,8 +12,11 @@
    ============================================ */
 
 .fsv1-section {
-  --fsv1-display: var(--font-instrument-serif), serif;
-  --fsv1-sans: var(--font-geist-sans), sans-serif;
+  /* Fonts — uses next/font CSS variables for zero-layout-shift loading */
+  --fsv1-display: var(--font-display, 'Instrument Serif', serif);
+  --fsv1-sans: var(--font-sans, 'Geist', sans-serif);
+
+  /* Colors */
   --fsv1-accent: oklch(0.55 0.22 264.53);
   --fsv1-border: oklch(0 0 0 / 0.1);
   --fsv1-card-bg: oklch(0 0 0 / 0.025);

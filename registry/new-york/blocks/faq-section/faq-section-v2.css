@@ -1,0 +1,324 @@
+/* CSS Variables for FAQ Section V2 */
+/* These variables are required for the component styles to work correctly */
+/* Import this file in your globals.css or app layout */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
+
+/* ============================================
+   FAQ Section V2 — Split Layout Modern
+   Two-column layout with sticky heading,
+   numbered accordion items, card treatment,
+   monospace numbering, geometric feel
+   ============================================ */
+
+/* ── Section Root ──────────────────────────── */
+
+.faq2-section {
+  /* Fonts */
+  --faq2-sans: var(--font-sans, 'Geist', sans-serif);
+  --faq2-mono: var(--font-mono, 'Geist Mono', monospace);
+
+  /* Colors */
+  --faq2-card-bg: oklch(0 0 0 / 0.025);
+  --faq2-card-border: oklch(0 0 0 / 0.06);
+  --faq2-card-hover: oklch(0 0 0 / 0.04);
+  --faq2-index-color: oklch(0 0 0 / 0.2);
+  --faq2-badge-bg: oklch(0 0 0 / 0.05);
+  --faq2-badge-border: oklch(0 0 0 / 0.08);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  container-name: faq2;
+  color: var(--foreground);
+}
+
+.dark .faq2-section {
+  --faq2-card-bg: oklch(1 0 0 / 0.03);
+  --faq2-card-border: oklch(1 0 0 / 0.06);
+  --faq2-card-hover: oklch(1 0 0 / 0.05);
+  --faq2-index-color: oklch(1 0 0 / 0.2);
+  --faq2-badge-bg: oklch(1 0 0 / 0.06);
+  --faq2-badge-border: oklch(1 0 0 / 0.08);
+}
+
+/* ── Container ───────────────────────────────── */
+
+.faq2-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ── Left Column — Header ────────────────────── */
+
+.faq2-header {
+  flex-shrink: 0;
+}
+
+.faq2-header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Badge ───────────────────────────────────── */
+
+.faq2-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  font-family: var(--faq2-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  background: var(--faq2-badge-bg);
+  border: 1px solid var(--faq2-badge-border);
+  color: var(--muted-foreground);
+}
+
+/* ── Headline ────────────────────────────────── */
+
+.faq2-headline {
+  font-family: var(--faq2-sans);
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--foreground);
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* ── Description ─────────────────────────────── */
+
+.faq2-description {
+  font-family: var(--faq2-sans);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--muted-foreground);
+  max-width: 24rem;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ── Right Column — FAQ List ─────────────────── */
+
+.faq2-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ── FAQ Item Card ───────────────────────────── */
+
+.faq2-item {
+  background: var(--faq2-card-bg);
+  border: 1px solid var(--faq2-card-border);
+  border-radius: 0.875rem;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+.faq2-item:hover {
+  background: var(--faq2-card-hover);
+}
+
+/* ── Trigger Button ──────────────────────────── */
+
+.faq2-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq2-trigger:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: -2px;
+  border-radius: 0.875rem;
+}
+
+/* ── Number Index ────────────────────────────── */
+
+.faq2-index {
+  flex-shrink: 0;
+  font-family: var(--faq2-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--faq2-index-color);
+  letter-spacing: 0.02em;
+  min-width: 1.5rem;
+}
+
+/* ── Question Text ───────────────────────────── */
+
+.faq2-question {
+  flex: 1;
+  font-family: var(--faq2-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+/* ── Chevron Icon ────────────────────────────── */
+
+.faq2-chevron {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--muted-foreground);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.6;
+}
+
+.faq2-chevron--open {
+  transform: rotate(180deg);
+}
+
+/* ── Content Wrapper (height transition) ─────── */
+
+.faq2-content-wrapper {
+  overflow: hidden;
+  transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Answer Content ──────────────────────────── */
+
+.faq2-content {
+  padding: 0 1.25rem 1.25rem;
+  padding-left: calc(1.25rem + 1.5rem + 1rem);
+}
+
+.faq2-answer {
+  font-family: var(--faq2-sans);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ================================
+   Responsive — Tablet (640px+)
+   ================================ */
+
+@container faq2 (min-width: 640px) {
+  .faq2-container {
+    padding: 6rem 2rem;
+    gap: 3.5rem;
+  }
+
+  .faq2-trigger {
+    padding: 1.125rem 1.5rem;
+  }
+
+  .faq2-question {
+    font-size: 1rem;
+  }
+
+  .faq2-content {
+    padding: 0 1.5rem 1.25rem;
+    padding-left: calc(1.5rem + 1.5rem + 1rem);
+  }
+
+  .faq2-answer {
+    font-size: 0.875rem;
+  }
+}
+
+/* ================================
+   Responsive — Desktop (960px+)
+   Two-column layout
+   ================================ */
+
+@container faq2 (min-width: 960px) {
+  .faq2-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 8rem 2.5rem;
+  }
+
+  .faq2-header {
+    position: sticky;
+    top: 6rem;
+    width: 20rem;
+    flex-shrink: 0;
+  }
+
+  .faq2-list {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .faq2-question {
+    font-size: 1rem;
+  }
+}
+
+/* ================================
+   Large Desktop (1200px+)
+   ================================ */
+
+@container faq2 (min-width: 1200px) {
+  .faq2-container {
+    padding: 10rem 3rem;
+    gap: 6rem;
+  }
+
+  .faq2-header {
+    width: 24rem;
+  }
+
+  .faq2-trigger {
+    padding: 1.25rem 1.75rem;
+  }
+
+  .faq2-question {
+    font-size: 1.0625rem;
+  }
+
+  .faq2-content {
+    padding: 0 1.75rem 1.5rem;
+    padding-left: calc(1.75rem + 1.5rem + 1rem);
+  }
+
+  .faq2-answer {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .faq2-content-wrapper {
+    transition: none;
+  }
+
+  .faq2-chevron {
+    transition: none;
+  }
+
+  .faq2-item {
+    transition: none;
+  }
+}

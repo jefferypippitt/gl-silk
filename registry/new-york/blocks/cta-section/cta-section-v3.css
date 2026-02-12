@@ -1,0 +1,106 @@
+/* CSS Variables for CTA Section V3 */
+/* These variables are required for the component styles to work correctly */
+/* Import this file in your globals.css or app layout */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
+
+/* ============================================
+   CTA Section V3 — Minimal CTA with muted
+   background. Theme-aware, adapts to light
+   and dark mode via CSS variables.
+   ============================================ */
+
+/* ── Section Root ──────────────────────────── */
+
+.cta3-section {
+  --cta3-sans: var(--font-sans, 'Geist', sans-serif);
+
+  position: relative;
+  width: 100%;
+  container-type: inline-size;
+  container-name: cta3;
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+/* ── Inner Content ───────────────────────────── */
+
+.cta3-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 6rem 1.25rem;
+  gap: 2.5rem;
+}
+
+/* ── Headline ────────────────────────────────── */
+
+.cta3-headline {
+  font-family: var(--cta3-sans);
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--foreground);
+  margin: 0;
+}
+
+/* ── CTA Button ──────────────────────────────── */
+
+.cta3-btn {
+  font-family: var(--cta3-sans);
+  font-weight: 400;
+  font-size: 0.875rem;
+  padding: 0 1.5rem;
+  height: 2.75rem;
+  gap: 0.5rem;
+  background: var(--foreground) !important;
+  color: var(--background) !important;
+  border: none !important;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.cta3-btn:hover {
+  opacity: 0.85;
+}
+
+.cta3-btn-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  stroke-width: 2;
+  opacity: 0.7;
+}
+
+/* ================================
+   Responsive — Tablet (640px+)
+   ================================ */
+
+@container cta3 (min-width: 640px) {
+  .cta3-inner {
+    padding: 8rem 2rem;
+  }
+}
+
+/* ================================
+   Responsive — Desktop (960px+)
+   ================================ */
+
+@container cta3 (min-width: 960px) {
+  .cta3-inner {
+    padding: 10rem 2.5rem;
+  }
+}
+
+/* ================================
+   Large Desktop (1200px+)
+   ================================ */
+
+@container cta3 (min-width: 1200px) {
+  .cta3-inner {
+    padding: 12rem 3rem;
+  }
+}

@@ -1,9 +1,17 @@
+/* CSS Variables for Feature Section V2 */
+/* These variables are required for the component styles to work correctly */
+/* Import this file in your globals.css or app layout */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
+
 /* ============================================
    Feature Section V2 — Bento Visual Grid
    Asymmetric bento layout where each card has
    a unique animated CSS visual that matches
    its feature concept. No icons — pure geometry.
    ============================================ */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
 
 .fsv2-container {
   container-type: inline-size;

@@ -1043,6 +1043,136 @@
       ]
     },
     {
+      "name": "cta-section-v1",
+      "type": "registry:block",
+      "category": "cta",
+      "title": "CTA Section V1",
+      "description": "An editorial CTA section with warm rose accent, ornamental divider, display serif headline, and atmospheric background glow",
+      "dependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/cta-section-v1/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v1.tsx",
+          "type": "registry:component",
+          "target": "app/cta-section-v1.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v1.css",
+          "type": "registry:component",
+          "target": "app/cta-section-v1.css"
+        }
+      ]
+    },
+    {
+      "name": "cta-section-v2",
+      "type": "registry:block",
+      "category": "cta",
+      "title": "CTA Section V2",
+      "description": "A modern minimalist CTA card with organic NeuroNoise shader background and clean typography",
+      "dependencies": ["@paper-design/shaders-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v2/page.tsx",
+          "type": "registry:page",
+          "target": "app/cta-section-v2/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v2.tsx",
+          "type": "registry:component",
+          "target": "app/cta-section-v2.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v2.css",
+          "type": "registry:component",
+          "target": "app/cta-section-v2.css"
+        }
+      ]
+    },
+    {
+      "name": "cta-section-v3",
+      "type": "registry:block",
+      "category": "cta",
+      "title": "CTA Section V3",
+      "description": "A modern minimalist CTA section with muted background, geometric precision, and a single download action",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v3/page.tsx",
+          "type": "registry:page",
+          "target": "app/cta-section-v3/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v3.tsx",
+          "type": "registry:component",
+          "target": "app/cta-section-v3.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v3.css",
+          "type": "registry:component",
+          "target": "app/cta-section-v3.css"
+        }
+      ]
+    },
+    {
+      "name": "faq-section-v1",
+      "type": "registry:block",
+      "category": "faqs",
+      "title": "FAQ Section V1",
+      "description": "An editorial accordion FAQ section with serif display headline, smooth expand/collapse animations, and refined dividers",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/faq-section-v1/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v1.tsx",
+          "type": "registry:component",
+          "target": "app/faq-section-v1.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v1.css",
+          "type": "registry:component",
+          "target": "app/faq-section-v1.css"
+        }
+      ]
+    },
+    {
+      "name": "faq-section-v2",
+      "type": "registry:block",
+      "category": "faqs",
+      "title": "FAQ Section V2",
+      "description": "A modern split-layout FAQ with sticky heading, numbered card-based accordion items, and monospace numbering",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v2/page.tsx",
+          "type": "registry:page",
+          "target": "app/faq-section-v2/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v2.tsx",
+          "type": "registry:component",
+          "target": "app/faq-section-v2.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v2.css",
+          "type": "registry:component",
+          "target": "app/faq-section-v2.css"
+        }
+      ]
+    },
+    {
       "name": "feature-section-v2",
       "type": "registry:block",
       "category": "features",
@@ -1065,6 +1195,32 @@
           "path": "registry/new-york/blocks/features-section/feature-section-v2.css",
           "type": "registry:component",
           "target": "app/feature-section-v2.css"
+        }
+      ]
+    },
+    {
+      "name": "feature-section-v3",
+      "type": "registry:block",
+      "category": "features",
+      "title": "Feature Section V3",
+      "description": "A minimal feature section with centered serif heading, subtitle, and three icon-driven feature cards in a horizontal grid",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v3/page.tsx",
+          "type": "registry:page",
+          "target": "app/feature-section-v3/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v3.tsx",
+          "type": "registry:component",
+          "target": "app/feature-section-v3.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v3.css",
+          "type": "registry:component",
+          "target": "app/feature-section-v3.css"
         }
       ]
     }

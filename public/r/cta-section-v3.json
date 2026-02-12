@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-section-v3",
+  "type": "registry:block",
+  "title": "CTA Section V3",
+  "description": "A modern minimalist CTA section with muted background, geometric precision, and a single download action",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/cta-section/cta-section-v3/page.tsx",
+      "content": "import { CtaSectionV3 } from \"../cta-section-v3\"\r\n\r\nexport default function Page() {\r\n    return <CtaSectionV3 />\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/cta-section-v3/page.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/cta-section/cta-section-v3.tsx",
+      "content": "import \"./cta-section-v3.css\"\r\nimport { cn } from \"@/lib/utils\"\r\nimport { Button } from \"@/components/ui/button\"\r\nimport { Download } from \"lucide-react\"\r\n\r\n/* ─── Main Component ─────────────────────────── */\r\n\r\nexport function CtaSectionV3({\r\n    className,\r\n    ...props\r\n}: React.ComponentProps<\"section\">) {\r\n    return (\r\n        <section\r\n            className={cn(\"cta3-section\", className)}\r\n            {...props}\r\n        >\r\n            <div className=\"cta3-inner\">\r\n                {/* Headline */}\r\n                <h2 className=\"cta3-headline\">\r\n                    Try Lorem now.\r\n                </h2>\r\n\r\n                {/* CTA Button */}\r\n                <Button\r\n                    variant=\"secondary\"\r\n                    className=\"cta3-btn\"\r\n                >\r\n                    Download\r\n                    <Download className=\"cta3-btn-icon\" />\r\n                </Button>\r\n            </div>\r\n        </section>\r\n    )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "app/cta-section-v3.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/cta-section/cta-section-v3.css",
+      "content": "/* CSS Variables for CTA Section V3 */\r\n/* These variables are required for the component styles to work correctly */\r\n/* Import this file in your globals.css or app layout */\r\n\r\n/* Fonts — inherits --font-sans from next/font (globals.css) */\r\n\r\n/* ============================================\r\n   CTA Section V3 — Minimal CTA with muted\r\n   background. Theme-aware, adapts to light\r\n   and dark mode via CSS variables.\r\n   ============================================ */\r\n\r\n/* ── Section Root ──────────────────────────── */\r\n\r\n.cta3-section {\r\n  --cta3-sans: var(--font-sans, 'Geist', sans-serif);\r\n\r\n  position: relative;\r\n  width: 100%;\r\n  container-type: inline-size;\r\n  container-name: cta3;\r\n  background: var(--muted);\r\n  color: var(--foreground);\r\n}\r\n\r\n/* ── Inner Content ───────────────────────────── */\r\n\r\n.cta3-inner {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  text-align: center;\r\n  margin: 0 auto;\r\n  padding: 6rem 1.25rem;\r\n  gap: 2.5rem;\r\n}\r\n\r\n/* ── Headline ────────────────────────────────── */\r\n\r\n.cta3-headline {\r\n  font-family: var(--cta3-sans);\r\n  font-size: clamp(2rem, 6vw, 3.75rem);\r\n  font-weight: 400;\r\n  line-height: 1.1;\r\n  letter-spacing: -0.025em;\r\n  color: var(--foreground);\r\n  margin: 0;\r\n}\r\n\r\n/* ── CTA Button ──────────────────────────────── */\r\n\r\n.cta3-btn {\r\n  font-family: var(--cta3-sans);\r\n  font-weight: 400;\r\n  font-size: 0.875rem;\r\n  padding: 0 1.5rem;\r\n  height: 2.75rem;\r\n  gap: 0.5rem;\r\n  background: var(--foreground) !important;\r\n  color: var(--background) !important;\r\n  border: none !important;\r\n  border-radius: 9999px;\r\n  cursor: pointer;\r\n  transition: opacity 0.15s ease;\r\n}\r\n\r\n.cta3-btn:hover {\r\n  opacity: 0.85;\r\n}\r\n\r\n.cta3-btn-icon {\r\n  width: 0.875rem;\r\n  height: 0.875rem;\r\n  stroke-width: 2;\r\n  opacity: 0.7;\r\n}\r\n\r\n/* ================================\r\n   Responsive — Tablet (640px+)\r\n   ================================ */\r\n\r\n@container cta3 (min-width: 640px) {\r\n  .cta3-inner {\r\n    padding: 8rem 2rem;\r\n  }\r\n}\r\n\r\n/* ================================\r\n   Responsive — Desktop (960px+)\r\n   ================================ */\r\n\r\n@container cta3 (min-width: 960px) {\r\n  .cta3-inner {\r\n    padding: 10rem 2.5rem;\r\n  }\r\n}\r\n\r\n/* ================================\r\n   Large Desktop (1200px+)\r\n   ================================ */\r\n\r\n@container cta3 (min-width: 1200px) {\r\n  .cta3-inner {\r\n    padding: 12rem 3rem;\r\n  }\r\n}\r\n",
+      "type": "registry:component",
+      "target": "app/cta-section-v3.css"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+/* CSS Variables for Feature Section V3 */
+/* These variables are required for the component styles to work correctly */
+/* Import this file in your globals.css or app layout */
+
+/* Fonts — inherits --font-sans from next/font (globals.css) */
+
+/* ============================================
+   Feature Section V3 — Minimal Icon Grid
+   Centered serif heading + subtitle, three
+   icon-driven feature cards in a horizontal
+   grid with two-tone descriptions.
+   ============================================ */
+
+.fsv3-section {
+  /* Fonts */
+  --fsv3-display: var(--font-display, 'Instrument Serif', serif);
+  --fsv3-sans: var(--font-sans, 'Geist', sans-serif);
+
+  /* Colors */
+  --fsv3-heading: oklch(0.18 0 0);
+  --fsv3-subtitle: oklch(0.52 0 0);
+  --fsv3-icon-color: oklch(0.35 0 0);
+  --fsv3-title-color: oklch(0.15 0 0);
+  --fsv3-lead-color: oklch(0.18 0 0);
+  --fsv3-body-color: oklch(0.5 0 0);
+
+  color: var(--foreground);
+  container-type: inline-size;
+  container-name: fsv3;
+  width: 100%;
+}
+
+.dark .fsv3-section {
+  --fsv3-heading: oklch(0.92 0 0);
+  --fsv3-subtitle: oklch(0.55 0 0);
+  --fsv3-icon-color: oklch(0.65 0 0);
+  --fsv3-title-color: oklch(0.9 0 0);
+  --fsv3-lead-color: oklch(0.88 0 0);
+  --fsv3-body-color: oklch(0.55 0 0);
+}
+
+.fsv3-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 5rem 1.25rem;
+}
+
+/* ================================
+   Header
+   ================================ */
+
+.fsv3-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.fsv3-heading {
+  font-family: var(--fsv3-sans);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--fsv3-heading);
+  margin: 0 0 0.875rem;
+}
+
+.fsv3-subtitle {
+  font-family: var(--fsv3-sans);
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--fsv3-subtitle);
+  letter-spacing: 0.005em;
+  margin: 0;
+}
+
+/* ================================
+   Feature Grid — 3 Columns
+   ================================ */
+
+.fsv3-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+
+.fsv3-icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.fsv3-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--fsv3-icon-color);
+  stroke-width: 1.5;
+}
+
+/* ─── Title ─────────────────────── */
+
+.fsv3-card-title {
+  font-family: var(--fsv3-sans);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--fsv3-title-color);
+  margin: 0 0 0.625rem;
+}
+
+/* ─── Description (two-tone) ───── */
+
+.fsv3-card-desc {
+  font-family: var(--fsv3-sans);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fsv3-card-lead {
+  font-weight: 600;
+  color: var(--fsv3-lead-color);
+}
+
+.fsv3-card-body {
+  font-weight: 400;
+  color: var(--fsv3-body-color);
+}
+
+/* ================================
+   Responsive — Tablet (540px+)
+   2-column grid
+   ================================ */
+
+@container fsv3 (min-width: 540px) {
+  .fsv3-inner {
+    padding: 6rem 2rem;
+  }
+
+  .fsv3-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+  }
+}
+
+/* ================================
+   Responsive — Desktop (768px+)
+   3-column grid
+   ================================ */
+
+@container fsv3 (min-width: 768px) {
+  .fsv3-inner {
+    padding: 6rem 2.5rem;
+  }
+
+  .fsv3-header {
+    margin-bottom: 4rem;
+  }
+
+  .fsv3-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* ================================
+   Large Desktop (1080px+)
+   ================================ */
+
+@container fsv3 (min-width: 1080px) {
+  .fsv3-inner {
+    padding: 7rem 3rem;
+  }
+
+  .fsv3-header {
+    margin-bottom: 4.5rem;
+  }
+
+  .fsv3-grid {
+    gap: 3rem;
+  }
+
+  .fsv3-card-title {
+    font-size: 1.125rem;
+  }
+
+  .fsv3-card-desc {
+    font-size: 0.9375rem;
+  }
+}
+
