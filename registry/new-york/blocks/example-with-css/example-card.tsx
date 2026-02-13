@@ -1,4 +1,5 @@
 import "./example-card.css"
+import Link from "next/link"
 
 export function ExampleCard() {
   return (
@@ -33,9 +34,9 @@ export function ExampleCard() {
             </button>
           </div>
           <div className="form-footer">
-            <a href="#" className="forgot-password">
+            <Link href="#" className="forgot-password">
               Forgot password?
-            </a>
+            </Link>
           </div>
         </form>
       </div>

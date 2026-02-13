@@ -1,0 +1,223 @@
+/* ============================================
+   Feature Section V4 — Grid Card Layout
+   Centered heading + subtitle with a 4-column
+   feature grid. Each card fully bordered with
+   crosshair markers on all four corners.
+   ============================================ */
+
+.fsv4-section {
+  --fsv4-sans: var(--font-sans, "Geist", sans-serif);
+  --fsv4-border: oklch(0 0 0 / 0.12);
+  --fsv4-icon-bg: oklch(0.98 0 0);
+  --fsv4-icon-border: oklch(0 0 0 / 0.1);
+  --fsv4-marker: oklch(0 0 0 / 0.18);
+
+  color: var(--foreground);
+  container-type: inline-size;
+  container-name: fsv4;
+  width: 100%;
+}
+
+.dark .fsv4-section {
+  --fsv4-border: oklch(1 0 0 / 0.14);
+  --fsv4-icon-bg: oklch(0.16 0 0);
+  --fsv4-icon-border: oklch(1 0 0 / 0.14);
+  --fsv4-marker: oklch(1 0 0 / 0.22);
+}
+
+/* ─── Layout ────────────────────────────────── */
+
+.fsv4-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 5rem 1.25rem;
+  display: grid;
+  gap: 3.5rem;
+}
+
+/* ─── Header ────────────────────────────────── */
+
+.fsv4-header {
+  display: grid;
+  gap: 0.75rem;
+  text-align: center;
+  justify-items: center;
+}
+
+.fsv4-heading {
+  font-family: var(--fsv4-sans);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.fsv4-subtitle {
+  font-family: var(--fsv4-sans);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* ─── Grid ──────────────────────────────────── */
+
+.fsv4-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  position: relative;
+}
+
+/* ─── Card ──────────────────────────────────── */
+
+.fsv4-card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--fsv4-border);
+  position: relative;
+}
+
+/* ─── Crosshair Markers — shared style ─────── */
+
+.fsv4-card::before,
+.fsv4-card::after,
+.fsv4-corners::before,
+.fsv4-corners::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background:
+    linear-gradient(var(--fsv4-marker), var(--fsv4-marker)) center / 2px 14px no-repeat,
+    linear-gradient(var(--fsv4-marker), var(--fsv4-marker)) center / 14px 2px no-repeat;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Top-left */
+.fsv4-card::before {
+  top: -7px;
+  left: -7px;
+}
+
+/* Top-right */
+.fsv4-card::after {
+  top: -7px;
+  right: -7px;
+}
+
+/* Bottom-left */
+.fsv4-corners::before {
+  bottom: -7px;
+  left: -7px;
+}
+
+/* Bottom-right */
+.fsv4-corners::after {
+  bottom: -7px;
+  right: -7px;
+}
+
+/* Corners span — full coverage for positioning */
+.fsv4-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ─── Icon ──────────────────────────────────── */
+
+.fsv4-icon-wrap {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  border: 1px solid var(--fsv4-icon-border);
+  background: var(--fsv4-icon-bg);
+  margin-bottom: 0.35rem;
+}
+
+.fsv4-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--foreground);
+  stroke-width: 1.5;
+}
+
+/* ─── Card Text ─────────────────────────────── */
+
+.fsv4-card-title {
+  font-family: var(--fsv4-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.fsv4-card-body {
+  font-family: var(--fsv4-sans);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+/* ─── Responsive: 2-column ──────────────────── */
+
+@container fsv4 (min-width: 540px) {
+  .fsv4-inner {
+    padding: 6rem 2rem;
+    gap: 4rem;
+  }
+
+  .fsv4-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fsv4-card {
+    padding: 2rem 1.75rem;
+  }
+}
+
+/* ─── Responsive: 4-column ──────────────────── */
+
+@container fsv4 (min-width: 768px) {
+  .fsv4-inner {
+    padding: 6rem 2.5rem;
+  }
+
+  .fsv4-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .fsv4-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Bottom row: cards 5 & 6 under columns 2 & 3 */
+  .fsv4-card:nth-child(5) {
+    grid-column: 2;
+  }
+
+  .fsv4-card:nth-child(6) {
+    grid-column: 3;
+  }
+}
+
+@container fsv4 (min-width: 1080px) {
+  .fsv4-inner {
+    padding: 7rem 3rem;
+  }
+
+  .fsv4-card {
+    padding: 2.25rem 2rem;
+  }
+}

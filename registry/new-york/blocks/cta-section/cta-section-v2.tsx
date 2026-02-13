@@ -1,40 +1,44 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useTheme } from "next-themes"
 import "./cta-section-v2.css"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { NeuroNoise } from "@paper-design/shaders-react"
 
-/* ─── Theme-aware shader colors ─────────────── */
+/* ─── Read shader colours from CSS variables ─── */
 
-const shaderPalette = {
-    light: {
-        colorFront: "#d4c8b8",
-        colorMid: "#a89888",
-        colorBack: "#f0ebe5",
-    },
-    dark: {
-        colorFront: "#4a4035",
-        colorMid: "#2e2822",
-        colorBack: "#1a1816",
-    },
+function getShaderColors() {
+    const s = getComputedStyle(document.documentElement)
+    return {
+        colorFront: s.getPropertyValue("--cta2-shader-front").trim(),
+        colorMid: s.getPropertyValue("--cta2-shader-mid").trim(),
+        colorBack: s.getPropertyValue("--cta2-shader-back").trim(),
+    }
 }
 
 export function CtaSectionV2({
     className,
     ...props
 }: React.ComponentProps<"section">) {
-    const { resolvedTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
+    const [palette, setPalette] = useState({
+        colorFront: "#d2d2d2",
+        colorMid: "#8f8f8f",
+        colorBack: "#f3f3f3",
+    })
 
     useEffect(() => {
         setMounted(true)
-    }, [])
+        setPalette(getShaderColors())
 
-    const isDark = mounted && resolvedTheme === "dark"
-    const palette = isDark ? shaderPalette.dark : shaderPalette.light
+        const observer = new MutationObserver(() => setPalette(getShaderColors()))
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["class"],
+        })
+        return () => observer.disconnect()
+    }, [])
 
     return (
         <section

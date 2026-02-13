@@ -1,0 +1,180 @@
+/* ============================================
+   Feature Section V5 — Editorial Grid
+   3x2 layout with v2-style bordered cards.
+   Circle icon placeholders for easy replacement.
+   ============================================ */
+
+.fsv5-section {
+  --fsv5-sans: var(--font-sans, "Geist", sans-serif);
+  --fsv5-title: #0b1323;
+  --fsv5-text: rgba(11, 19, 35, 0.72);
+  --fsv5-icon: rgba(11, 19, 35, 0.55);
+
+  color: var(--fsv5-title);
+  width: 100%;
+  container-type: inline-size;
+  container-name: fsv5;
+}
+
+.dark .fsv5-section {
+  --fsv5-title: rgba(255, 255, 255, 0.96);
+  --fsv5-text: rgba(255, 255, 255, 0.68);
+  --fsv5-icon: rgba(255, 255, 255, 0.56);
+}
+
+.fsv5-inner {
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 4.5rem 1rem 5.25rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.fsv5-header {
+  max-width: 44rem;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.fsv5-heading {
+  margin: 0;
+  font-family: var(--fsv5-sans);
+  font-size: 1.5rem;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  color: var(--fsv5-title);
+  text-wrap: balance;
+}
+
+.fsv5-subtitle {
+  margin: 0 auto;
+  max-width: 38rem;
+  font-family: var(--fsv5-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: var(--fsv5-text);
+  text-wrap: balance;
+}
+
+/* ================================
+   Grid
+   ================================ */
+.fsv5-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* ================================
+   Cards — v2-style
+   ================================ */
+.fsv5-card {
+  border-radius: 0;
+  border: 1px solid oklch(0 0 0 / 0.06);
+  background: oklch(0 0 0 / 0.015);
+  padding: 1.25rem 1.25rem 1.35rem;
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  min-height: 9.5rem;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.dark .fsv5-card {
+  border-color: oklch(1 0 0 / 0.07);
+  background: oklch(1 0 0 / 0.025);
+}
+
+.fsv5-card:hover {
+  border-color: oklch(0 0 0 / 0.12);
+  box-shadow: 0 16px 48px -16px oklch(0 0 0 / 0.1);
+  transform: translateY(-3px);
+}
+
+.dark .fsv5-card:hover {
+  border-color: oklch(1 0 0 / 0.14);
+  box-shadow: 0 16px 48px -16px oklch(0 0 0 / 0.5);
+}
+
+.fsv5-icon {
+  color: var(--fsv5-icon);
+  margin-bottom: 0.15rem;
+}
+
+.fsv5-card-title {
+  margin: 0;
+  font-family: var(--fsv5-sans);
+  font-size: clamp(0.95rem, 1.05vw, 1.075rem);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--fsv5-title);
+}
+
+.fsv5-card-body {
+  margin: 0;
+  font-family: var(--fsv5-sans);
+  font-size: clamp(0.835rem, 0.86vw, 0.9rem);
+  line-height: 1.6;
+  color: var(--fsv5-text);
+  max-width: 42ch;
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@container fsv5 (min-width: 700px) {
+  .fsv5-inner {
+    padding: 5.25rem 1.5rem 6rem;
+    gap: 3rem;
+  }
+
+  .fsv5-heading {
+    font-size: 1.875rem;
+  }
+
+  .fsv5-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .fsv5-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .fsv5-card {
+    min-height: 10.5rem;
+  }
+}
+
+@container fsv5 (min-width: 1024px) {
+  .fsv5-inner {
+    padding: 6rem 2rem 6.5rem;
+  }
+
+  .fsv5-heading {
+    font-size: 2.25rem;
+  }
+
+  .fsv5-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .fsv5-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .fsv5-card {
+    min-height: 10.75rem;
+    padding: 1.35rem 1.25rem 1.4rem;
+  }
+}

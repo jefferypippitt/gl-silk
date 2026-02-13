@@ -1,33 +1,5 @@
-"use client"
-
-import { useState, useEffect, useRef } from "react"
 import "./feature-section-v1.css"
 import { cn } from "@/lib/utils"
-
-/* ─── Scroll-triggered visibility ────────────── */
-
-function useInView(threshold = 0.1) {
-    const ref = useRef<HTMLDivElement>(null)
-    const [inView, setInView] = useState(false)
-
-    useEffect(() => {
-        const el = ref.current
-        if (!el) return
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setInView(true)
-                    observer.disconnect()
-                }
-            },
-            { threshold }
-        )
-        observer.observe(el)
-        return () => observer.disconnect()
-    }, [threshold])
-
-    return { ref, inView }
-}
 
 /* ─── Card Graphic (Unsplash images) ─────────── */
 
@@ -52,21 +24,14 @@ function FeatureCard({
     graphic,
     title,
     description,
-    delay,
-    visible,
 }: {
     index: string
     graphic: React.ReactNode
     title: string
     description: string
-    delay: number
-    visible: boolean
 }) {
     return (
-        <article
-            className={cn("fsv1-card", visible && "fsv1-visible")}
-            style={{ "--delay": `${delay}s` } as React.CSSProperties}
-        >
+        <article className="fsv1-card">
             {/* Graphic with L-bracket corners */}
             <div className="fsv1-card-graphic">
                 {graphic}
@@ -94,17 +59,14 @@ export function FeatureSectionV1({
     className,
     ...props
 }: React.ComponentProps<"section">) {
-    const { ref, inView } = useInView(0.05)
-
     return (
         <section
-            ref={ref}
             className={cn("fsv1-section", className)}
             {...props}
         >
             <div className="fsv1-inner">
                 {/* Intro paragraph */}
-                <p className={cn("fsv1-intro", inView && "fsv1-visible")}>
+                <p className="fsv1-intro">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
@@ -113,35 +75,27 @@ export function FeatureSectionV1({
                 <div className="fsv1-cards">
                     <FeatureCard
                         index="01"
-                        graphic={<CardGraphic src="https://images.unsplash.com/photo-1604076850742-4c7221f3101b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lorem ipsum" />}
+                        graphic={<CardGraphic src="https://cdn.cosmos.so/9756655e-96d3-4aea-9844-521793e68b66?format=jpeg" alt="Lorem ipsum" />}
                         title="Lorem ipsum dolor."
                         description="Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-                        delay={0.08}
-                        visible={inView}
                     />
                     <FeatureCard
                         index="02"
-                        graphic={<CardGraphic src="https://images.unsplash.com/photo-1604076850742-4c7221f3101b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lorem ipsum" />}
+                        graphic={<CardGraphic src="https://cdn.cosmos.so/9756655e-96d3-4aea-9844-521793e68b66?format=jpeg" alt="Lorem ipsum" />}
                         title="Consectetur elit."
                         description="Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute."
-                        delay={0.16}
-                        visible={inView}
                     />
                     <FeatureCard
                         index="03"
-                        graphic={<CardGraphic src="https://images.unsplash.com/photo-1604076850742-4c7221f3101b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lorem ipsum" />}
+                        graphic={<CardGraphic src="https://cdn.cosmos.so/9756655e-96d3-4aea-9844-521793e68b66?format=jpeg" alt="Lorem ipsum" />}
                         title="Sed do eiusmod."
                         description="Irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                        delay={0.24}
-                        visible={inView}
                     />
                     <FeatureCard
                         index="04"
-                        graphic={<CardGraphic src="https://images.unsplash.com/photo-1604076850742-4c7221f3101b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lorem ipsum" />}
+                        graphic={<CardGraphic src="https://cdn.cosmos.so/9756655e-96d3-4aea-9844-521793e68b66?format=jpeg" alt="Lorem ipsum" />}
                         title="Tempor incididunt."
                         description="Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit."
-                        delay={0.32}
-                        visible={inView}
                     />
                 </div>
             </div>

@@ -3,6 +3,7 @@ export const CATEGORY_GROUPS = [
   { id: "landing-page", label: "Landing Page" },
   { id: "application-ui", label: "Application UI" },
   { id: "e-commerce", label: "E-commerce" },
+  { id: "other", label: "Other" },
 ] as const;
 
 // Map actual categories to groups
@@ -42,5 +43,5 @@ export const CATEGORY_TO_GROUP: Record<string, string> = {
   checkout: "e-commerce",
 
   // Other
-  "coming-soon": "other",
+  other: "other",
 };

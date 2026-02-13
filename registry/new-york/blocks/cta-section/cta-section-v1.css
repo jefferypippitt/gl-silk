@@ -19,7 +19,7 @@
 
   /* Colors — black & white */
   --cta1-accent: var(--foreground);
-  --cta1-accent-glow: oklch(0 0 0 / 0.04);
+  --cta1-accent-glow: oklch(0 0 0 / 0.12);
 
   position: relative;
   width: 100%;
@@ -31,19 +31,19 @@
 
 .dark .cta1-section {
   --cta1-accent: var(--foreground);
-  --cta1-accent-glow: oklch(1 0 0 / 0.04);
+  --cta1-accent-glow: oklch(1 0 0 / 0.12);
 }
 
-/* ── Background Glow ─────────────────────────── */
+/* ── Content Glow ────────────────────────────── */
 
 .cta1-glow {
   position: absolute;
-  inset: 0;
-  z-index: 0;
+  inset: -20% -30%;
+  z-index: -1;
   background: radial-gradient(
-    55% 65% at 50% 55%,
+    50% 50% at 50% 50%,
     var(--cta1-accent-glow) 0%,
-    transparent 100%
+    transparent 70%
   );
   pointer-events: none;
 }

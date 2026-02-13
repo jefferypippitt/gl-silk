@@ -215,4 +215,17 @@
   .custom-scrollbar::-webkit-scrollbar-corner {
     background: transparent;
   }
+
+  /* Preview frame: make viewport-relative heights use container height instead */
+  .preview-frame {
+    container-type: size;
+  }
+  .preview-frame .min-h-screen,
+  .preview-frame .min-h-dvh {
+    min-height: 100cqh !important;
+  }
+  .preview-frame .h-screen,
+  .preview-frame .h-dvh {
+    height: 100cqh !important;
+  }
 }

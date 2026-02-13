@@ -2,7 +2,7 @@ import "./hero-section-v1.css"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Layers } from "lucide-react"
+import { Circle } from "lucide-react"
 
 export function HeroSectionV1({
     className,
@@ -29,7 +29,7 @@ export function HeroSectionV1({
                         variant="secondary"
                         className="rounded-full"
                     >
-                        <Layers className="size-4" />
+                        <Circle className="size-4" />
                         <span>Lorem ipsum dolor sit</span>
                     </Badge>
 

@@ -13,13 +13,12 @@ export function CtaSectionV1({
             className={cn("cta1-section", className)}
             {...props}
         >
-            {/* Background radial glow */}
-            <div className="cta1-glow" aria-hidden="true" />
-
             {/* Noise grain overlay */}
             <div className="cta1-grain" aria-hidden="true" />
 
             <div className="cta1-inner">
+                {/* Radial glow — centered on content */}
+                <div className="cta1-glow" aria-hidden="true" />
                 {/* Headline */}
                 <h2 className="cta1-headline">
                     Lorem ipsum dolor sit amet,

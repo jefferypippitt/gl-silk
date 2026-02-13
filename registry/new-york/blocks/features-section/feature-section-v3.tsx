@@ -1,54 +1,52 @@
 import "./feature-section-v3.css"
 import { cn } from "@/lib/utils"
-import { Circle } from "lucide-react"
 
 /* ─── Feature Data ───────────────────────────── */
 
 const features = [
     {
-        icon: Circle,
-        title: "Lorem ipsum dolor",
-        lead: "Sed do eiusmod tempor incididunt.",
-        body: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        index: "01",
+        title: "Lorem ipsum dolor sit amet",
+        body: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-        icon: Circle,
-        title: "Consectetur adipiscing",
-        lead: "Duis aute irure dolor in reprehenderit.",
-        body: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.",
+        index: "02",
+        title: "Ut enim ad minim veniam",
+        body: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.",
     },
     {
-        icon: Circle,
-        title: "Excepteur sint occaecat",
-        lead: "Sunt in culpa qui officia deserunt.",
-        body: "Mollit anim id est laborum sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        index: "03",
+        title: "Excepteur sint occaecat cupidatat",
+        body: "Non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis.",
+    },
+    {
+        index: "04",
+        title: "Nemo enim ipsam voluptatem",
+        body: "Quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione.",
     },
 ]
 
-/* ─── Feature Card ───────────────────────────── */
+/* ─── Feature Row ───────────────────────────── */
 
-function FeatureCard({
-    icon: Icon,
+function FeatureRow({
+    index,
     title,
-    lead,
     body,
 }: {
-    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+    index: string
     title: string
-    lead: string
     body: string
 }) {
     return (
-        <article className="fsv3-card">
-            <div className="fsv3-icon-wrapper">
-                <Icon className="fsv3-icon" aria-hidden="true" />
+        <li className="fsv3-row">
+            <span className="fsv3-row-index" aria-hidden="true">
+                {index}
+            </span>
+            <div className="fsv3-row-content">
+                <h3 className="fsv3-row-title">{title}</h3>
+                <p className="fsv3-row-body">{body}</p>
             </div>
-            <h3 className="fsv3-card-title">{title}</h3>
-            <p className="fsv3-card-desc">
-                <strong className="fsv3-card-lead">{lead}</strong>{" "}
-                <span className="fsv3-card-body">{body}</span>
-            </p>
-        </article>
+        </li>
     )
 }
 
@@ -64,29 +62,25 @@ export function FeatureSectionV3({
             {...props}
         >
             <div className="fsv3-inner">
-                {/* Header */}
-                <div className="fsv3-header">
-                    <h2 className="fsv3-heading">
-                        Lorem ipsum dolor sit amet
-                    </h2>
+                <header className="fsv3-header">
+                    <p className="fsv3-kicker">Consectetur adipiscing</p>
+                    <h2 className="fsv3-heading">Lorem ipsum dolor sit amet</h2>
                     <p className="fsv3-subtitle">
-                        Consectetur adipiscing elit. Sed do eiusmod tempor
-                        incididunt ut labore.
+                        Sed ut perspiciatis unde omnis iste natus error sit
+                        voluptatem accusantium doloremque laudantium.
                     </p>
-                </div>
+                </header>
 
-                {/* Feature Cards */}
-                <div className="fsv3-grid">
+                <ol className="fsv3-list">
                     {features.map((feature) => (
-                        <FeatureCard
+                        <FeatureRow
                             key={feature.title}
-                            icon={feature.icon}
+                            index={feature.index}
                             title={feature.title}
-                            lead={feature.lead}
                             body={feature.body}
                         />
                     ))}
-                </div>
+                </ol>
             </div>
         </section>
     )

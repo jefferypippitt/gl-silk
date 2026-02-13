@@ -109,7 +109,7 @@ export const BLOCK_CATEGORIES: BlockCategory[] = [
   { name: "checkout", slug: "checkout", displayName: "Checkout" },
 
   // Other
-  { name: "coming-soon", slug: "coming-soon", displayName: "Coming Soon" },
+  { name: "other", slug: "other", displayName: "Other" },
 ];
 
 export function getBlockCategories(): BlockCategory[] {

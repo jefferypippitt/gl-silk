@@ -35,9 +35,9 @@ export default function BlocksList({ blocks }: BlocksListProps) {
           <EmptyMedia variant="icon">
             <PackageIcon />
           </EmptyMedia>
-          <EmptyTitle>Coming Soon</EmptyTitle>
+          <EmptyTitle>Other</EmptyTitle>
           <EmptyDescription>
-            No blocks available yet. Check back soon!
+            No blocks available yet for this category.
           </EmptyDescription>
         </EmptyHeader>
       </Empty>
@@ -162,7 +162,7 @@ function BlockItem({ block }: { block: RegistryItem }) {
         </div>
 
         {/* Preview area — fixed dimensions, never shifts */}
-        <div className="border border-t-0 rounded-b-lg overflow-hidden h-[min(75vh,1000px)] w-full bg-muted/30">
+        <div className="border border-t-0 rounded-b-lg overflow-hidden h-[min(75vh,1000px)] w-full bg-muted/30 preview-frame">
           <ComponentPreview name={block.name} viewMode={viewMode} />
         </div>
       </div>

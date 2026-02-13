@@ -44,7 +44,7 @@ export function BlockCategorySkeleton({ category }: BlockCategorySkeletonProps) 
     checkout: <CheckoutSkeleton />,
 
     // Other
-    "coming-soon": <ComingSoonSkeleton />,
+    other: <OtherSkeleton />,
   };
 
   return (
@@ -837,8 +837,8 @@ function CheckoutSkeleton() {
   );
 }
 
-/* ─── Coming Soon ─── placeholder */
-function ComingSoonSkeleton() {
+/* ─── Other ─── placeholder */
+function OtherSkeleton() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-2">
       <Skeleton className="size-5 rounded-full opacity-30" />

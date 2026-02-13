@@ -4,7 +4,6 @@ import { RegistryItem } from "@/lib/registry";
 import { ComponentCard } from "./component-card";
 
 // Import all your components here
-import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world";
 import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form";
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
@@ -55,7 +54,6 @@ import { NeubrutalismButtonDemo } from "@/registry/new-york/components/neubrutal
 
 // Component mapping - add new components here as you create them
 const componentMap: Record<string, React.ComponentType> = {
-  "hello-world": HelloWorld,
   "example-form": ExampleForm,
   "example-with-css": ExampleCard,
   // Split Text Animations

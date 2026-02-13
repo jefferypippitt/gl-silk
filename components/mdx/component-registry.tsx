@@ -1,19 +1,24 @@
 // Static registry mapping for Turbopack compatibility
-import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world";
+import { MacOsTerminal } from "@/registry/new-york/blocks/other/mac-os-terminal";
 import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form";
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card";
 import { LoginFormV1 } from "@/registry/new-york/blocks/auth/login-form-v1";
 import { SignupForm } from "@/registry/new-york/blocks/auth/sign-up-form-v1";
 import { HeroSectionV1 } from "@/registry/new-york/blocks/hero-section/hero-section-v1";
 import { HeroSectionV2 } from "@/registry/new-york/blocks/hero-section/hero-section-v2";
+import { HeroSectionV3 } from "@/registry/new-york/blocks/hero-section/hero-section-v3";
+import { HeroSectionV4 } from "@/registry/new-york/blocks/hero-section/hero-section-v4";
 import { FeatureSectionV1 } from "@/registry/new-york/blocks/features-section/feature-section-v1";
 import { FeatureSectionV2 } from "@/registry/new-york/blocks/features-section/feature-section-v2";
 import { FeatureSectionV3 } from "@/registry/new-york/blocks/features-section/feature-section-v3";
+import { FeatureSectionV4 } from "@/registry/new-york/blocks/features-section/feature-section-v4";
 import { CtaSectionV1 } from "@/registry/new-york/blocks/cta-section/cta-section-v1";
 import { CtaSectionV2 } from "@/registry/new-york/blocks/cta-section/cta-section-v2";
 import { CtaSectionV3 } from "@/registry/new-york/blocks/cta-section/cta-section-v3";
+import { BlogSectionV1 } from "@/registry/new-york/blocks/blog-section/blog-section-v1";
 import { FaqSectionV1 } from "@/registry/new-york/blocks/faq-section/faq-section-v1";
 import { FaqSectionV2 } from "@/registry/new-york/blocks/faq-section/faq-section-v2";
+import { FaqSectionV3 } from "@/registry/new-york/blocks/faq-section/faq-section-v3";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
 import { FadeDemo } from "@/registry/new-york/components/split-text-animation/fade-demo";
 import { FadeFastDemo } from "@/registry/new-york/components/split-text-animation/fade-fast-demo";
@@ -62,23 +67,30 @@ import { NeubrutalismButtonDemo } from "@/registry/new-york/components/neubrutal
 import { NeubrutalismButtonOutlineDemo } from "@/registry/new-york/components/neubrutalism-button/outline-demo";
 import { NeubrutalismButtonDestructiveDemo } from "@/registry/new-york/components/neubrutalism-button/destructive-demo";
 import { NeubrutalismButtonSecondaryDemo } from "@/registry/new-york/components/neubrutalism-button/secondary-demo";
+import { FeatureSectionV5 } from "@/registry/new-york/blocks/features-section/feature-section-v5";
 
 export const componentRegistry: Record<string, React.ComponentType> = {
-  "hello-world": HelloWorld,
+  "mac-os-terminal": MacOsTerminal,
   "example-form": ExampleForm,
   "example-with-css": ExampleCard,
   "login-form-v1": LoginFormV1,
   "sign-up-form-v1": SignupForm,
   "hero-section-v1": HeroSectionV1,
   "hero-section-v2": HeroSectionV2,
+  "hero-section-v3": HeroSectionV3,
+  "hero-section-v4": HeroSectionV4,
   "feature-section-v1": FeatureSectionV1,
   "feature-section-v2": FeatureSectionV2,
   "feature-section-v3": FeatureSectionV3,
+  "feature-section-v4": FeatureSectionV4,
+  "feature-section-v5": FeatureSectionV5,
   "cta-section-v1": CtaSectionV1,
   "cta-section-v2": CtaSectionV2,
   "cta-section-v3": CtaSectionV3,
+  "blog-section-v1": BlogSectionV1,
   "faq-section-v1": FaqSectionV1,
   "faq-section-v2": FaqSectionV2,
+  "faq-section-v3": FaqSectionV3,
   "split-text-demo": SplitTextDemo,
   "split-text-fade": FadeDemo,
   "split-text-fade-fast": FadeFastDemo,

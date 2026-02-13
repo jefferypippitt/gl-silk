@@ -162,7 +162,7 @@
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
   opacity: 0.45;
   filter: url(#hs2-grain);
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='hs2-grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23hs2-grain)'/%3E%3C/svg%3E");
@@ -216,6 +216,7 @@
 /* ── Tab navigation ──────────────────────────── */
 
 .hs2-tabs {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.375rem;
@@ -239,6 +240,9 @@
 }
 
 .hs2-tab {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 500;
@@ -256,14 +260,40 @@
 
 .hs2-tab:hover {
   color: var(--foreground);
+}
+
+.hs2-tab-label {
+  position: relative;
+  z-index: 3;
+}
+
+.hs2-tab-pill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 9999px;
   background: var(--hs2-subcard-bg);
+  border: 1px solid var(--hs2-subcard-border);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 0.04);
+  pointer-events: none;
+}
+
+.hs2-tab-pulse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(circle, oklch(0.62 0.03 75 / 0.22) 0%, oklch(0.62 0.03 75 / 0) 72%);
 }
 
 .hs2-tab-active {
   color: var(--foreground);
-  background: var(--hs2-subcard-bg);
-  border-color: var(--hs2-subcard-border);
-  box-shadow: 0 1px 2px oklch(0 0 0 / 0.04);
 }
 
 @media (min-width: 768px) {
@@ -330,13 +360,6 @@
   }
 }
 
-/* Reverse — image left, text right on desktop */
-@media (min-width: 768px) {
-  .hs2-panel-reverse {
-    flex-direction: row;
-  }
-}
-
 /* Bullet list inside panels */
 .hs2-panel-list {
   list-style: none;
@@ -380,28 +403,6 @@
   }
 }
 
-/* Duo — two stacked images in a column */
-.hs2-panel-duo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1;
-  min-width: 0;
-  min-height: 0;
-}
-
-.hs2-panel-duo-img {
-  flex: 1;
-  min-height: 0;
-  border-radius: 0.375rem;
-}
-
-@media (max-width: 767px) {
-  .hs2-panel-duo {
-    display: none;
-  }
-}
-
 /* Stack — vertical flow */
 .hs2-panel-stack {
   gap: 0.625rem;
@@ -435,21 +436,8 @@
   overflow: hidden;
   border-radius: 0.5rem;
   position: relative;
+  z-index: 1;
   background: var(--muted);
-}
-
-.hs2-img-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: oklch(0.55 0.06 75);
-  opacity: 0.45;
-  mix-blend-mode: color;
-}
-
-.dark .hs2-img-overlay {
-  background: oklch(0.45 0.05 75);
-  opacity: 0.5;
 }
 
 .hs2-img {
@@ -459,7 +447,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: brightness(0.85) saturate(0.7);
 }
 
 
@@ -524,5 +511,9 @@
   .hs2-actions,
   .hs2-card {
     animation: none;
+  }
+
+  .hs2-tab {
+    transition: color 0.2s ease;
   }
 }

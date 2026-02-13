@@ -4,6 +4,20 @@
 
 /* Fonts — inherits --font-sans from next/font (globals.css) */
 
+/* ── Theme Variables ─────────────────────────── */
+
+:root {
+  --cta2-shader-front: #d2d2d2;
+  --cta2-shader-mid: #8f8f8f;
+  --cta2-shader-back: #f3f3f3;
+}
+
+.dark {
+  --cta2-shader-front: #575757;
+  --cta2-shader-mid: #2f2f2f;
+  --cta2-shader-back: #161616;
+}
+
 /* ============================================
    CTA Section V2 — Minimalist Shader Card
    Modern, clean, and minimalist design

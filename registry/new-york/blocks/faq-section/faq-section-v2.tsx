@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 import "./faq-section-v2.css"
 import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 
 /* ─── FAQ Data ───────────────────────────────── */
 
@@ -120,15 +121,14 @@ export function FaqSectionV2({
                 {/* Left Column — Sticky Header */}
                 <div className="faq2-header">
                     <div className="faq2-header-inner">
-                        <span className="faq2-badge">FAQ</span>
+                        <Badge variant="outline">FAQ</Badge>
                         <h2 className="faq2-headline">
                             Frequently asked
                             <br />
                             questions
                         </h2>
                         <p className="faq2-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
                         </p>
                     </div>
                 </div>

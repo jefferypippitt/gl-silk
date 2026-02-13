@@ -14,13 +14,14 @@ import {
     FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import Link from "next/link"
 
 export function SignupForm({
     className,
     ...props
 }: React.ComponentProps<"div">) {
     return (
-        <div className={cn("flex min-h-svh w-full items-center justify-center p-6 md:p-10", className)} {...props}>
+        <div className={cn("flex w-full items-center justify-center p-6 md:p-10", className)} {...props}>
             <div className="w-full max-w-md">
                 <Card>
                     <CardHeader>
@@ -69,7 +70,7 @@ export function SignupForm({
                                         Sign up with Google
                                     </Button>
                                     <FieldDescription className="text-center">
-                                        Already have an account? <a href="#">Sign in</a>
+                                        Already have an account? <Link href="#">Sign in</Link>
                                     </FieldDescription>
                                 </Field>
                             </FieldGroup>

@@ -103,20 +103,19 @@ export function FaqSectionV1({
             <div className="faq1-inner">
                 {/* Eyebrow */}
                 <p className="faq1-eyebrow">
-                    Frequenter Interrogata
+                    FAQ
                 </p>
 
                 {/* Headline */}
                 <h2 className="faq1-headline">
-                    Lorem ipsum dolor
+                    Frequently asked
                     <br />
-                    <em>sit amet</em>
+                    <em>questions</em>
                 </h2>
 
                 {/* Description */}
                 <p className="faq1-description">
-                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
                 </p>
 
                 {/* Accordion */}
