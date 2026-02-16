@@ -1,0 +1,265 @@
+/* ─── macOS Terminal ─────────────────────────────── */
+/* Reusable animated macOS terminal component         */
+
+/* ─── Theme Variables ────────────────────────── */
+
+.hmot-wrapper {
+  /* Title bar – light mode (macOS light chrome) */
+  --hmot-tb-bg-from: #e8e6e2;
+  --hmot-tb-bg-to: #dddbd7;
+  --hmot-tb-border: #c4c2be;
+  --hmot-tb-title: #4a4846;
+  --hmot-tb-icon: #2f6feb;
+
+  /* Terminal body – light mode */
+  --hmot-bg: #ffffff;
+  --hmot-border: #d4d4d4;
+  --hmot-shadow: rgba(0, 0, 0, 0.08);
+  --hmot-shadow-ring: rgba(0, 0, 0, 0.05);
+  --hmot-prompt: #1a8a6e;
+  --hmot-typed: #1e1e1e;
+  --hmot-text: #4b5563;
+  --hmot-text-success: #16a34a;
+  --hmot-text-error: #dc2626;
+  --hmot-cursor: #1e1e1e;
+}
+
+.dark .hmot-wrapper {
+  /* Title bar – dark mode (zinc) */
+  --hmot-tb-bg-from: #27272a;
+  --hmot-tb-bg-to: #1f1f23;
+  --hmot-tb-border: rgba(255, 255, 255, 0.06);
+  --hmot-tb-title: rgba(255, 255, 255, 0.45);
+  --hmot-tb-icon: #7aa2ff;
+
+  /* Terminal body – dark mode (zinc) */
+  --hmot-bg: #18181b;
+  --hmot-border: #27272a;
+  --hmot-shadow: rgba(0, 0, 0, 0.6);
+  --hmot-shadow-ring: rgba(0, 0, 0, 0.4);
+  --hmot-prompt: #2db8a4;
+  --hmot-typed: #e4e4e7;
+  --hmot-text: #a1a1aa;
+  --hmot-text-success: #9ece6a;
+  --hmot-text-error: #f7768e;
+  --hmot-cursor: #e4e4e7;
+}
+
+/* ─── Wrapper ────────────────────────────────── */
+
+.hmot-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Terminal Window ────────────────────────── */
+
+.hmot-terminal {
+  position: relative;
+  z-index: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--hmot-bg);
+  border: 1px solid var(--hmot-border);
+  box-shadow:
+    0 0 0 1px var(--hmot-shadow-ring),
+    0 8px 40px -8px var(--hmot-shadow),
+    0 2px 12px -2px var(--hmot-shadow);
+}
+
+/* ─── Title Bar ──────────────────────────────── */
+
+.hmot-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(180deg, var(--hmot-tb-bg-from) 0%, var(--hmot-tb-bg-to) 100%);
+  border-bottom: 1px solid var(--hmot-tb-border);
+  user-select: none;
+  position: relative;
+  min-height: 2.25rem;
+}
+
+.hmot-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.hmot-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.hmot-dot-close {
+  background: #ff5f57;
+  box-shadow: inset 0 -0.5px 0.5px rgba(0, 0, 0, 0.12);
+}
+
+.hmot-dot-minimize {
+  background: #ffbd2e;
+  box-shadow: inset 0 -0.5px 0.5px rgba(0, 0, 0, 0.12);
+}
+
+.hmot-dot-maximize {
+  background: #28c840;
+  box-shadow: inset 0 -0.5px 0.5px rgba(0, 0, 0, 0.12);
+}
+
+.hmot-title-group {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+.hmot-title-icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: var(--hmot-tb-icon);
+  opacity: 1;
+}
+
+.hmot-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--hmot-tb-title);
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hmot-dots-spacer {
+  width: 3.25rem;
+  z-index: 1;
+}
+
+/* ─── Terminal Body ──────────────────────────── */
+
+.hmot-body {
+  padding: 1.25rem 1.25rem 1.5rem;
+  font-family: var(--font-mono, "SF Mono", "Fira Code", "Cascadia Code", monospace);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  height: 320px;
+  overflow: hidden;
+}
+
+/* ─── Lines ──────────────────────────────────── */
+
+.hmot-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+  white-space: pre;
+  min-width: 0;
+}
+
+.hmot-line-blank {
+  height: 0.5em;
+}
+
+.hmot-line-command {
+  align-items: flex-start;
+}
+
+/* ─── Prompt ─────────────────────────────────── */
+
+.hmot-prompt {
+  color: var(--hmot-prompt);
+  font-weight: 600;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* ─── Typed Command Text ─────────────────────── */
+
+.hmot-typed {
+  color: var(--hmot-typed);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+  flex: 1;
+}
+
+/* ─── Output Text ────────────────────────────── */
+
+.hmot-text {
+  color: var(--hmot-text);
+}
+
+.hmot-text-success {
+  color: var(--hmot-text-success);
+}
+
+.hmot-text-error {
+  color: var(--hmot-text-error);
+}
+
+.hmot-spinner {
+  color: var(--hmot-text);
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+}
+
+/* ─── Cursor ─────────────────────────────────── */
+
+.hmot-cursor {
+  color: var(--hmot-cursor);
+  font-size: 1em;
+  line-height: 1;
+}
+
+/* ─── Responsive ─────────────────────────────── */
+
+@media (max-width: 480px) {
+  .hmot-body {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .hmot-titlebar {
+    padding: 0.5rem 0.625rem;
+  }
+
+  .hmot-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+  }
+
+  .hmot-title {
+    font-size: 0.75rem;
+  }
+
+  .hmot-title-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
+
+/* ─── Reduced Motion ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .hmot-cursor {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

@@ -168,6 +168,9 @@ importers:
       shadcn:
         specifier: ^3.0.0
         version: 3.0.0(@types/node@20.19.9)(typescript@5.9.2)
+      shaders:
+        specifier: ^2.3.61
+        version: 2.3.61
       shiki:
         specifier: ^3.13.0
         version: 3.13.0
@@ -4352,6 +4355,9 @@ packages:
     resolution: {integrity: sha512-GhMwMwcxR3GpDO2ctocvyetQ7BJAxSakaznBtYM/1mPRTjN0I0TAZCGSXdfj0VXOW4PaHbFEHsyUCnFcEf/1Ag==}
     hasBin: true
 
+  shaders@2.3.61:
+    resolution: {integrity: sha512-mkXLGbx8wY9C9DEO/UKIEq38Wd8s0VJkPekONx7thsTJl7OEX35GYf3CP8iBJIUSJpaPDHkMUWvMaC2SgLYboQ==}
+
   sharp@0.34.4:
     resolution: {integrity: sha512-FUH39xp3SBPnxWvd5iib1X8XY7J0K0X7d93sie9CJg2PO8/7gmg89Nve6OjItK53/MlAushNNxteBYfM6DEuoA==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -4565,6 +4571,9 @@ packages:
 
   three@0.181.0:
     resolution: {integrity: sha512-KGf6EOCOQGshXeleKxpxhbowQwAXR2dLlD93egHtZ9Qmk07Saf8sXDR+7wJb53Z1ORZiatZ4WGST9UsVxhHEbg==}
+
+  three@0.182.0:
+    resolution: {integrity: sha512-GbHabT+Irv+ihI1/f5kIIsZ+Ef9Sl5A1Y7imvS5RQjWgtTPfPnZ43JmlYI7NtCRDK9zir20lQpfg8/9Yd02OvQ==}
 
   tiny-invariant@1.3.3:
     resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
@@ -9622,6 +9631,10 @@ snapshots:
       - supports-color
       - typescript
 
+  shaders@2.3.61:
+    dependencies:
+      three: 0.182.0
+
   sharp@0.34.4:
     dependencies:
       '@img/colour': 1.0.0
@@ -9882,6 +9895,8 @@ snapshots:
       three: 0.181.0
 
   three@0.181.0: {}
+
+  three@0.182.0: {}
 
   tiny-invariant@1.3.3: {}
 

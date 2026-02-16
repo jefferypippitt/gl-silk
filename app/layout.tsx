@@ -32,6 +32,14 @@ const sourceSerif4 = Source_Serif_4({
 export const metadata: Metadata = {
   title: "glsilk",
   description: "A component library for building web applications.",
+  icons: {
+    icon: [
+      { url: "/icon0.svg", type: "image/svg+xml" },
+      { url: "/icon1.png", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

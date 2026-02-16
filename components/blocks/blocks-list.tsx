@@ -85,7 +85,7 @@ function BlockItem({ block }: { block: RegistryItem }) {
   return (
     <div className="w-full space-y-2">
       {/* Block ID — filename above the preview */}
-      <h3 className="text-sm font-medium text-muted-foreground font-mono">
+      <h3 className="text-sm font-medium text-foreground font-mono">
         {block.name}
       </h3>
 
