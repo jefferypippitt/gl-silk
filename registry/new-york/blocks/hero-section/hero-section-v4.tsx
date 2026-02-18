@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect, useState } from "react"
 import "./hero-section-v4.css"
 import { cn } from "@/lib/utils"
@@ -48,7 +46,7 @@ export function HeroSectionV4({
           {/* Announcement */}
           <Badge variant="secondary">
             Announcing Our Latest Release
-            <ArrowRight className="size-3" />
+            <ArrowRight />
           </Badge>
 
           {/* Split Layout */}
@@ -66,10 +64,12 @@ export function HeroSectionV4({
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
               </p>
               <div className="hs4-cta-group">
-                <Button>
+                <Button size="default" variant="default"
+                >
                   Get started free
                 </Button>
-                <Button variant="outline">
+                <Button size="default" variant="outline"
+                >
                   See it in action
                 </Button>
               </div>

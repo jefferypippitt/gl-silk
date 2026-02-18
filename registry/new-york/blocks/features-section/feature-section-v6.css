@@ -1,0 +1,338 @@
+/* ============================================
+   Feature Section V6 — Pixel Bento Grid
+   Asymmetric bento-style card grid where each
+   card showcases a different Geist Pixel font
+   variant as a large decorative glyph.
+   ============================================ */
+
+.fsv6-section {
+  --fsv6-pixel-square: var(--font-pixel-square, monospace);
+  --fsv6-pixel-grid: var(--font-pixel-grid, monospace);
+  --fsv6-pixel-circle: var(--font-pixel-circle, monospace);
+  --fsv6-pixel-triangle: var(--font-pixel-triangle, monospace);
+  --fsv6-pixel-line: var(--font-pixel-line, monospace);
+
+  --fsv6-title: #0b1323;
+  --fsv6-text: rgba(11, 19, 35, 0.62);
+  --fsv6-kicker-color: rgba(11, 19, 35, 0.44);
+  --fsv6-glyph-color: rgba(11, 19, 35, 0.06);
+  --fsv6-glyph-color-hover: rgba(11, 19, 35, 0.10);
+  --fsv6-card-bg: oklch(0 0 0 / 0.02);
+  --fsv6-card-bg-hover: oklch(0 0 0 / 0.035);
+  --fsv6-card-border: oklch(0 0 0 / 0.08);
+
+  color: var(--fsv6-title);
+  width: 100%;
+  container-type: inline-size;
+  container-name: fsv6;
+}
+
+.dark .fsv6-section {
+  --fsv6-title: rgba(255, 255, 255, 0.96);
+  --fsv6-text: rgba(255, 255, 255, 0.55);
+  --fsv6-kicker-color: rgba(255, 255, 255, 0.40);
+  --fsv6-glyph-color: rgba(255, 255, 255, 0.05);
+  --fsv6-glyph-color-hover: rgba(255, 255, 255, 0.09);
+  --fsv6-card-bg: oklch(1 0 0 / 0.025);
+  --fsv6-card-bg-hover: oklch(1 0 0 / 0.045);
+  --fsv6-card-border: oklch(1 0 0 / 0.08);
+}
+
+/* ================================
+   Layout wrapper
+   ================================ */
+.fsv6-inner {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 4rem 1rem 4.5rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* ================================
+   Header
+   ================================ */
+.fsv6-header {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.fsv6-kicker {
+  font-family: var(--fsv6-pixel-grid);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fsv6-kicker-color);
+  line-height: 1;
+}
+
+.fsv6-heading {
+  margin: 0;
+  font-family: var(--fsv6-pixel-square);
+  font-size: 1.625rem;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  color: var(--fsv6-title);
+  text-wrap: balance;
+}
+
+.fsv6-subtitle {
+  margin: 0;
+  font-family: var(--fsv6-pixel-grid);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--fsv6-text);
+  max-width: 38rem;
+}
+
+/* ================================
+   Bento grid — stacked on mobile
+   ================================ */
+.fsv6-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* ================================
+   Card base
+   ================================ */
+.fsv6-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--fsv6-card-border);
+  border-radius: 0.75rem;
+  background: var(--fsv6-card-bg);
+  transition: background 0.25s ease;
+  min-height: 11rem;
+}
+
+.fsv6-card:hover {
+  background: var(--fsv6-card-bg-hover);
+}
+
+/* Large decorative glyph — positioned top-right, partially clipped */
+.fsv6-card-glyph {
+  position: absolute;
+  top: -0.15em;
+  right: 0.1em;
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--fsv6-glyph-color);
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.fsv6-card:hover .fsv6-card-glyph {
+  color: var(--fsv6-glyph-color-hover);
+}
+
+/* Font assignments per variant */
+.fsv6-font-square   { font-family: var(--fsv6-pixel-square); }
+.fsv6-font-grid     { font-family: var(--fsv6-pixel-grid); }
+.fsv6-font-circle   { font-family: var(--fsv6-pixel-circle); }
+.fsv6-font-triangle { font-family: var(--fsv6-pixel-triangle); }
+.fsv6-font-line     { font-family: var(--fsv6-pixel-line); }
+
+/* Card text — sits above the glyph via stacking */
+.fsv6-card-text {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.fsv6-card-title {
+  margin: 0;
+  font-family: var(--fsv6-pixel-circle);
+  font-size: 1rem;
+  line-height: 1.35;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--fsv6-title);
+}
+
+.fsv6-card-body {
+  margin: 0;
+  font-family: var(--fsv6-pixel-line);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--fsv6-text);
+}
+
+/* Match card title font to the card's pixel variant */
+.fsv6-card-1 .fsv6-card-title { font-family: var(--fsv6-pixel-square); }
+.fsv6-card-2 .fsv6-card-title { font-family: var(--fsv6-pixel-grid); }
+.fsv6-card-3 .fsv6-card-title { font-family: var(--fsv6-pixel-circle); }
+.fsv6-card-4 .fsv6-card-title { font-family: var(--fsv6-pixel-triangle); }
+.fsv6-card-5 .fsv6-card-title { font-family: var(--fsv6-pixel-line); }
+
+/* ================================
+   Responsive — 2-column bento
+   ================================ */
+@container fsv6 (min-width: 540px) {
+  .fsv6-inner {
+    padding: 5rem 1.5rem 5.5rem;
+    gap: 3rem;
+  }
+
+  .fsv6-heading {
+    font-size: 2rem;
+  }
+
+  .fsv6-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Card 1: wide hero card spanning full width */
+  .fsv6-card-1 {
+    grid-column: 1 / -1;
+    min-height: 13rem;
+  }
+
+  .fsv6-card-1 .fsv6-card-glyph {
+    font-size: 8rem;
+  }
+
+  .fsv6-card-glyph {
+    font-size: 6.5rem;
+  }
+}
+
+/* ================================
+   Responsive — 3-column bento
+   ================================ */
+@container fsv6 (min-width: 820px) {
+  .fsv6-inner {
+    padding: 5.5rem 2rem 6rem;
+  }
+
+  .fsv6-heading {
+    font-size: 2.25rem;
+  }
+
+  .fsv6-subtitle {
+    font-size: 1rem;
+  }
+
+  .fsv6-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 0.875rem;
+  }
+
+  /*
+     Bento layout:
+     ┌──────────┬──────────┬──────────┐
+     │  Card 1  │  Card 1  │  Card 2  │
+     │ (2-col)  │ (2-col)  │ (tall)   │
+     ├──────────┼──────────┤          │
+     │  Card 3  │  Card 4  │          │
+     ├──────────┴──────────┴──────────┤
+     │          Card 5 (full)         │
+     └────────────────────────────────┘
+  */
+  .fsv6-card-1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    min-height: 14rem;
+  }
+
+  .fsv6-card-2 {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    min-height: auto;
+  }
+
+  .fsv6-card-3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .fsv6-card-4 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .fsv6-card-5 {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    min-height: 10rem;
+  }
+
+  .fsv6-card-glyph {
+    font-size: 7rem;
+  }
+
+  .fsv6-card-1 .fsv6-card-glyph {
+    font-size: 9rem;
+  }
+
+  .fsv6-card-5 .fsv6-card-glyph {
+    font-size: 8rem;
+  }
+}
+
+/* ================================
+   Responsive — desktop polish
+   ================================ */
+@container fsv6 (min-width: 1024px) {
+  .fsv6-inner {
+    padding: 6rem 2rem 6.5rem;
+  }
+
+  .fsv6-heading {
+    font-size: 2.5rem;
+  }
+
+  .fsv6-subtitle {
+    font-size: 1.0625rem;
+  }
+
+  .fsv6-grid {
+    gap: 1rem;
+  }
+
+  .fsv6-card {
+    padding: 1.75rem;
+    border-radius: 1rem;
+    min-height: 12rem;
+  }
+
+  .fsv6-card-1 {
+    min-height: 16rem;
+  }
+
+  .fsv6-card-5 {
+    min-height: 11rem;
+  }
+
+  .fsv6-card-title {
+    font-size: 1.0625rem;
+  }
+
+  .fsv6-card-body {
+    font-size: 0.875rem;
+  }
+
+  .fsv6-card-glyph {
+    font-size: 8rem;
+  }
+
+  .fsv6-card-1 .fsv6-card-glyph {
+    font-size: 11rem;
+  }
+
+  .fsv6-card-5 .fsv6-card-glyph {
+    font-size: 9rem;
+  }
+}

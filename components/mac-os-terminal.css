@@ -25,18 +25,18 @@
 }
 
 .dark .hmot-wrapper {
-  /* Title bar – dark mode (zinc) */
-  --hmot-tb-bg-from: #27272a;
-  --hmot-tb-bg-to: #1f1f23;
+  /* Title bar – dark mode */
+  --hmot-tb-bg-from: #161618;
+  --hmot-tb-bg-to: #101012;
   --hmot-tb-border: rgba(255, 255, 255, 0.06);
   --hmot-tb-title: rgba(255, 255, 255, 0.45);
   --hmot-tb-icon: #7aa2ff;
 
-  /* Terminal body – dark mode (zinc) */
-  --hmot-bg: #18181b;
-  --hmot-border: #27272a;
-  --hmot-shadow: rgba(0, 0, 0, 0.6);
-  --hmot-shadow-ring: rgba(0, 0, 0, 0.4);
+  /* Terminal body – dark mode */
+  --hmot-bg: #09090b;
+  --hmot-border: #18181b;
+  --hmot-shadow: rgba(0, 0, 0, 0.8);
+  --hmot-shadow-ring: rgba(0, 0, 0, 0.6);
   --hmot-prompt: #2db8a4;
   --hmot-typed: #e4e4e7;
   --hmot-text: #a1a1aa;

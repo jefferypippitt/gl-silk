@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
+import { Instrument_Serif, Noto_Serif_Display } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import {
-    Geist,
-    Geist_Mono,
-    Instrument_Serif,
-    Source_Serif_4,
-} from "next/font/google";
+    GeistPixelSquare,
+    GeistPixelGrid,
+    GeistPixelCircle,
+    GeistPixelTriangle,
+    GeistPixelLine,
+} from "geist/font/pixel";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import "./globals.css";
-
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
 
 const instrumentSerif = Instrument_Serif({
     variable: "--font-instrument-serif",
@@ -24,8 +18,8 @@ const instrumentSerif = Instrument_Serif({
     weight: "400",
 });
 
-const sourceSerif4 = Source_Serif_4({
-    variable: "--font-source-serif-4",
+const notoSerifDisplay = Noto_Serif_Display({
+    variable: "--font-noto-serif-display",
     subsets: ["latin"],
 });
 
@@ -48,10 +42,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${sourceSerif4.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} ${GeistPixelGrid.variable} ${GeistPixelCircle.variable} ${GeistPixelTriangle.variable} ${GeistPixelLine.variable} ${instrumentSerif.variable} ${notoSerifDisplay.variable}`}
+    >
+      <body className="antialiased">
         <RootProvider
           theme={{
             enabled: true,

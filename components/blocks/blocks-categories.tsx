@@ -19,15 +19,15 @@ export default function BlocksCategories({ categories }: BlocksCategoriesProps) 
                         <Link
                             key={category.slug}
                             href={`/blocks/${category.slug}`}
-                            className="group"
+                            className=""
                         >
-                            <div className="rounded-xl border border-border/60 bg-card transition-all duration-200 hover:border-border hover:shadow-sm overflow-hidden">
+                            <div className="rounded-xl border border-border/60 bg-card overflow-hidden">
                                 {/* Skeleton illustration */}
-                                <div className="transition-transform duration-300 group-hover:scale-[1.02]">
+                                <div>
                                     <BlockCategorySkeleton category={category.name} />
                                 </div>
                                 {/* Label */}
-                                <div className="flex items-center justify-between border-t border-border/40 px-3 py-2.5">
+                                <div className="flex items-center justify-between px-3 py-2.5">
                                     <span className="text-sm font-medium text-foreground">
                                         {category.displayName}
                                     </span>

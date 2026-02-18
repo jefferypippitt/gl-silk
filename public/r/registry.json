@@ -1081,6 +1081,33 @@
       ]
     },
     {
+      "name": "hero-section-v5",
+      "type": "registry:block",
+      "category": "hero-section",
+      "title": "Hero Section V5",
+      "description": "A monochromatic centered SaaS hero section with serif heading, CTA button, theme-aware dashboard showcase image, and three feature cards",
+      "dependencies": [],
+      "registryDependencies": ["button"],
+      "docs": "This block requires two dashboard images for the product showcase.\n\nDownload and place them in your public/images/ folder:\n- public/images/dashboard-light.png → https://glsilk.vercel.app/images/dashboard-light.png\n- public/images/dashboard-dark.png  → https://glsilk.vercel.app/images/dashboard-dark.png\n\nOr replace them with your own product screenshots.",
+      "files": [
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v5/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/hero-section-v5/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v5.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v5.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v5.css",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v5.css"
+        }
+      ]
+    },
+    {
       "name": "feature-section-v1",
       "type": "registry:block",
       "category": "features",
@@ -1389,6 +1416,32 @@
           "path": "registry/new-york/blocks/features-section/feature-section-v5.css",
           "type": "registry:component",
           "target": "app/glsilk/feature-section-v5.css"
+        }
+      ]
+    },
+    {
+      "name": "feature-section-v6",
+      "type": "registry:block",
+      "category": "features",
+      "title": "Feature Section V6",
+      "description": "An asymmetric split-panel feature section with a sticky intro, decorative pixel-dot grid, and horizontal feature rows using Geist Pixel font numbers",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v6/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/feature-section-v6/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v6.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/feature-section-v6.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v6.css",
+          "type": "registry:component",
+          "target": "app/glsilk/feature-section-v6.css"
         }
       ]
     }

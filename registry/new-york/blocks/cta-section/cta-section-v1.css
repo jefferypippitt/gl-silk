@@ -14,7 +14,7 @@
 
 .cta1-section {
   /* Fonts — uses next/font CSS variables for zero-layout-shift loading */
-  --cta1-display: 'DM Serif Display', serif;
+  --cta1-display: var(--font-noto-serif-display), serif;
   --cta1-sans: var(--font-sans, 'Geist', sans-serif);
 
   /* Colors — black & white */

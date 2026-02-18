@@ -1,0 +1,364 @@
+/* ─── Hero Section V5 ─────────────────────────── */
+/* Centered hero · Monochromatic · Serif heading   */
+/* Full light & dark mode support                  */
+/* Fonts — heading uses --font-serif (Noto Serif Display) from globals.css */
+
+/* ─── Theme Variables (Light) ───────────────── */
+
+:root {
+  --hs5-bg: var(--background);
+  --hs5-text: #0a0a0a;
+  --hs5-text-muted: rgba(10, 10, 10, 0.5);
+  --hs5-btn-bg: #171717;
+  --hs5-btn-text: #fafafa;
+  --hs5-image-border: rgba(0, 0, 0, 0.08);
+  --hs5-image-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1),
+    0 12px 24px -8px rgba(0, 0, 0, 0.05);
+  --hs5-fade-from: transparent;
+  --hs5-fade-to: var(--background);
+  --hs5-glow-1: rgba(160, 160, 160, 0.25);
+  --hs5-glow-2: rgba(180, 180, 180, 0.15);
+  --hs5-box-bg: var(--background);
+  --hs5-box-border: rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Theme Variables (Dark) ────────────────── */
+
+.dark {
+  --hs5-bg: var(--background);
+  --hs5-text: #fafafa;
+  --hs5-text-muted: rgba(250, 250, 250, 0.5);
+  --hs5-btn-bg: #fafafa;
+  --hs5-btn-text: #09090b;
+  --hs5-image-border: rgba(255, 255, 255, 0.08);
+  --hs5-image-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 12px 24px -8px rgba(0, 0, 0, 0.3);
+  --hs5-fade-from: transparent;
+  --hs5-fade-to: var(--background);
+  --hs5-glow-1: rgba(160, 160, 160, 0.12);
+  --hs5-glow-2: rgba(140, 140, 140, 0.08);
+  --hs5-box-bg: var(--background);
+  --hs5-box-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Section Root ───────────────────────────── */
+
+.hs5-section {
+  width: 100%;
+  overflow: hidden;
+  background: var(--hs5-bg);
+  color: var(--hs5-text);
+  font-family: var(--font-sans);
+}
+
+.hs5-root {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+/* ─── Box Wrapper ──────────────────────────── */
+
+.hs5-box {
+  width: 100%;
+  max-width: 76rem;
+  background: var(--hs5-box-bg);
+  border: 1px solid var(--hs5-box-border);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* ─── Content Layer ─────────────────────────── */
+
+.hs5-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 1.25rem 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ─── Heading ───────────────────────────────── */
+
+.hs5-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.875rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--hs5-text);
+  margin: 0;
+  animation: hs5-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+/* ─── Description ───────────────────────────── */
+
+.hs5-description {
+  font-size: clamp(0.875rem, 1vw + 0.4rem, 1.0625rem);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--hs5-text-muted);
+  max-width: 32rem;
+  margin: 0;
+  text-wrap: balance;
+  animation: hs5-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+/* ─── CTA Group ─────────────────────────────── */
+
+.hs5-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: hs5-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+
+/* ─── Image Showcase ─────────────────────────── */
+
+.hs5-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  max-height: 28rem;
+  margin-top: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--hs5-image-border);
+  box-shadow: var(--hs5-image-shadow);
+  overflow: hidden;
+  animation: hs5-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.hs5-image-glow {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  translate: -50% 0;
+  width: 120%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--hs5-glow-1) 0%,
+    var(--hs5-glow-2) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+.hs5-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Light image shown by default, dark hidden */
+.hs5-image-light {
+  display: block;
+}
+
+.hs5-image-dark {
+  display: none;
+}
+
+/* In dark mode, swap visibility */
+.dark .hs5-image-light {
+  display: none;
+}
+
+.dark .hs5-image-dark {
+  display: block;
+}
+
+.hs5-image-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(to bottom, var(--hs5-fade-from), var(--hs5-fade-to));
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ─── Feature Cards ─────────────────────────── */
+
+.hs5-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: calc(100% + 2.5rem);
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--hs5-box-border);
+  animation: hs5-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+.hs5-feature-card {
+  padding: 1.75rem 2rem;
+  text-align: left;
+  border-top: 1px solid var(--hs5-box-border);
+}
+
+.hs5-feature-card:first-child {
+  border-top: none;
+  border-left: none;
+}
+
+.hs5-feature-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--hs5-text);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.hs5-feature-desc {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--hs5-text-muted);
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .hs5-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hs5-feature-card {
+    border-top: none;
+    border-left: 1px solid var(--hs5-box-border);
+  }
+
+  .hs5-feature-card:first-child {
+    border-top: none;
+    border-left: none;
+  }
+}
+
+/* ─── Animations ─────────────────────────────── */
+
+@keyframes hs5-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Responsive ─────────────────────────────── */
+
+@media (min-width: 640px) {
+  .hs5-root {
+    padding: 1.5rem;
+  }
+
+  .hs5-content {
+    padding: 5rem 2rem 0;
+    gap: 1.5rem;
+  }
+
+  .hs5-features {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-top: 3.5rem;
+  }
+
+  .hs5-image-wrapper {
+    margin-top: 2rem;
+    max-height: 22rem;
+    border-radius: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hs5-root {
+    padding: 2rem;
+  }
+
+  .hs5-content {
+    padding: 5rem 2.5rem 0;
+  }
+
+  .hs5-features {
+    width: calc(100% + 5rem);
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+    margin-top: 4rem;
+  }
+
+  .hs5-image-wrapper {
+    margin-top: 2.5rem;
+    max-height: 26rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hs5-root {
+    padding: 2.5rem;
+  }
+
+  .hs5-content {
+    padding: 5rem 3rem 0;
+  }
+
+  .hs5-features {
+    width: calc(100% + 6rem);
+    margin-left: -3rem;
+    margin-right: -3rem;
+    margin-top: 4.5rem;
+  }
+
+  .hs5-image-wrapper {
+    margin-top: 3rem;
+    max-height: 30rem;
+    border-radius: 1.125rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hs5-root {
+    padding: 3rem;
+  }
+
+  .hs5-content {
+    padding: 5rem 4rem 0;
+  }
+
+  .hs5-features {
+    width: calc(100% + 8rem);
+    margin-left: -4rem;
+    margin-right: -4rem;
+    margin-top: 5rem;
+  }
+
+  .hs5-image-wrapper {
+    max-height: 34rem;
+  }
+}
+
+/* ─── Reduced Motion ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .hs5-heading,
+  .hs5-description,
+  .hs5-cta-group,
+  .hs5-image-wrapper {
+    animation: none;
+  }
+}

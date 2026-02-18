@@ -1,5 +1,3 @@
-"use client"
-
 import "./feature-section-v2.css"
 import { cn } from "@/lib/utils"
 

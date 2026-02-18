@@ -8,6 +8,7 @@ import { HeroSectionV1 } from "@/registry/new-york/blocks/hero-section/hero-sect
 import { HeroSectionV2 } from "@/registry/new-york/blocks/hero-section/hero-section-v2";
 import { HeroSectionV3 } from "@/registry/new-york/blocks/hero-section/hero-section-v3";
 import { HeroSectionV4 } from "@/registry/new-york/blocks/hero-section/hero-section-v4";
+import { HeroSectionV5 } from "@/registry/new-york/blocks/hero-section/hero-section-v5";
 import { FeatureSectionV1 } from "@/registry/new-york/blocks/features-section/feature-section-v1";
 import { FeatureSectionV2 } from "@/registry/new-york/blocks/features-section/feature-section-v2";
 import { FeatureSectionV3 } from "@/registry/new-york/blocks/features-section/feature-section-v3";
@@ -68,6 +69,8 @@ import { NeubrutalismButtonOutlineDemo } from "@/registry/new-york/components/ne
 import { NeubrutalismButtonDestructiveDemo } from "@/registry/new-york/components/neubrutalism-button/destructive-demo";
 import { NeubrutalismButtonSecondaryDemo } from "@/registry/new-york/components/neubrutalism-button/secondary-demo";
 import { FeatureSectionV5 } from "@/registry/new-york/blocks/features-section/feature-section-v5";
+import { FeatureSectionV6 } from "@/registry/new-york/blocks/features-section/feature-section-v6";
+
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   "mac-os-terminal": MacOsTerminal,
@@ -79,11 +82,13 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "hero-section-v2": HeroSectionV2,
   "hero-section-v3": HeroSectionV3,
   "hero-section-v4": HeroSectionV4,
+  "hero-section-v5": HeroSectionV5,
   "feature-section-v1": FeatureSectionV1,
   "feature-section-v2": FeatureSectionV2,
   "feature-section-v3": FeatureSectionV3,
   "feature-section-v4": FeatureSectionV4,
   "feature-section-v5": FeatureSectionV5,
+  "feature-section-v6": FeatureSectionV6,
   "cta-section-v1": CtaSectionV1,
   "cta-section-v2": CtaSectionV2,
   "cta-section-v3": CtaSectionV3,

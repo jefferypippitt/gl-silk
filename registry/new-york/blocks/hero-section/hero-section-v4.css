@@ -151,25 +151,15 @@
 
 .hs4-cta-group {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.75rem;
   margin-top: 0.5rem;
-  width: 100%;
-  max-width: 20rem;
 }
 
 /* ─── Responsive ────────────────────────────── */
 
 @media (min-width: 480px) {
-  .hs4-cta-group {
-    flex-direction: row;
-    align-items: center;
-    width: auto;
-    max-width: none;
-    gap: 1rem;
-  }
-
   .hs4-dither-circle {
     width: 400px;
     height: 400px;

@@ -14,7 +14,7 @@
 
 .faq1-section {
   /* Fonts */
-  --faq1-display: 'DM Serif Display', serif;
+  --faq1-display: var(--font-display, var(--font-instrument-serif), serif);
   --faq1-sans: var(--font-sans, 'Geist', sans-serif);
 
   /* Colors */

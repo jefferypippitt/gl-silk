@@ -47,4 +47,7 @@ next-env.d.ts
 .source
 
 # local tooling
+/.agents/
+/.gents/
+/.cursor/
 
