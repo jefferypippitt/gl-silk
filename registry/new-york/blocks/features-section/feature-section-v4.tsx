@@ -50,7 +50,6 @@ function FeatureCard({
 }) {
     return (
         <div className="fsv4-card">
-            <span className="fsv4-corners" aria-hidden="true" />
             <div className="fsv4-icon-wrap">
                 <Icon className="fsv4-icon" />
             </div>

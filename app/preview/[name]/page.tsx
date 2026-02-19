@@ -1,21 +1,45 @@
 "use client";
 
-import { ComponentPreview, ViewMode } from "@/components/mdx/component-preview";
+import { useState, useEffect } from "react";
 import { useSearchParams, useParams } from "next/navigation";
 import { componentRegistry } from "@/components/mdx/component-registry";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function PreviewPage() {
     const params = useParams();
     const searchParams = useSearchParams();
     const blockName = params.name as string;
 
-    // Default to desktop view for clean preview
-    const viewMode = (searchParams.get("view") as ViewMode) || "desktop";
+    const [rerunKey, setRerunKey] = useState(0);
+    const Component = componentRegistry[blockName];
 
-    // Check if component exists
-    const componentExists = componentRegistry[blockName];
+    // Listen for rerun events
+    useEffect(() => {
+        const handleRerun = (event: Event) => {
+            const customEvent = event as CustomEvent;
+            if (
+                !customEvent.detail?.previewId ||
+                customEvent.detail.previewId === blockName
+            ) {
+                setRerunKey((prev) => prev + 1);
+            }
+        };
 
-    if (!componentExists) {
+        window.addEventListener("rerun-animation", handleRerun);
+        return () => window.removeEventListener("rerun-animation", handleRerun);
+    }, [blockName]);
+
+    // Add scrollbar class to html/body
+    useEffect(() => {
+        document.documentElement.classList.add("preview-scrollbar");
+        document.body.classList.add("preview-scrollbar");
+        return () => {
+            document.documentElement.classList.remove("preview-scrollbar");
+            document.body.classList.remove("preview-scrollbar");
+        };
+    }, []);
+
+    if (!Component) {
         return (
             <div className="min-h-screen w-full bg-background flex items-center justify-center">
                 <div className="text-center">
@@ -29,10 +53,10 @@ export default function PreviewPage() {
     }
 
     return (
-        <div className="min-h-screen w-full flex items-center justify-center bg-background">
-            <div className="w-full max-w-full h-full flex items-center justify-center">
-                <ComponentPreview name={blockName} viewMode={viewMode} />
+        <ScrollArea className="h-screen w-full bg-background">
+            <div className="min-h-full">
+                <Component key={rerunKey} />
             </div>
-        </div>
+        </ScrollArea>
     );
 }

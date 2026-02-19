@@ -17,8 +17,7 @@ type BlogCard = {
   variant: "lead" | "side" | "base" | "feature"
 }
 
-const PLACEHOLDER_IMAGE =
-  "https://cdn.cosmos.so/93d22142-3c7e-42ab-9848-602e6d7985d4?format=jpeg"
+const PLACEHOLDER_IMAGE = "/images/shadcn1.webp"
 
 const posts: BlogCard[] = [
   {

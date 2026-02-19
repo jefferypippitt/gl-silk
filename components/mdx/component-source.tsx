@@ -1,28 +1,23 @@
 "use client";
 
 import * as React from "react";
-import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock";
+import { FileTreeView } from "./file-tree-view";
 
 interface RegistryFile {
   path?: string;
+  target?: string;
   type: string;
   content?: string;
 }
 
-function getLang(path: string): string {
-  const ext = path.split(".").pop()?.toLowerCase();
-  if (ext === "css") return "css";
-  if (ext === "tsx" || ext === "ts") return "tsx";
-  if (ext === "jsx" || ext === "js") return "jsx";
-  return "tsx";
-}
-
-function getFileName(path: string): string {
-  return path.split("/").pop() || path;
+interface RegistryAsset {
+  path: string;
+  url: string;
 }
 
 export const ComponentSource: React.FC<{ name: string }> = ({ name }) => {
   const [files, setFiles] = React.useState<RegistryFile[]>([]);
+  const [assets, setAssets] = React.useState<RegistryAsset[]>([]);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -37,9 +32,18 @@ export const ComponentSource: React.FC<{ name: string }> = ({ name }) => {
         const data = await response.json();
         const componentFiles = data.files.filter(
           (file: RegistryFile) =>
-            file.type === "registry:component" && file.content
-        );
+            (file.type === "registry:component" || file.type === "registry:page") && file.content
+        ).map((file: RegistryFile) => ({
+          path: file.path,
+          target: file.target,
+          type: file.type,
+          content: file.content
+        }));
         setFiles(componentFiles);
+
+        if (data.meta?.assets) {
+          setAssets(data.meta.assets as RegistryAsset[]);
+        }
       } catch (error) {
         console.error(`Error loading component source for ${name}:`, error);
         setFiles([]);
@@ -53,15 +57,22 @@ export const ComponentSource: React.FC<{ name: string }> = ({ name }) => {
 
   if (loading) {
     return (
-      <div className="flex flex-col gap-2 p-4">
-        <div className="h-4 w-3/4 rounded bg-muted animate-pulse" />
-        <div className="h-4 w-1/2 rounded bg-muted animate-pulse" />
-        <div className="h-4 w-5/6 rounded bg-muted animate-pulse" />
-        <div className="h-4 w-2/3 rounded bg-muted animate-pulse" />
-        <div className="h-4 w-4/5 rounded bg-muted animate-pulse" />
-        <div className="h-4 w-1/3 rounded bg-muted animate-pulse" />
-        <div className="h-4 w-3/5 rounded bg-muted animate-pulse" />
-        <div className="h-4 w-2/4 rounded bg-muted animate-pulse" />
+      <div className="flex h-full w-full">
+        <div className="w-52 border-r bg-muted/30 p-4">
+          <div className="h-4 w-20 rounded bg-muted animate-pulse mb-4" />
+          <div className="space-y-2">
+            <div className="h-3 w-3/4 rounded bg-muted animate-pulse" />
+            <div className="h-3 w-1/2 rounded bg-muted animate-pulse ml-4" />
+            <div className="h-3 w-2/3 rounded bg-muted animate-pulse ml-4" />
+            <div className="h-3 w-1/2 rounded bg-muted animate-pulse" />
+          </div>
+        </div>
+        <div className="flex-1 p-4">
+          <div className="h-4 w-full rounded bg-muted animate-pulse mb-2" />
+          <div className="h-4 w-5/6 rounded bg-muted animate-pulse mb-2" />
+          <div className="h-4 w-4/5 rounded bg-muted animate-pulse mb-2" />
+          <div className="h-4 w-full rounded bg-muted animate-pulse" />
+        </div>
       </div>
     );
   }
@@ -71,22 +82,8 @@ export const ComponentSource: React.FC<{ name: string }> = ({ name }) => {
   }
 
   return (
-    <div className="flex flex-col">
-      {files.map((file, index) => (
-        <div key={file.path || index}>
-          {files.length > 1 && file.path && (
-            <div className="flex items-center gap-2 border-b border-border/40 bg-muted/30 px-4 py-1.5">
-              <span className="text-xs font-mono text-muted-foreground">
-                {getFileName(file.path)}
-              </span>
-            </div>
-          )}
-          <DynamicCodeBlock
-            lang={getLang(file.path || `${name}.tsx`)}
-            code={file.content!}
-          />
-        </div>
-      ))}
+    <div className="h-full">
+      <FileTreeView files={files} assets={assets} />
     </div>
   );
 };

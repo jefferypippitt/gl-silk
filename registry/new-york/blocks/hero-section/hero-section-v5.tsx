@@ -2,12 +2,10 @@ import "./hero-section-v5.css"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-/**
- * NOTE: This block uses Noto Serif Display for the heading via the
- * `--font-serif` CSS variable, configured in globals.css @theme inline.
- */
-
-/* ─── Main Component ─────────────────────────── */
+const DASHBOARD_LIGHT =
+  "https://glsilk.vercel.app/images/dashboard-light.png"
+const DASHBOARD_DARK =
+  "https://glsilk.vercel.app/images/dashboard-dark.png"
 
 export function HeroSectionV5({
   className,
@@ -42,12 +40,12 @@ export function HeroSectionV5({
             <div className="hs5-image-wrapper">
               <div className="hs5-image-glow" aria-hidden="true" />
               <img
-                src="/images/dashboard-light.png"
+                src={DASHBOARD_LIGHT}
                 alt="Product dashboard preview"
                 className="hs5-image hs5-image-light"
               />
               <img
-                src="/images/dashboard-dark.png"
+                src={DASHBOARD_DARK}
                 alt="Product dashboard preview"
                 className="hs5-image hs5-image-dark"
               />

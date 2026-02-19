@@ -721,3 +721,59 @@
     font-size: 1.0625rem;
   }
 }
+
+@container fsv2 (min-width: 1024px) {
+  .fsv2-card-text {
+    padding: 1.5rem 1.75rem 2rem;
+  }
+}
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fsv2-animate {
+    animation: none;
+  }
+
+  .fsv2-card {
+    transition: none;
+  }
+
+  .fsv2-card:hover {
+    transform: none;
+  }
+
+  .fsv2-bolt {
+    animation: none;
+  }
+
+  .fsv2-bolt-glow {
+    animation: none;
+  }
+
+  .fsv2-lock-1,
+  .fsv2-lock-2,
+  .fsv2-lock-3 {
+    animation: none;
+  }
+
+  .fsv2-radial {
+    animation: none;
+  }
+
+  .fsv2-globe-m1,
+  .fsv2-globe-m2 {
+    animation: none;
+  }
+
+  .fsv2-globe-dot {
+    animation: none;
+  }
+
+  .fsv2-noconfig-circle,
+  .fsv2-noconfig-slash {
+    animation: none;
+  }
+}

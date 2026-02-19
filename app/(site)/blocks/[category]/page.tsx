@@ -29,7 +29,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           href="/blocks"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
         >
-          <ChevronLeft className="h-3.5 w-3.5" />
+          <ChevronLeft className="h-4 w-4" />
           All blocks
         </Link>
         <h1 className="text-3xl font-semibold tracking-tighter md:text-4xl">

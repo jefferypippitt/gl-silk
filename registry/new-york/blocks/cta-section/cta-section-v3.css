@@ -104,3 +104,13 @@
     padding: 12rem 3rem;
   }
 }
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta3-btn {
+    transition: none;
+  }
+}

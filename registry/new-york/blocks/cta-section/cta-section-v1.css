@@ -182,3 +182,14 @@
   }
 }
 
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta1-btn-primary,
+  .cta1-btn-secondary {
+    transition: none;
+  }
+}
+

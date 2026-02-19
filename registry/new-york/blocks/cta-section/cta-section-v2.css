@@ -52,7 +52,7 @@
 .cta2-container {
   max-width: 72rem;
   margin: 0 auto;
-  padding: 6rem 1.5rem;
+  padding: 4rem 1.25rem;
 }
 
 /* ── Card ────────────────────────────────────── */
@@ -60,7 +60,7 @@
 .cta2-card {
   position: relative;
   width: 100%;
-  min-height: 400px;
+  min-height: 320px;
   border-radius: 2rem;
   background: var(--cta2-card-bg);
   border: 1px solid var(--cta2-card-border);
@@ -202,6 +202,14 @@
    ================================ */
 
 @container cta2 (min-width: 640px) {
+  .cta2-container {
+    padding: 5rem 1.5rem;
+  }
+
+  .cta2-card {
+    min-height: 380px;
+  }
+
   .cta2-actions {
     flex-direction: row;
     width: auto;
@@ -213,6 +221,10 @@
    ================================ */
 
 @container cta2 (min-width: 960px) {
+  .cta2-container {
+    padding: 6rem 2rem;
+  }
+
   .cta2-card {
     min-height: 500px;
   }
@@ -229,6 +241,21 @@
 @container cta2 (min-width: 1200px) {
   .cta2-container {
     padding: 8rem 2rem;
+  }
+}
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta2-btn-primary,
+  .cta2-btn-secondary {
+    transition: none;
+  }
+
+  .cta2-btn-primary:hover {
+    transform: none;
   }
 }
 

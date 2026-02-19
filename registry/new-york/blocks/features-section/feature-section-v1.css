@@ -264,3 +264,13 @@
   }
 }
 
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fsv1-card {
+    transition: none;
+  }
+}
+

@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { LiquidGlassButton } from "./liquid-glass-button";
 
+const BG_IMAGE = "https://glsilk.vercel.app/images/glwp.jpg"
+
 export function LiquidGlassVariantsDemo() {
   return (
     <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden rounded-lg border">
-      {/* Background image */}
       <Image
-        src="/images/glwp.jpg"
+        src={BG_IMAGE}
         alt="Background"
         fill
         className="object-cover"

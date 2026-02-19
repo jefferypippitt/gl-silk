@@ -1,16 +1,157 @@
-/* CSS Variables for Hero Section V1 */
-/* These variables are required for the radial gradient background to work correctly */
-/* Import this file in your globals.css or app layout */
+/* ─── Hero Section V1 ─────────────────────────── */
+/* Centered hero · Sans-serif · Metric strip        */
+/* Full light & dark mode support                   */
 
-/* Fonts — inherits --font-sans from next/font (globals.css) */
+/* ─── Theme Variables (Light) ───────────────── */
 
 :root {
-  /* Component-specific variable to avoid conflicts with v0 or other themes */
-  /* Uses chart-2 value directly: blue */
-  --hero-gradient-color: oklch(0.55 0.22 264.53);
+  --hs1-bg: var(--background);
+  --hs1-text: #0a0a0a;
+  --hs1-text-muted: rgba(10, 10, 10, 0.55);
+  --hs1-border: rgba(10, 10, 10, 0.12);
 }
 
+/* ─── Theme Variables (Dark) ────────────────── */
+
 .dark {
-  /* Component-specific variable for dark mode */
-  --hero-gradient-color: oklch(0.58 0.21 260.84);
+  --hs1-bg: var(--background);
+  --hs1-text: #fafafa;
+  --hs1-text-muted: rgba(250, 250, 250, 0.5);
+  --hs1-border: rgba(250, 250, 250, 0.1);
+}
+
+/* ─── Section Root ───────────────────────────── */
+
+.hs1-section {
+  width: 100%;
+  background: var(--hs1-bg);
+  color: var(--hs1-text);
+  font-family: var(--font-sans);
+}
+
+.hs1-root {
+  width: 100%;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ─── Heading ───────────────────────────────── */
+
+.hs1-heading {
+  font-size: clamp(1.875rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--hs1-text);
+  margin: 0 0 1.25rem;
+
+}
+
+/* ─── Description ────────────────────────────── */
+
+.hs1-description {
+  font-size: clamp(0.875rem, 1vw + 0.4rem, 1.0625rem);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--hs1-text-muted);
+  max-width: 32rem;
+  margin: 0 0 2rem;
+  text-wrap: balance;
+
+}
+
+/* ─── CTA Group ──────────────────────────────── */
+
+.hs1-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 4rem;
+
+}
+
+/* ─── Metric Strip ───────────────────────────── */
+
+.hs1-metrics {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+
+}
+
+.hs1-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.25rem 0;
+}
+
+.hs1-metric-value {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--hs1-text);
+}
+
+.hs1-metric-label {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--hs1-text-muted);
+  letter-spacing: -0.01em;
+}
+
+/* ─── Responsive ─────────────────────────────── */
+
+@media (min-width: 640px) {
+  .hs1-root {
+    padding: 5rem 2rem 0;
+  }
+
+  .hs1-metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hs1-metric {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .hs1-metric:first-child {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .hs1-root {
+    padding: 6rem 2.5rem 0;
+  }
+
+  .hs1-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .hs1-cta-group {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hs1-root {
+    padding: 7rem 3rem 0;
+  }
+
+  .hs1-cta-group {
+    margin-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hs1-root {
+    padding: 8rem 4rem 0;
+  }
 }

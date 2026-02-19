@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { componentRegistry } from "./component-registry";
 import { cn } from "@/lib/utils";
 
 export type ViewMode = "desktop" | "tablet" | "mobile";
@@ -23,7 +22,6 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   viewMode = "desktop",
 }) => {
   const [rerunKey, setRerunKey] = useState(0);
-  const Component = componentRegistry[name];
 
   useEffect(() => {
     const handleRerun = (event: Event) => {
@@ -40,33 +38,33 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     return () => window.removeEventListener("rerun-animation", handleRerun);
   }, [name]);
 
-  if (!Component) {
-    return (
-      <div className="flex items-center justify-center min-h-[200px] border rounded-lg">
-        <div className="text-sm text-destructive">
-          Component &quot;{name}&quot; not found
-        </div>
-      </div>
-    );
-  }
+  // Build the iframe URL - load the preview page
+  const iframeUrl = `/preview/${name}?view=${viewMode}&t=${rerunKey}`;
 
   return (
     <div className="not-prose w-full h-full">
       {/* Fixed outer shell — never changes size */}
-      <div className="relative w-full h-full flex justify-center">
+      <div 
+        className={cn(
+          "relative w-full h-full flex justify-center",
+          viewMode !== "desktop" && "bg-muted"
+        )}
+      >
         {/* Resizable inner frame */}
         <div
           className={cn(
-            "h-full overflow-y-auto overflow-x-hidden bg-background transition-[max-width] duration-300 ease-in-out custom-scrollbar",
+            "h-full overflow-hidden bg-background transition-[max-width,width] duration-300 ease-in-out",
             viewMode !== "desktop" && "border-x border-border/40"
           )}
           style={{ maxWidth: VIEW_WIDTHS[viewMode], width: "100%" }}
         >
-          <div className="flex min-h-full items-center justify-center">
-            <div className="w-full">
-              <Component key={rerunKey} />
-            </div>
-          </div>
+          <iframe
+            key={rerunKey}
+            src={iframeUrl}
+            className="w-full h-full border-0"
+            sandbox="allow-same-origin allow-scripts"
+            title={`Preview of ${name}`}
+          />
         </div>
       </div>
     </div>

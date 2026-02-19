@@ -981,9 +981,9 @@
       "type": "registry:block",
       "category": "hero-section",
       "title": "Hero Section V1",
-      "description": "A dark-themed hero section with badge, heading, description, and CTA buttons",
+      "description": "An editorial-style hero section with left-aligned serif heading, split description/CTA, and metric strip",
       "dependencies": [],
-      "registryDependencies": ["button", "badge"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "registry/new-york/blocks/hero-section/hero-section-v1/page.tsx",
@@ -1008,8 +1008,16 @@
       "category": "hero-section",
       "title": "Hero Section V2",
       "description": "An editorial-style hero with asymmetric layout, serif display typography, and diagonal accents",
-      "dependencies": [],
+      "dependencies": ["motion"],
       "registryDependencies": ["button"],
+      "meta": {
+        "assets": [
+          {
+            "path": "public/images/shadcn1.webp",
+            "url": "https://glsilk.vercel.app/images/shadcn1.webp"
+          }
+        ]
+      },
       "files": [
         {
           "path": "registry/new-york/blocks/hero-section/hero-section-v2/page.tsx",
@@ -1020,6 +1028,11 @@
           "path": "registry/new-york/blocks/hero-section/hero-section-v2.tsx",
           "type": "registry:component",
           "target": "app/glsilk/hero-section-v2.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v2/feature-panel.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v2/feature-panel.tsx"
         },
         {
           "path": "registry/new-york/blocks/hero-section/hero-section-v2.css",
@@ -1034,7 +1047,7 @@
       "category": "hero-section",
       "title": "Hero Section V3",
       "description": "A dark hero section with shader background and mouse-reactive particles",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": [],
       "registryDependencies": ["button"],
       "files": [
         {
@@ -1059,7 +1072,7 @@
       "type": "registry:block",
       "category": "hero-section",
       "title": "Hero Section V4",
-      "description": "A lime green themed hero section with shader background, floating glow orbs, and mouse-reactive particles",
+      "description": "A blue themed split hero section with dithering shader sphere and gradient accent heading",
       "dependencies": ["@paper-design/shaders-react", "lucide-react"],
       "registryDependencies": ["button"],
       "files": [
@@ -1072,6 +1085,11 @@
           "path": "registry/new-york/blocks/hero-section/hero-section-v4.tsx",
           "type": "registry:component",
           "target": "app/glsilk/hero-section-v4.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v4/hero-section-v4-dither.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v4/hero-section-v4-dither.tsx"
         },
         {
           "path": "registry/new-york/blocks/hero-section/hero-section-v4.css",
@@ -1088,7 +1106,19 @@
       "description": "A monochromatic centered SaaS hero section with serif heading, CTA button, theme-aware dashboard showcase image, and three feature cards",
       "dependencies": [],
       "registryDependencies": ["button"],
-      "docs": "This block requires two dashboard images for the product showcase.\n\nDownload and place them in your public/images/ folder:\n- public/images/dashboard-light.png → https://glsilk.vercel.app/images/dashboard-light.png\n- public/images/dashboard-dark.png  → https://glsilk.vercel.app/images/dashboard-dark.png\n\nOr replace them with your own product screenshots.",
+      "docs": "The dashboard images are loaded from a remote URL by default.\n\nReplace the `DASHBOARD_LIGHT` and `DASHBOARD_DARK` constants at the top of the file with your own product screenshots.",
+      "meta": {
+        "assets": [
+          {
+            "path": "public/images/dashboard-light.png",
+            "url": "https://glsilk.vercel.app/images/dashboard-light.png"
+          },
+          {
+            "path": "public/images/dashboard-dark.png",
+            "url": "https://glsilk.vercel.app/images/dashboard-dark.png"
+          }
+        ]
+      },
       "files": [
         {
           "path": "registry/new-york/blocks/hero-section/hero-section-v5/page.tsx",
@@ -1115,6 +1145,15 @@
       "description": "A centered feature section with headline, description, and four horizontal feature icons",
       "dependencies": [],
       "registryDependencies": [],
+      "docs": "The card images are loaded from a remote URL by default.\n\nReplace the `PLACEHOLDER_IMAGE` constant at the top of the file with your own image.",
+      "meta": {
+        "assets": [
+          {
+            "path": "public/images/shadcn1.webp",
+            "url": "https://glsilk.vercel.app/images/shadcn1.webp"
+          }
+        ]
+      },
       "files": [
         {
           "path": "registry/new-york/blocks/features-section/feature-section-v1/page.tsx",

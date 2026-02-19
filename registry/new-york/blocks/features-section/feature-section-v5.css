@@ -178,3 +178,17 @@
     padding: 1.35rem 1.25rem 1.4rem;
   }
 }
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fsv5-card {
+    transition: none;
+  }
+
+  .fsv5-card:hover {
+    transform: none;
+  }
+}

@@ -1,13 +1,6 @@
-/* CSS Variables for Hero Section V2 */
-/* These variables are required for the component styles to work correctly */
-/* Import this file in your globals.css or app layout */
-
-/* Fonts — inherits --font-sans from next/font (globals.css) */
-
 /* ============================================
-   Hero Section V2 — Clean, modern, serif display heading,
-   pill buttons, warm interactive card,
-   tabbed image content
+   Hero Section V2 — Split heading, warm interactive
+   card, tabbed image content
    ============================================ */
 
 /* ── Root ────────────────────────────────────── */
@@ -15,7 +8,6 @@
 .hs2-root {
   width: 100%;
   position: relative;
-  background: var(--background);
 }
 
 /* ── Inner wrapper ───────────────────────────── */
@@ -25,7 +17,7 @@
   z-index: 10;
   display: flex;
   flex-direction: column;
-  max-width: 72rem;
+  max-width: 76rem;
   margin-inline: auto;
   width: 100%;
   padding: 4rem 1.25rem 0;
@@ -91,11 +83,10 @@
 /* ── Heading ─────────────────────────────────── */
 
 .hs2-headline {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-size: clamp(1.875rem, 5vw, 3.5rem);
   font-weight: 400;
   line-height: 1.1;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   color: var(--foreground);
   margin: 0;
 }
@@ -103,25 +94,13 @@
 /* ── Description ─────────────────────────────── */
 
 .hs2-description {
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 1vw + 0.4rem, 1.0625rem);
   line-height: 1.65;
+  letter-spacing: -0.01em;
   color: var(--muted-foreground);
   max-width: 32rem;
   margin: 0;
-}
-
-@media (min-width: 480px) {
-  .hs2-description {
-    font-size: 0.9375rem;
-    line-height: 1.7;
-  }
-}
-
-@media (min-width: 768px) {
-  .hs2-description {
-    font-size: 1rem;
-  }
+  text-wrap: balance;
 }
 
 /* ── CTA actions (below text row) ────────────── */
@@ -131,16 +110,6 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
-}
-
-.hs2-btn-primary {
-  font-weight: 500;
-  padding-inline: 1.75rem;
-}
-
-.hs2-btn-secondary {
-  font-weight: 500;
-  padding-inline: 1.5rem;
 }
 
 /* ── Interactive card ────────────────────────── */
@@ -175,20 +144,10 @@
   mix-blend-mode: soft-light;
 }
 
-/* Fonts — inherits --font-sans and --font-display from next/font (globals.css) */
-
 :root {
-  /* Colors */
-  --hs2-card-bg: oklch(0.95 0.01 75 / 1);
-  --hs2-subcard-bg: var(--background);
+  --hs2-card-bg: var(--muted);
+  --hs2-subcard-bg: var(--card);
   --hs2-subcard-border: var(--border);
-}
-
-.dark {
-  /* Colors */
-  --hs2-card-bg: oklch(0.22 0.01 75 / 1);
-  --hs2-subcard-bg: oklch(0.18 0.005 75 / 1);
-  --hs2-subcard-border: oklch(0.30 0.01 75 / 1);
 }
 
 @media (min-width: 480px) {
@@ -210,6 +169,26 @@
 @media (min-width: 1024px) {
   .hs2-card {
     padding: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hs2-inner {
+    padding: 7rem 4rem 0;
+  }
+
+  .hs2-hero-top {
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .hs2-card {
+    padding: 2.5rem;
+  }
+
+  .hs2-card-content {
+    padding: 2rem;
+    height: 24rem;
   }
 }
 
@@ -289,10 +268,9 @@
   z-index: 2;
   pointer-events: none;
   border-radius: 9999px;
-  background: radial-gradient(circle, oklch(0.62 0.03 75 / 0.22) 0%, oklch(0.62 0.03 75 / 0) 72%);
 }
 
-.hs2-tab-active {
+    .hs2-tab-active {
   color: var(--foreground);
 }
 
@@ -312,7 +290,7 @@
   padding: 1rem;
   height: 16rem;
   overflow: hidden;
-  max-width: 52rem;
+  max-width: 56rem;
   margin-inline: auto;
   width: 100%;
 }
@@ -446,9 +424,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top left;
   display: block;
 }
-
 
 /* ── Panel content styles ────────────────────── */
 
@@ -476,44 +454,4 @@
   line-height: 1.55;
   color: var(--muted-foreground);
   margin: 0;
-}
-
-
-/* ── Entry animations — staggered, gentle ────── */
-
-@keyframes hs2-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hs2-hero-top {
-  animation: hs2-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
-}
-
-.hs2-actions {
-  animation: hs2-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
-}
-
-.hs2-card {
-  animation: hs2-fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-}
-
-/* ── Reduced motion ──────────────────────────── */
-
-@media (prefers-reduced-motion: reduce) {
-  .hs2-hero-top,
-  .hs2-actions,
-  .hs2-card {
-    animation: none;
-  }
-
-  .hs2-tab {
-    transition: color 0.2s ease;
-  }
 }

@@ -213,6 +213,26 @@
     background: transparent;
   }
 
+  /* Preview page scrollbar styles - applied to html/body */
+  .preview-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  .preview-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .preview-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .preview-scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 9999px;
+  }
+  .preview-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground));
+  }
+
   /* Preview frame: make viewport-relative heights use container height instead */
   .preview-frame {
     container-type: size;
@@ -224,5 +244,39 @@
   .preview-frame .h-screen,
   .preview-frame .h-dvh {
     height: 100cqh !important;
+  }
+
+  /* File tree view - ensure code blocks fill available width and height */
+  .file-tree-code-container {
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+  }
+  
+  .file-tree-code-container pre,
+  .file-tree-code-container code,
+  .file-tree-code-container .fd-codeblock,
+  .file-tree-code-container [data-fd-code-block] {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+  }
+
+  .file-tree-code-container * {
+    scrollbar-width: none !important;
+  }
+  .file-tree-code-container *::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  .file-tree-code-container figure,
+  .file-tree-code-container [data-fd-code-block] figure {
+    min-height: 100% !important;
+    max-height: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
   }
 }

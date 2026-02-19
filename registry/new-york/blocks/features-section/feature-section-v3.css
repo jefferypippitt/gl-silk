@@ -175,3 +175,13 @@
   }
 }
 
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fsv3-row {
+    transition: none;
+  }
+}
+

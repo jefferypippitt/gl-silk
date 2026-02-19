@@ -10,8 +10,6 @@
   --fsv4-border: oklch(0 0 0 / 0.12);
   --fsv4-icon-bg: oklch(0.98 0 0);
   --fsv4-icon-border: oklch(0 0 0 / 0.1);
-  --fsv4-marker: oklch(0 0 0 / 0.18);
-
   color: var(--foreground);
   container-type: inline-size;
   container-name: fsv4;
@@ -22,7 +20,6 @@
   --fsv4-border: oklch(1 0 0 / 0.14);
   --fsv4-icon-bg: oklch(0.16 0 0);
   --fsv4-icon-border: oklch(1 0 0 / 0.14);
-  --fsv4-marker: oklch(1 0 0 / 0.22);
 }
 
 /* ─── Layout ────────────────────────────────── */
@@ -80,54 +77,6 @@
   padding: 2rem 1.5rem;
   border: 1px solid var(--fsv4-border);
   position: relative;
-}
-
-/* ─── Crosshair Markers — shared style ─────── */
-
-.fsv4-card::before,
-.fsv4-card::after,
-.fsv4-corners::before,
-.fsv4-corners::after {
-  content: "";
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  background:
-    linear-gradient(var(--fsv4-marker), var(--fsv4-marker)) center / 2px 14px no-repeat,
-    linear-gradient(var(--fsv4-marker), var(--fsv4-marker)) center / 14px 2px no-repeat;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Top-left */
-.fsv4-card::before {
-  top: -7px;
-  left: -7px;
-}
-
-/* Top-right */
-.fsv4-card::after {
-  top: -7px;
-  right: -7px;
-}
-
-/* Bottom-left */
-.fsv4-corners::before {
-  bottom: -7px;
-  left: -7px;
-}
-
-/* Bottom-right */
-.fsv4-corners::after {
-  bottom: -7px;
-  right: -7px;
-}
-
-/* Corners span — full coverage for positioning */
-.fsv4-corners {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
 }
 
 /* ─── Icon ──────────────────────────────────── */
@@ -219,5 +168,15 @@
 
   .fsv4-card {
     padding: 2.25rem 2rem;
+  }
+}
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fsv4-card {
+    transition: none;
   }
 }
