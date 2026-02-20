@@ -5,7 +5,9 @@
   "title": "Play Pause Button - Icon Variants",
   "description": "Play pause button with different icon styles.",
   "dependencies": [
-    "gsap"
+    "gsap",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

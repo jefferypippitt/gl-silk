@@ -5,7 +5,9 @@
   "title": "Play Pause Button",
   "description": "Button with morphing SVG animation between Play and Pause icons using GSAP.",
   "dependencies": [
-    "gsap"
+    "gsap",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

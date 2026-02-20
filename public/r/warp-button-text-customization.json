@@ -5,7 +5,9 @@
   "title": "Warp Button - Text Customization",
   "description": "Warp button demonstrating text styling options.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

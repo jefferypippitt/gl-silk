@@ -5,7 +5,10 @@
   "title": "Theme Toggle Button - Colored",
   "description": "Colored theme toggle button variant.",
   "dependencies": [
-    "gsap"
+    "gsap",
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "next-themes"
   ],
   "files": [
     {

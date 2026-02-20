@@ -5,7 +5,9 @@
   "title": "Mesh Gradient Button - Ocean Theme",
   "description": "Ocean-themed mesh gradient button with blue colors.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

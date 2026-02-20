@@ -5,7 +5,9 @@
   "title": "Warp Button - Demo",
   "description": "Basic warp button demo showcasing text customization effects.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

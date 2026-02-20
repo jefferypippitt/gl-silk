@@ -5,7 +5,9 @@
   "title": "Mesh Gradient Button - High Energy",
   "description": "High energy mesh gradient button with intense colors.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

@@ -4,6 +4,10 @@
   "type": "registry:component",
   "title": "Neubrutalism Button - Secondary",
   "description": "Secondary variant of the neubrutalism button.",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
   "files": [
     {
       "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",

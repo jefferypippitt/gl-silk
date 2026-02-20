@@ -5,7 +5,9 @@
   "title": "Warp Button - Subtle Warp",
   "description": "Warp button with subtle, calm settings and cool colors.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

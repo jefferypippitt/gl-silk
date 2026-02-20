@@ -5,7 +5,9 @@
   "title": "Warp Button - High Distortion",
   "description": "Warp button with high distortion, fast swirl, and vibrant colors.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

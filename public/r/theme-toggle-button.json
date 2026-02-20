@@ -5,7 +5,10 @@
   "title": "Theme Toggle Button",
   "description": "Button with morphing SVG animation between Sun and Moon icons using GSAP.",
   "dependencies": [
-    "gsap"
+    "gsap",
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "next-themes"
   ],
   "files": [
     {

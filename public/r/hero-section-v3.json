@@ -4,7 +4,9 @@
   "type": "registry:block",
   "title": "Hero Section V3",
   "description": "A dark hero section with shader background and mouse-reactive particles",
-  "dependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "button"
   ],

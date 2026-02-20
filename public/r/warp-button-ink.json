@@ -5,7 +5,9 @@
   "title": "Warp Button - Ink Effect",
   "description": "Warp button with ink-like fluid effects and organic movement patterns.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

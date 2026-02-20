@@ -4,7 +4,9 @@
   "type": "registry:block",
   "title": "Blog Section V1",
   "description": "A magazine-style blog grid with editorial card hierarchy and image-driven storytelling",
-  "dependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [],
   "files": [
     {

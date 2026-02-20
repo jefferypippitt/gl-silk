@@ -5,7 +5,9 @@
   "title": "Mesh Gradient Button - Text Customization",
   "description": "Mesh gradient button with custom text styling.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

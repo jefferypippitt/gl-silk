@@ -5,7 +5,9 @@
   "title": "Play Pause Button - Sizes",
   "description": "Play pause button with different size variants.",
   "dependencies": [
-    "gsap"
+    "gsap",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

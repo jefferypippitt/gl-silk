@@ -5,7 +5,10 @@
   "title": "Theme Toggle Button - Sizes",
   "description": "Theme toggle button with different size variants.",
   "dependencies": [
-    "gsap"
+    "gsap",
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "next-themes"
   ],
   "files": [
     {

@@ -5,7 +5,9 @@
   "title": "Warp Button - Custom Shape",
   "description": "Warp button using custom shape patterns like stripes.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

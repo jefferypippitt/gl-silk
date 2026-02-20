@@ -35,7 +35,7 @@
       "category": "buttons",
       "title": "Warp Button - High Distortion",
       "description": "Warp button with high distortion, fast swirl, and vibrant colors.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/warp-button/warp-button.tsx",
@@ -53,7 +53,7 @@
       "category": "buttons",
       "title": "Warp Button - Subtle Warp",
       "description": "Warp button with subtle, calm settings and cool colors.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/warp-button/warp-button.tsx",
@@ -71,7 +71,7 @@
       "category": "buttons",
       "title": "Warp Button - Custom Shape",
       "description": "Warp button using custom shape patterns like stripes.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/warp-button/warp-button.tsx",
@@ -89,7 +89,7 @@
       "category": "buttons",
       "title": "Warp Button - Text Customization",
       "description": "Warp button demonstrating text styling options.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/warp-button/warp-button.tsx",
@@ -427,7 +427,7 @@
       "category": "buttons",
       "title": "Mesh Gradient Button",
       "description": "Animated button with flowing mesh gradient backgrounds powered by @paper-design/shaders-react.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
@@ -445,7 +445,7 @@
       "category": "buttons",
       "title": "Mesh Gradient Button - High Energy",
       "description": "High energy mesh gradient button with intense colors.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
@@ -463,7 +463,7 @@
       "category": "buttons",
       "title": "Mesh Gradient Button - Ocean Theme",
       "description": "Ocean-themed mesh gradient button with blue colors.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
@@ -481,7 +481,7 @@
       "category": "buttons",
       "title": "Mesh Gradient Button - Text Customization",
       "description": "Mesh gradient button with custom text styling.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/mesh-gradient-button/mesh-gradient-button.tsx",
@@ -499,7 +499,7 @@
       "category": "buttons",
       "title": "Warp Button",
       "description": "Button with animated warp shader effect using fluid, smoky, and marbled patterns.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/warp-button/warp-button.tsx",
@@ -517,7 +517,7 @@
       "category": "buttons",
       "title": "Warp Button - Ink Effect",
       "description": "Warp button with ink-like fluid effects and organic movement patterns.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/warp-button/warp-button.tsx",
@@ -535,7 +535,7 @@
       "category": "buttons",
       "title": "Warp Button - Demo",
       "description": "Basic warp button demo showcasing text customization effects.",
-      "dependencies": ["@paper-design/shaders-react"],
+      "dependencies": ["@paper-design/shaders-react", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/warp-button/warp-button.tsx",
@@ -553,7 +553,7 @@
       "category": "buttons",
       "title": "Play Pause Button",
       "description": "Button with morphing SVG animation between Play and Pause icons using GSAP.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
@@ -571,7 +571,7 @@
       "category": "buttons",
       "title": "Play Pause Button - Sizes",
       "description": "Play pause button with different size variants.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
@@ -589,7 +589,7 @@
       "category": "buttons",
       "title": "Play Pause Button - Variants",
       "description": "Play pause button with different style variants.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
@@ -607,7 +607,7 @@
       "category": "buttons",
       "title": "Play Pause Button - Icon Variants",
       "description": "Play pause button with different icon styles.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
@@ -625,7 +625,7 @@
       "category": "buttons",
       "title": "Play Pause Button - Rounded",
       "description": "Rounded play pause button variant.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/play-pause-button/play-pause-button.tsx",
@@ -643,7 +643,7 @@
       "category": "buttons",
       "title": "Theme Toggle Button",
       "description": "Button with morphing SVG animation between Sun and Moon icons using GSAP.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority", "next-themes"],
       "files": [
         {
           "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
@@ -661,7 +661,7 @@
       "category": "buttons",
       "title": "Theme Toggle Button - Sizes",
       "description": "Theme toggle button with different size variants.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority", "next-themes"],
       "files": [
         {
           "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
@@ -679,7 +679,7 @@
       "category": "buttons",
       "title": "Theme Toggle Button - Rounded",
       "description": "Rounded theme toggle button variant.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority", "next-themes"],
       "files": [
         {
           "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
@@ -697,7 +697,7 @@
       "category": "buttons",
       "title": "Theme Toggle Button - Colored",
       "description": "Colored theme toggle button variant.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority", "next-themes"],
       "files": [
         {
           "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
@@ -715,7 +715,7 @@
       "category": "buttons",
       "title": "Theme Toggle Button - Dual Color",
       "description": "Dual color theme toggle button variant.",
-      "dependencies": ["gsap"],
+      "dependencies": ["gsap", "@radix-ui/react-slot", "class-variance-authority", "next-themes"],
       "files": [
         {
           "path": "registry/new-york/components/theme-toggle-button/theme-toggle-button.tsx",
@@ -733,6 +733,7 @@
       "category": "buttons",
       "title": "Neubrutalism Button",
       "description": "Button with neubrutalism design style featuring 3D offset effect and bold borders.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",
@@ -750,6 +751,7 @@
       "category": "buttons",
       "title": "Neubrutalism Button - Secondary",
       "description": "Secondary variant of the neubrutalism button.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",
@@ -767,6 +769,7 @@
       "category": "buttons",
       "title": "Neubrutalism Button - Outline",
       "description": "Outline variant of the neubrutalism button.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",
@@ -784,6 +787,7 @@
       "category": "buttons",
       "title": "Neubrutalism Button - Destructive",
       "description": "Destructive variant of the neubrutalism button.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",
@@ -837,7 +841,7 @@
       "category": "special-effects",
       "title": "3D Text - Advanced Playground",
       "description": "Interactive playground to experiment with all 3D text properties.",
-      "dependencies": ["@react-three/fiber", "@react-three/drei", "three"],
+      "dependencies": ["@react-three/fiber", "@react-three/drei", "three", "lucide-react"],
       "files": [
         {
           "path": "registry/new-york/components/text-3d/text-3d.tsx",
@@ -962,7 +966,7 @@
       "category": "hero-section",
       "title": "Hero Section V3",
       "description": "A dark hero section with shader background and mouse-reactive particles",
-      "dependencies": [],
+      "dependencies": ["lucide-react"],
       "registryDependencies": ["button"],
       "files": [
         {
@@ -1171,7 +1175,7 @@
       "category": "blog",
       "title": "Blog Section V1",
       "description": "A magazine-style blog grid with editorial card hierarchy and image-driven storytelling",
-      "dependencies": [],
+      "dependencies": ["lucide-react"],
       "registryDependencies": [],
       "files": [
         {
@@ -1197,7 +1201,7 @@
       "category": "faqs",
       "title": "FAQ Section V1",
       "description": "An editorial accordion FAQ section with serif display headline, smooth expand/collapse animations, and refined dividers",
-      "dependencies": [],
+      "dependencies": ["lucide-react"],
       "registryDependencies": [],
       "files": [
         {

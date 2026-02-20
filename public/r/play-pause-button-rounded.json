@@ -5,7 +5,9 @@
   "title": "Play Pause Button - Rounded",
   "description": "Rounded play pause button variant.",
   "dependencies": [
-    "gsap"
+    "gsap",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

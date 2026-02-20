@@ -5,7 +5,9 @@
   "title": "Warp Button",
   "description": "Button with animated warp shader effect using fluid, smoky, and marbled patterns.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {

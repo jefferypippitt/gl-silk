@@ -4,6 +4,10 @@
   "type": "registry:component",
   "title": "Neubrutalism Button",
   "description": "Button with neubrutalism design style featuring 3D offset effect and bold borders.",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
   "files": [
     {
       "path": "registry/new-york/components/neubrutalism-button/neubrutalism-button.tsx",

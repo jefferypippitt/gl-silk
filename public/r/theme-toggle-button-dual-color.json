@@ -5,7 +5,10 @@
   "title": "Theme Toggle Button - Dual Color",
   "description": "Dual color theme toggle button variant.",
   "dependencies": [
-    "gsap"
+    "gsap",
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "next-themes"
   ],
   "files": [
     {

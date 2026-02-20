@@ -5,7 +5,9 @@
   "title": "Mesh Gradient Button",
   "description": "Animated button with flowing mesh gradient backgrounds powered by @paper-design/shaders-react.",
   "dependencies": [
-    "@paper-design/shaders-react"
+    "@paper-design/shaders-react",
+    "@radix-ui/react-slot",
+    "class-variance-authority"
   ],
   "files": [
     {
