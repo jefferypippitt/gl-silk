@@ -36,11 +36,7 @@ import { ThemeToggleSizesDemo } from "@/registry/new-york/components/theme-toggl
 import { ThemeToggleRoundedDemo } from "@/registry/new-york/components/theme-toggle-button/rounded-demo";
 import { ThemeToggleColoredDemo } from "@/registry/new-york/components/theme-toggle-button/colored-demo";
 import { ThemeToggleDualColorDemo } from "@/registry/new-york/components/theme-toggle-button/dual-color-demo";
-import { LiquidGlassButtonDemo } from "@/registry/new-york/components/liquid-glass-button/demo";
-import { LiquidGlassSizesDemo } from "@/registry/new-york/components/liquid-glass-button/sizes-demo";
-import { LiquidGlassVariantsDemo } from "@/registry/new-york/components/liquid-glass-button/variants-demo";
-import { LiquidGlassColorsDemo } from "@/registry/new-york/components/liquid-glass-button/colors-demo";
-import { LiquidGlassAdvancedDemo } from "@/registry/new-york/components/liquid-glass-button/advanced-liquid-demo";
+
 import { WarpButtonDemo } from "@/registry/new-york/components/warp-button/demo";
 import { WarpButtonInkDemo } from "@/registry/new-york/components/warp-button/ink-demo";
 import { WarpButtonHighDistortionDemo } from "@/registry/new-york/components/warp-button/high-distortion-demo";
@@ -90,12 +86,7 @@ const componentMap: Record<string, React.ComponentType> = {
   "theme-toggle-button-rounded": ThemeToggleRoundedDemo,
   "theme-toggle-button-colored": ThemeToggleColoredDemo,
   "theme-toggle-button-dual-color": ThemeToggleDualColorDemo,
-  // Liquid Glass Buttons
-  "liquid-glass-button": LiquidGlassButtonDemo,
-  "liquid-glass-button-sizes": LiquidGlassSizesDemo,
-  "liquid-glass-button-variants": LiquidGlassVariantsDemo,
-  "liquid-glass-button-colors": LiquidGlassColorsDemo,
-  "liquid-glass-button-advanced": LiquidGlassAdvancedDemo,
+
   // Warp Button
   "warp-button": WarpButtonDemo,
   "warp-button-ink": WarpButtonInkDemo,

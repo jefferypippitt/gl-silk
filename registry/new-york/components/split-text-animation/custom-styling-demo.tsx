@@ -4,7 +4,7 @@ import { SplitTextAnimation } from "./split-text-animation";
 
 export function CustomStylingDemo() {
   return (
-    <div className="flex items-center justify-center min-h-[400px] p-8">
+    <div className="flex items-center justify-center min-h-[200px] p-8">
       <SplitTextAnimation
         text="Custom Styled Text"
         animationType="fade"

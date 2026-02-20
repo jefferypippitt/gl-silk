@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/new-york/components/split-text-animation/fade-demo.tsx",
-      "content": "\"use client\";\n\nimport { SplitTextAnimation } from \"./split-text-animation\";\n\nexport function FadeDemo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[400px] p-8\">\n      <SplitTextAnimation\n        text=\"Beautiful Fade In Animation\"\n        animationType=\"fade\"\n        duration={0.8}\n        stagger={0.03}\n        className=\"text-center\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { SplitTextAnimation } from \"./split-text-animation\";\n\nexport function FadeDemo() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[200px] p-8\">\n      <SplitTextAnimation\n        text=\"Beautiful Fade In Animation\"\n        animationType=\"fade\"\n        duration={0.8}\n        stagger={0.03}\n        className=\"text-center\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:component"
     }
   ]
