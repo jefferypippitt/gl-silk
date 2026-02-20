@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Container from "@/components/container";
 import { HeroSectionMacOsTerminal } from "@/components/hero-section-mac-os-terminal";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Craft without the grind",
+  description: "Quality components and blocks. Install. Ship.",
+};
 
 export default function Home() {
   return (

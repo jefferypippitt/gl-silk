@@ -3,40 +3,15 @@ title: Neubrutalism Button
 description: A trendy neubrutalism style button with hover and active states.
 ---
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
+## Installation
 
-```bash
+```npm
 npx shadcn@latest add https://glsilk.vercel.app/r/neubrutalism-button.json
 ```
 
-</Tab>
-<Tab value="pnpm">
+## Quick Start
 
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/neubrutalism-button.json
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/neubrutalism-button.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/neubrutalism-button.json
-```
-
-</Tab>
-</Tabs>
-
-### Quick Start
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
+```tsx title="app/page.tsx"
 import { NeubrutalismButton } from "@/components/ui/neubrutalism-button";
 
 export default function Home() {
@@ -47,6 +22,8 @@ export default function Home() {
   );
 }
 ```
+
+## Examples
 
 <div className="flex items-center justify-between">
   <h3>Default</h3>
@@ -120,15 +97,34 @@ export default function Home() {
 </Tab>
 </Tabs>
 
-### API Reference
+## API Reference
 
-The `NeubrutalismButton` component accepts all props that the standard shadcn/ui `Button` component accepts.
+The `NeubrutalismButton` component accepts all props from the standard shadcn/ui `Button`.
 
-| Prop        | Type                                                                          | Default     | Description                                            |
-| ----------- | ----------------------------------------------------------------------------- | ----------- | ------------------------------------------------------ |
-| `variant`   | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | Button variant style.                                  |
-| `size`      | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"` | Button size variant.                                   |
-| `className` | `string`                                                                      | —           | Additional CSS classes to apply to the button wrapper. |
-| `children`  | `React.ReactNode`                                                             | —           | The content to display inside the button.              |
-| `asChild`   | `boolean`                                                                     | `false`     | Render as a child element using Radix Slot.            |
-| `...props`  | `ButtonProps`                                                                 | —           | All other props supported by the `Button` component.   |
+<TypeTable
+  type={{
+    variant: {
+      description: "Button variant style",
+      type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
+      default: '"default"',
+    },
+    size: {
+      description: "Button size variant",
+      type: '"default" | "sm" | "lg" | "icon" | "icon-sm" | "icon-lg"',
+      default: '"default"',
+    },
+    className: {
+      description: "Additional CSS classes to apply to the button wrapper",
+      type: "string",
+    },
+    children: {
+      description: "The content to display inside the button",
+      type: "React.ReactNode",
+    },
+    asChild: {
+      description: "Render as a child element using Radix Slot",
+      type: "boolean",
+      default: "false",
+    },
+  }}
+/>

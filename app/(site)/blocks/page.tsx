@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Container from "@/components/container";
 import BlocksCategories from "@/components/blocks/blocks-categories";
 import { getBlockCategories } from "@/lib/registry";
+
+export const metadata: Metadata = {
+  title: "Blocks",
+  description: "UI blocks for your next project.",
+};
 
 export default function BlocksPage() {
   const allCategories = getBlockCategories();

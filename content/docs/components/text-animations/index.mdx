@@ -5,73 +5,28 @@ description: Beautiful animated text effects powered by GSAP
 
 All text animations require GSAP to be installed first. **No global CSS setup required** - the component is fully self-contained and inherits styles automatically.
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
+<Steps>
+<Step>
+### Install GSAP
 
-```bash
+```npm
 npm install gsap
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+<Step>
+### Add the component
 
-```bash
-pnpm add gsap
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add gsap
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add gsap
-```
-
-</Tab>
-</Tabs>
-
-Then add the component:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+</Steps>
 
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
-```
+## Quick Start
 
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
-```
-
-</Tab>
-</Tabs>
-
-### Quick Start
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
+```tsx title="app/page.tsx"
 import { SplitTextAnimation } from "@/components/ui/split-text-animation";
 
 export default function Home() {
@@ -85,6 +40,8 @@ export default function Home() {
   );
 }
 ```
+
+## Examples
 
 <div className="flex items-center justify-between">
   <h3>Default</h3>
@@ -112,14 +69,26 @@ export default function Home() {
 </Tab>
 </Tabs>
 
-### Animation Types
+## Animation Types
 
 Explore different animation types:
 
-- **[Fade Animation](/docs/components/text-animations/fade)** - Simple fade-in effect
-- **[Slide Animation](/docs/components/text-animations/slide)** - Slide from any direction
-- **[Scale Animation](/docs/components/text-animations/scale)** - Scale with bounce effect
-- **[Rotate Animation](/docs/components/text-animations/rotate)** - Rotating text effect
+<Cards>
+  <Card href="/docs/components/text-animations/fade" title="Fade Animation">
+    Simple fade-in effect
+  </Card>
+  <Card href="/docs/components/text-animations/slide" title="Slide Animation">
+    Slide from any direction
+  </Card>
+  <Card href="/docs/components/text-animations/scale" title="Scale Animation">
+    Scale with bounce effect
+  </Card>
+  <Card href="/docs/components/text-animations/rotate" title="Rotate Animation">
+    Rotating text effect
+  </Card>
+</Cards>
+
+## Custom Styling
 
 <div className="flex items-center justify-between">
   <h3>Custom Styling</h3>
@@ -129,7 +98,7 @@ Explore different animation types:
   </div>
 </div>
 
-The component automatically inherits all font properties (size, weight, family, color) from its container. Simply apply any Tailwind classes or custom CSS to the component - all styles will be automatically applied to each animated character:
+The component automatically inherits all font properties (size, weight, family, color) from its container. Apply any Tailwind classes or custom CSS to the component and all styles will be applied to each animated character:
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
@@ -138,7 +107,6 @@ The component automatically inherits all font properties (size, weight, family, 
 <Tab value="Code">
 
 ```tsx
-// Custom styled text with Tailwind classes
 <SplitTextAnimation
   text="Custom Styled Text"
   className="text-2xl text-green-500"
@@ -149,7 +117,7 @@ The component automatically inherits all font properties (size, weight, family, 
 </Tab>
 </Tabs>
 
-**How it works:** The component reads the computed styles from its container and applies them to each character span automatically. This means you can use any CSS classes:
+Supported CSS classes:
 
 - **Text sizing:** `text-sm`, `text-lg`, `text-4xl`, etc.
 - **Font weight:** `font-normal`, `font-bold`, `font-black`, etc.
@@ -157,22 +125,52 @@ The component automatically inherits all font properties (size, weight, family, 
 - **Custom styles:** `font-mono`, `tracking-wider`, `italic`, etc.
 - **Gradients:** `bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent`
 
-**No global CSS setup required** - the component handles all styling inheritance automatically.
+## API Reference
 
-### API Reference
+<TypeTable
+  type={{
+    text: {
+      description: "The text to animate",
+      type: "string",
+    },
+    animationType: {
+      description: "Type of animation to apply",
+      type: '"fade" | "slide" | "scale" | "rotate"',
+      default: '"fade"',
+    },
+    direction: {
+      description: "Direction for slide animation",
+      type: '"up" | "down" | "left" | "right"',
+      default: '"up"',
+    },
+    duration: {
+      description: "Duration of the animation in seconds",
+      type: "number",
+      default: "0.8",
+    },
+    stagger: {
+      description: "Delay between each character animation",
+      type: "number",
+      default: "0.05",
+    },
+    delay: {
+      description: "Initial delay before animation starts",
+      type: "number",
+      default: "0",
+    },
+    className: {
+      description: "Additional CSS classes (automatically inherited by all characters)",
+      type: "string",
+    },
+    showRerunButton: {
+      description: "Show a rerun button to replay the animation",
+      type: "boolean",
+      default: "false",
+    },
+  }}
+/>
 
-| Prop              | Type                                       | Default  | Description                                                                 |
-| ----------------- | ------------------------------------------ | -------- | --------------------------------------------------------------------------- |
-| `text`            | `string`                                   | —        | The text to animate                                                         |
-| `animationType`   | `"fade" \| "slide" \| "scale" \| "rotate"` | `"fade"` | Type of animation to apply                                                  |
-| `direction`       | `"up" \| "down" \| "left" \| "right"`      | `"up"`   | Direction for slide animation                                               |
-| `duration`        | `number`                                   | `0.8`    | Duration of the animation in seconds                                        |
-| `stagger`         | `number`                                   | `0.05`   | Delay between each character animation                                      |
-| `delay`           | `number`                                   | `0`      | Initial delay before animation starts                                       |
-| `className`       | `string`                                   | `""`     | Additional CSS classes to apply (automatically inherited by all characters) |
-| `showRerunButton` | `boolean`                                  | `false`  | Show a rerun button to replay the animation                                 |
-
-### Credits
+## Credits
 
 - GSAP: [greensock.com](https://greensock.com/)
 - GitHub: [greensock/GSAP](https://github.com/greensock/GSAP)

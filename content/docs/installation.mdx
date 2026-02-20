@@ -5,116 +5,36 @@ description: How to add glsilk components to your project
 
 ## Getting Started
 
-To install glsilk components for your application.
+<Steps>
+<Step>
+### Initialize shadcn
 
-<section id="setup-section">
-<div className="fd-steps [&_h3]:fd-step">
-
-### Installation
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npx shadcn@latest init
 ```
 
-</Tab>
-<Tab value="pnpm">
-
-```bash
-pnpm dlx shadcn@latest init
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest init
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest init
-```
-
-</Tab>
-</Tabs>
-
+</Step>
+<Step>
 ### Add all shadcn components to your project
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npx shadcn@latest add --all
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+<Step>
+### Add a specific glsilk component
 
-```bash
-pnpm dlx shadcn@latest add --all
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add --all
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add --all
-```
-
-</Tab>
-</Tabs>
-
-### Add a specific component
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
 ```
 
-</Tab>
-<Tab value="pnpm">
-
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
-```
-
-</Tab>
-</Tabs>
-
-</div>
-</section>
+</Step>
+</Steps>
 
 The command above will add the `MeshGradientButton` component to your project. You can then import it like this:
 
-```tsx {1,6} showLineNumbers title="app/page.tsx"
+```tsx title="app/page.tsx"
 import { MeshGradientButton } from "@/components/ui/mesh-gradient-button";
 
 export default function Home() {

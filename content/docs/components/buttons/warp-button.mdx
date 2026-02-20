@@ -3,75 +3,28 @@ title: Warp Button
 description: Animated button with dynamic warp distortion effects
 ---
 
-All warp buttons require the @paper-design/shaders-react package to be installed first:
+<Steps>
+<Step>
+### Install the shader dependency
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npm install @paper-design/shaders-react
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+<Step>
+### Add the component
 
-```bash
-pnpm add @paper-design/shaders-react
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add @paper-design/shaders-react
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add @paper-design/shaders-react
-```
-
-</Tab>
-</Tabs>
-
-Then add the component:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npx shadcn@latest add https://glsilk.vercel.app/r/warp-button.json
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+</Steps>
 
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/warp-button.json
-```
+## Quick Start
 
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/warp-button.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/warp-button.json
-```
-
-</Tab>
-</Tabs>
-
-### Quick Start
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
+```tsx title="app/page.tsx"
 import { WarpButton } from "@/components/ui/warp-button";
 
 export default function Home() {
@@ -88,6 +41,8 @@ export default function Home() {
   scheme by default, featuring deep slate and vibrant teal tones that work well
   in both light and dark modes.
 </Callout>
+
+## Examples
 
 <div className="flex items-center justify-between">
   <h3>Default</h3>
@@ -237,7 +192,6 @@ export default function Home() {
 <Tab value="Code">
 
 ```tsx
-// Mix blend mode for color inversion effect
 <WarpButton textClassName="text-white mix-blend-difference">
   Inverted Text
 </WarpButton>
@@ -246,52 +200,150 @@ export default function Home() {
 </Tab>
 </Tabs>
 
-### Advanced Text Effects
+## Advanced Text Effects
 
-For advanced text effects, use the `textClassName` prop to add custom styling:
+Use the `textClassName` prop for custom text styling:
 
 ```tsx
-// Add mix-blend-difference for color inversion effect
 <WarpButton textClassName="text-white mix-blend-difference">
   Inverted Text
 </WarpButton>
 ```
 
-### API Reference
+## API Reference
 
-| Prop              | Type                                                                                               | Default          | Description                                |
-| ----------------- | -------------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------ |
-| `variant`         | `"default" \| "destructive" \| "destructive-red" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"`      | Button variant (same as shadcn Button)     |
-| `size`            | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`                                    | `"default"`      | Button size variant                        |
-| `asChild`         | `boolean`                                                                                          | `false`          | Render as child component using Radix Slot |
-| `colors`          | `string[]`                                                                                         | Default gradient | Array of colors for the warp effect        |
-| `proportion`      | `number`                                                                                           | `0.45`           | Proportion of the warp effect              |
-| `softness`        | `number`                                                                                           | `1`              | Softness of the warp edges                 |
-| `distortion`      | `number`                                                                                           | `0.25`           | Amount of distortion applied               |
-| `swirl`           | `number`                                                                                           | `0.8`            | Intensity of the swirl effect              |
-| `swirlIterations` | `number`                                                                                           | `10`             | Number of swirl iterations                 |
-| `shape`           | `"checks" \| "stripes" \| "edge"`                                                                  | `"checks"`       | Shape pattern for the warp                 |
-| `shapeScale`      | `number`                                                                                           | `0.1`            | Scale of the shape pattern                 |
-| `speed`           | `number`                                                                                           | `1`              | Animation speed                            |
-| `frame`           | `number`                                                                                           | —                | Frame number for animation control         |
-| `scale`           | `number`                                                                                           | `1`              | Scale of the warp effect                   |
-| `rotation`        | `number`                                                                                           | —                | Rotation of the warp effect                |
-| `offsetX`         | `number`                                                                                           | —                | X offset for the warp effect               |
-| `offsetY`         | `number`                                                                                           | —                | Y offset for the warp effect               |
-| `width`           | `number \| string`                                                                                 | —                | Width of the warp effect                   |
-| `height`          | `number \| string`                                                                                 | —                | Height of the warp effect                  |
-| `fit`             | `"contain" \| "cover"`                                                                             | `"cover"`        | How the warp effect fits                   |
-| `worldWidth`      | `number`                                                                                           | —                | World width for the warp effect            |
-| `worldHeight`     | `number`                                                                                           | —                | World height for the warp effect           |
-| `originX`         | `number`                                                                                           | —                | X origin for the warp effect               |
-| `originY`         | `number`                                                                                           | —                | Y origin for the warp effect               |
-| `minPixelRatio`   | `number`                                                                                           | —                | Minimum pixel ratio                        |
-| `maxPixelCount`   | `number`                                                                                           | —                | Maximum pixel count                        |
-| `className`       | `string`                                                                                           | —                | Additional CSS classes for the button      |
-| `textClassName`   | `string`                                                                                           | —                | Additional CSS classes for the text        |
+<TypeTable
+  type={{
+    variant: {
+      description: "Button variant (same as shadcn Button)",
+      type: '"default" | "destructive" | "destructive-red" | "outline" | "secondary" | "ghost" | "link"',
+      default: '"default"',
+    },
+    size: {
+      description: "Button size variant",
+      type: '"default" | "sm" | "lg" | "icon" | "icon-sm" | "icon-lg"',
+      default: '"default"',
+    },
+    asChild: {
+      description: "Render as child component using Radix Slot",
+      type: "boolean",
+      default: "false",
+    },
+    colors: {
+      description: "Array of colors for the warp effect",
+      type: "string[]",
+      default: "Default gradient",
+    },
+    proportion: {
+      description: "Proportion of the warp effect",
+      type: "number",
+      default: "0.45",
+    },
+    softness: {
+      description: "Softness of the warp edges",
+      type: "number",
+      default: "1",
+    },
+    distortion: {
+      description: "Amount of distortion applied",
+      type: "number",
+      default: "0.25",
+    },
+    swirl: {
+      description: "Intensity of the swirl effect",
+      type: "number",
+      default: "0.8",
+    },
+    swirlIterations: {
+      description: "Number of swirl iterations",
+      type: "number",
+      default: "10",
+    },
+    shape: {
+      description: "Shape pattern for the warp",
+      type: '"checks" | "stripes" | "edge"',
+      default: '"checks"',
+    },
+    shapeScale: {
+      description: "Scale of the shape pattern",
+      type: "number",
+      default: "0.1",
+    },
+    speed: {
+      description: "Animation speed",
+      type: "number",
+      default: "1",
+    },
+    frame: {
+      description: "Frame number for animation control",
+      type: "number",
+    },
+    scale: {
+      description: "Scale of the warp effect",
+      type: "number",
+      default: "1",
+    },
+    rotation: {
+      description: "Rotation of the warp effect",
+      type: "number",
+    },
+    offsetX: {
+      description: "X offset for the warp effect",
+      type: "number",
+    },
+    offsetY: {
+      description: "Y offset for the warp effect",
+      type: "number",
+    },
+    width: {
+      description: "Width of the warp effect",
+      type: "number | string",
+    },
+    height: {
+      description: "Height of the warp effect",
+      type: "number | string",
+    },
+    fit: {
+      description: "How the warp effect fits",
+      type: '"contain" | "cover"',
+      default: '"cover"',
+    },
+    worldWidth: {
+      description: "World width for the warp effect",
+      type: "number",
+    },
+    worldHeight: {
+      description: "World height for the warp effect",
+      type: "number",
+    },
+    originX: {
+      description: "X origin for the warp effect",
+      type: "number",
+    },
+    originY: {
+      description: "Y origin for the warp effect",
+      type: "number",
+    },
+    minPixelRatio: {
+      description: "Minimum pixel ratio",
+      type: "number",
+    },
+    maxPixelCount: {
+      description: "Maximum pixel count",
+      type: "number",
+    },
+    className: {
+      description: "Additional CSS classes for the button",
+      type: "string",
+    },
+    textClassName: {
+      description: "Additional CSS classes for the text",
+      type: "string",
+    },
+  }}
+/>
 
-
-### Credits
+## Credits
 
 - Website: [paper-design.com](https://paper.design/)
 - GitHub: [paper-design/shaders](https://github.com/paper-design/shaders)

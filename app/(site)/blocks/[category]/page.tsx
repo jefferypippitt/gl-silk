@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   getBlockCategoryBySlug,
   getBlocksByCategory,
@@ -10,6 +11,20 @@ import { ChevronLeft } from "lucide-react";
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
+}
+
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  const { category } = await params;
+  const blockCategory = getBlockCategoryBySlug(category);
+
+  if (!blockCategory) {
+    return { title: "Not Found" };
+  }
+
+  return {
+    title: `${blockCategory.displayName} Blocks`,
+    description: `Browse ${blockCategory.displayName} blocks for your next project.`,
+  };
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {

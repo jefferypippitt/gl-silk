@@ -5,47 +5,27 @@ description: Button with morphing SVG animation between Sun and Moon icons using
 
 ## Getting Started
 
-To install the theme toggle button component for your application install next-themes package.
+<Steps>
+<Step>
+### Install dependencies
 
-<section id="setup-section">
-<div className="fd-steps [&_h3]:fd-step">
-
-### Installation
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
-npm install next-themes
+```npm
+npm install next-themes gsap
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+<Step>
+### Add the component
 
-```bash
-pnpm add next-themes
+```npm
+npx shadcn@latest add https://glsilk.vercel.app/r/theme-toggle-button.json
 ```
 
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add next-themes
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add next-themes
-```
-
-</Tab>
-</Tabs>
-
+</Step>
+<Step>
 ### Create a theme provider
 
-```tsx title="components/theme-provider.tsx" showLineNumbers
+```tsx title="components/theme-provider.tsx"
 "use client";
 
 import * as React from "react";
@@ -59,9 +39,11 @@ export function ThemeProvider({
 }
 ```
 
+</Step>
+<Step>
 ### Wrap your root layout
 
-```tsx title="app/layout.tsx" showLineNumbers
+```tsx title="app/layout.tsx"
 import { ThemeProvider } from "@/components/theme-provider";
 
 export default function RootLayout({
@@ -81,9 +63,11 @@ export default function RootLayout({
 }
 ```
 
+</Step>
+<Step>
 ### Create a reusable mode toggle component
 
-```tsx title="components/mode-toggle.tsx" showLineNumbers
+```tsx title="components/mode-toggle.tsx"
 "use client";
 
 import { useTheme } from "next-themes";
@@ -99,41 +83,10 @@ export function ModeToggle() {
 }
 ```
 
-</div>
-</section>
+</Step>
+</Steps>
 
-All theme toggle buttons require the gsap package to be installed first:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
-npm install gsap
-```
-
-</Tab>
-<Tab value="pnpm">
-
-```bash
-pnpm add gsap
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add gsap
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add gsap
-```
-
-</Tab>
-</Tabs>
+## Examples
 
 <div className="flex items-center justify-between">
   <h3>Default</h3>
@@ -165,14 +118,12 @@ bun add gsap
 <Tab value="Code">
 
 ```tsx
-// Default rounded buttons
 <div className="flex gap-4">
   <ThemeToggleButton variant="outline" size="icon" className="rounded-full" />
   <ThemeToggleButton variant="default" size="icon" className="rounded-full" />
   <ThemeToggleButton variant="destructive" size="icon" className="rounded-full" />
 </div>
 
-// Dual-color rounded buttons
 <div className="flex gap-4">
   <ThemeToggleButton
     variant="outline"
@@ -207,28 +158,24 @@ bun add gsap
 <Tab value="Code">
 
 ```tsx
-// Yellow theme
 <ThemeToggleButton
   size="icon"
   variant="outline"
   className="[&_svg_circle]:fill-yellow-500 [&_svg_path]:stroke-yellow-500"
 />
 
-// Blue theme
 <ThemeToggleButton
   size="icon"
   variant="outline"
   className="[&_svg_circle]:fill-blue-500 [&_svg_path]:stroke-blue-500"
 />
 
-// Orange theme
 <ThemeToggleButton
   size="icon"
   variant="outline"
   className="[&_svg_circle]:fill-orange-500 [&_svg_path]:stroke-orange-500"
 />
 
-// Purple theme
 <ThemeToggleButton
   size="icon"
   variant="outline"
@@ -251,21 +198,18 @@ bun add gsap
 <Tab value="Code">
 
 ```tsx
-// Yellow sun → Blue moon
 <ThemeToggleButton
   size="icon"
   variant="outline"
   className="[&_svg_circle]:fill-yellow-500 [&_svg_path]:stroke-yellow-500 [&[data-state=checked]_svg_circle]:fill-blue-500 [&[data-state=checked]_svg_path]:stroke-blue-500"
 />
 
-// Orange sun → Purple moon
 <ThemeToggleButton
   size="icon"
   variant="outline"
   className="[&_svg_circle]:fill-orange-500 [&_svg_path]:stroke-orange-500 [&[data-state=checked]_svg_circle]:fill-purple-500 [&[data-state=checked]_svg_path]:stroke-purple-500"
 />
 
-// Green sun → Pink moon
 <ThemeToggleButton
   size="icon"
   variant="outline"
@@ -276,18 +220,43 @@ bun add gsap
 </Tab>
 </Tabs>
 
-### API Reference
+## API Reference
 
-| Prop            | Type                                                                          | Default          | Description                                |
-| --------------- | ----------------------------------------------------------------------------- | ---------------- | ------------------------------------------ |
-| `variant`       | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"`      | Button variant (same as shadcn Button)     |
-| `size`          | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"`      | Button size variant                        |
-| `duration`      | `number`                                                                      | `0.5`            | Animation duration in seconds              |
-| `ease`          | `string`                                                                      | `"power2.inOut"` | GSAP easing function                       |
-| `asChild`       | `boolean`                                                                     | `false`          | Render as child component using Radix Slot |
-| `onStateChange` | `(isDark: boolean) => void`                                                   | —                | Callback when state changes                |
+<TypeTable
+  type={{
+    variant: {
+      description: "Button variant (same as shadcn Button)",
+      type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
+      default: '"default"',
+    },
+    size: {
+      description: "Button size variant",
+      type: '"default" | "sm" | "lg" | "icon" | "icon-sm" | "icon-lg"',
+      default: '"default"',
+    },
+    duration: {
+      description: "Animation duration in seconds",
+      type: "number",
+      default: "0.5",
+    },
+    ease: {
+      description: "GSAP easing function",
+      type: "string",
+      default: '"power2.inOut"',
+    },
+    asChild: {
+      description: "Render as child component using Radix Slot",
+      type: "boolean",
+      default: "false",
+    },
+    onStateChange: {
+      description: "Callback when state changes",
+      type: "(isDark: boolean) => void",
+    },
+  }}
+/>
 
-### Credits
+## Credits
 
 - GSAP: [greensock.com](https://greensock.com/)
 - Icons: [lucide-react](https://lucide.dev/)

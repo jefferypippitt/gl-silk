@@ -3,75 +3,28 @@ title: Slide Animation
 description: Slide text animations in multiple directions
 ---
 
-All text animations require GSAP to be installed first:
+<Steps>
+<Step>
+### Install the GSAP dependency
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npm install gsap
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+<Step>
+### Add the component
 
-```bash
-pnpm add gsap
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add gsap
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add gsap
-```
-
-</Tab>
-</Tabs>
-
-Then add the component:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+</Steps>
 
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
-```
+## Quick Start
 
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/split-text-animation.json
-```
-
-</Tab>
-</Tabs>
-
-### Quick Start
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
+```tsx title="app/page.tsx"
 import { SplitTextAnimation } from "@/components/ui/split-text-animation";
 
 export default function Home() {
@@ -86,6 +39,8 @@ export default function Home() {
   );
 }
 ```
+
+## Examples
 
 <div className="flex items-center justify-between">
   <h3>Slide Up</h3>
@@ -195,20 +150,52 @@ export default function Home() {
 </Tab>
 </Tabs>
 
-### API Reference
+## API Reference
 
-| Prop              | Type                                  | Default   | Description                   |
-| ----------------- | ------------------------------------- | --------- | ----------------------------- |
-| `text`            | `string`                              | required  | The text to animate           |
-| `animationType`   | `"slide"`                             | `"slide"` | Type of animation to apply    |
-| `direction`       | `"up" \| "down" \| "left" \| "right"` | `"up"`    | Direction for slide animation |
-| `duration`        | `number`                              | `0.8`     | Animation duration in seconds |
-| `stagger`         | `number`                              | `0.05`    | Delay between each character  |
-| `delay`           | `number`                              | `0`       | Initial delay                 |
-| `className`       | `string`                              | `""`      | Additional CSS classes        |
-| `showRerunButton` | `boolean`                             | `false`   | Show a rerun button           |
+<TypeTable
+  type={{
+    text: {
+      description: "The text to animate",
+      type: "string",
+    },
+    animationType: {
+      description: "Type of animation to apply",
+      type: '"slide"',
+      default: '"slide"',
+    },
+    direction: {
+      description: "Direction for slide animation",
+      type: '"up" | "down" | "left" | "right"',
+      default: '"up"',
+    },
+    duration: {
+      description: "Animation duration in seconds",
+      type: "number",
+      default: "0.8",
+    },
+    stagger: {
+      description: "Delay between each character",
+      type: "number",
+      default: "0.05",
+    },
+    delay: {
+      description: "Initial delay",
+      type: "number",
+      default: "0",
+    },
+    className: {
+      description: "Additional CSS classes",
+      type: "string",
+    },
+    showRerunButton: {
+      description: "Show a rerun button",
+      type: "boolean",
+      default: "false",
+    },
+  }}
+/>
 
-### Credits
+## Credits
 
 - GSAP: [greensock.com](https://greensock.com/)
 - GitHub: [greensock/GSAP](https://github.com/greensock/GSAP)

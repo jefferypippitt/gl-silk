@@ -3,75 +3,28 @@ title: Mesh Gradient Button
 description: Animated button with flowing mesh gradient backgrounds
 ---
 
-All mesh gradient buttons require the @paper-design/shaders-react package to be installed first:
+<Steps>
+<Step>
+### Install the shader dependency
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npm install @paper-design/shaders-react
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+<Step>
+### Add the component
 
-```bash
-pnpm add @paper-design/shaders-react
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add @paper-design/shaders-react
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add @paper-design/shaders-react
-```
-
-</Tab>
-</Tabs>
-
-Then add the component:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+</Steps>
 
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
-```
+## Quick Start
 
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/mesh-gradient-button.json
-```
-
-</Tab>
-</Tabs>
-
-### Quick Start
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
+```tsx title="app/page.tsx"
 import { MeshGradientButton } from "@/components/ui/mesh-gradient-button";
 
 export default function Home() {
@@ -82,6 +35,8 @@ export default function Home() {
   );
 }
 ```
+
+## Examples
 
 <div className="flex items-center justify-between">
   <h3>Default</h3>
@@ -179,56 +134,134 @@ export default function Home() {
 </Tab>
 </Tabs>
 
-### Advanced Text Effects
+## Advanced Text Effects
 
-For advanced text effects, use the `textClassName` prop to add custom styling:
+Use the `textClassName` prop for custom text styling:
 
 ```tsx
-// Add mix-blend-difference for color inversion effect
 <MeshGradientButton textClassName="text-white mix-blend-difference">
   Inverted Text
 </MeshGradientButton>
 
-// Custom colors without blend mode
 <MeshGradientButton textClassName="text-black">
   Black Text
 </MeshGradientButton>
 
-// Combine with other Tailwind classes
 <MeshGradientButton textClassName="text-primary font-bold text-lg">
   Bold Primary Text
 </MeshGradientButton>
 ```
 
-### API Reference
+## API Reference
 
-| Prop            | Type                                                                          | Default                                        | Description                                               |
-| --------------- | ----------------------------------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------- |
-| `colors`        | `string[]`                                                                    | `["#3b82f6", "#8b5cf6", "#06b6d4", "#f59e0b"]` | Array of color spots (up to 10 colors)                    |
-| `distortion`    | `number`                                                                      | `0.8`                                          | Power of organic noise distortion (0-1)                   |
-| `swirl`         | `number`                                                                      | `0.1`                                          | Power of vortex distortion (0-1)                          |
-| `grainMixer`    | `number`                                                                      | `0`                                            | Strength of grain distortion applied to color edges (0-1) |
-| `grainOverlay`  | `number`                                                                      | `0`                                            | Post-processing RGB grain overlay (0-1)                   |
-| `speed`         | `number`                                                                      | `1`                                            | Animation speed                                           |
-| `scale`         | `number`                                                                      | `1`                                            | Overall zoom level of the graphics (0.01-4)               |
-| `frame`         | `number`                                                                      | —                                              | Starting animation frame                                  |
-| `rotation`      | `number`                                                                      | —                                              | Overall rotation angle of the graphics (0-360)            |
-| `offsetX`       | `number`                                                                      | —                                              | Horizontal offset of the graphics center (-1 to 1)        |
-| `offsetY`       | `number`                                                                      | —                                              | Vertical offset of the graphics center (-1 to 1)          |
-| `width`         | `number \| string`                                                            | —                                              | CSS width style of the shader element                     |
-| `height`        | `number \| string`                                                            | —                                              | CSS height style of the shader element                    |
-| `fit`           | `"contain" \| "cover"`                                                        | `"cover"`                                      | How to fit the shader into canvas dimensions              |
-| `worldWidth`    | `number`                                                                      | —                                              | Virtual width before scaling                              |
-| `worldHeight`   | `number`                                                                      | —                                              | Virtual height before scaling                             |
-| `originX`       | `number`                                                                      | —                                              | Reference point for world width (0-1)                     |
-| `originY`       | `number`                                                                      | —                                              | Reference point for world height (0-1)                    |
-| `minPixelRatio` | `number`                                                                      | —                                              | Minimum pixel ratio for rendering                         |
-| `maxPixelCount` | `number`                                                                      | —                                              | Maximum pixel count the shader may process                |
-| `variant`       | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"`                                    | Button variant (same as shadcn Button)                    |
-| `size`          | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"`               | `"default"`                                    | Button size variant                                       |
+<TypeTable
+  type={{
+    colors: {
+      description: "Array of color spots (up to 10 colors)",
+      type: "string[]",
+      default: '["#3b82f6", "#8b5cf6", "#06b6d4", "#f59e0b"]',
+    },
+    distortion: {
+      description: "Power of organic noise distortion (0-1)",
+      type: "number",
+      default: "0.8",
+    },
+    swirl: {
+      description: "Power of vortex distortion (0-1)",
+      type: "number",
+      default: "0.1",
+    },
+    grainMixer: {
+      description: "Strength of grain distortion applied to color edges (0-1)",
+      type: "number",
+      default: "0",
+    },
+    grainOverlay: {
+      description: "Post-processing RGB grain overlay (0-1)",
+      type: "number",
+      default: "0",
+    },
+    speed: {
+      description: "Animation speed",
+      type: "number",
+      default: "1",
+    },
+    scale: {
+      description: "Overall zoom level of the graphics (0.01-4)",
+      type: "number",
+      default: "1",
+    },
+    frame: {
+      description: "Starting animation frame",
+      type: "number",
+    },
+    rotation: {
+      description: "Overall rotation angle of the graphics (0-360)",
+      type: "number",
+    },
+    offsetX: {
+      description: "Horizontal offset of the graphics center (-1 to 1)",
+      type: "number",
+    },
+    offsetY: {
+      description: "Vertical offset of the graphics center (-1 to 1)",
+      type: "number",
+    },
+    width: {
+      description: "CSS width style of the shader element",
+      type: "number | string",
+    },
+    height: {
+      description: "CSS height style of the shader element",
+      type: "number | string",
+    },
+    fit: {
+      description: "How to fit the shader into canvas dimensions",
+      type: '"contain" | "cover"',
+      default: '"cover"',
+    },
+    worldWidth: {
+      description: "Virtual width before scaling",
+      type: "number",
+    },
+    worldHeight: {
+      description: "Virtual height before scaling",
+      type: "number",
+    },
+    originX: {
+      description: "Reference point for world width (0-1)",
+      type: "number",
+    },
+    originY: {
+      description: "Reference point for world height (0-1)",
+      type: "number",
+    },
+    minPixelRatio: {
+      description: "Minimum pixel ratio for rendering",
+      type: "number",
+    },
+    maxPixelCount: {
+      description: "Maximum pixel count the shader may process",
+      type: "number",
+    },
+    variant: {
+      description: "Button variant (same as shadcn Button)",
+      type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
+      default: '"default"',
+    },
+    size: {
+      description: "Button size variant",
+      type: '"default" | "sm" | "lg" | "icon" | "icon-sm" | "icon-lg"',
+      default: '"default"',
+    },
+    textClassName: {
+      description: "Additional CSS classes for the button text",
+      type: "string",
+    },
+  }}
+/>
 
-
-### Credits
+## Credits
 
 - Website: [paper-design.com](https://paper.design/)
 - GitHub: [paper-design/shaders](https://github.com/paper-design/shaders)

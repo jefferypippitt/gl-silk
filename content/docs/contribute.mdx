@@ -6,9 +6,7 @@ description: Learn how to contribute to glsilk and help make it better for every
 ## Getting Started
 
 <Steps>
-
 <Step>
-
 ### Setup
 
 Fork and clone the repository, then install dependencies:
@@ -21,7 +19,7 @@ pnpm install
 
 Create a `.env.local` file:
 
-```bash
+```bash title=".env.local"
 # App origin (local dev)
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
@@ -32,9 +30,7 @@ NEXT_PUBLIC_V0_BASE_URL=https://<id>.ngrok-free.app
 ```
 
 </Step>
-
 <Step>
-
 ### Start Public Tunnel
 
 Start a tunnel on the fixed domain (hostname only, no https):
@@ -43,7 +39,7 @@ Start a tunnel on the fixed domain (hostname only, no https):
 ngrok http --domain=<id>.ngrok-free.app 3000
 ```
 
-If domain reservation isn’t available, use:
+If domain reservation isn't available, use:
 
 ```bash
 ngrok http 3000
@@ -52,9 +48,7 @@ ngrok http 3000
 Then copy the printed `https://<id>.ngrok-free.app` and ensure your `.env.local` uses that URL for `NEXT_PUBLIC_V0_BASE_URL`.
 
 </Step>
-
 <Step>
-
 ### Run Dev Server
 
 Start Next.js locally:
@@ -64,9 +58,7 @@ pnpm dev
 ```
 
 </Step>
-
 <Step>
-
 ### Create Component Files
 
 Create your component directory in `registry/new-york/components/your-component-name/`:
@@ -99,20 +91,21 @@ export function MyButtonDemo() {
 The file should include:
 
 - Frontmatter with `title` and `description`
-- Installation tabs for all package managers (npm, pnpm, yarn, bun)
+- Installation using ` ```npm ` shorthand (auto-generates npm/pnpm/yarn/bun tabs)
+- `<Steps>` for installation flow
 - Quick Start section with import and usage example
+- Examples with `<ComponentPreview>` in Preview/Code tabs
+- `<TypeTable>` for API reference
 
 See `content/docs/components/buttons/mesh-gradient.mdx` for a complete example.
 
 </Step>
-
 <Step>
-
 ### Register Component
 
 Add your component to **two registry files**:
 
-**1. `components/mdx/component-registry.tsx`** - For documentation pages:
+**1. `components/mdx/component-registry.tsx`** — For documentation pages:
 
 ```tsx
 import { MyButtonDemo } from "@/registry/new-york/components/my-button/demo";
@@ -123,7 +116,7 @@ export const componentRegistry: Record<string, React.ComponentType> = {
 };
 ```
 
-**2. `components/registry/dynamic-component-loader.tsx`** - For blocks page:
+**2. `components/registry/dynamic-component-loader.tsx`** — For blocks page:
 
 ```tsx
 import { MyButtonDemo } from "@/registry/new-york/components/my-button/demo";
@@ -134,7 +127,7 @@ const componentMap: Record<string, React.ComponentType> = {
 };
 ```
 
-**3. `registry.json`** - For registry entries:
+**3. `registry.json`** — For registry entries:
 
 Add a main entry for your component:
 
@@ -159,9 +152,9 @@ Add a main entry for your component:
 }
 ```
 
-**4. Demo Variations** - If you create multiple demo files (e.g., `sizes-demo.tsx`, `variants-demo.tsx`):
+**4. Demo Variations** — If you create multiple demo files (e.g., `sizes-demo.tsx`, `variants-demo.tsx`):
 
-You need to create separate registry entries for each demo variation. This ensures the "Open in v0" button works correctly for each demo.
+Create separate registry entries for each demo variation. This ensures the "Open in v0" button works correctly for each demo.
 
 For example, if you have `sizes-demo.tsx`:
 
@@ -186,11 +179,10 @@ For example, if you have `sizes-demo.tsx`:
 }
 ```
 
-**Important:** Make sure the `OpenInV0Button` name in your demo file matches the registry entry name:
-
-```tsx
-<OpenInV0Button name="my-button-sizes" />
-```
+<Callout type="warn">
+  Make sure the `OpenInV0Button` name in your MDX file matches the registry entry name:
+  `<OpenInV0Button name="my-button-sizes" />`
+</Callout>
 
 After adding entries to `registry.json`, build the registry:
 
@@ -199,34 +191,28 @@ pnpm registry:build
 ```
 
 </Step>
-
 </Steps>
 
-### Best Practices
+## Best Practices
 
 - Follow existing patterns in the codebase
 - Add responsive design considerations
 - Ensure accessibility compliance
 - Test across different browsers
 
-When you create a commit we kindly ask you to follow the convention
-`category(scope or module): message` in your commit message while using one of
-the following categories:
+## Commit Convention
 
-- `feat / feature`: all changes that introduce completely new code or new
-  features
-- `fix`: changes that fix a bug (ideally you will additionally reference an
-  issue if present)
-- `refactor`: any code related change that is not a fix nor a feature
-- `docs`: changing existing or creating new documentation (i.e. README, docs for
-  usage of a lib or cli usage)
-- `build`: all changes regarding the build of the software, changes to
-  dependencies or the addition of new dependencies
-- `test`: all changes regarding tests (adding new tests or changing existing
-  ones)
-- `ci`: all changes regarding the configuration of continuous integration (i.e.
-  github actions, ci system)
-- `chore`: all changes to the repository that do not fit into any of the above
-  categories
+When you create a commit, follow the convention `category(scope or module): message` using one of these categories:
 
-- e.g. `feat(components): add new prop to the button component`
+| Category | Description |
+|---|---|
+| `feat` / `feature` | Completely new code or new features |
+| `fix` | Bug fixes (reference an issue if present) |
+| `refactor` | Code changes that are not a fix nor a feature |
+| `docs` | Documentation changes (README, usage docs, etc.) |
+| `build` | Build changes, dependency updates |
+| `test` | Adding or changing tests |
+| `ci` | CI configuration changes (GitHub Actions, etc.) |
+| `chore` | Changes that don't fit any of the above |
+
+Example: `feat(components): add new prop to the button component`

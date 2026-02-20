@@ -3,77 +3,30 @@ title: 3D Text
 description: Beautiful 3D text effect using Three.js and React Three Fiber
 ---
 
-This component requires React Three Fiber and Drei to be installed first:
+<Steps>
+<Step>
+### Install dependencies
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npm install @react-three/fiber @react-three/drei three
 ```
 
-</Tab>
-<Tab value="pnpm">
-
-```bash
-pnpm add @react-three/fiber @react-three/drei three
-```
-
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn add @react-three/fiber @react-three/drei three
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bun add @react-three/fiber @react-three/drei three
-```
-
-</Tab>
-</Tabs>
+</Step>
+<Step>
+### Add the component
 
 The component uses a Geist font from the public folder.
 
-Then add the component:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-<Tab value="npm">
-
-```bash
+```npm
 npx shadcn@latest add https://glsilk.vercel.app/r/text-3d.json
 ```
 
-</Tab>
-<Tab value="pnpm">
+</Step>
+</Steps>
 
-```bash
-pnpm dlx shadcn@latest add https://glsilk.vercel.app/r/text-3d.json
-```
+## Quick Start
 
-</Tab>
-<Tab value="yarn">
-
-```bash
-yarn dlx shadcn@latest add https://glsilk.vercel.app/r/text-3d.json
-```
-
-</Tab>
-<Tab value="bun">
-
-```bash
-bunx shadcn@latest add https://glsilk.vercel.app/r/text-3d.json
-```
-
-</Tab>
-</Tabs>
-
-### Quick Start
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
+```tsx title="app/page.tsx"
 import { Text3DComponent } from "@/components/ui/text-3d";
 
 export default function Home() {
@@ -91,11 +44,11 @@ Text"
 }
 ```
 
+## Examples
+
 <div className="flex items-center justify-between">
   <h3>Default</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="text-3d" />
-  </div>
+  <OpenInV0Button name="text-3d" />
 </div>
 
 <Tabs items={['Preview', 'Code']}>
@@ -122,23 +75,23 @@ Text"
 </Tab>
 </Tabs>
 
-**Material Types and Color Support:**
+### Material Types
 
-- `gradient`: Creates a smooth multi-color gradient using vertex colors (requires `gradientColors` prop, not `color`).
-- `standard` (default): Supports single color customization with PBR lighting.
-- `normal`: Supports color with specular highlights and phong shading.
-- `basic`: Supports color but is unlit (flat appearance).
-- `lambert`: Supports color with lambert shading (diffuse lighting).
-- `toon`: Supports color with cartoon/toon shading effect.
-- `physical`: Supports color with advanced PBR properties (metallic, roughness, etc.).
+- `gradient`: Smooth multi-color gradient using vertex colors (requires `gradientColors` prop, not `color`).
+- `standard` (default): Single color with PBR lighting.
+- `normal`: Color with specular highlights and phong shading.
+- `basic`: Color but unlit (flat appearance).
+- `lambert`: Color with lambert shading (diffuse lighting).
+- `toon`: Color with cartoon/toon shading effect.
+- `physical`: Color with advanced PBR properties (metallic, roughness, etc.).
 
-**Note**: All materials except `gradient` use the `color` prop. The `gradient` material uses `gradientColors` for multi-color effects.
+<Callout type="info">
+  All materials except `gradient` use the `color` prop. The `gradient` material uses `gradientColors` for multi-color effects.
+</Callout>
 
 <div className="flex items-center justify-between">
   <h3>Gradient</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="text-3d-gradient" />
-  </div>
+  <OpenInV0Button name="text-3d-gradient" />
 </div>
 
 <Tabs items={['Preview', 'Code']}>
@@ -167,9 +120,7 @@ Text"
 
 <div className="flex items-center justify-between">
   <h3>Advanced Playground</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="text-3d-advanced" />
-  </div>
+  <OpenInV0Button name="text-3d-advanced" />
 </div>
 
 Experiment with all props using the interactive controls:
@@ -188,44 +139,111 @@ Experiment with all props using the interactive controls:
 </Tab>
 </Tabs>
 
-### API Reference
+## API Reference
 
-| Prop                   | Type                                                                                   | Default            | Description                                                                                                                                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `text`                 | `string`                                                                               | `"3D Text"`        | The text to display (use `\n` for line breaks)                                                                                                                                                                      |
-| `size`                 | `number`                                                                               | `0.8`              | Font size                                                                                                                                                                                                           |
-| `height`               | `number`                                                                               | `0.3`              | Extrusion height                                                                                                                                                                                                    |
-| `bevelEnabled`         | `boolean`                                                                              | `true`             | Enable beveled edges                                                                                                                                                                                                |
-| `bevelSize`            | `number`                                                                               | `0.02`             | Bevel size                                                                                                                                                                                                          |
-| `bevelThickness`       | `number`                                                                               | `0.05`             | Bevel thickness                                                                                                                                                                                                     |
-| `curveSegments`        | `number`                                                                               | `32`               | Curve segments for smooth curves                                                                                                                                                                                    |
-| `letterSpacing`        | `number`                                                                               | `-0.06`            | Letter spacing                                                                                                                                                                                                      |
-| `lineHeight`           | `number`                                                                               | `0.5`              | Line height                                                                                                                                                                                                         |
-| `color`                | `string`                                                                               | `"#f5f5f5"`        | Text color (works with all materials except `gradient`). Use hex, rgb, or CSS variables. Optional - defaults to neutral gray.                                                                                       |
-| `gradientColors`       | `string[]`                                                                             | `undefined`        | Array of color values for gradient effect (2, 3, 4, or more colors). Requires `materialType="gradient"`. Examples: `["#06b6d4", "#2196f3"]` (2 colors) or `["#06b6d4", "#2196f3", "#8b5cf6", "#ec4899"]` (4 colors) |
-| `rotation`             | `[number, number, number]`                                                             | `[-0.5, -0.25, 0]` | Rotation in radians [x, y, z]                                                                                                                                                                                       |
-| `position`             | `[number, number, number]`                                                             | `[0, 0, 0]`        | Position [x, y, z]                                                                                                                                                                                                  |
-| `className`            | `string`                                                                               | `""`               | Additional CSS classes                                                                                                                                                                                              |
-| `width`                | `number \| string`                                                                     | `"100%"`           | Container width                                                                                                                                                                                                     |
-| `heightContainer`      | `number \| string`                                                                     | `400`              | Container height                                                                                                                                                                                                    |
-| `materialType`         | `"standard" \| "normal" \| "basic" \| "gradient" \| "lambert" \| "toon" \| "physical"` | `"standard"`       | Material type. Use `"gradient"` with `gradientColors` for multi-color themes. Other materials support single color customization.                                                                                   |
-| `ambientIntensity`     | `number`                                                                               | `0.6`              | Intensity of the ambient light (0-2)                                                                                                                                                                                |
-| `directionalIntensity` | `number`                                                                               | `0.8`              | Intensity of the directional light (0-2)                                                                                                                                                                            |
+<TypeTable
+  type={{
+    text: {
+      description: 'The text to display (use \\n for line breaks)',
+      type: "string",
+      default: '"3D Text"',
+    },
+    size: {
+      description: "Font size",
+      type: "number",
+      default: "0.8",
+    },
+    height: {
+      description: "Extrusion height",
+      type: "number",
+      default: "0.3",
+    },
+    bevelEnabled: {
+      description: "Enable beveled edges",
+      type: "boolean",
+      default: "true",
+    },
+    bevelSize: {
+      description: "Bevel size",
+      type: "number",
+      default: "0.02",
+    },
+    bevelThickness: {
+      description: "Bevel thickness",
+      type: "number",
+      default: "0.05",
+    },
+    curveSegments: {
+      description: "Curve segments for smooth curves",
+      type: "number",
+      default: "32",
+    },
+    letterSpacing: {
+      description: "Letter spacing",
+      type: "number",
+      default: "-0.06",
+    },
+    lineHeight: {
+      description: "Line height",
+      type: "number",
+      default: "0.5",
+    },
+    color: {
+      description: "Text color (works with all materials except gradient)",
+      type: "string",
+      default: '"#f5f5f5"',
+    },
+    gradientColors: {
+      description: "Array of colors for gradient effect (requires materialType='gradient')",
+      type: "string[]",
+    },
+    rotation: {
+      description: "Rotation in radians [x, y, z]",
+      type: "[number, number, number]",
+      default: "[-0.5, -0.25, 0]",
+    },
+    position: {
+      description: "Position [x, y, z]",
+      type: "[number, number, number]",
+      default: "[0, 0, 0]",
+    },
+    className: {
+      description: "Additional CSS classes",
+      type: "string",
+    },
+    width: {
+      description: "Container width",
+      type: "number | string",
+      default: '"100%"',
+    },
+    heightContainer: {
+      description: "Container height",
+      type: "number | string",
+      default: "400",
+    },
+    materialType: {
+      description: "Material type for rendering",
+      type: '"standard" | "normal" | "basic" | "gradient" | "lambert" | "toon" | "physical"',
+      default: '"standard"',
+    },
+    ambientIntensity: {
+      description: "Intensity of the ambient light (0-2)",
+      type: "number",
+      default: "0.6",
+    },
+    directionalIntensity: {
+      description: "Intensity of the directional light (0-2)",
+      type: "number",
+      default: "0.8",
+    },
+  }}
+/>
 
-**Note on Height vs Bevel Thickness:**
+<Callout title="Height vs Bevel Thickness">
+  Both `height` and `bevelThickness` control depth effects. `height` controls extrusion depth while `bevelThickness` controls the beveled edge depth. For a pronounced distinction, increase `height` to 0.5-1.0 and keep bevel values small (&lt; 0.1).
+</Callout>
 
-Both `height` and `bevelThickness` control depth effects on the 3D text:
-
-- `height`: Controls the extrusion depth (how far the text extends along the z-axis)
-- `bevelThickness`: Controls the depth of the beveled edge (the angled surface connecting front and sides)
-
-At certain scales and proportions, these parameters can appear to affect the text similarly because both add depth to the geometry. For a more pronounced distinction, try:
-
-- Increasing `height` to 0.5-1.0 for more visible extrusion
-- Keeping `bevelSize` and `bevelThickness` to smaller values (< 0.1) for subtle beveling
-- Disabling `bevelEnabled` to see pure extrusion without bevel effects
-
-### Credits
+## Credits
 
 - React Three Fiber: [docs.pmnd.rs/react-three-fiber](https://docs.pmnd.rs/react-three-fiber)
 - Drei: [github.com/pmndrs/drei](https://github.com/pmndrs/drei)
