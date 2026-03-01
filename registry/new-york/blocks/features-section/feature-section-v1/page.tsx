@@ -1,5 +1,5 @@
-import { FeatureSectionV1 } from "../feature-section-v1"
+import FeatureSectionV1 from "./feature-section-v1";
 
 export default function Page() {
-    return <FeatureSectionV1 />
+  return <FeatureSectionV1 />;
 }

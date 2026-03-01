@@ -1,0 +1,257 @@
+/* ─── macOS Terminal ─────────────────────────────── */
+/* Reusable animated macOS terminal component         */
+
+/* ─── Theme Variables ────────────────────────── */
+
+:root {
+  /* Title bar – light mode (macOS light chrome) */
+  --mot-tb-bg-from: #e8e6e2;
+  --mot-tb-bg-to: #dddbd7;
+  --mot-tb-border: #c4c2be;
+  --mot-tb-title: #4a4846;
+  --mot-tb-icon: #2f6feb;
+
+  /* Terminal body – light mode */
+  --mot-bg: #ffffff;
+  --mot-border: #d4d4d4;
+  --mot-shadow: rgba(0, 0, 0, 0.08);
+  --mot-shadow-ring: rgba(0, 0, 0, 0.05);
+  --mot-prompt: #1a8a6e;
+  --mot-typed: #1e1e1e;
+  --mot-text: #4b5563;
+  --mot-text-success: #16a34a;
+  --mot-text-error: #dc2626;
+  --mot-cursor: #1e1e1e;
+}
+
+.dark {
+  /* Title bar – dark mode */
+  --mot-tb-bg-from: #161618;
+  --mot-tb-bg-to: #101012;
+  --mot-tb-border: rgba(255, 255, 255, 0.06);
+  --mot-tb-title: rgba(255, 255, 255, 0.45);
+  --mot-tb-icon: #7aa2ff;
+
+  /* Terminal body – dark mode */
+  --mot-bg: #09090b;
+  --mot-border: #18181b;
+  --mot-shadow: rgba(0, 0, 0, 0.8);
+  --mot-shadow-ring: rgba(0, 0, 0, 0.6);
+  --mot-prompt: #2db8a4;
+  --mot-typed: #e4e4e7;
+  --mot-text: #a1a1aa;
+  --mot-text-success: #9ece6a;
+  --mot-text-error: #f7768e;
+  --mot-cursor: #e4e4e7;
+}
+
+/* ─── Terminal Window ────────────────────────── */
+
+.mot-terminal {
+  position: relative;
+  z-index: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--mot-bg);
+  border: 1px solid var(--mot-border);
+  box-shadow:
+    0 0 0 1px var(--mot-shadow-ring),
+    0 8px 40px -8px var(--mot-shadow),
+    0 2px 12px -2px var(--mot-shadow);
+}
+
+/* ─── Title Bar ──────────────────────────────── */
+
+.mot-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.625rem;
+  background: linear-gradient(180deg, var(--mot-tb-bg-from) 0%, var(--mot-tb-bg-to) 100%);
+  border-bottom: 1px solid var(--mot-tb-border);
+  user-select: none;
+  position: relative;
+  min-height: 2.25rem;
+}
+
+.mot-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.mot-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.mot-dot-close {
+  background: #ff5f57;
+  box-shadow: inset 0 -0.5px 0.5px rgba(0, 0, 0, 0.12);
+}
+
+.mot-dot-minimize {
+  background: #ffbd2e;
+  box-shadow: inset 0 -0.5px 0.5px rgba(0, 0, 0, 0.12);
+}
+
+.mot-dot-maximize {
+  background: #28c840;
+  box-shadow: inset 0 -0.5px 0.5px rgba(0, 0, 0, 0.12);
+}
+
+.mot-title-group {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+.mot-title-icon {
+  flex-shrink: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--mot-tb-icon);
+  opacity: 1;
+}
+
+.mot-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--mot-tb-title);
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mot-dots-spacer {
+  width: 3.25rem;
+  z-index: 1;
+}
+
+/* ─── Terminal Body ──────────────────────────── */
+
+.mot-body {
+  padding: 1rem;
+  font-family: var(--font-mono, "SF Mono", "Fira Code", "Cascadia Code", monospace);
+  font-size: 0.75rem;
+  line-height: 1.7;
+  min-height: 220px;
+}
+
+/* ─── Lines ──────────────────────────────────── */
+
+.mot-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+}
+
+.mot-line-blank {
+  height: 0.5em;
+}
+
+.mot-line-command {
+  align-items: flex-start;
+}
+
+/* ─── Prompt ─────────────────────────────────── */
+
+.mot-prompt {
+  color: var(--mot-prompt);
+  font-weight: 600;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* ─── Typed Command Text ─────────────────────── */
+
+.mot-typed {
+  color: var(--mot-typed);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+  flex: 1;
+}
+
+/* ─── Output Text ────────────────────────────── */
+
+.mot-text {
+  color: var(--mot-text);
+}
+
+.mot-text-success {
+  color: var(--mot-text-success);
+}
+
+.mot-text-error {
+  color: var(--mot-text-error);
+}
+
+.mot-spinner {
+  color: var(--mot-text);
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+}
+
+/* ─── Cursor ─────────────────────────────────── */
+
+.mot-cursor {
+  color: var(--mot-cursor);
+  font-size: 1em;
+  line-height: 1;
+}
+
+/* ─── Responsive ─────────────────────────────── */
+
+@media (min-width: 640px) {
+  .mot-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    font-size: 0.8125rem;
+    min-height: 260px;
+  }
+
+  .mot-titlebar {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .mot-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .mot-title {
+    font-size: 0.8125rem;
+  }
+
+  .mot-title-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* ─── Reduced Motion ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .mot-cursor {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

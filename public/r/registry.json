@@ -18,14 +18,70 @@
           "target": "app/glsilk/mac-os-terminal/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/other/mac-os-terminal.tsx",
+          "path": "registry/new-york/blocks/other/mac-os-terminal/mac-os-terminal.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/mac-os-terminal.tsx"
+          "target": "app/glsilk/mac-os-terminal/mac-os-terminal.tsx"
         },
         {
-          "path": "registry/new-york/blocks/other/mac-os-terminal.css",
+          "path": "registry/new-york/blocks/other/mac-os-terminal/mac-os-terminal-window.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/mac-os-terminal.css"
+          "target": "app/glsilk/mac-os-terminal/mac-os-terminal-window.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/other/mac-os-terminal/mac-os-terminal-titlebar.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/mac-os-terminal/mac-os-terminal-titlebar.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/other/mac-os-terminal/mac-os-terminal.css",
+          "type": "registry:component",
+          "target": "app/glsilk/mac-os-terminal/mac-os-terminal.css"
+        },
+        {
+          "path": "registry/new-york/blocks/other/mac-os-terminal/utils.ts",
+          "type": "registry:component",
+          "target": "app/glsilk/mac-os-terminal/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "windows-terminal",
+      "type": "registry:block",
+      "category": "other",
+      "title": "Windows Terminal",
+      "description": "An animated Windows Terminal / PowerShell mockup with GSAP typing animation, perfect for SaaS hero sections and product showcases",
+      "dependencies": ["gsap"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/other/windows-terminal/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/windows-terminal/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/other/windows-terminal/windows-terminal.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/windows-terminal/windows-terminal.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/other/windows-terminal/windows-terminal-window.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/windows-terminal/windows-terminal-window.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/other/windows-terminal/windows-terminal-titlebar.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/windows-terminal/windows-terminal-titlebar.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/other/windows-terminal/windows-terminal.css",
+          "type": "registry:component",
+          "target": "app/glsilk/windows-terminal/windows-terminal.css"
+        },
+        {
+          "path": "registry/new-york/blocks/other/windows-terminal/utils.ts",
+          "type": "registry:component",
+          "target": "app/glsilk/windows-terminal/utils.ts"
         }
       ]
     },
@@ -854,55 +910,25 @@
       ]
     },
     {
-      "name": "login-form-v1",
-      "type": "registry:block",
-      "category": "auth",
-      "title": "Login Form V1",
-      "description": "A simple login form",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "card"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/auth/login-form-v1/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/login-form-v1/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/auth/login-form-v1.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/login-form-v1.tsx"
-        }
-      ]
-    },
-    {
-      "name": "sign-up-form-v1",
-      "type": "registry:block",
-      "category": "auth",
-      "title": "Sign Up Form V1",
-      "description": "A simple sign up form",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "card", "field"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/auth/sign-up-form-v1/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/sign-up-form-v1/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/auth/sign-up-form-v1.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/sign-up-form-v1.tsx"
-        }
-      ]
-    },
-    {
       "name": "hero-section-v1",
       "type": "registry:block",
       "category": "hero-section",
       "title": "Hero Section V1",
-      "description": "An editorial-style hero section with left-aligned serif heading, split description/CTA, and metric strip",
-      "dependencies": [],
-      "registryDependencies": ["button"],
+      "description": "A centered call-to-action card with inline utility classes and icon-enhanced copy.",
+      "dependencies": ["clsx", "tailwind-merge", "class-variance-authority", "@radix-ui/react-slot"],
+      "registryDependencies": [],
+      "meta": {
+        "assets": [
+          {
+            "path": "public/images/dashboard-light.png",
+            "url": "/images/dashboard-light.png"
+          },
+          {
+            "path": "public/images/dashboard-dark.png",
+            "url": "/images/dashboard-dark.png"
+          }
+        ]
+      },
       "files": [
         {
           "path": "registry/new-york/blocks/hero-section/hero-section-v1/page.tsx",
@@ -910,14 +936,24 @@
           "target": "app/glsilk/hero-section-v1/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v1.tsx",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v1/hero-section-v1.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v1.tsx"
+          "target": "app/glsilk/hero-section-v1/hero-section-v1.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v1.css",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v1/hero-section-v1.css",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v1.css"
+          "target": "app/glsilk/hero-section-v1/hero-section-v1.css"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v1/button.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v1/button.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v1/utils.ts",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v1/utils.ts"
         }
       ]
     },
@@ -932,8 +968,12 @@
       "meta": {
         "assets": [
           {
-            "path": "public/images/shadcn1.webp",
-            "url": "https://glsilk.vercel.app/images/shadcn1.webp"
+            "path": "public/images/dashboard-light.png",
+            "url": "/images/dashboard-light.png"
+          },
+          {
+            "path": "public/images/dashboard-dark.png",
+            "url": "/images/dashboard-dark.png"
           }
         ]
       },
@@ -944,19 +984,19 @@
           "target": "app/glsilk/hero-section-v2/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v2.tsx",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v2/hero-section-v2.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v2.tsx"
+          "target": "app/glsilk/hero-section-v2/hero-section-v2.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v2/feature-panel.tsx",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v2/button.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v2/feature-panel.tsx"
+          "target": "app/glsilk/hero-section-v2/button.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v2.css",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v2/hero-section-v2.css",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v2.css"
+          "target": "app/glsilk/hero-section-v2/hero-section-v2.css"
         }
       ]
     },
@@ -975,14 +1015,24 @@
           "target": "app/glsilk/hero-section-v3/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v3.tsx",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v3/hero-section-v3.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v3.tsx"
+          "target": "app/glsilk/hero-section-v3/hero-section-v3.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v3.css",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v3/hero-section-v3-features.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v3.css"
+          "target": "app/glsilk/hero-section-v3/hero-section-v3-features.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v3/button.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v3/button.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v3/utils.ts",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v3/utils.ts"
         }
       ]
     },
@@ -1001,19 +1051,34 @@
           "target": "app/glsilk/hero-section-v4/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v4.tsx",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v4/hero-section-v4.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v4.tsx"
+          "target": "app/glsilk/hero-section-v4/hero-section-v4.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v4/hero-section-v4-dither.tsx",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v4/hero-section-v4-dither-dark.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v4/hero-section-v4-dither.tsx"
+          "target": "app/glsilk/hero-section-v4/hero-section-v4-dither-dark.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v4.css",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v4/hero-section-v4-dither-light.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v4.css"
+          "target": "app/glsilk/hero-section-v4/hero-section-v4-dither-light.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v4/button.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v4/button.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v4/utils.ts",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v4/utils.ts"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v4/hero-section-v4.css",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v4/hero-section-v4.css"
         }
       ]
     },
@@ -1045,14 +1110,29 @@
           "target": "app/glsilk/hero-section-v5/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v5.tsx",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v5/hero-section-v5.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v5.tsx"
+          "target": "app/glsilk/hero-section-v5/hero-section-v5.tsx"
         },
         {
-          "path": "registry/new-york/blocks/hero-section/hero-section-v5.css",
+          "path": "registry/new-york/blocks/hero-section/hero-section-v5/hero-section-v5-features.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/hero-section-v5.css"
+          "target": "app/glsilk/hero-section-v5/hero-section-v5-features.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v5/button.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v5/button.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v5/utils.ts",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v5/utils.ts"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v5/hero-section-v5.css",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v5/hero-section-v5.css"
         }
       ]
     },
@@ -1080,14 +1160,14 @@
           "target": "app/glsilk/feature-section-v1/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/features-section/feature-section-v1.tsx",
+          "path": "registry/new-york/blocks/features-section/feature-section-v1/feature-section-v1.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/feature-section-v1.tsx"
+          "target": "app/glsilk/feature-section-v1/feature-section-v1.tsx"
         },
         {
-          "path": "registry/new-york/blocks/features-section/feature-section-v1.css",
+          "path": "registry/new-york/blocks/features-section/feature-section-v1/feature-section-v1-grid.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/feature-section-v1.css"
+          "target": "app/glsilk/feature-section-v1/feature-section-v1-grid.tsx"
         }
       ]
     },
@@ -1096,9 +1176,9 @@
       "type": "registry:block",
       "category": "cta",
       "title": "CTA Section V1",
-      "description": "An editorial CTA section with warm rose accent, ornamental divider, display serif headline, and atmospheric background glow",
-      "dependencies": [],
-      "registryDependencies": ["button"],
+      "description": "A modern minimalist CTA section with muted background, geometric precision, and a single download action",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/blocks/cta-section/cta-section-v1/page.tsx",
@@ -1106,170 +1186,19 @@
           "target": "app/glsilk/cta-section-v1/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/cta-section/cta-section-v1.tsx",
+          "path": "registry/new-york/blocks/cta-section/cta-section-v1/cta-section-v1.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/cta-section-v1.tsx"
+          "target": "app/glsilk/cta-section-v1/cta-section-v1.tsx"
         },
         {
-          "path": "registry/new-york/blocks/cta-section/cta-section-v1.css",
+          "path": "registry/new-york/blocks/cta-section/cta-section-v1/button.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/cta-section-v1.css"
-        }
-      ]
-    },
-    {
-      "name": "cta-section-v2",
-      "type": "registry:block",
-      "category": "cta",
-      "title": "CTA Section V2",
-      "description": "A modern minimalist CTA card with organic NeuroNoise shader background and clean typography",
-      "dependencies": ["@paper-design/shaders-react"],
-      "registryDependencies": ["button"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/cta-section/cta-section-v2/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/cta-section-v2/page.tsx"
+          "target": "app/glsilk/cta-section-v1/button.tsx"
         },
         {
-          "path": "registry/new-york/blocks/cta-section/cta-section-v2.tsx",
+          "path": "registry/new-york/blocks/cta-section/cta-section-v1/utils.ts",
           "type": "registry:component",
-          "target": "app/glsilk/cta-section-v2.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/cta-section/cta-section-v2.css",
-          "type": "registry:component",
-          "target": "app/glsilk/cta-section-v2.css"
-        }
-      ]
-    },
-    {
-      "name": "cta-section-v3",
-      "type": "registry:block",
-      "category": "cta",
-      "title": "CTA Section V3",
-      "description": "A modern minimalist CTA section with muted background, geometric precision, and a single download action",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["button"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/cta-section/cta-section-v3/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/cta-section-v3/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/cta-section/cta-section-v3.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/cta-section-v3.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/cta-section/cta-section-v3.css",
-          "type": "registry:component",
-          "target": "app/glsilk/cta-section-v3.css"
-        }
-      ]
-    },
-    {
-      "name": "blog-section-v1",
-      "type": "registry:block",
-      "category": "blog",
-      "title": "Blog Section V1",
-      "description": "A magazine-style blog grid with editorial card hierarchy and image-driven storytelling",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/blog-section/blog-section-v1/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/blog-section-v1/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/blog-section/blog-section-v1.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/blog-section-v1.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/blog-section/blog-section-v1.css",
-          "type": "registry:component",
-          "target": "app/glsilk/blog-section-v1.css"
-        }
-      ]
-    },
-    {
-      "name": "faq-section-v1",
-      "type": "registry:block",
-      "category": "faqs",
-      "title": "FAQ Section V1",
-      "description": "An editorial accordion FAQ section with serif display headline, smooth expand/collapse animations, and refined dividers",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v1/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/faq-section-v1/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v1.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/faq-section-v1.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v1.css",
-          "type": "registry:component",
-          "target": "app/glsilk/faq-section-v1.css"
-        }
-      ]
-    },
-    {
-      "name": "faq-section-v2",
-      "type": "registry:block",
-      "category": "faqs",
-      "title": "FAQ Section V2",
-      "description": "A modern split-layout FAQ with sticky heading, numbered card-based accordion items, and monospace numbering",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v2/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/faq-section-v2/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v2.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/faq-section-v2.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v2.css",
-          "type": "registry:component",
-          "target": "app/glsilk/faq-section-v2.css"
-        }
-      ]
-    },
-    {
-      "name": "faq-section-v3",
-      "type": "registry:block",
-      "category": "faqs",
-      "title": "FAQ Section V3",
-      "description": "A timeline-inspired FAQ with sticky editorial header, layered panels, and compact metadata labels",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v3/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/faq-section-v3/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v3.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/faq-section-v3.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/faq-section/faq-section-v3.css",
-          "type": "registry:component",
-          "target": "app/glsilk/faq-section-v3.css"
+          "target": "app/glsilk/cta-section-v1/utils.ts"
         }
       ]
     },
@@ -1288,118 +1217,19 @@
           "target": "app/glsilk/feature-section-v2/page.tsx"
         },
         {
-          "path": "registry/new-york/blocks/features-section/feature-section-v2.tsx",
+          "path": "registry/new-york/blocks/features-section/feature-section-v2/feature-section-v2.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/feature-section-v2.tsx"
+          "target": "app/glsilk/feature-section-v2/feature-section-v2.tsx"
         },
         {
-          "path": "registry/new-york/blocks/features-section/feature-section-v2.css",
+          "path": "registry/new-york/blocks/features-section/feature-section-v2/feature-section-v2-card.tsx",
           "type": "registry:component",
-          "target": "app/glsilk/feature-section-v2.css"
-        }
-      ]
-    },
-    {
-      "name": "feature-section-v3",
-      "type": "registry:block",
-      "category": "features",
-      "title": "Feature Section V3",
-      "description": "A minimal feature section with centered serif heading, subtitle, and three icon-driven feature cards in a horizontal grid",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v3/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/feature-section-v3/page.tsx"
+          "target": "app/glsilk/feature-section-v2/feature-section-v2-card.tsx"
         },
         {
-          "path": "registry/new-york/blocks/features-section/feature-section-v3.tsx",
+          "path": "registry/new-york/blocks/features-section/feature-section-v2/feature-section-v2.css",
           "type": "registry:component",
-          "target": "app/glsilk/feature-section-v3.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v3.css",
-          "type": "registry:component",
-          "target": "app/glsilk/feature-section-v3.css"
-        }
-      ]
-    },
-    {
-      "name": "feature-section-v4",
-      "type": "registry:block",
-      "category": "features",
-      "title": "Feature Section V4",
-      "description": "A structured grid feature section with centered heading, icon cards in a 4-column layout, and crosshair markers at grid intersections",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v4/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/feature-section-v4/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v4.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/feature-section-v4.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v4.css",
-          "type": "registry:component",
-          "target": "app/glsilk/feature-section-v4.css"
-        }
-      ]
-    },
-    {
-      "name": "feature-section-v5",
-      "type": "registry:block",
-      "category": "features",
-      "title": "Feature Section V5",
-      "description": "A dark editorial-style feature section with centered heading and a 3x2 bordered card grid using circular placeholder icons",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v5/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/feature-section-v5/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v5.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/feature-section-v5.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v5.css",
-          "type": "registry:component",
-          "target": "app/glsilk/feature-section-v5.css"
-        }
-      ]
-    },
-    {
-      "name": "feature-section-v6",
-      "type": "registry:block",
-      "category": "features",
-      "title": "Feature Section V6",
-      "description": "An asymmetric split-panel feature section with a sticky intro, decorative pixel-dot grid, and horizontal feature rows using Geist Pixel font numbers",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v6/page.tsx",
-          "type": "registry:page",
-          "target": "app/glsilk/feature-section-v6/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v6.tsx",
-          "type": "registry:component",
-          "target": "app/glsilk/feature-section-v6.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/features-section/feature-section-v6.css",
-          "type": "registry:component",
-          "target": "app/glsilk/feature-section-v6.css"
+          "target": "app/glsilk/feature-section-v2/feature-section-v2.css"
         }
       ]
     }

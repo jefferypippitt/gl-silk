@@ -1,0 +1,24 @@
+/* Hero Section V5 */
+
+:root {
+  --hs5-image-light: url("https://glsilk.vercel.app/images/dashboard-light.png");
+  --hs5-image-dark: url("https://glsilk.vercel.app/images/dashboard-dark.png");
+}
+
+.hs5-image-light {
+  display: block;
+  background-image: var(--hs5-image-light);
+}
+
+.hs5-image-dark {
+  display: none;
+  background-image: var(--hs5-image-dark);
+}
+
+.dark .hs5-image-light {
+  display: none;
+}
+
+.dark .hs5-image-dark {
+  display: block;
+}

@@ -3,29 +3,56 @@
   "name": "hero-section-v1",
   "type": "registry:block",
   "title": "Hero Section V1",
-  "description": "An editorial-style hero section with left-aligned serif heading, split description/CTA, and metric strip",
-  "dependencies": [],
-  "registryDependencies": [
-    "button"
+  "description": "A centered call-to-action card with inline utility classes and icon-enhanced copy.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "class-variance-authority",
+    "@radix-ui/react-slot"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/new-york/blocks/hero-section/hero-section-v1/page.tsx",
-      "content": "import { HeroSectionV1 } from \"../hero-section-v1\"\n\nexport default function Page() {\n    return <HeroSectionV1 />\n}",
+      "content": "import HeroSectionV1 from \"./hero-section-v1\"\n\nexport default function Page() {\n  return <HeroSectionV1 />\n}",
       "type": "registry:page",
       "target": "app/glsilk/hero-section-v1/page.tsx"
     },
     {
-      "path": "registry/new-york/blocks/hero-section/hero-section-v1.tsx",
-      "content": "import \"./hero-section-v1.css\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\n\n/* ─── Main Component ─────────────────────────── */\n\nexport function HeroSectionV1({\n  className,\n  ...props\n}: React.ComponentProps<\"section\">) {\n  return (\n    <section className={cn(\"hs1-section\", className)} {...props}>\n      <div className=\"hs1-root\">\n        {/* Heading */}\n        <h1 className=\"hs1-heading\">\n          Lorem ipsum dolor sit\n          <br />\n          amet consectetur\n        </h1>\n\n        {/* Description */}\n        <p className=\"hs1-description\">\n          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n        </p>\n\n        {/* CTA */}\n        <div className=\"hs1-cta-group\">\n          <Button size=\"lg\" className=\"rounded-full\">\n            Get started\n          </Button>\n          <Button variant=\"outline\" size=\"lg\" className=\"rounded-full\">\n            Learn more\n          </Button>\n        </div>\n\n        {/* Metric Strip */}\n        <div className=\"hs1-metrics\">\n          <div className=\"hs1-metric\">\n            <span className=\"hs1-metric-value\">99.9%</span>\n            <span className=\"hs1-metric-label\">Lorem uptime</span>\n          </div>\n          <div className=\"hs1-metric\">\n            <span className=\"hs1-metric-value\">2.4M</span>\n            <span className=\"hs1-metric-label\">Ipsum dolor</span>\n          </div>\n          <div className=\"hs1-metric\">\n            <span className=\"hs1-metric-value\">50ms</span>\n            <span className=\"hs1-metric-label\">Amet consec</span>\n          </div>\n          <div className=\"hs1-metric\">\n            <span className=\"hs1-metric-value\">140+</span>\n            <span className=\"hs1-metric-label\">Sit adipiscing</span>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "path": "registry/new-york/blocks/hero-section/hero-section-v1/hero-section-v1.tsx",
+      "content": "import { Button } from \"./button\";\nimport \"./hero-section-v1.css\";\n\nexport default function HeroSectionV1() {\n  return (\n    <section className=\"py-16 md:py-20 lg:py-24\">\n      <div className=\"container mx-auto max-w-6xl px-4\">\n        <div className=\"mx-auto max-w-3xl text-center\">\n          <h1 className=\"text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl\">\n            Lorem ipsum dolor sit amet consectetur\n          </h1>\n          <p className=\"mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg\">\n            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n          </p>\n        </div>\n        <div className=\"mt-8 flex flex-col gap-3 sm:flex-row justify-center\">\n          <Button variant=\"default\" className=\"rounded-full\">\n            Get started\n          </Button>\n          <Button variant=\"outline\" className=\"rounded-full\">\n            Learn more\n          </Button>\n        </div>\n        <div className=\"mt-12 rounded-xl border border-border bg-card overflow-hidden shadow-lg\">\n          <div className=\"hs1-image-light w-full aspect-[16/9] bg-cover\" role=\"img\" aria-label=\"Product dashboard preview\" />\n          <div className=\"hs1-image-dark w-full aspect-[16/9] bg-cover\" role=\"img\" aria-label=\"Product dashboard preview\" />\n        </div>\n      </div>\n    </section>\n  );\n}\n",
       "type": "registry:component",
-      "target": "app/glsilk/hero-section-v1.tsx"
+      "target": "app/glsilk/hero-section-v1/hero-section-v1.tsx"
     },
     {
-      "path": "registry/new-york/blocks/hero-section/hero-section-v1.css",
-      "content": "/* ─── Hero Section V1 ─────────────────────────── */\n/* Centered hero · Sans-serif · Metric strip        */\n/* Full light & dark mode support                   */\n\n/* ─── Theme Variables (Light) ───────────────── */\n\n:root {\n  --hs1-bg: var(--background);\n  --hs1-text: #0a0a0a;\n  --hs1-text-muted: rgba(10, 10, 10, 0.55);\n  --hs1-border: rgba(10, 10, 10, 0.12);\n}\n\n/* ─── Theme Variables (Dark) ────────────────── */\n\n.dark {\n  --hs1-bg: var(--background);\n  --hs1-text: #fafafa;\n  --hs1-text-muted: rgba(250, 250, 250, 0.5);\n  --hs1-border: rgba(250, 250, 250, 0.1);\n}\n\n/* ─── Section Root ───────────────────────────── */\n\n.hs1-section {\n  width: 100%;\n  background: var(--hs1-bg);\n  color: var(--hs1-text);\n  font-family: var(--font-sans);\n}\n\n.hs1-root {\n  width: 100%;\n  max-width: 76rem;\n  margin: 0 auto;\n  padding: 4rem 1.5rem 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n}\n\n/* ─── Heading ───────────────────────────────── */\n\n.hs1-heading {\n  font-size: clamp(1.875rem, 5vw, 3.5rem);\n  font-weight: 400;\n  line-height: 1.1;\n  letter-spacing: -0.02em;\n  color: var(--hs1-text);\n  margin: 0 0 1.25rem;\n\n}\n\n/* ─── Description ────────────────────────────── */\n\n.hs1-description {\n  font-size: clamp(0.875rem, 1vw + 0.4rem, 1.0625rem);\n  line-height: 1.65;\n  letter-spacing: -0.01em;\n  color: var(--hs1-text-muted);\n  max-width: 32rem;\n  margin: 0 0 2rem;\n  text-wrap: balance;\n\n}\n\n/* ─── CTA Group ──────────────────────────────── */\n\n.hs1-cta-group {\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  margin-bottom: 4rem;\n\n}\n\n/* ─── Metric Strip ───────────────────────────── */\n\n.hs1-metrics {\n  display: grid;\n  grid-template-columns: 1fr;\n  width: 100%;\n\n}\n\n.hs1-metric {\n  display: flex;\n  flex-direction: column;\n  gap: 0.25rem;\n  padding: 1.25rem 0;\n}\n\n.hs1-metric-value {\n  font-size: clamp(1.5rem, 3vw, 2rem);\n  font-weight: 600;\n  letter-spacing: -0.02em;\n  line-height: 1.1;\n  color: var(--hs1-text);\n}\n\n.hs1-metric-label {\n  font-size: 0.8125rem;\n  line-height: 1.4;\n  color: var(--hs1-text-muted);\n  letter-spacing: -0.01em;\n}\n\n/* ─── Responsive ─────────────────────────────── */\n\n@media (min-width: 640px) {\n  .hs1-root {\n    padding: 5rem 2rem 0;\n  }\n\n  .hs1-metrics {\n    grid-template-columns: repeat(4, 1fr);\n  }\n\n  .hs1-metric {\n    padding: 1.5rem 1.5rem;\n  }\n\n  .hs1-metric:first-child {\n    padding-left: 0;\n  }\n}\n\n@media (min-width: 768px) {\n  .hs1-root {\n    padding: 6rem 2.5rem 0;\n  }\n\n  .hs1-heading {\n    margin-bottom: 1.5rem;\n  }\n\n  .hs1-cta-group {\n    margin-bottom: 5rem;\n  }\n}\n\n@media (min-width: 1024px) {\n  .hs1-root {\n    padding: 7rem 3rem 0;\n  }\n\n  .hs1-cta-group {\n    margin-bottom: 6rem;\n  }\n}\n\n@media (min-width: 1280px) {\n  .hs1-root {\n    padding: 8rem 4rem 0;\n  }\n}\n",
+      "path": "registry/new-york/blocks/hero-section/hero-section-v1/hero-section-v1.css",
+      "content": "/* Hero Section V1 - Custom utilities */\n/* CSS handles image URLs and light/dark mode switching */\n\n/* Image URLs */\n:root {\n  --hs1-image-light: url(\"/images/dashboard-light.png\");\n  --hs1-image-dark: url(\"/images/dashboard-dark.png\");\n}\n\n/* Light mode image */\n.hs1-image-light {\n  display: block;\n  background-image: var(--hs1-image-light);\n}\n\n/* Dark mode image - hidden by default */\n.hs1-image-dark {\n  display: none;\n  background-image: var(--hs1-image-dark);\n}\n\n/* In dark mode, swap visibility */\n.dark .hs1-image-light {\n  display: none;\n}\n\n.dark .hs1-image-dark {\n  display: block;\n}\n",
       "type": "registry:component",
-      "target": "app/glsilk/hero-section-v1.css"
+      "target": "app/glsilk/hero-section-v1/hero-section-v1.css"
+    },
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v1/button.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"./utils\"\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60\",\n        outline:\n          \"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        sm: \"h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n        \"icon-sm\": \"size-8\",\n        \"icon-lg\": \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "type": "registry:component",
+      "target": "app/glsilk/hero-section-v1/button.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v1/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/hero-section-v1/utils.ts"
     }
-  ]
+  ],
+  "meta": {
+    "assets": [
+      {
+        "path": "public/images/dashboard-light.png",
+        "url": "/images/dashboard-light.png"
+      },
+      {
+        "path": "public/images/dashboard-dark.png",
+        "url": "/images/dashboard-dark.png"
+      }
+    ]
+  }
 }

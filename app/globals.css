@@ -190,6 +190,26 @@
     font-family: var(--font-display);
   }
 
+  .font-pixel-square {
+    font-family: var(--font-pixel-square);
+  }
+
+  .font-pixel-grid {
+    font-family: var(--font-pixel-grid);
+  }
+
+  .font-pixel-circle {
+    font-family: var(--font-pixel-circle);
+  }
+
+  .font-pixel-triangle {
+    font-family: var(--font-pixel-triangle);
+  }
+
+  .font-pixel-line {
+    font-family: var(--font-pixel-line);
+  }
+
   /* Custom scrollbar for block previews */
   .custom-scrollbar {
     scrollbar-width: thin;

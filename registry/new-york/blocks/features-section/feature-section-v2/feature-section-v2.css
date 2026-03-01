@@ -1,0 +1,647 @@
+/* ============================================
+   Feature Section V2 — Bento Visual Grid
+   Asymmetric bento layout where each card has
+   a unique animated CSS visual that matches
+   its feature concept. No icons — pure geometry.
+   ============================================ */
+
+/* Entry animation */
+@keyframes fsv2-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fsv2-animate {
+  animation: fsv2-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ================================
+   Cards
+   ================================ */
+.fsv2-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.fsv2-card:hover {
+  border-color: oklch(0 0 0 / 0.12);
+  box-shadow: 0 16px 48px -16px oklch(0 0 0 / 0.1);
+  transform: translateY(-3px);
+}
+
+.dark .fsv2-card:hover {
+  border-color: oklch(1 0 0 / 0.14);
+  box-shadow: 0 16px 48px -16px oklch(0 0 0 / 0.5);
+}
+
+/* ================================
+   Visual Area
+   ================================ */
+.fsv2-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  overflow: hidden;
+  background: oklch(0 0 0 / 0.02);
+  transition: background 0.3s ease;
+}
+
+.dark .fsv2-visual {
+  background: oklch(1 0 0 / 0.02);
+}
+
+/* Grain texture overlay on visual area */
+.fsv2-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}
+
+.dark .fsv2-visual::before {
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+}
+
+.fsv2-card:hover .fsv2-visual {
+  background: oklch(0 0 0 / 0.035);
+}
+
+.dark .fsv2-card:hover .fsv2-visual {
+  background: oklch(1 0 0 / 0.04);
+}
+
+/* Text area — subtle gradient bg, flex-grows to fill card height */
+.fsv2-card-text {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    oklch(0 0 0 / 0.01) 0%,
+    oklch(0 0 0 / 0.035) 100%
+  );
+}
+
+.dark .fsv2-card-text {
+  background: linear-gradient(
+    to bottom,
+    oklch(1 0 0 / 0.01) 0%,
+    oklch(1 0 0 / 0.04) 100%
+  );
+}
+
+/* ================================================================
+    1. LIGHTNING BOLT — Blazing Fast
+    A sharp bolt shape built with clip-path.
+    A double-flash animation simulates a real lightning strike.
+    On hover, bolt intensifies.
+    ================================================================ */
+
+/* Lightning bolt shape */
+@keyframes fsv2-bolt-flash {
+  0%,
+  82%,
+  100% {
+    opacity: 0.55;
+  }
+  86% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 0.45;
+  }
+  93% {
+    opacity: 1;
+  }
+}
+
+.fsv2-bolt {
+  position: absolute;
+  width: 42px;
+  height: 72px;
+  background: oklch(0 0 0 / 0.14);
+  clip-path: polygon(
+    48% 0%,
+    8% 50%,
+    36% 50%,
+    18% 100%,
+    92% 38%,
+    58% 38%,
+    76% 0%
+  );
+  animation: fsv2-bolt-flash 3.5s ease-in-out infinite;
+  transition:
+    background 0.4s ease,
+    transform 0.4s ease;
+  z-index: 1;
+}
+
+.dark .fsv2-bolt {
+  background: oklch(1 0 0 / 0.18);
+}
+
+.fsv2-card:hover .fsv2-bolt {
+  background: oklch(0 0 0 / 0.25);
+  transform: scale(1.08);
+}
+
+.dark .fsv2-card:hover .fsv2-bolt {
+  background: oklch(1 0 0 / 0.32);
+}
+
+/* ================================================================
+    2. LOCK — Padlock Icon
+    Classic padlock with shackle and body. The shackle animates
+    open and closed to simulate a lock engaging.
+    ================================================================ */
+
+@keyframes fsv2-lock-shackle-open {
+  0%, 15% {
+    transform: translateX(-50%) translateY(0);
+  }
+  35%, 65% {
+    transform: translateX(-50%) translateY(-11px);
+  }
+  85%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+.fsv2-lock {
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  z-index: 1;
+}
+
+.fsv2-lock-shackle {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 34px;
+  border: 5px solid oklch(0 0 0 / 0.2);
+  border-bottom: none;
+  border-radius: 18px 18px 0 0;
+  animation: fsv2-lock-shackle-open 4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.dark .fsv2-lock-shackle {
+  border-color: oklch(1 0 0 / 0.2);
+}
+
+.fsv2-lock-body {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 38px;
+  background: oklch(0 0 0 / 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fsv2-lock-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: oklch(0 0 0 / 0.15);
+}
+
+.dark .fsv2-lock-body {
+  background: oklch(1 0 0 / 0.15);
+}
+
+.dark .fsv2-lock-body::before {
+  background: oklch(1 0 0 / 0.15);
+}
+
+.fsv2-lock-keyhole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 16px;
+  background: oklch(0 0 0 / 0.25);
+  border-radius: 5px 5px 2px 2px;
+}
+
+.fsv2-lock-keyhole::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 8px;
+  background: oklch(0 0 0 / 0.25);
+  border-radius: 0 0 2px 2px;
+}
+
+.dark .fsv2-lock-keyhole,
+.dark .fsv2-lock-keyhole::after {
+  background: oklch(1 0 0 / 0.25);
+}
+
+
+.fsv2-card:hover .fsv2-lock-shackle {
+  border-color: oklch(0 0 0 / 0.3);
+  animation-duration: 2s;
+}
+
+.fsv2-card:hover .fsv2-lock-body {
+  background: oklch(0 0 0 / 0.22);
+}
+
+.dark .fsv2-card:hover .fsv2-lock-shackle {
+  border-color: oklch(1 0 0 / 0.3);
+}
+
+.dark .fsv2-card:hover .fsv2-lock-body {
+  background: oklch(1 0 0 / 0.22);
+}
+
+/* ================================================================
+    3. WAVE GRAPH — Live Analytics
+    Three vertical equalizer bars using clip-path
+    ================================================================ */
+
+@keyframes fsv2-bar-pulse-a {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes fsv2-bar-pulse-b {
+  0%, 100% { transform: scaleY(0.8); }
+  50% { transform: scaleY(0.4); }
+}
+
+@keyframes fsv2-bar-pulse-c {
+  0%, 100% { transform: scaleY(0.6); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes fsv2-bar-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.05); }
+}
+
+.fsv2-wave-container {
+  position: relative;
+  width: 70px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.fsv2-wave-glow {
+  display: none;
+}
+
+.dark .fsv2-wave-glow {
+  display: none;
+}
+
+.fsv2-wave {
+  width: 14px;
+  height: 40px;
+  transform-origin: bottom;
+  transition: background 0.3s ease;
+}
+
+.fsv2-wave-a {
+  background: oklch(0 0 0 / 0.2);
+  border-radius: 2px 2px 0 0;
+  animation: fsv2-bar-pulse-a 1.2s ease-in-out infinite;
+}
+
+.fsv2-wave-b {
+  height: 36px;
+  background: oklch(0 0 0 / 0.28);
+  border-radius: 2px 2px 0 0;
+  animation: fsv2-bar-pulse-b 1.5s ease-in-out infinite;
+}
+
+.fsv2-wave-c {
+  background: oklch(0 0 0 / 0.16);
+  border-radius: 2px 2px 0 0;
+  animation: fsv2-bar-pulse-c 1.1s ease-in-out infinite;
+}
+
+.dark .fsv2-wave-a {
+  background: oklch(1 0 0 / 0.28);
+}
+
+.dark .fsv2-wave-b {
+  background: oklch(1 0 0 / 0.38);
+}
+
+.dark .fsv2-wave-c {
+  background: oklch(1 0 0 / 0.22);
+}
+
+.fsv2-card:hover .fsv2-wave-a {
+  background: oklch(0 0 0 / 0.32);
+}
+
+.fsv2-card:hover .fsv2-wave-b {
+  background: oklch(0 0 0 / 0.4);
+}
+
+.fsv2-card:hover .fsv2-wave-c {
+  background: oklch(0 0 0 / 0.28);
+}
+
+.dark .fsv2-card:hover .fsv2-wave-a {
+  background: oklch(1 0 0 / 0.42);
+}
+
+.dark .fsv2-card:hover .fsv2-wave-b {
+  background: oklch(1 0 0 / 0.52);
+}
+
+.dark .fsv2-card:hover .fsv2-wave-c {
+  background: oklch(1 0 0 / 0.35);
+}
+
+.fsv2-card:hover .fsv2-wave-glow {
+  display: none;
+}
+
+/* ================================================================
+    4. SERVER — Reliable Backend
+    Three stacked server units with blinking status lights
+    ================================================================ */
+
+@keyframes fsv2-server-blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.fsv2-server {
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px 0;
+  z-index: 1;
+}
+
+.fsv2-server-unit {
+  position: relative;
+  width: 50px;
+  height: 14px;
+  background: oklch(0 0 0 / 0.12);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  gap: 6px;
+}
+
+.dark .fsv2-server-unit {
+  background: oklch(1 0 0 / 0.15);
+}
+
+.fsv2-server-light {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: oklch(0 0 0 / 0.2);
+  animation: fsv2-server-blink 2s ease-in-out infinite;
+}
+
+.fsv2-server-light:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.fsv2-server-light:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.fsv2-server-line {
+  flex: 1;
+  height: 2px;
+  background: oklch(0 0 0 / 0.08);
+  border-radius: 1px;
+}
+
+.dark .fsv2-server-line {
+  background: oklch(1 0 0 / 0.1);
+}
+
+.fsv2-card:hover .fsv2-server-unit {
+  background: oklch(0 0 0 / 0.2);
+}
+
+.dark .fsv2-card:hover .fsv2-server-unit {
+  background: oklch(1 0 0 / 0.25);
+}
+
+.fsv2-card:hover .fsv2-server-light {
+  opacity: 1;
+}
+
+/* ================================================================
+   4. WIREFRAME GLOBE — Global Edge
+   CSS globe using ellipses as meridian lines + equator.
+   Meridians animate scaleX to simulate rotation.
+   An orbiting dot circles the equator.
+   ================================================================ */
+
+.fsv2-globe {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid oklch(0 0 0 / 0.08);
+}
+
+.dark .fsv2-globe {
+  border-color: oklch(1 0 0 / 0.1);
+}
+
+/* Outer sphere */
+.fsv2-globe-outer {
+  width: 84px;
+  height: 84px;
+}
+
+/* Meridian lines — ellipses that oscillate scaleX */
+@keyframes fsv2-meridian-a {
+  0%,
+  100% {
+    transform: scaleX(0.2);
+  }
+  50% {
+    transform: scaleX(0.85);
+  }
+}
+
+@keyframes fsv2-meridian-b {
+  0%,
+  100% {
+    transform: scaleX(0.7);
+  }
+  50% {
+    transform: scaleX(0.15);
+  }
+}
+
+.fsv2-globe-m1 {
+  width: 84px;
+  height: 84px;
+  transform: scaleX(0.2);
+  animation: fsv2-meridian-a 7s ease-in-out infinite;
+}
+
+.fsv2-globe-m2 {
+  width: 84px;
+  height: 84px;
+  transform: scaleX(0.7);
+  animation: fsv2-meridian-b 7s ease-in-out infinite;
+}
+
+/* Equator — horizontal ellipse */
+.fsv2-globe-eq {
+  position: absolute;
+  width: 84px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid oklch(0 0 0 / 0.06);
+}
+
+.dark .fsv2-globe-eq {
+  border-color: oklch(1 0 0 / 0.08);
+}
+
+/* Orbiting dot */
+@keyframes fsv2-globe-orbit {
+  from {
+    transform: rotate(0deg) translateX(42px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(42px) rotate(-360deg);
+  }
+}
+
+.fsv2-globe-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: oklch(0 0 0 / 0.22);
+  animation: fsv2-globe-orbit 6s linear infinite;
+}
+
+.dark .fsv2-globe-dot {
+  background: oklch(1 0 0 / 0.35);
+}
+
+/* Hover: intensify */
+.fsv2-card:hover .fsv2-globe {
+  border-color: oklch(0 0 0 / 0.14);
+}
+
+.dark .fsv2-card:hover .fsv2-globe {
+  border-color: oklch(1 0 0 / 0.18);
+}
+
+.fsv2-card:hover .fsv2-globe-eq {
+  border-color: oklch(0 0 0 / 0.1);
+}
+
+.dark .fsv2-card:hover .fsv2-globe-eq {
+  border-color: oklch(1 0 0 / 0.14);
+}
+
+.fsv2-card:hover .fsv2-globe-dot {
+  background: oklch(0 0 0 / 0.35);
+}
+
+.dark .fsv2-card:hover .fsv2-globe-dot {
+  background: oklch(1 0 0 / 0.5);
+}
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fsv2-animate {
+    animation: none;
+  }
+
+  .fsv2-card {
+    transition: none;
+  }
+
+  .fsv2-card:hover {
+    transform: none;
+  }
+
+  .fsv2-bolt {
+    animation: none;
+  }
+
+  .fsv2-lock-shackle {
+    animation: none;
+  }
+
+  .fsv2-lock-shackle {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .fsv2-globe-m1,
+  .fsv2-globe-m2 {
+    animation: none;
+  }
+
+  .fsv2-globe-dot {
+    animation: none;
+  }
+
+  .fsv2-wave-a,
+  .fsv2-wave-b,
+  .fsv2-wave-c,
+  .fsv2-wave-glow {
+    animation: none;
+  }
+
+  .fsv2-server-light {
+    animation: none;
+  }
+}

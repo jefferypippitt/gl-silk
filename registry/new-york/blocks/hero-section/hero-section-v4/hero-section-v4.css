@@ -1,0 +1,18 @@
+/* Hero Section V4 - Custom utilities */
+/* CSS handles light/dark mode switching for dither components */
+
+.hs4-dither-light {
+  display: block;
+}
+
+.hs4-dither-dark {
+  display: none;
+}
+
+.dark .hs4-dither-light {
+  display: none;
+}
+
+.dark .hs4-dither-dark {
+  display: block;
+}

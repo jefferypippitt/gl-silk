@@ -1,0 +1,29 @@
+/* Hero Section V1 - Custom utilities */
+/* CSS handles image URLs and light/dark mode switching */
+
+/* Image URLs */
+:root {
+  --hs1-image-light: url("/images/dashboard-light.png");
+  --hs1-image-dark: url("/images/dashboard-dark.png");
+}
+
+/* Light mode image */
+.hs1-image-light {
+  display: block;
+  background-image: var(--hs1-image-light);
+}
+
+/* Dark mode image - hidden by default */
+.hs1-image-dark {
+  display: none;
+  background-image: var(--hs1-image-dark);
+}
+
+/* In dark mode, swap visibility */
+.dark .hs1-image-light {
+  display: none;
+}
+
+.dark .hs1-image-dark {
+  display: block;
+}

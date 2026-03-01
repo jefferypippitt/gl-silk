@@ -1,0 +1,318 @@
+/* ─── Windows Terminal ────────────────────────────── */
+/* Reusable animated Windows Terminal component        */
+
+/* ─── Theme Variables ────────────────────────── */
+
+:root {
+  /* Title bar – light mode */
+  --wt-tb-bg: #f3f3f3;
+  --wt-tb-border: #d1d1d1;
+  --wt-tb-title: #1c1c1c;
+  --wt-tb-icon-ps: #012456;
+  --wt-tb-icon-wt: #5a4fcf;
+  --wt-tab-active-bg: #ffffff;
+  --wt-tab-active-border: #5a4fcf;
+  --wt-tab-text: #3a3a3a;
+  --wt-tab-active-text: #1c1c1c;
+  --wt-btn-hover: rgba(0, 0, 0, 0.06);
+
+  /* Terminal body – light mode */
+  --wt-bg: #ffffff;
+  --wt-border: #d1d1d1;
+  --wt-shadow: rgba(0, 0, 0, 0.1);
+  --wt-shadow-ring: rgba(0, 0, 0, 0.06);
+  --wt-prompt: #0071c5;
+  --wt-prompt-path: #005fa3;
+  --wt-typed: #1e1e1e;
+  --wt-text: #4b5563;
+  --wt-text-success: #16a34a;
+  --wt-text-error: #dc2626;
+  --wt-cursor: #1e1e1e;
+  --wt-selection: rgba(0, 113, 197, 0.2);
+}
+
+.dark {
+  /* Title bar – dark mode (matches real Windows Terminal dark) */
+  --wt-tb-bg: #1c1c1c;
+  --wt-tb-border: rgba(255, 255, 255, 0.08);
+  --wt-tb-title: rgba(255, 255, 255, 0.75);
+  --wt-tb-icon-ps: #012456;
+  --wt-tb-icon-wt: #9580ff;
+  --wt-tab-active-bg: #0c0c0c;
+  --wt-tab-active-border: #9580ff;
+  --wt-tab-text: rgba(255, 255, 255, 0.45);
+  --wt-tab-active-text: rgba(255, 255, 255, 0.9);
+  --wt-btn-hover: rgba(255, 255, 255, 0.08);
+
+  /* Terminal body – dark mode */
+  --wt-bg: #0c0c0c;
+  --wt-border: rgba(255, 255, 255, 0.06);
+  --wt-shadow: rgba(0, 0, 0, 0.85);
+  --wt-shadow-ring: rgba(0, 0, 0, 0.6);
+  --wt-prompt: #61d6d6;
+  --wt-prompt-path: #3a96dd;
+  --wt-typed: #cccccc;
+  --wt-text: #888888;
+  --wt-text-success: #16c60c;
+  --wt-text-error: #e74856;
+  --wt-cursor: #ffffff;
+  --wt-selection: rgba(97, 214, 214, 0.2);
+}
+
+/* ─── Terminal Window ────────────────────────── */
+
+.wt-terminal {
+  position: relative;
+  z-index: 1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--wt-bg);
+  border: 1px solid var(--wt-border);
+  box-shadow:
+    0 0 0 1px var(--wt-shadow-ring),
+    0 8px 40px -8px var(--wt-shadow),
+    0 2px 12px -2px var(--wt-shadow);
+}
+
+/* ─── Title Bar ──────────────────────────────── */
+
+.wt-titlebar {
+  display: flex;
+  align-items: stretch;
+  background: var(--wt-tb-bg);
+  border-bottom: 1px solid var(--wt-tb-border);
+  user-select: none;
+  min-height: 2.25rem;
+  position: relative;
+}
+
+/* ─── Tabs Area ──────────────────────────────── */
+
+.wt-tabs {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  overflow: hidden;
+  gap: 0;
+}
+
+.wt-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0 0.75rem;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75rem;
+  color: var(--wt-tab-text);
+  cursor: default;
+  white-space: nowrap;
+  position: relative;
+  border-right: 1px solid var(--wt-tb-border);
+  min-width: 0;
+}
+
+.wt-tab-active {
+  background: var(--wt-tab-active-bg);
+  color: var(--wt-tab-active-text);
+  font-weight: 500;
+}
+
+.wt-tab-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--wt-tab-active-border);
+}
+
+.wt-tab-icon {
+  flex-shrink: 0;
+}
+
+.wt-tab-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.wt-tab-close {
+  margin-left: 0.25rem;
+  opacity: 0.45;
+  font-size: 0.65rem;
+  line-height: 1;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+}
+
+.wt-new-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  color: var(--wt-tab-text);
+  font-size: 1rem;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+/* ─── Window Buttons ─────────────────────────── */
+
+.wt-window-buttons {
+  display: flex;
+  align-items: stretch;
+  margin-left: auto;
+}
+
+.wt-win-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  color: var(--wt-tb-title);
+  font-size: 0.625rem;
+  cursor: default;
+  transition: background 0.1s;
+  border-left: 1px solid transparent;
+}
+
+.wt-win-btn:hover {
+  background: var(--wt-btn-hover);
+}
+
+.wt-win-btn-close:hover {
+  background: #e81123;
+  color: #ffffff;
+}
+
+/* ─── Terminal Body ──────────────────────────── */
+
+.wt-body {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono, "Cascadia Code", "Cascadia Mono", "Consolas", "Courier New", monospace);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  min-height: 220px;
+}
+
+/* ─── Lines ──────────────────────────────────── */
+
+.wt-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.wt-line-blank {
+  height: 0.5em;
+}
+
+.wt-line-command {
+  align-items: flex-start;
+}
+
+/* ─── Prompt ─────────────────────────────────── */
+
+.wt-prompt {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.wt-prompt-ps {
+  color: var(--wt-prompt);
+  font-weight: 600;
+}
+
+.wt-prompt-path {
+  color: var(--wt-prompt-path);
+  font-weight: 400;
+}
+
+.wt-prompt-arrow {
+  color: var(--wt-prompt);
+  font-weight: 700;
+  margin-left: 0.25rem;
+  margin-right: 0.125rem;
+}
+
+/* ─── Typed Command Text ─────────────────────── */
+
+.wt-typed {
+  color: var(--wt-typed);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+  flex: 1;
+}
+
+/* ─── Output Text ────────────────────────────── */
+
+.wt-text {
+  color: var(--wt-text);
+}
+
+.wt-text-success {
+  color: var(--wt-text-success);
+}
+
+.wt-text-error {
+  color: var(--wt-text-error);
+}
+
+.wt-spinner {
+  color: var(--wt-text);
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+}
+
+/* ─── Cursor ─────────────────────────────────── */
+
+.wt-cursor {
+  color: var(--wt-cursor);
+  font-size: 1em;
+  line-height: 1;
+}
+
+/* ─── Responsive ─────────────────────────────── */
+
+@media (min-width: 640px) {
+  .wt-body {
+    padding: 1rem 1.25rem 1.5rem;
+    font-size: 0.8125rem;
+    min-height: 260px;
+  }
+
+  .wt-titlebar {
+    min-height: 2.5rem;
+  }
+
+  .wt-tab {
+    font-size: 0.8125rem;
+    padding: 0 0.875rem;
+  }
+}
+
+/* ─── Reduced Motion ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .wt-cursor {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

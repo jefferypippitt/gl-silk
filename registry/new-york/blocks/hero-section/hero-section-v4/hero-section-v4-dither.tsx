@@ -7,16 +7,16 @@ import { Dithering } from "@paper-design/shaders-react"
 function getShaderColors() {
   const s = getComputedStyle(document.documentElement)
   return {
-    colorBack: s.getPropertyValue("--hs4-shader-back").trim() || "#fcfcfc",
-    colorFront: s.getPropertyValue("--hs4-shader-front").trim() || "#0284c7",
+    colorBack: s.getPropertyValue("--hs4-shader-back").trim() || "#FCFCFC",
+    colorFront: s.getPropertyValue("--hs4-shader-front").trim() || "#000000",
   }
 }
 
-export function HeroSectionV4Dither({ className }: { className?: string }) {
+export default function HeroSectionV4Dither({ className }: { className?: string }) {
   const [mounted, setMounted] = useState(false)
   const [palette, setPalette] = useState({
-    colorBack: "#fcfcfc",
-    colorFront: "#0284c7",
+    colorBack: "#FCFCFC",
+    colorFront: "#000000",
   })
 
   useEffect(() => {
@@ -40,8 +40,8 @@ export function HeroSectionV4Dither({ className }: { className?: string }) {
       colorBack={palette.colorBack}
       colorFront={palette.colorFront}
       shape="sphere"
-      type="4x4"
-      size={2}
+      type="random"
+      size={1}
       speed={1}
       scale={0.6}
       className={cn("hs4-dither-shader", className)}
