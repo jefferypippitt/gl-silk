@@ -158,38 +158,6 @@
       ]
     },
     {
-      "name": "example-form",
-      "type": "registry:block",
-      "category": "landing-page",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/example-form/example-form.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "example-with-css",
-      "type": "registry:block",
-      "category": "landing-page",
-      "title": "Example with CSS",
-      "description": "A login form with a CSS file.",
-      "files": [
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.css",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
       "name": "split-text-animation",
       "type": "registry:component",
       "category": "text-animations",
@@ -920,12 +888,12 @@
       "meta": {
         "assets": [
           {
-            "path": "public/images/dashboard-light.png",
-            "url": "/images/dashboard-light.png"
+            "path": "public/images/super-fast-api.webp",
+            "url": "/images/super-fast-api.webp"
           },
           {
-            "path": "public/images/dashboard-dark.png",
-            "url": "/images/dashboard-dark.png"
+            "path": "public/images/fast-api.webp",
+            "url": "/images/fast-api.webp"
           }
         ]
       },
@@ -968,12 +936,12 @@
       "meta": {
         "assets": [
           {
-            "path": "public/images/dashboard-light.png",
-            "url": "/images/dashboard-light.png"
+            "path": "public/images/collections-api.webp",
+            "url": "/images/collections-api.webp"
           },
           {
-            "path": "public/images/dashboard-dark.png",
-            "url": "/images/dashboard-dark.png"
+            "path": "public/images/business-api.webp",
+            "url": "/images/business-api.webp"
           }
         ]
       },
@@ -1090,16 +1058,16 @@
       "description": "A monochromatic centered SaaS hero section with serif heading, CTA button, theme-aware dashboard showcase image, and three feature cards",
       "dependencies": [],
       "registryDependencies": ["button"],
-      "docs": "The dashboard images are loaded from a remote URL by default.\n\nReplace the `DASHBOARD_LIGHT` and `DASHBOARD_DARK` constants at the top of the file with your own product screenshots.",
+      "docs": "The showcase image is loaded from `/images/voice-api.webp` (light mode) and `/images/imagine-api.webp` (dark mode) by default.\n\nReplace the `--hs5-image-light` and `--hs5-image-dark` CSS variables in `hero-section-v5.css` with your own screenshot URLs.",
       "meta": {
         "assets": [
           {
-            "path": "public/images/dashboard-light.png",
-            "url": "https://glsilk.vercel.app/images/dashboard-light.png"
+            "path": "public/images/voice-api.webp",
+            "url": "/images/voice-api.webp"
           },
           {
-            "path": "public/images/dashboard-dark.png",
-            "url": "https://glsilk.vercel.app/images/dashboard-dark.png"
+            "path": "public/images/imagine-api.webp",
+            "url": "/images/imagine-api.webp"
           }
         ]
       },
@@ -1144,15 +1112,6 @@
       "description": "A centered feature section with headline, description, and four horizontal feature icons",
       "dependencies": [],
       "registryDependencies": [],
-      "docs": "The card images are loaded from a remote URL by default.\n\nReplace the `PLACEHOLDER_IMAGE` constant at the top of the file with your own image.",
-      "meta": {
-        "assets": [
-          {
-            "path": "public/images/shadcn1.webp",
-            "url": "https://glsilk.vercel.app/images/shadcn1.webp"
-          }
-        ]
-      },
       "files": [
         {
           "path": "registry/new-york/blocks/features-section/feature-section-v1/page.tsx",
@@ -1199,6 +1158,42 @@
           "path": "registry/new-york/blocks/cta-section/cta-section-v1/utils.ts",
           "type": "registry:component",
           "target": "app/glsilk/cta-section-v1/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "cta-section-v2",
+      "type": "registry:block",
+      "category": "cta",
+      "title": "CTA Section V2",
+      "description": "A bold CTA section with layered shader background, top badge, and dual action buttons",
+      "dependencies": ["shaders", "@radix-ui/react-slot", "class-variance-authority", "clsx", "tailwind-merge"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v2/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/cta-section-v2/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v2/cta-section-v2.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/cta-section-v2/cta-section-v2.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v2/cta-section-v2-shader.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/cta-section-v2/cta-section-v2-shader.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v2/button.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/cta-section-v2/button.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/cta-section/cta-section-v2/utils.ts",
+          "type": "registry:component",
+          "target": "app/glsilk/cta-section-v2/utils.ts"
         }
       ]
     },

@@ -26,7 +26,7 @@
     },
     {
       "path": "registry/new-york/blocks/hero-section/hero-section-v1/hero-section-v1.css",
-      "content": "/* Hero Section V1 - Custom utilities */\n/* CSS handles image URLs and light/dark mode switching */\n\n/* Image URLs */\n:root {\n  --hs1-image-light: url(\"/images/dashboard-light.png\");\n  --hs1-image-dark: url(\"/images/dashboard-dark.png\");\n}\n\n/* Light mode image */\n.hs1-image-light {\n  display: block;\n  background-image: var(--hs1-image-light);\n}\n\n/* Dark mode image - hidden by default */\n.hs1-image-dark {\n  display: none;\n  background-image: var(--hs1-image-dark);\n}\n\n/* In dark mode, swap visibility */\n.dark .hs1-image-light {\n  display: none;\n}\n\n.dark .hs1-image-dark {\n  display: block;\n}\n",
+      "content": "/* Hero Section V1 - Custom utilities */\n/* CSS handles image URLs and light/dark mode switching */\n\n/* Image URLs */\n:root {\n  --hs1-image-light: url(\"/images/super-fast-api.webp\");\n  --hs1-image-dark: url(\"/images/fast-api.webp\");\n}\n\n/* Light mode image */\n.hs1-image-light {\n  display: block;\n  background-image: var(--hs1-image-light);\n}\n\n/* Dark mode image - hidden by default */\n.hs1-image-dark {\n  display: none;\n  background-image: var(--hs1-image-dark);\n}\n\n/* In dark mode, swap visibility */\n.dark .hs1-image-light {\n  display: none;\n}\n\n.dark .hs1-image-dark {\n  display: block;\n}\n",
       "type": "registry:component",
       "target": "app/glsilk/hero-section-v1/hero-section-v1.css"
     },
@@ -46,12 +46,12 @@
   "meta": {
     "assets": [
       {
-        "path": "public/images/dashboard-light.png",
-        "url": "/images/dashboard-light.png"
+        "path": "public/images/super-fast-api.webp",
+        "url": "/images/super-fast-api.webp"
       },
       {
-        "path": "public/images/dashboard-dark.png",
-        "url": "/images/dashboard-dark.png"
+        "path": "public/images/fast-api.webp",
+        "url": "/images/fast-api.webp"
       }
     ]
   }

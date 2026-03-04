@@ -3,8 +3,8 @@
 
 /* Image URLs */
 :root {
-  --hs1-image-light: url("/images/dashboard-light.png");
-  --hs1-image-dark: url("/images/dashboard-dark.png");
+  --hs1-image-light: url("/images/super-fast-api.webp");
+  --hs1-image-dark: url("/images/fast-api.webp");
 }
 
 /* Light mode image */

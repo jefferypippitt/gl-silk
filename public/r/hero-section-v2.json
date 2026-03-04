@@ -31,7 +31,7 @@
     },
     {
       "path": "registry/new-york/blocks/hero-section/hero-section-v2/hero-section-v2.css",
-      "content": "/* Hero Section V2 - Custom utilities */\n/* CSS handles image URLs and light/dark mode switching */\n\n/* Image URLs */\n:root {\n  --hs2-image-light: url(\"/images/dashboard-light.png\");\n  --hs2-image-dark: url(\"/images/dashboard-dark.png\");\n}\n\n/* Light mode image */\n.hs2-image-light {\n  display: block;\n  background-image: var(--hs2-image-light);\n}\n\n/* Dark mode image - hidden by default */\n.hs2-image-dark {\n  display: none;\n  background-image: var(--hs2-image-dark);\n}\n\n/* In dark mode, swap visibility */\n.dark .hs2-image-light {\n  display: none;\n}\n\n.dark .hs2-image-dark {\n  display: block;\n}\n",
+      "content": "/* Hero Section V2 - Custom utilities */\n/* CSS handles image URLs and light/dark mode switching */\n\n/* Image URLs */\n:root {\n  --hs2-image-light: url(\"/images/collections-api.webp\");\n  --hs2-image-dark: url(\"/images/business-api.webp\");\n}\n\n/* Light mode image */\n.hs2-image-light {\n  display: block;\n  background-image: var(--hs2-image-light);\n}\n\n/* Dark mode image - hidden by default */\n.hs2-image-dark {\n  display: none;\n  background-image: var(--hs2-image-dark);\n}\n\n/* In dark mode, swap visibility */\n.dark .hs2-image-light {\n  display: none;\n}\n\n.dark .hs2-image-dark {\n  display: block;\n}\n",
       "type": "registry:component",
       "target": "app/glsilk/hero-section-v2/hero-section-v2.css"
     }
@@ -39,12 +39,12 @@
   "meta": {
     "assets": [
       {
-        "path": "public/images/dashboard-light.png",
-        "url": "/images/dashboard-light.png"
+        "path": "public/images/collections-api.webp",
+        "url": "/images/collections-api.webp"
       },
       {
-        "path": "public/images/dashboard-dark.png",
-        "url": "/images/dashboard-dark.png"
+        "path": "public/images/business-api.webp",
+        "url": "/images/business-api.webp"
       }
     ]
   }

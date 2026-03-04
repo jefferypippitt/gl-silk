@@ -7,9 +7,9 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative min-h-screen flex flex-col">
+    <div className="relative flex min-h-svh flex-col">
       <Navbar />
-      <main className="relative flex flex-col flex-1">{children}</main>
+      <main className="relative flex min-h-0 flex-1 flex-col">{children}</main>
       <Footer />
     </div>
   );

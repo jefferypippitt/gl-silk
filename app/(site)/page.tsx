@@ -3,6 +3,8 @@ import Container from "@/components/container";
 import { HeroSectionMacOsTerminal } from "@/components/hero-section-mac-os-terminal";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Craft without the grind",
@@ -11,27 +13,43 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="relative flex flex-1 flex-col items-center justify-center">
-      <Container className="flex flex-col items-center text-center py-16 lg:py-24">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight max-w-4xl font-pixel-circle">
-          Craft without the grind
-        </h1>
+    <div className="relative flex h-full min-h-0 flex-1 flex-col items-center justify-center">
+      <Container className="flex h-full min-h-0 flex-col items-center justify-center py-4 text-center lg:py-6">
+        <div className="flex w-full max-w-4xl flex-col items-center gap-5 lg:gap-6">
+          <section>
+            <Badge
+              asChild
+              variant="secondary"
+            >
+              <Link href="/changelog" className="inline-flex items-center gap-1">
+                What's New
+                <ArrowRight className="size-4" />
+              </Link>
+            </Badge>
+          </section>
 
-        <p className="mt-5 max-w-md text-lg md:text-xl tracking-tight font-light font-pixel-circle">
-          Quality components and blocks. Install. Ship.
-        </p>
+          <section className="flex flex-col items-center gap-4">
+            <h1 className="max-w-4xl text-4xl tracking-tight font-pixel-circle md:text-5xl lg:text-6xl">
+              Craft without the grind
+            </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-8">
-          <Button asChild size="sm" className="rounded-full" >
-            <Link href="/docs">Get Started</Link>
-          </Button>
-          <Button asChild variant="outline" size="sm" className="rounded-full">
-            <Link href="/docs/components">View Components</Link>
-          </Button>
-        </div>
+            <p className="max-w-3xl tracking-tight md:text-lg font-light">
+              Quality components and blocks. Install. Ship.
+            </p>
+          </section>
 
-        <div className="w-full max-w-4xl mt-12 lg:mt-16 text-left">
-          <HeroSectionMacOsTerminal />
+          <section className="flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="sm">
+              <Link href="/docs">Get Started</Link>
+            </Button>
+            <Button asChild variant="ghost" size="sm">
+              <Link href="/docs/components">View Components</Link>
+            </Button>
+          </section>
+
+          <section className="w-full max-w-4xl text-left mt-4">
+            <HeroSectionMacOsTerminal />
+          </section>
         </div>
       </Container>
     </div>

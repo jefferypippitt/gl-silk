@@ -48,3 +48,41 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...components,
   };
 }
+
+export function getChangelogMDXComponents(components?: MDXComponents): MDXComponents {
+  const headingComponents: MDXComponents = {
+    h2: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
+    h3: ({ children, ...props }) => <h3 {...props}>{children}</h3>,
+    h4: ({ children, ...props }) => <h4 {...props}>{children}</h4>,
+    h5: ({ children, ...props }) => <h5 {...props}>{children}</h5>,
+    h6: ({ children, ...props }) => <h6 {...props}>{children}</h6>,
+  };
+
+  return {
+    ...defaultMdxComponents,
+    ...headingComponents,
+    img: (props) => <ImageZoom {...(props as any)} />,
+    pre: ({ ref: _ref, ...props }) => (
+      <CodeBlock {...props}>
+        <Pre>{props.children}</Pre>
+      </CodeBlock>
+    ),
+    ComponentPreview: DocsComponentPreview,
+    ComponentSource,
+    OpenInV0Button,
+    RerunButton,
+    ...TabsComponents,
+    Steps,
+    Step,
+    Files,
+    File,
+    Folder,
+    Accordion,
+    Accordions,
+    TypeTable,
+    Alert,
+    AlertTitle,
+    AlertDescription,
+    ...components,
+  };
+}

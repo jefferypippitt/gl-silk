@@ -41,7 +41,7 @@
     },
     {
       "path": "registry/new-york/blocks/hero-section/hero-section-v5/hero-section-v5.css",
-      "content": "/* Hero Section V5 */\n\n:root {\n  --hs5-image-light: url(\"https://glsilk.vercel.app/images/dashboard-light.png\");\n  --hs5-image-dark: url(\"https://glsilk.vercel.app/images/dashboard-dark.png\");\n}\n\n.hs5-image-light {\n  display: block;\n  background-image: var(--hs5-image-light);\n}\n\n.hs5-image-dark {\n  display: none;\n  background-image: var(--hs5-image-dark);\n}\n\n.dark .hs5-image-light {\n  display: none;\n}\n\n.dark .hs5-image-dark {\n  display: block;\n}\n",
+      "content": "/* Hero Section V5 */\n\n:root {\n  --hs5-image-light: url(\"/images/voice-api.webp\");\n  --hs5-image-dark: url(\"/images/imagine-api.webp\");\n}\n\n.hs5-image-light {\n  display: block;\n  background-image: var(--hs5-image-light);\n}\n\n.hs5-image-dark {\n  display: none;\n  background-image: var(--hs5-image-dark);\n}\n\n.dark .hs5-image-light {\n  display: none;\n}\n\n.dark .hs5-image-dark {\n  display: block;\n}\n",
       "type": "registry:component",
       "target": "app/glsilk/hero-section-v5/hero-section-v5.css"
     }
@@ -49,14 +49,14 @@
   "meta": {
     "assets": [
       {
-        "path": "public/images/dashboard-light.png",
-        "url": "https://glsilk.vercel.app/images/dashboard-light.png"
+        "path": "public/images/voice-api.webp",
+        "url": "/images/voice-api.webp"
       },
       {
-        "path": "public/images/dashboard-dark.png",
-        "url": "https://glsilk.vercel.app/images/dashboard-dark.png"
+        "path": "public/images/imagine-api.webp",
+        "url": "/images/imagine-api.webp"
       }
     ]
   },
-  "docs": "The dashboard images are loaded from a remote URL by default.\n\nReplace the `DASHBOARD_LIGHT` and `DASHBOARD_DARK` constants at the top of the file with your own product screenshots."
+  "docs": "The showcase image is loaded from `/images/voice-api.webp` (light mode) and `/images/imagine-api.webp` (dark mode) by default.\n\nReplace the `--hs5-image-light` and `--hs5-image-dark` CSS variables in `hero-section-v5.css` with your own screenshot URLs."
 }

@@ -34,6 +34,9 @@ export default function Navbar() {
           <Button variant="ghost" size="sm" asChild>
             <Link href="/blocks">Blocks</Link>
           </Button>
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="/changelog">Changelog</Link>
+          </Button>
         </div>
 
         <div className="flex items-center gap-1">

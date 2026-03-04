@@ -1,8 +1,6 @@
 // Static registry mapping for Turbopack compatibility
 import MacOsTerminal from "@/registry/new-york/blocks/other/mac-os-terminal/mac-os-terminal";
 import WindowsTerminal from "@/registry/new-york/blocks/other/windows-terminal/windows-terminal";
-import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form";
-import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card";
 import { SplitTextDemo } from "@/registry/new-york/components/split-text-animation/demo";
 import { FadeDemo } from "@/registry/new-york/components/split-text-animation/fade-demo";
 import { FadeFastDemo } from "@/registry/new-york/components/split-text-animation/fade-fast-demo";
@@ -54,14 +52,13 @@ import HeroSectionV5 from "@/registry/new-york/blocks/hero-section/hero-section-
 import FeatureSectionV1 from "@/registry/new-york/blocks/features-section/feature-section-v1/feature-section-v1";
 import FeatureSectionV2 from "@/registry/new-york/blocks/features-section/feature-section-v2/feature-section-v2";
 import CtaSectionV1 from "@/registry/new-york/blocks/cta-section/cta-section-v1/cta-section-v1";
+import CtaSectionV2 from "@/registry/new-york/blocks/cta-section/cta-section-v2/cta-section-v2";
 
 
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   "mac-os-terminal": MacOsTerminal,
   "windows-terminal": WindowsTerminal,
-  "example-form": ExampleForm,
-  "example-with-css": ExampleCard,
   "cta-section-v1": CtaSectionV1,
   "split-text-demo": SplitTextDemo,
   "split-text-fade": FadeDemo,
@@ -114,5 +111,6 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "hero-section-v5": HeroSectionV5,
   "feature-section-v1": FeatureSectionV1,
   "feature-section-v2": FeatureSectionV2,
+  "cta-section-v2": CtaSectionV2,
 
 };

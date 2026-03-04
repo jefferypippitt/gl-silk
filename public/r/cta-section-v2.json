@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-section-v2",
+  "type": "registry:block",
+  "title": "CTA Section V2",
+  "description": "A bold CTA section with layered shader background, top badge, and dual action buttons",
+  "dependencies": [
+    "shaders",
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/cta-section/cta-section-v2/page.tsx",
+      "content": "import CtaSectionV2 from \"./cta-section-v2\";\n\nexport default function Page() {\n  return <CtaSectionV2 />\n}\n",
+      "type": "registry:page",
+      "target": "app/glsilk/cta-section-v2/page.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/cta-section/cta-section-v2/cta-section-v2.tsx",
+      "content": "import { Button } from \"./button\"\nimport CtaSectionV2Shader from \"./cta-section-v2-shader\"\n\nexport default function CtaSectionV2() {\n  return (\n    <section className=\"py-16 md:py-20 lg:py-24\">\n      <div className=\"container mx-auto max-w-6xl px-4\">\n        <CtaSectionV2Shader\n          className=\"px-4 py-14 sm:px-8 sm:py-20 md:px-12 md:py-24 lg:px-16 lg:py-32\"\n          contentClassName=\"mx-auto flex w-full max-w-4xl flex-col items-center gap-7 text-center sm:gap-9 md:gap-10\"\n        >\n          <div className=\"flex w-full flex-col items-center gap-2\">\n            <h1 className=\"text-sm leading-tight tracking-tight text-white\"> Let's talk</h1>\n            <h2 className=\"max-w-[18ch] text-balance break-words text-3xl leading-tight tracking-tight text-white sm:max-w-2xl sm:text-4xl md:text-5xl lg:max-w-3xl lg:text-6xl\">\n              Lorem ipsum dolor sit amet.\n            </h2>\n            <p className=\"max-w-xl text-balance break-words text-sm text-white/80 sm:max-w-2xl sm:text-base md:text-lg\">\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n            </p>\n          </div>\n          <div className=\"flex w-full max-w-sm flex-col items-stretch gap-3 sm:max-w-md md:max-w-none md:flex-row md:items-center md:justify-center\">\n            <Button\n              variant=\"default\"\n              className=\"w-full md:w-auto\"\n            >\n              Start For Free\n            </Button>\n            <Button\n              variant=\"secondary\"\n              className=\"w-full md:w-auto\"\n            >\n              Book a Demo\n            </Button>\n          </div>\n        </CtaSectionV2Shader>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/cta-section-v2/cta-section-v2.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/cta-section/cta-section-v2/cta-section-v2-shader.tsx",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport { useEffect, useState } from \"react\"\nimport {\n  Dither,\n  FilmGrain,\n  GridDistortion,\n  Shader,\n  Sharpness,\n  Swirl,\n} from \"shaders/react\"\nimport { cn } from \"./utils\"\n\ntype CtaSectionV2ShaderProps = {\n  children?: ReactNode\n  className?: string\n  contentClassName?: string\n}\n\nexport default function CtaSectionV2Shader({\n  children,\n  className,\n  contentClassName,\n}: CtaSectionV2ShaderProps) {\n  const [mounted, setMounted] = useState(false)\n\n  useEffect(() => {\n    setMounted(true)\n  }, [])\n\n  return (\n    <div\n      className={cn(\n        \"relative overflow-hidden rounded-2xl bg-[#1c034f]\",\n        className\n      )}\n    >\n      {mounted ? (\n        <div className=\"pointer-events-none absolute inset-0 rounded-[inherit]\">\n          <div className=\"h-full w-full\">\n            <Shader>\n              <Swirl\n                blend={30}\n                colorA=\"#1c034f\"\n                colorB=\"#2b4cf0\"\n                colorSpace=\"oklch\"\n                detail={1.2}\n                speed={0.6}\n              />\n              <Dither blendMode=\"overlay\" pixelSize={5} threshold={0.45} />\n              <GridDistortion edges=\"mirror\" gridSize={75} intensity={5} radius={2} />\n              <Sharpness sharpness={1} />\n              <FilmGrain strength={0.05} />\n            </Shader>\n          </div>\n        </div>\n      ) : null}\n      <div className={cn(\"relative z-10\", contentClassName)}>{children}</div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/cta-section-v2/cta-section-v2-shader.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/cta-section/cta-section-v2/button.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"./utils\"\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60\",\n        outline:\n          \"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        sm: \"h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n        \"icon-sm\": \"size-8\",\n        \"icon-lg\": \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "type": "registry:component",
+      "target": "app/glsilk/cta-section-v2/button.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/cta-section/cta-section-v2/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/cta-section-v2/utils.ts"
+    }
+  ]
+}

@@ -25,14 +25,5 @@
       "type": "registry:component",
       "target": "app/glsilk/feature-section-v1/feature-section-v1-grid.tsx"
     }
-  ],
-  "meta": {
-    "assets": [
-      {
-        "path": "public/images/shadcn1.webp",
-        "url": "https://glsilk.vercel.app/images/shadcn1.webp"
-      }
-    ]
-  },
-  "docs": "The card images are loaded from a remote URL by default.\n\nReplace the `PLACEHOLDER_IMAGE` constant at the top of the file with your own image."
+  ]
 }

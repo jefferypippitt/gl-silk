@@ -17,7 +17,7 @@
     },
     {
       "path": "registry/new-york/blocks/cta-section/cta-section-v1/cta-section-v1.tsx",
-      "content": "import { Button } from \"./button\";\n\nexport default function CtaSectionV1() {\n  return (\n    <section className=\"py-16 md:py-20 lg:py-24\">\n      <div className=\"container mx-auto max-w-6xl px-4\">\n        <div className=\"bg-muted rounded-2xl px-8 py-20 sm:px-16 sm:py-28 md:py-32 flex flex-col items-center gap-10 text-center\">\n          <h1 className=\"text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl\">\n            Try Lorem now.\n          </h1>\n          <Button variant=\"default\" size=\"lg\" className=\"rounded-full\">\n            Get started\n          </Button>\n        </div>\n      </div>\n    </section>\n  );\n}\n",
+      "content": "import { Button } from \"./button\";\r\n\r\nexport default function CtaSectionV1() {\r\n  return (\r\n    <section className=\"py-16 md:py-20 lg:py-24\">\r\n      <div className=\"container mx-auto max-w-6xl px-4\">\r\n        <div className=\"bg-muted rounded-2xl px-8 py-20 sm:px-16 sm:py-28 md:py-32 flex flex-col items-center gap-10 text-center\">\r\n          <h1 className=\"text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl\">\r\n            Try Lorem now.\r\n          </h1>\r\n          <Button variant=\"default\" size=\"lg\" className=\"rounded-full\">\r\n            Get started\r\n          </Button>\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n}\r\n",
       "type": "registry:component",
       "target": "app/glsilk/cta-section-v1/cta-section-v1.tsx"
     },

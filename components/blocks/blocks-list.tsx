@@ -89,9 +89,9 @@ function BlockItem({ block }: { block: RegistryItem }) {
   };
 
   return (
-    <div className="w-full space-y-2">
+    <article id={block.name} className="w-full space-y-2 scroll-mt-24">
       {/* Block ID — filename above the preview */}
-      <h3 className="text-foreground font-pixel-triangle">
+      <h3 className="text-foreground font-pixel-circle">
         {block.name}
       </h3>
 
@@ -159,6 +159,6 @@ function BlockItem({ block }: { block: RegistryItem }) {
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 }
