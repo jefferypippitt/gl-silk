@@ -20,7 +20,6 @@ export function ViewTabs({
   viewMode,
   onViewModeChange,
   onOpenInNewTab,
-  previewId,
 }: ViewTabsProps) {
   return (
     <div className="flex items-center gap-2">

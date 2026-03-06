@@ -44,34 +44,31 @@ export default function Home() {
 
 ## Examples
 
-<div className="flex items-center justify-between">
-  <h3>Default</h3>
-  <OpenInV0Button name="warp-button" />
-</div>
+<SectionHeader title="Default" name="warp-button" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="warp-button-demo" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="warp-button">
 
 ```tsx
 <WarpButton>Warp Button</WarpButton>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>High Distortion Effect</h3>
-  <OpenInV0Button name="warp-button-high-distortion" />
-</div>
+<SectionHeader title="High Distortion Effect" name="warp-button-high-distortion" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="warp-button-high-distortion" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="warp-button-high-distortion">
 
 ```tsx
 <WarpButton
@@ -85,19 +82,18 @@ export default function Home() {
 </WarpButton>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Subtle Warp Effect</h3>
-  <OpenInV0Button name="warp-button-subtle-warp" />
-</div>
+<SectionHeader title="Subtle Warp Effect" name="warp-button-subtle-warp" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="warp-button-subtle-warp" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="warp-button-subtle-warp">
 
 ```tsx
 <WarpButton
@@ -111,19 +107,18 @@ export default function Home() {
 </WarpButton>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Custom Shape Patterns</h3>
-  <OpenInV0Button name="warp-button-custom-shape" />
-</div>
+<SectionHeader title="Custom Shape Patterns" name="warp-button-custom-shape" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="warp-button-custom-shape" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="warp-button-custom-shape">
 
 ```tsx
 <WarpButton
@@ -138,13 +133,11 @@ export default function Home() {
 </WarpButton>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Ink Effect</h3>
-  <OpenInV0Button name="warp-button-ink" />
-</div>
+### Ink Effect
 
 <Callout type="info">
   **Note:** This ink effect uses a black and white color scheme that works well
@@ -152,11 +145,14 @@ export default function Home() {
   different themes.
 </Callout>
 
+<SectionHeader title="Ink Effect" name="warp-button-ink" />
+
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="warp-button-ink" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="warp-button-ink">
 
 ```tsx
 <WarpButton
@@ -177,19 +173,18 @@ export default function Home() {
 </WarpButton>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Text Customization</h3>
-  <OpenInV0Button name="warp-button-text-customization" />
-</div>
+<SectionHeader title="Text Customization" name="warp-button-text-customization" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="warp-button-text-customization" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="warp-button-text-customization">
 
 ```tsx
 <WarpButton textClassName="text-white mix-blend-difference">
@@ -197,6 +192,7 @@ export default function Home() {
 </WarpButton>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 

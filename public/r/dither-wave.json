@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dither-wave",
+  "type": "registry:component",
+  "title": "Dither Wave",
+  "description": "Animated dithered wave background shader with customizable colors and motion.",
+  "dependencies": [
+    "@paper-design/shaders-react"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/components/dither-wave/dither-wave.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Dithering } from \"@paper-design/shaders-react\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype DitheringProps = React.ComponentProps<typeof Dithering>;\n\ninterface DitherWaveProps extends Omit<DitheringProps, \"shape\"> {\n  className?: string;\n}\n\nexport function DitherWave({\n  className,\n  colorBack = \"#1aff00\",\n  colorFront = \"#0000ff\",\n  width = \"100%\",\n  height = \"100%\",\n  speed = 1.1,\n  scale = 1,\n  size = 5,\n  type = \"8x8\",\n  rotation = 309,\n  ...props\n}: DitherWaveProps) {\n  return (\n    <div className={cn(\"relative overflow-hidden\", className)}>\n      <Dithering\n        colorBack={colorBack}\n        colorFront={colorFront}\n        shape=\"wave\"\n        width={width}\n        height={height}\n        speed={speed}\n        scale={scale}\n        size={size}\n        type={type}\n        rotation={rotation}\n        {...props}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/components/dither-wave/demo.tsx",
+      "content": "\"use client\";\n\nimport { DitherWave } from \"./dither-wave\";\n\nexport function DitherWaveDemo() {\n  return (\n    <div className=\"flex min-h-[560px] items-center justify-center px-6 py-8\">\n      <div className=\"h-[460px] w-full overflow-hidden rounded-xl border\">\n        <DitherWave className=\"h-full w-full\" />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -41,19 +41,14 @@ export default function Home() {
 
 ## Examples
 
-<div className="flex items-center justify-between">
-  <h3>Default</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="split-text-rotate" />
-    <RerunButton previewId="split-text-rotate" />
-  </div>
-</div>
+<SectionHeader title="Default" name="split-text-rotate" previewId="split-text-rotate" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="split-text-rotate" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="split-text-rotate" previewId="split-text-rotate">
 
 ```tsx
 <SplitTextAnimation
@@ -64,22 +59,18 @@ export default function Home() {
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Fast Rotate</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="split-text-rotate-fast" />
-    <RerunButton previewId="split-text-rotate-fast" />
-  </div>
-</div>
+<SectionHeader title="Fast Rotate" name="split-text-rotate-fast" previewId="split-text-rotate-fast" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="split-text-rotate-fast" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="split-text-rotate-fast" previewId="split-text-rotate-fast">
 
 ```tsx
 <SplitTextAnimation
@@ -90,22 +81,18 @@ export default function Home() {
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Slow Rotate</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="split-text-rotate-slow" />
-    <RerunButton previewId="split-text-rotate-slow" />
-  </div>
-</div>
+<SectionHeader title="Slow Rotate" name="split-text-rotate-slow" previewId="split-text-rotate-slow" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="split-text-rotate-slow" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="split-text-rotate-slow" previewId="split-text-rotate-slow">
 
 ```tsx
 <SplitTextAnimation
@@ -116,6 +103,7 @@ export default function Home() {
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 

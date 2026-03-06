@@ -38,34 +38,31 @@ export default function Home() {
 
 ## Examples
 
-<div className="flex items-center justify-between">
-  <h3>Default</h3>
-  <OpenInV0Button name="play-pause-button" />
-</div>
+<SectionHeader title="Default" name="play-pause-button" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="play-pause-demo" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="play-pause-button">
 
 ```tsx
 <PlayPauseButton />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Sizes</h3>
-  <OpenInV0Button name="play-pause-button-sizes" />
-</div>
+<SectionHeader title="Sizes" name="play-pause-button-sizes" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="play-pause-sizes" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="play-pause-button-sizes">
 
 ```tsx
 <div className="flex gap-2">
@@ -90,19 +87,18 @@ export default function Home() {
 </div>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Variants</h3>
-  <OpenInV0Button name="play-pause-button-variants" />
-</div>
+<SectionHeader title="Variants" name="play-pause-button-variants" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="play-pause-variants" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="play-pause-button-variants">
 
 ```tsx
 <div className="flex flex-wrap gap-2">
@@ -113,19 +109,18 @@ export default function Home() {
 </div>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Icon Variants</h3>
-  <OpenInV0Button name="play-pause-button-icon-variants" />
-</div>
+<SectionHeader title="Icon Variants" name="play-pause-button-icon-variants" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="play-pause-icon-variants" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="play-pause-button-icon-variants">
 
 ```tsx
 <div className="flex flex-wrap gap-2">
@@ -136,19 +131,18 @@ export default function Home() {
 </div>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Rounded</h3>
-  <OpenInV0Button name="play-pause-button-rounded" />
-</div>
+<SectionHeader title="Rounded" name="play-pause-button-rounded" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="play-pause-rounded" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="play-pause-button-rounded">
 
 ```tsx
 <div className="flex gap-4">
@@ -158,6 +152,7 @@ export default function Home() {
 </div>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 

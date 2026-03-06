@@ -88,34 +88,31 @@ export function ModeToggle() {
 
 ## Examples
 
-<div className="flex items-center justify-between">
-  <h3>Default</h3>
-  <OpenInV0Button name="theme-toggle-button" />
-</div>
+<SectionHeader title="Default" name="theme-toggle-button" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="theme-toggle-demo" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="theme-toggle-button">
 
 ```tsx
 <ThemeToggleButton>Toggle Theme</ThemeToggleButton>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Rounded</h3>
-  <OpenInV0Button name="theme-toggle-button-rounded" />
-</div>
+<SectionHeader title="Rounded" name="theme-toggle-button-rounded" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="theme-toggle-rounded" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="theme-toggle-button-rounded">
 
 ```tsx
 <div className="flex gap-4">
@@ -143,19 +140,18 @@ export function ModeToggle() {
 </div>
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Custom Colors</h3>
-  <OpenInV0Button name="theme-toggle-button-colored" />
-</div>
+<SectionHeader title="Custom Colors" name="theme-toggle-button-colored" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="theme-toggle-colored" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="theme-toggle-button-colored">
 
 ```tsx
 <ThemeToggleButton
@@ -183,19 +179,18 @@ export function ModeToggle() {
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Dual Color Mode</h3>
-  <OpenInV0Button name="theme-toggle-button-dual-color" />
-</div>
+<SectionHeader title="Dual Color Mode" name="theme-toggle-button-dual-color" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="theme-toggle-dual-color" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="theme-toggle-button-dual-color">
 
 ```tsx
 <ThemeToggleButton
@@ -217,6 +212,7 @@ export function ModeToggle() {
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 

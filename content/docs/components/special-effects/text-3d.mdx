@@ -46,16 +46,14 @@ Text"
 
 ## Examples
 
-<div className="flex items-center justify-between">
-  <h3>Default</h3>
-  <OpenInV0Button name="text-3d" />
-</div>
+<SectionHeader title="Default" name="text-3d" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="text-3d" height={400} />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="text-3d">
 
 ```tsx
 <Text3DComponent
@@ -72,6 +70,7 @@ Text"
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
@@ -89,16 +88,14 @@ Text"
   All materials except `gradient` use the `color` prop. The `gradient` material uses `gradientColors` for multi-color effects.
 </Callout>
 
-<div className="flex items-center justify-between">
-  <h3>Gradient</h3>
-  <OpenInV0Button name="text-3d-gradient" />
-</div>
+<SectionHeader title="Gradient" name="text-3d-gradient" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="text-3d-gradient" height={400} />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="text-3d-gradient">
 
 ```tsx
 <Text3DComponent
@@ -115,27 +112,25 @@ Text"
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Advanced Playground</h3>
-  <OpenInV0Button name="text-3d-advanced" />
-</div>
-
-Experiment with all props using the interactive controls:
+<SectionHeader title="Advanced Playground" name="text-3d-advanced" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="text-3d-advanced" height={650} />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="text-3d-advanced">
 
 ```tsx
 // Use the advanced demo to customize all properties
 // and copy the generated code
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 

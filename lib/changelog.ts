@@ -72,12 +72,17 @@ function resolveEntryItems(
         return { name: key, label: key };
       }
 
+      const isBlock = registryItem.type === "registry:block";
+      const href = registryItem.category
+        ? isBlock
+          ? `/blocks/${registryItem.category}#${encodeURIComponent(registryItem.name)}`
+          : `/docs/components/${registryItem.category}/${registryItem.name}`
+        : undefined;
+
       return {
         name: registryItem.name,
         label: registryItem.title || registryItem.name,
-        href: registryItem.category
-          ? `/blocks/${registryItem.category}#${encodeURIComponent(registryItem.name)}`
-          : undefined,
+        href,
       };
     })
     .filter((item): item is ChangelogItem => Boolean(item));

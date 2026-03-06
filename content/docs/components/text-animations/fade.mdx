@@ -41,19 +41,14 @@ export default function Home() {
 
 ## Examples
 
-<div className="flex items-center justify-between">
-  <h3>Default</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="split-text-fade" />
-    <RerunButton previewId="split-text-fade" />
-  </div>
-</div>
+<SectionHeader title="Default" name="split-text-fade" previewId="split-text-fade" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="split-text-fade" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="split-text-fade" previewId="split-text-fade">
 
 ```tsx
 <SplitTextAnimation
@@ -64,22 +59,18 @@ export default function Home() {
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Fast Fade</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="split-text-fade-fast" />
-    <RerunButton previewId="split-text-fade-fast" />
-  </div>
-</div>
+<SectionHeader title="Fast Fade" name="split-text-fade-fast" previewId="split-text-fade-fast" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="split-text-fade-fast" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="split-text-fade-fast" previewId="split-text-fade-fast">
 
 ```tsx
 <SplitTextAnimation
@@ -90,22 +81,18 @@ export default function Home() {
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
-<div className="flex items-center justify-between">
-  <h3>Slow Fade</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="split-text-fade-slow" />
-    <RerunButton previewId="split-text-fade-slow" />
-  </div>
-</div>
+<SectionHeader title="Slow Fade" name="split-text-fade-slow" previewId="split-text-fade-slow" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="split-text-fade-slow" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="split-text-fade-slow" previewId="split-text-fade-slow">
 
 ```tsx
 <SplitTextAnimation
@@ -116,6 +103,51 @@ export default function Home() {
 />
 ```
 
+</CodeBlockWithAction>
+</Tab>
+</Tabs>
+
+### Fast Fade
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="split-text-fade-fast" />
+</Tab>
+<Tab value="Code">
+<CodeBlockWithAction name="split-text-fade-fast" previewId="split-text-fade-fast">
+
+```tsx
+<SplitTextAnimation
+  text="Fast Fade In Animation"
+  animationType="fade"
+  duration={0.4}
+  stagger={0.02}
+/>
+```
+
+</CodeBlockWithAction>
+</Tab>
+</Tabs>
+
+### Slow Fade
+
+<Tabs items={['Preview', 'Code']}>
+<Tab value="Preview">
+  <ComponentPreview name="split-text-fade-slow" />
+</Tab>
+<Tab value="Code">
+<CodeBlockWithAction name="split-text-fade-slow" previewId="split-text-fade-slow">
+
+```tsx
+<SplitTextAnimation
+  text="Slow Fade In Animation"
+  animationType="fade"
+  duration={1.2}
+  stagger={0.05}
+/>
+```
+
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 

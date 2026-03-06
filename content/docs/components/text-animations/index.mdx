@@ -43,19 +43,14 @@ export default function Home() {
 
 ## Examples
 
-<div className="flex items-center justify-between">
-  <h3>Default</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="split-text-fade" />
-    <RerunButton previewId="split-text-fade" />
-  </div>
-</div>
+<SectionHeader title="Default" name="split-text-fade" previewId="split-text-fade" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="split-text-fade" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="split-text-fade" previewId="split-text-fade">
 
 ```tsx
 <SplitTextAnimation
@@ -66,6 +61,7 @@ export default function Home() {
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 
@@ -90,21 +86,16 @@ Explore different animation types:
 
 ## Custom Styling
 
-<div className="flex items-center justify-between">
-  <h3>Custom Styling</h3>
-  <div className="flex items-center gap-2">
-    <OpenInV0Button name="split-text-custom-styling" />
-    <RerunButton previewId="split-text-custom-styling" />
-  </div>
-</div>
-
 The component automatically inherits all font properties (size, weight, family, color) from its container. Apply any Tailwind classes or custom CSS to the component and all styles will be applied to each animated character:
+
+<SectionHeader title="Custom Styling Example" name="split-text-custom-styling" previewId="split-text-custom-styling" />
 
 <Tabs items={['Preview', 'Code']}>
 <Tab value="Preview">
   <ComponentPreview name="split-text-custom-styling" />
 </Tab>
 <Tab value="Code">
+<CodeBlockWithAction name="split-text-custom-styling" previewId="split-text-custom-styling">
 
 ```tsx
 <SplitTextAnimation
@@ -114,6 +105,7 @@ The component automatically inherits all font properties (size, weight, family, 
 />
 ```
 
+</CodeBlockWithAction>
 </Tab>
 </Tabs>
 

@@ -824,6 +824,24 @@
       ]
     },
     {
+      "name": "dither-wave",
+      "type": "registry:component",
+      "category": "backgrounds",
+      "title": "Dither Wave",
+      "description": "Animated dithered wave background shader with customizable colors and motion.",
+      "dependencies": ["@paper-design/shaders-react"],
+      "files": [
+        {
+          "path": "registry/new-york/components/dither-wave/dither-wave.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/components/dither-wave/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "text-3d",
       "type": "registry:component",
       "category": "special-effects",
@@ -1101,6 +1119,73 @@
           "path": "registry/new-york/blocks/hero-section/hero-section-v5/hero-section-v5.css",
           "type": "registry:component",
           "target": "app/glsilk/hero-section-v5/hero-section-v5.css"
+        }
+      ]
+    },
+    {
+      "name": "hero-section-v6",
+      "type": "registry:block",
+      "category": "hero-section",
+      "title": "Hero Section V6",
+      "description": "A split layout SaaS hero section with heading, description, CTA button on the left, and animated image carousel on the right",
+      "dependencies": [],
+      "registryDependencies": ["button"],
+      "docs": "The carousel cycles through 4 images: voice-api.webp, imagine-api.webp, super-fast-api.webp, and fast-api.webp. Edit the carouselImages array in hero-section-v6.tsx to add your own images.",
+      "meta": {
+        "assets": [
+          {
+            "path": "public/images/voice-api.webp",
+            "url": "/images/voice-api.webp"
+          },
+          {
+            "path": "public/images/imagine-api.webp",
+            "url": "/images/imagine-api.webp"
+          },
+          {
+            "path": "public/images/super-fast-api.webp",
+            "url": "/images/super-fast-api.webp"
+          },
+          {
+            "path": "public/images/fast-api.webp",
+            "url": "/images/fast-api.webp"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v6/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/hero-section-v6/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v6/hero-section-v6.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6-carousel.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v6/hero-section-v6-carousel.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6-stats.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v6/hero-section-v6-stats.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v6/button.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v6/button.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v6/utils.ts",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v6/utils.ts"
+        },
+        {
+          "path": "registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6.css",
+          "type": "registry:component",
+          "target": "app/glsilk/hero-section-v6/hero-section-v6.css"
         }
       ]
     },

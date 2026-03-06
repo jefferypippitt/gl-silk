@@ -14,14 +14,14 @@ export default function Navbar() {
   return (
     <nav className="border-b border-border bg-background sticky top-0 z-50">
       <div className="flex items-center justify-between h-16 px-6 sm:px-8 max-w-6xl mx-auto">
-        <div className="flex items-center gap-1">
-          <Button variant="ghost" size="icon" asChild className="hover:bg-transparent">
+        <div className="flex items-center gap-2">
+          <Button variant="ghost" size="icon">
             <Link href="/" aria-label="Home">
               <Image
-                src="/glsilk-logo.png"
+                src="/icon1.png"
                 alt="glsilk"
-                width={20}
-                height={20}
+                width={30}
+                height={30}
               />
             </Link>
           </Button>

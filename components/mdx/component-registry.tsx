@@ -40,6 +40,7 @@ import { WarpButtonTextCustomizationDemo } from "@/registry/new-york/components/
 import { Text3DDemo } from "@/registry/new-york/components/text-3d/demo";
 import { Text3DGradientDemo } from "@/registry/new-york/components/text-3d/gradient-demo";
 import { Text3DAdvancedDemo } from "@/registry/new-york/components/text-3d/advanced-demo";
+import { DitherWaveDemo } from "@/registry/new-york/components/dither-wave/demo";
 import { NeubrutalismButtonDemo } from "@/registry/new-york/components/neubrutalism-button/demo";
 import { NeubrutalismButtonOutlineDemo } from "@/registry/new-york/components/neubrutalism-button/outline-demo";
 import { NeubrutalismButtonDestructiveDemo } from "@/registry/new-york/components/neubrutalism-button/destructive-demo";
@@ -53,6 +54,7 @@ import FeatureSectionV1 from "@/registry/new-york/blocks/features-section/featur
 import FeatureSectionV2 from "@/registry/new-york/blocks/features-section/feature-section-v2/feature-section-v2";
 import CtaSectionV1 from "@/registry/new-york/blocks/cta-section/cta-section-v1/cta-section-v1";
 import CtaSectionV2 from "@/registry/new-york/blocks/cta-section/cta-section-v2/cta-section-v2";
+import HeroSectionV6 from "@/registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6";
 
 
 
@@ -99,6 +101,7 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "text-3d": Text3DDemo,
   "text-3d-gradient": Text3DGradientDemo,
   "text-3d-advanced": Text3DAdvancedDemo,
+  "dither-wave-demo": DitherWaveDemo,
   "neubrutalism-button": NeubrutalismButtonDemo,
   "neubrutalism-button-demo": NeubrutalismButtonDemo,
   "neubrutalism-button-outline": NeubrutalismButtonOutlineDemo,
@@ -109,6 +112,7 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "hero-section-v3": HeroSectionV3,
   "hero-section-v4": HeroSectionV4,
   "hero-section-v5": HeroSectionV5,
+  "hero-section-v6": HeroSectionV6,
   "feature-section-v1": FeatureSectionV1,
   "feature-section-v2": FeatureSectionV2,
   "cta-section-v2": CtaSectionV2,

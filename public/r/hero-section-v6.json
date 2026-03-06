@@ -1,0 +1,76 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-section-v6",
+  "type": "registry:block",
+  "title": "Hero Section V6",
+  "description": "A split layout SaaS hero section with heading, description, CTA button on the left, and animated image carousel on the right",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v6/page.tsx",
+      "content": "import HeroSectionV6 from \"./hero-section-v6\"\n\nexport default function Page() {\n    return <HeroSectionV6 />\n}\n",
+      "type": "registry:page",
+      "target": "app/glsilk/hero-section-v6/page.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6.tsx",
+      "content": "import { ArrowRightIcon } from \"lucide-react\";\nimport { Button } from \"./button\";\nimport { HeroSectionV6Carousel } from \"./hero-section-v6-carousel\";\nimport { HeroSectionV6Stats } from \"./hero-section-v6-stats\";\nimport \"./hero-section-v6.css\";\n\nexport default function HeroSectionV6() {\n  return (\n    <section className=\"hs6-hero relative min-h-screen py-16 md:py-20 lg:py-24\">\n      <div className=\"hs6-bg-pattern\" aria-hidden=\"true\" />\n      <div className=\"container mx-auto relative z-10 max-w-6xl px-4\">\n        <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center\">\n          <div className=\"mx-auto lg:mx-0 max-w-xl text-center lg:text-left\">\n            <h1 className=\"text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl\">\n              Lorem ipsum dolor sit amet consectetur.\n            </h1>\n            <p className=\"mt-4 text-muted-foreground text-base md:text-lg\">\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit vitae cursus morbi, dictum cursus aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n            </p>\n            <div className=\"mt-8 flex flex-col gap-3 sm:flex-row justify-center lg:justify-start\">\n              <Button variant=\"default\" size=\"default\">\n                Get Started <ArrowRightIcon className=\"w-4 h-4\" />\n              </Button>\n            </div>\n            <HeroSectionV6Stats />\n          </div>\n          <div className=\"relative\">\n            <HeroSectionV6Carousel />\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/hero-section-v6/hero-section-v6.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6-carousel.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { AnimatePresence, motion } from \"motion/react\";\n\nconst carouselImages = [\n  \"/images/voice-api.webp\",\n  \"/images/imagine-api.webp\",\n  \"/images/super-fast-api.webp\",\n  \"/images/fast-api.webp\",\n];\n\nexport function HeroSectionV6Carousel() {\n  const [currentIndex, setCurrentIndex] = useState(0);\n\n  useEffect(() => {\n    const timer = setInterval(() => {\n      setCurrentIndex((prev) => (prev + 1) % carouselImages.length);\n    }, 4000);\n\n    return () => clearInterval(timer);\n  }, []);\n\n  return (\n    <div className=\"hs6-carousel rounded-xl border border-border bg-card overflow-hidden shadow-xl\">\n      <AnimatePresence mode=\"popLayout\">\n        <motion.div\n          key={currentIndex}\n          initial={{ opacity: 0, scale: 1.02 }}\n          animate={{ opacity: 1, scale: 1 }}\n          exit={{ opacity: 0, scale: 0.98 }}\n          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}\n          className=\"hs6-carousel-slide\"\n          style={{ backgroundImage: `url(${carouselImages[currentIndex]})` }}\n          role=\"img\"\n          aria-label={`Product preview ${currentIndex + 1}`}\n        />\n      </AnimatePresence>\n      <div className=\"hs6-carousel-indicators\">\n        {carouselImages.map((_, index) => (\n          <button\n            key={index}\n            onClick={() => setCurrentIndex(index)}\n            className={`hs6-carousel-dot ${index === currentIndex ? \"active\" : \"\"}`}\n            aria-label={`Go to slide ${index + 1}`}\n          />\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/hero-section-v6/hero-section-v6-carousel.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6-stats.tsx",
+      "content": "const stats = [\n  { value: \"1,240+\", label: \"Active teams\" },\n  { value: \"99.95%\", label: \"Uptime (last 12 months)\" },\n  { value: \"< 180ms\", label: \"Median API latency\" },\n  { value: \"42%\", label: \"Faster release cycles\" },\n];\n\nexport function HeroSectionV6Stats() {\n  return (\n    <div className=\"mt-8 grid grid-cols-2 gap-3 sm:gap-4\">\n      {stats.map((stat) => (\n        <div\n          key={stat.label}\n          className=\"rounded-lg border border-border/70 bg-background/80 px-4 py-3 text-left shadow-sm backdrop-blur-sm dark:border-border/60 dark:bg-background/40\"\n        >\n          <p className=\"text-xl font-semibold tracking-tight text-foreground sm:text-2xl\">\n            {stat.value}\n          </p>\n          <p className=\"mt-1 text-xs text-muted-foreground sm:text-sm\">{stat.label}</p>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/hero-section-v6/hero-section-v6-stats.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v6/button.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"./utils\"\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60\",\n        outline:\n          \"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        sm: \"h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n        \"icon-sm\": \"size-8\",\n        \"icon-lg\": \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "type": "registry:component",
+      "target": "app/glsilk/hero-section-v6/button.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v6/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/hero-section-v6/utils.ts"
+    },
+    {
+      "path": "registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6.css",
+      "content": "/* Hero Section V6 */\n\n.hs6-hero {\n  position: relative;\n  overflow: hidden;\n  isolation: isolate;\n}\n\n.hs6-bg-pattern {\n  position: absolute;\n  inset: 0;\n  z-index: -1;\n  pointer-events: none;\n  background: radial-gradient(125% 125% at 50% 10%, #ffffff 50%, #7e7e7e 100%);\n}\n\n.dark .hs6-bg-pattern {\n  background: radial-gradient(125% 125% at 50% 10%, #000000 50%, #272727 100%);\n}\n\n.hs6-carousel {\n  position: relative;\n  width: 100%;\n  aspect-ratio: 4 / 3;\n  min-height: clamp(300px, 36vw, 520px);\n  overflow: hidden;\n}\n\n.hs6-carousel-slide {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  background-size: cover;\n  background-position: center;\n  will-change: opacity, transform;\n}\n\n.hs6-carousel-indicators {\n  position: absolute;\n  bottom: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  display: flex;\n  gap: 8px;\n  z-index: 10;\n}\n\n.hs6-carousel-dot {\n  width: 32px;\n  height: 4px;\n  border-radius: 2px;\n  background-color: rgba(255, 255, 255, 0.3);\n  border: none;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  padding: 0;\n}\n\n.hs6-carousel-dot:hover {\n  background-color: rgba(255, 255, 255, 0.5);\n}\n\n.hs6-carousel-dot.active {\n  background-color: rgba(255, 255, 255, 0.9);\n  width: 48px;\n}\n",
+      "type": "registry:component",
+      "target": "app/glsilk/hero-section-v6/hero-section-v6.css"
+    }
+  ],
+  "meta": {
+    "assets": [
+      {
+        "path": "public/images/voice-api.webp",
+        "url": "/images/voice-api.webp"
+      },
+      {
+        "path": "public/images/imagine-api.webp",
+        "url": "/images/imagine-api.webp"
+      },
+      {
+        "path": "public/images/super-fast-api.webp",
+        "url": "/images/super-fast-api.webp"
+      },
+      {
+        "path": "public/images/fast-api.webp",
+        "url": "/images/fast-api.webp"
+      }
+    ]
+  },
+  "docs": "The carousel cycles through 4 images: voice-api.webp, imagine-api.webp, super-fast-api.webp, and fast-api.webp. Edit the carouselImages array in hero-section-v6.tsx to add your own images."
+}

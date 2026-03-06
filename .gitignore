@@ -46,10 +46,10 @@ next-env.d.ts
 # fumadocs
 .source
 
-# local tooling
+# local agent/editor metadata
 .agents/
 .cursor/
-AGENTS.md
-
-# next-agents-md
 .next-docs/
+AGENTS.md
+CLAUDE.md
+

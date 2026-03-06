@@ -4,7 +4,6 @@ import { Steps, Step } from "fumadocs-ui/components/steps";
 import { Files, File, Folder } from "fumadocs-ui/components/files";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { TypeTable } from "fumadocs-ui/components/type-table";
-import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import type { MDXComponents } from "mdx/types";
 import { ComponentPreview } from "@/components/mdx/component-preview";
@@ -13,6 +12,7 @@ import { ComponentSource } from "@/components/mdx/component-source";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { RerunButton } from "@/components/mdx/rerun-button";
+import { MdxCodeBlock, CodeBlockWithAction, SectionHeader } from "@/components/mdx/code-block-action";
 
 const DOCS_PREVIEW_HEIGHT = 200;
 
@@ -24,13 +24,11 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
     img: (props) => <ImageZoom {...(props as any)} />,
-    pre: ({ ref: _ref, ...props }) => (
-      <CodeBlock {...props}>
-        <Pre>{props.children}</Pre>
-      </CodeBlock>
-    ),
+    pre: MdxCodeBlock,
     ComponentPreview: DocsComponentPreview,
     ComponentSource,
+    CodeBlockWithAction,
+    SectionHeader,
     OpenInV0Button,
     RerunButton,
     ...TabsComponents,
@@ -62,13 +60,11 @@ export function getChangelogMDXComponents(components?: MDXComponents): MDXCompon
     ...defaultMdxComponents,
     ...headingComponents,
     img: (props) => <ImageZoom {...(props as any)} />,
-    pre: ({ ref: _ref, ...props }) => (
-      <CodeBlock {...props}>
-        <Pre>{props.children}</Pre>
-      </CodeBlock>
-    ),
+    pre: MdxCodeBlock,
     ComponentPreview: DocsComponentPreview,
     ComponentSource,
+    CodeBlockWithAction,
+    SectionHeader,
     OpenInV0Button,
     RerunButton,
     ...TabsComponents,
