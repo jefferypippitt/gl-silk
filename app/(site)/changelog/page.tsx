@@ -24,7 +24,7 @@ export default function ChangelogPage() {
   const entries = getChangelogEntries();
 
   return (
-    <Container className="border-b border-border/40 py-8 md:py-12">
+    <Container className="border-b border-border/40 pt-8 md:pt-12">
       <div className="mb-12">
         <h1 className="text-3xl font-semibold tracking-tighter md:text-4xl">
           Changelog

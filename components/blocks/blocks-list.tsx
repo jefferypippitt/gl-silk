@@ -30,9 +30,10 @@ import {
 
 interface BlocksListProps {
   blocks: RegistryItem[];
+  categoryName?: string;
 }
 
-export default function BlocksList({ blocks }: BlocksListProps) {
+export default function BlocksList({ blocks, categoryName }: BlocksListProps) {
   if (blocks.length === 0) {
     return (
       <Empty className="border border-dashed">
@@ -40,7 +41,7 @@ export default function BlocksList({ blocks }: BlocksListProps) {
           <EmptyMedia variant="icon">
             <PackageIcon />
           </EmptyMedia>
-          <EmptyTitle>Other</EmptyTitle>
+          <EmptyTitle>{categoryName ?? "No blocks"}</EmptyTitle>
           <EmptyDescription>
             No blocks available yet for this category.
           </EmptyDescription>

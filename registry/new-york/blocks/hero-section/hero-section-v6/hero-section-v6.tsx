@@ -11,11 +11,11 @@ export default function HeroSectionV6() {
       <div className="container mx-auto relative z-10 max-w-6xl px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="mx-auto lg:mx-0 max-w-xl text-center lg:text-left">
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl  sm:text-4xl lg:text-5xl">
               Lorem ipsum dolor sit amet consectetur.
             </h1>
-            <p className="mt-4 text-muted-foreground text-base md:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit vitae cursus morbi, dictum cursus aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p className="mt-4 text-muted-foreground md:text-lg">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit vitae cursus morbi consectetur adipiscing elit.
 
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row justify-center lg:justify-start">

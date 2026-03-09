@@ -32,12 +32,12 @@ export default function HeroSectionV4() {
               </Button>
             </div>
           </div>
-          <div className="mt-8 lg:mt-0">
-            <div className="mx-auto max-w-[300px]">
-              <div className="hs4-dither-light">
+          <div className="flex items-center justify-center lg:justify-end">
+            <div className="w-full max-w-sm sm:max-w-md lg:max-w-full aspect-square">
+              <div className="hs4-dither-light w-full h-full">
                 <HeroSectionV4DitherLight />
               </div>
-              <div className="hs4-dither-dark">
+              <div className="hs4-dither-dark w-full h-full">
                 <HeroSectionV4DitherDark />
               </div>
             </div>

@@ -14,6 +14,7 @@ export default function HeroSectionV4DitherDark() {
       size={1}
       speed={1.2}
       scale={0.96}
+      style={{ width: '100%', height: '100%' }}
     />
   )
 }

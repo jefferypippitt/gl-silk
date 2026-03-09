@@ -4,11 +4,11 @@ import { HeroSectionMacOsTerminal } from "@/components/hero-section-mac-os-termi
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Blocks, Component } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Craft without the grind",
-  description: "Quality components and blocks. Install. Ship.",
+  title: "Beautiful UI. Zero bloat.",
+  description: "Ready to use components and blocks for modern apps.",
 };
 
 export default function Home() {
@@ -30,11 +30,23 @@ export default function Home() {
 
           <section className="flex flex-col items-center gap-4">
             <h1 className="max-w-4xl text-4xl tracking-tight font-pixel-circle md:text-5xl lg:text-6xl">
-              Craft without the grind
+              Beautiful UI. Zero bloat.
             </h1>
 
             <p className="max-w-3xl tracking-tight md:text-lg font-light">
-              Quality components and blocks. Install. Ship.
+              Ready to use{" "}
+              <Component
+                className="mx-1 inline size-4 align-[-0.125em] text-foreground"
+                strokeWidth={2.4}
+              />
+              components and{" "}
+              <Blocks
+                className="mx-1 inline size-4 align-[-0.125em] text-foreground"
+                strokeWidth={2.4}
+              />
+              blocks
+              <br />
+              built to ship fast and customize freely.
             </p>
           </section>
 

@@ -52,9 +52,18 @@ import HeroSectionV4 from "@/registry/new-york/blocks/hero-section/hero-section-
 import HeroSectionV5 from "@/registry/new-york/blocks/hero-section/hero-section-v5/hero-section-v5";
 import FeatureSectionV1 from "@/registry/new-york/blocks/features-section/feature-section-v1/feature-section-v1";
 import FeatureSectionV2 from "@/registry/new-york/blocks/features-section/feature-section-v2/feature-section-v2";
+import FeatureSectionV3 from "@/registry/new-york/blocks/features-section/feature-section-v3/feature-section-v3";
+import FeatureSectionV4 from "@/registry/new-york/blocks/features-section/feature-section-v4/feature-section-v4";
 import CtaSectionV1 from "@/registry/new-york/blocks/cta-section/cta-section-v1/cta-section-v1";
 import CtaSectionV2 from "@/registry/new-york/blocks/cta-section/cta-section-v2/cta-section-v2";
 import HeroSectionV6 from "@/registry/new-york/blocks/hero-section/hero-section-v6/hero-section-v6";
+import FaqSectionV1 from "@/registry/new-york/blocks/faq-section/faq-section-v1/faq-section-v1";
+import FaqSectionV2 from "@/registry/new-york/blocks/faq-section/faq-section-v2/faq-section-v2";
+import FaqSectionV3 from "@/registry/new-york/blocks/faq-section/faq-section-v3/faq-section-v3";
+import BlogSectionV1 from "@/registry/new-york/blocks/blog-section/blog-section-v1/blog-section-v1";
+import BlogSectionV2 from "@/registry/new-york/blocks/blog-section/blog-section-v2/blog-section-v2";
+import LogoCloudSectionV1 from "@/registry/new-york/blocks/logo-cloud/logo-cloud-section-v1/logo-cloud-section-v1";
+import LogoCloudSectionV2 from "@/registry/new-york/blocks/logo-cloud/logo-cloud-section-v2/logo-cloud-section-v2";
 
 
 
@@ -115,6 +124,14 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   "hero-section-v6": HeroSectionV6,
   "feature-section-v1": FeatureSectionV1,
   "feature-section-v2": FeatureSectionV2,
+  "feature-section-v3": FeatureSectionV3,
+  "feature-section-v4": FeatureSectionV4,
   "cta-section-v2": CtaSectionV2,
-
+  "faq-section-v1": FaqSectionV1,
+  "faq-section-v2": FaqSectionV2,
+  "faq-section-v3": FaqSectionV3,
+  "blog-section-v1": BlogSectionV1,
+  "blog-section-v2": BlogSectionV2,
+  "logo-cloud-section-v1": LogoCloudSectionV1,
+  "logo-cloud-section-v2": LogoCloudSectionV2,
 };

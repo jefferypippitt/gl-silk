@@ -1312,6 +1312,345 @@
           "target": "app/glsilk/feature-section-v2/feature-section-v2.css"
         }
       ]
+    },
+    {
+      "name": "feature-section-v3",
+      "type": "registry:block",
+      "category": "features",
+      "title": "Feature Section V3",
+      "description": "A dark editorial feature section with full-width stacked rows, oversized watermark counters, and Lucide icons",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v3/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/feature-section-v3/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v3/feature-section-v3.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/feature-section-v3/feature-section-v3.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v3/feature-section-v3-list.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/feature-section-v3/feature-section-v3-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-section-v4",
+      "type": "registry:block",
+      "category": "features",
+      "title": "Feature Section V4",
+      "description": "An asymmetric bento grid feature section with 5 cells, each containing a unique CSS-animated visual illustration",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v4/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/feature-section-v4/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v4/feature-section-v4.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/feature-section-v4/feature-section-v4.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/features-section/feature-section-v4/feature-section-v4.css",
+          "type": "registry:component",
+          "target": "app/glsilk/feature-section-v4/feature-section-v4.css"
+        }
+      ]
+    },
+    {
+      "name": "faq-section-v1",
+      "type": "registry:block",
+      "category": "faqs",
+      "title": "FAQ Section V1",
+      "description": "An editorial FAQ section with animated accordion, oversized watermark, and numbered entries",
+      "dependencies": ["@radix-ui/react-accordion"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/faq-section-v1/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v1/faq-section-v1.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/faq-section-v1/faq-section-v1.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v1/accordion.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/faq-section-v1/accordion.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v1/utils.ts",
+          "type": "registry:lib",
+          "target": "app/glsilk/faq-section-v1/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "faq-section-v2",
+      "type": "registry:block",
+      "category": "faqs",
+      "title": "FAQ Section V2",
+      "description": "A tabbed FAQ section grouped by category with questions and answers displayed side by side",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v2/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/faq-section-v2/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v2/faq-section-v2.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/faq-section-v2/faq-section-v2.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v2/button.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/faq-section-v2/button.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v2/utils.ts",
+          "type": "registry:lib",
+          "target": "app/glsilk/faq-section-v2/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "faq-section-v3",
+      "type": "registry:block",
+      "category": "faqs",
+      "title": "FAQ Section V3",
+      "description": "A two-panel FAQ section with a clickable question list sidebar and an answer detail panel with decorative number accent.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v3/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/faq-section-v3/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/faq-section/faq-section-v3/faq-section-v3.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/faq-section-v3/faq-section-v3.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-section-v1",
+      "type": "registry:block",
+      "category": "blog",
+      "title": "Blog Section V1",
+      "description": "An editorial blog section with split header and a 3-column grid of image-rich article cards with category badges",
+      "dependencies": [],
+      "registryDependencies": ["badge", "button", "card"],
+      "meta": {
+        "assets": [
+          { "path": "public/images/shadcn1.webp", "url": "/images/shadcn1.webp" },
+          { "path": "public/images/super-fast-api.webp", "url": "/images/super-fast-api.webp" },
+          { "path": "public/images/tiny-api.webp", "url": "/images/tiny-api.webp" },
+          { "path": "public/images/voice-api.webp", "url": "/images/voice-api.webp" },
+          { "path": "public/images/imagine-api.webp", "url": "/images/imagine-api.webp" },
+          { "path": "public/images/business-api.webp", "url": "/images/business-api.webp" }
+        ]
+      },
+      "files": [
+        {
+          "path": "registry/new-york/blocks/blog-section/blog-section-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/blog-section-v1/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/blog-section/blog-section-v1/blog-section-v1.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/blog-section-v1/blog-section-v1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-section-v2",
+      "type": "registry:block",
+      "category": "blog",
+      "title": "Blog Section V2",
+      "description": "A typographic editorial blog section with a featured post and a numbered article list — no images, pure text hierarchy.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/blog-section/blog-section-v2/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/blog-section-v2/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/blog-section/blog-section-v2/blog-section-v2.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/blog-section-v2/blog-section-v2.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-section-v1",
+      "type": "registry:block",
+      "category": "logo-cloud",
+      "title": "Logo Cloud Section V1",
+      "description": "An infinite marquee logo cloud showcasing database integrations — Drizzle, Supabase, Neon, PlanetScale, Upstash, and Turso — with inline SVG brand marks.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/logo-cloud/logo-cloud-section-v1/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/logo-cloud-section-v1/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/logo-cloud/logo-cloud-section-v1/logo-cloud-section-v1.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/logo-cloud-section-v1/logo-cloud-section-v1.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/logo-cloud/logo-cloud-section-v1/logo-cloud-section-v1.css",
+          "type": "registry:component",
+          "target": "app/glsilk/logo-cloud-section-v1/logo-cloud-section-v1.css"
+        },
+        {
+          "path": "components/ui/svgs/drizzleOrmLight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/drizzleOrmLight.tsx"
+        },
+        {
+          "path": "components/ui/svgs/drizzleOrmDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/drizzleOrmDark.tsx"
+        },
+        {
+          "path": "components/ui/svgs/supabase.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/supabase.tsx"
+        },
+        {
+          "path": "components/ui/svgs/neon.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/neon.tsx"
+        },
+        {
+          "path": "components/ui/svgs/planetscale.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/planetscale.tsx"
+        },
+        {
+          "path": "components/ui/svgs/planetscaleDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/planetscaleDark.tsx"
+        },
+        {
+          "path": "components/ui/svgs/upstash.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/upstash.tsx"
+        },
+        {
+          "path": "components/ui/svgs/tursoLight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/tursoLight.tsx"
+        },
+        {
+          "path": "components/ui/svgs/tursoDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/tursoDark.tsx"
+        },
+        {
+          "path": "components/ui/svgs/convex.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/convex.tsx"
+        },
+        {
+          "path": "components/ui/svgs/mongodbIconLight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/mongodbIconLight.tsx"
+        },
+        {
+          "path": "components/ui/svgs/mongodbIconDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/mongodbIconDark.tsx"
+        },
+        {
+          "path": "components/ui/svgs/postgresql.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/postgresql.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-section-v2",
+      "type": "registry:block",
+      "category": "logo-cloud",
+      "title": "Logo Cloud Section V2",
+      "description": "A payment provider connection diagram with an animated dotted beam from a host logo to a cycling badge, fanning out to Stripe, Polar, and PayPal.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/logo-cloud/logo-cloud-section-v2/page.tsx",
+          "type": "registry:page",
+          "target": "app/glsilk/logo-cloud-section-v2/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/logo-cloud/logo-cloud-section-v2/logo-cloud-section-v2.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/logo-cloud-section-v2/logo-cloud-section-v2.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/logo-cloud/logo-cloud-section-v2/logo-cloud-section-v2.css",
+          "type": "registry:component",
+          "target": "app/glsilk/logo-cloud-section-v2/logo-cloud-section-v2.css"
+        },
+        {
+          "path": "registry/new-york/blocks/logo-cloud/logo-cloud-section-v2/animated-beam.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/logo-cloud-section-v2/animated-beam.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/logo-cloud/logo-cloud-section-v2/cycling-badge.tsx",
+          "type": "registry:component",
+          "target": "app/glsilk/logo-cloud-section-v2/cycling-badge.tsx"
+        },
+        {
+          "path": "components/ui/svgs/vercel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/vercel.tsx"
+        },
+        {
+          "path": "components/ui/svgs/stripe.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/stripe.tsx"
+        },
+        {
+          "path": "components/ui/svgs/polarShLight.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/polarShLight.tsx"
+        },
+        {
+          "path": "components/ui/svgs/polarShDark.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/polarShDark.tsx"
+        },
+        {
+          "path": "components/ui/svgs/paypal.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/svgs/paypal.tsx"
+        }
+      ]
     }
   ]
 }

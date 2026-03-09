@@ -53,7 +53,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </div>
 
       <div className="mt-8 mb-8">
-        <BlocksList blocks={blocks} />
+        <BlocksList blocks={blocks} categoryName={blockCategory.displayName} />
       </div>
     </Container>
   );

@@ -55,6 +55,22 @@
   margin-right: auto;
 }
 
+/* Hero variant – subtle 3D tilt + ambient glow */
+.hmot-hero {
+  perspective: 1200px;
+}
+
+.hmot-hero .hmot-terminal {
+  transform: rotateX(3deg);
+  transform-origin: 50% 0%;
+  transition: transform 0.4s ease;
+}
+
+.hmot-hero:hover .hmot-terminal {
+  transform: rotateX(1deg);
+}
+
+
 /* ─── Terminal Window ────────────────────────── */
 
 .hmot-terminal {
@@ -157,7 +173,7 @@
   font-family: var(--font-mono, "SF Mono", "Fira Code", "Cascadia Code", monospace);
   font-size: 0.8125rem;
   line-height: 1.7;
-  height: 320px;
+  height: 340px;
   overflow: hidden;
 }
 

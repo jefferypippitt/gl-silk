@@ -1,0 +1,27 @@
+@keyframes beam-flow {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+.beam-line {
+  will-change: transform;
+  animation: beam-flow 1s linear infinite;
+}
+
+@keyframes beam-dash {
+  from {
+    stroke-dashoffset: 10;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.beam-diagonal {
+  will-change: stroke-dashoffset;
+  animation: beam-dash 1s linear infinite;
+}

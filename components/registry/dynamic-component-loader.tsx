@@ -46,6 +46,14 @@ import { Text3DGradientDemo } from "@/registry/new-york/components/text-3d/gradi
 import { Text3DAdvancedDemo } from "@/registry/new-york/components/text-3d/advanced-demo";
 import { DitherWaveDemo } from "@/registry/new-york/components/dither-wave/demo";
 import { NeubrutalismButtonDemo } from "@/registry/new-york/components/neubrutalism-button/demo";
+import FaqSectionV1 from "@/registry/new-york/blocks/faq-section/faq-section-v1/faq-section-v1";
+import FaqSectionV2 from "@/registry/new-york/blocks/faq-section/faq-section-v2/faq-section-v2";
+import FaqSectionV3 from "@/registry/new-york/blocks/faq-section/faq-section-v3/faq-section-v3";
+import BlogSectionV1 from "@/registry/new-york/blocks/blog-section/blog-section-v1/blog-section-v1";
+import BlogSectionV2 from "@/registry/new-york/blocks/blog-section/blog-section-v2/blog-section-v2";
+import LogoCloudSectionV1 from "@/registry/new-york/blocks/logo-cloud/logo-cloud-section-v1/logo-cloud-section-v1";
+import LogoCloudSectionV2 from "@/registry/new-york/blocks/logo-cloud/logo-cloud-section-v2/logo-cloud-section-v2";
+import FeatureSectionV4 from "@/registry/new-york/blocks/features-section/feature-section-v4/feature-section-v4";
 
 // Component mapping - add new components here as you create them
 const componentMap: Record<string, React.ComponentType> = {
@@ -99,6 +107,13 @@ const componentMap: Record<string, React.ComponentType> = {
   // Neubrutalism Button
   "neubrutalism-button": NeubrutalismButtonDemo,
   "neubrutalism-button-demo": NeubrutalismButtonDemo,
+  "faq-section-v1": FaqSectionV1,
+  "faq-section-v2": FaqSectionV2,
+  "faq-section-v3": FaqSectionV3,
+  "blog-section-v1": BlogSectionV1,
+  "blog-section-v2": BlogSectionV2,
+  "logo-cloud-section-v1": LogoCloudSectionV1,
+  "feature-section-v4": FeatureSectionV4,
 };
 
 interface DynamicComponentLoaderProps {

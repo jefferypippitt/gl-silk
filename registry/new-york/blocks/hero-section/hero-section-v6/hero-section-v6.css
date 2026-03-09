@@ -7,15 +7,7 @@
 }
 
 .hs6-bg-pattern {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(125% 125% at 50% 10%, #ffffff 50%, #7e7e7e 100%);
-}
-
-.dark .hs6-bg-pattern {
-  background: radial-gradient(125% 125% at 50% 10%, #000000 50%, #272727 100%);
+  display: none;
 }
 
 .hs6-carousel {
@@ -38,30 +30,43 @@
 
 .hs6-carousel-indicators {
   position: absolute;
-  bottom: 16px;
+  bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
   z-index: 10;
 }
 
-.hs6-carousel-dot {
-  width: 32px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.3);
+.hs6-dots-backdrop {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hs6-dot-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
   border: none;
+  background: none;
   cursor: pointer;
-  transition: all 0.3s ease;
   padding: 0;
 }
 
-.hs6-carousel-dot:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+.hs6-dot-ring {
+  position: absolute;
+  inset: 0;
 }
 
-.hs6-carousel-dot.active {
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 48px;
+.hs6-dot-core {
+  display: block;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.95);
 }

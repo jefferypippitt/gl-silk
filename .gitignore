@@ -50,6 +50,7 @@ next-env.d.ts
 .agents/
 .cursor/
 .next-docs/
+.claude/
 AGENTS.md
 CLAUDE.md
 

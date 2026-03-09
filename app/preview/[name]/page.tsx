@@ -1,13 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { componentRegistry } from "@/components/mdx/component-registry";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function PreviewPage() {
     const params = useParams();
-    const searchParams = useSearchParams();
     const blockName = params.name as string;
 
     const [rerunKey, setRerunKey] = useState(0);
@@ -29,17 +27,7 @@ export default function PreviewPage() {
         return () => window.removeEventListener("rerun-animation", handleRerun);
     }, [blockName]);
 
-    // Add scrollbar class to html/body
-    useEffect(() => {
-        document.documentElement.classList.add("preview-scrollbar");
-        document.body.classList.add("preview-scrollbar");
-        return () => {
-            document.documentElement.classList.remove("preview-scrollbar");
-            document.body.classList.remove("preview-scrollbar");
-        };
-    }, []);
-
-    if (!Component) {
+if (!Component) {
         return (
             <div className="min-h-screen w-full bg-background flex items-center justify-center">
                 <div className="text-center">
@@ -53,10 +41,8 @@ export default function PreviewPage() {
     }
 
     return (
-        <ScrollArea className="h-screen w-full bg-background">
-            <div className="min-h-full">
-                <Component key={rerunKey} />
-            </div>
-        </ScrollArea>
+        <div className="min-h-screen w-full overflow-y-auto bg-background">
+            <Component key={rerunKey} />
+        </div>
     );
 }

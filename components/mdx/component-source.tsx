@@ -30,10 +30,14 @@ export const ComponentSource: React.FC<{ name: string }> = ({ name }) => {
           return;
         }
         const data = await response.json();
-        const componentFiles = data.files.filter(
-          (file: RegistryFile) =>
-            (file.type === "registry:component" || file.type === "registry:page") && file.content
-        ).map((file: RegistryFile) => ({
+        const componentFiles = data.files
+          .filter(
+            (file: RegistryFile) =>
+              typeof file.type === "string" &&
+              file.type.startsWith("registry:") &&
+              Boolean(file.content)
+          )
+          .map((file: RegistryFile) => ({
           path: file.path,
           target: file.target,
           type: file.type,

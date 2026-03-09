@@ -1,0 +1,57 @@
+/* ============================================
+   Feature Section V4 — Asymmetric Bento Grid
+   ============================================ */
+
+/* Entry animation */
+@keyframes fsv4-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fsv4-animate {
+  animation: fsv4-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Card hover — needs CSS for .dark parent-child hover selectors */
+.fsv4-card {
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.fsv4-card:hover {
+  border-color: oklch(0 0 0 / 0.16);
+  box-shadow: 0 12px 40px -12px oklch(0 0 0 / 0.1);
+  transform: translateY(-2px);
+}
+
+.dark .fsv4-card:hover {
+  border-color: oklch(1 0 0 / 0.13);
+  box-shadow: 0 12px 40px -12px oklch(0 0 0 / 0.45);
+}
+
+
+/* ================================
+   Accessibility — Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fsv4-animate {
+    animation: none;
+  }
+
+  .fsv4-card {
+    transition: none;
+  }
+
+  .fsv4-card:hover {
+    transform: none;
+  }
+}

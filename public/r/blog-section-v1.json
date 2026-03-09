@@ -1,0 +1,55 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blog-section-v1",
+  "type": "registry:block",
+  "title": "Blog Section V1",
+  "description": "An editorial blog section with split header and a 3-column grid of image-rich article cards with category badges",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/blog-section/blog-section-v1/page.tsx",
+      "content": "import BlogSectionV1 from \"./blog-section-v1\";\r\n\r\nexport default function Page() {\r\n  return <BlogSectionV1 />;\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/glsilk/blog-section-v1/page.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/blog-section/blog-section-v1/blog-section-v1.tsx",
+      "content": "import { Avatar, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { AvatarFallback } from \"@/components/ui/avatar\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Card,\r\n  CardAction,\r\n  CardDescription,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\";\r\nimport { ChevronRightIcon } from \"lucide-react\";\r\nimport Link from \"next/link\";\r\n\r\nconst posts = [\r\n  {\r\n    image: \"/images/collections-api.webp\",\r\n    category: \"Design\",\r\n    title: \"Lorem ipsum dolor sit amet consectetur adipisicing elit.\",\r\n    description:\r\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n  },\r\n  {\r\n    image: \"/images/super-fast-api.webp\",\r\n    category: \"Performance\",\r\n    title: \"Lorem ipsum dolor sit amet consectetur adipisicing elit.\",\r\n    description:\r\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n  },\r\n  {\r\n    image: \"/images/tiny-api.webp\",\r\n    category: \"Engineering\",\r\n    title: \"Lorem ipsum dolor sit amet consectetur adipisicing elit.\",\r\n    description:\r\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n  },\r\n  {\r\n    image: \"/images/voice-api.webp\",\r\n    category: \"AI\",\r\n    title: \"Lorem ipsum dolor sit amet consectetur adipisicing elit.\",\r\n    description:\r\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing magna aliqua.\",\r\n  },\r\n  {\r\n    image: \"/images/imagine-api.webp\",\r\n    category: \"AI\",\r\n    title: \"Lorem ipsum dolor sit amet consectetur adipisicing elit.\",\r\n    description:\r\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n  },\r\n  {\r\n    image: \"/images/fast-api.webp\",\r\n    category: \"Product\",\r\n    title: \"Lorem ipsum dolor sit amet consectetur adipisicing elit.\",\r\n    description:\r\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n  },\r\n];\r\n\r\nexport default function BlogSectionV1() {\r\n  return (\r\n    <section className=\"relative px-6 py-24 overflow-hidden\">\r\n      <div className=\"mx-auto max-w-7xl\">\r\n        {/* Header */}\r\n        <div className=\"mb-8 flex items-center justify-between gap-4\">\r\n          <h1 className=\"text-4xl font-light tracking-tight leading-tight lg:text-5xl\">\r\n            Latest Updates\r\n          </h1>\r\n          <Avatar className=\"size-10\">\r\n            <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n            <AvatarFallback>CN</AvatarFallback>\r\n          </Avatar>\r\n        </div>\r\n\r\n        {/* Card Grid */}\r\n        <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6\">\r\n          {posts.map((post, i) => (\r\n            <Card key={i} className=\"relative w-full pt-0 overflow-hidden group h-full flex flex-col\">\r\n              <div className=\"relative overflow-hidden\">\r\n                <div className=\"absolute inset-0 z-10\" />\r\n                <img\r\n                  src={post.image}\r\n                  alt={post.title}\r\n                  className=\"relative aspect-video w-full object-cover\"\r\n                />\r\n              </div>\r\n              <CardHeader className=\"flex-1\">\r\n                <CardAction>\r\n                  <Badge variant=\"secondary\">{post.category}</Badge>\r\n                </CardAction>\r\n                <CardTitle className=\"leading-snug\">{post.title}</CardTitle>\r\n                <CardDescription>{post.description}</CardDescription>\r\n              </CardHeader>\r\n              <CardFooter>\r\n                <Button variant=\"outline\" className=\"w-full\" size=\"sm\" asChild>\r\n                  <Link href=\"https://ui.shadcn.com/\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n                    Read Article\r\n                    <ChevronRightIcon className=\"size-4\" />\r\n                  </Link>\r\n                </Button>\r\n              </CardFooter>\r\n            </Card>\r\n          ))}\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "app/glsilk/blog-section-v1/blog-section-v1.tsx"
+    }
+  ],
+  "meta": {
+    "assets": [
+      {
+        "path": "public/images/shadcn1.webp",
+        "url": "/images/shadcn1.webp"
+      },
+      {
+        "path": "public/images/super-fast-api.webp",
+        "url": "/images/super-fast-api.webp"
+      },
+      {
+        "path": "public/images/tiny-api.webp",
+        "url": "/images/tiny-api.webp"
+      },
+      {
+        "path": "public/images/voice-api.webp",
+        "url": "/images/voice-api.webp"
+      },
+      {
+        "path": "public/images/imagine-api.webp",
+        "url": "/images/imagine-api.webp"
+      },
+      {
+        "path": "public/images/business-api.webp",
+        "url": "/images/business-api.webp"
+      }
+    ]
+  }
+}
